@@ -1,0 +1,47 @@
+:root {
+  --portal-background:#09090c;
+  --portal-surface:#17171d;
+  --portal-ink:#171714;
+  --portal-muted:#6b6250;
+  --portal-primary:#d4af37;
+  --portal-accent:#f4df8a;
+  --portal-dark:#101014;
+}
+
+.pp-site-header,
+header[role="banner"] { background:#121015 !important; }
+
+.pp-site-header a[aria-current="page"],
+nav a[aria-current="page"],
+.pp-button-primary {
+  background:#d4af37 !important;
+  border-color:#d4af37 !important;
+  color:#101014 !important;
+  -webkit-text-fill-color:#101014 !important;
+}
+
+.pp-button-secondary {
+  border-color:#d4af37 !important;
+  color:#f4df8a !important;
+  -webkit-text-fill-color:#f4df8a !important;
+}
+
+.pp-kicker,
+[class*="kicker"],
+.pp-hero-heading-green { color:#d4af37 !important; -webkit-text-fill-color:#d4af37 !important; }
+
+[data-headlines-ai-hero-frame] {
+  display:grid !important;
+  place-items:center !important;
+  background:radial-gradient(circle at 50% 42%,#29231a 0,#17171d 46%,#09090c 100%) !important;
+  border:2px solid #5a4a20 !important;
+}
+
+[data-headlines-ai-hero] {
+  width:min(78%,520px) !important;
+  height:auto !important;
+  aspect-ratio:1 / 1 !important;
+  object-fit:contain !important;
+}
+
+body { background:#09090c; }

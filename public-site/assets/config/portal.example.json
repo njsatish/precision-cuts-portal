@@ -4,7 +4,7 @@
     "name": "Sample Barbershop",
     "tagline": "Professional barbering with live Booksy availability",
     "description": "Professional grooming services, clear choices, and convenient online scheduling in Roanoke, Virginia.",
-    "logo": "/assets/images/headlines-logo.jpg",
+    "logo": "/assets/images/logo.png",
     "domain": "sample.example.com",
     "phoneDisplay": "(540) 524-8809",
     "phoneHref": "+15405248809",
@@ -15,8 +15,8 @@
     ],
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=2501+Hollins+Rd+NE+Roanoke+VA+24012",
     "facebookUrl": "https://www.facebook.com/HeadlinesHollins/",
-    "booksyUrl": "https://booksy.com/en-us/94095_headlines_barber-shop_134579_roanoke",
-    "booksyBusinessId": 94095,
+    "booksyUrl": "https://booksy.com/en-us/example",
+    "booksyBusinessId": 123456,
     "timezone": "America/New_York",
     "slug": "sample-barbershop",
     "locale": "en-US",
@@ -113,7 +113,7 @@
     "instantExperienceBase": "https://booksy.com/en-us/instant-experiences/widget"
   },
   "brand": {
-    "logo": "/assets/images/logo.jpg",
+    "logo": "/assets/images/logo.png",
     "favicon": "/assets/images/favicon-32.png",
     "heroImage": "/assets/images/hero.jpg",
     "theme": "theme-template",
