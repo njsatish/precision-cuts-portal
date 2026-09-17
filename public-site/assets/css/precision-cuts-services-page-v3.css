@@ -1,0 +1,109 @@
+/* Precision Cuts service explorer styled like the compact Headlines layout. */
+.pc-services-explorer-v2 {
+  padding: clamp(60px, 7vw, 108px) 0 !important;
+  background: #F4E9D3 !important;
+}
+
+.pc-services-explorer-v2 .pc-services-shell-v2 {
+  display: block !important;
+  width: min(1440px, calc(100% - 40px)) !important;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.pc-services-explorer-v2 .pc-services-layout-v2 {
+  display: grid !important;
+  grid-template-columns: minmax(330px, .72fr) minmax(0, 1.7fr) !important;
+  gap: 28px !important;
+  align-items: stretch !important;
+  margin: 0 !important;
+}
+
+.pc-services-explorer-v2 .pc-services-picker-v3,
+.pc-services-explorer-v2 .pc-service-detail-v2 {
+  background: #FFFDF7 !important;
+  border: 1px solid #CAB38E !important;
+  border-radius: 12px !important;
+  box-shadow: 0 14px 32px rgba(44, 33, 24, .10) !important;
+}
+
+.pc-services-explorer-v2 .pc-services-picker-v3 {
+  padding: 30px !important;
+}
+
+.pc-services-explorer-v2 .pc-services-picker-v3 .pp-kicker {
+  margin: 0 0 12px !important;
+  color: #B78918 !important;
+  -webkit-text-fill-color: #B78918 !important;
+  font-size: .86rem !important;
+  font-weight: 900 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+}
+
+.pc-services-explorer-v2 .pc-services-picker-v3 h2 {
+  margin: 0 0 24px !important;
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(2.1rem, 3.2vw, 3rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.025em !important;
+  text-shadow: none !important;
+}
+
+.pc-services-explorer-v2 .pc-services-list-v2 {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.pc-services-explorer-v2 .pc-service-choice-v2 {
+  min-height: 92px !important;
+}
+
+.pc-services-explorer-v2 .pc-service-detail-v2 {
+  min-height: 610px !important;
+  padding: clamp(38px, 5vw, 66px) !important;
+}
+
+/* Suppress any obsolete v2 heading left in the document by cache or markup. */
+.pc-services-explorer-v2 > .pc-services-heading-v2,
+.pc-services-explorer-v2 .pc-services-shell-v2 > .pc-services-heading-v2 {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .pc-services-explorer-v2 .pc-services-layout-v2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pc-services-explorer-v2 .pc-service-detail-v2 {
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .pc-services-explorer-v2 {
+    padding: 40px 0 54px !important;
+  }
+
+  .pc-services-explorer-v2 .pc-services-shell-v2 {
+    width: min(100% - 28px, 1440px) !important;
+  }
+
+  .pc-services-explorer-v2 .pc-services-picker-v3,
+  .pc-services-explorer-v2 .pc-service-detail-v2 {
+    padding: 20px !important;
+  }
+}

@@ -27,13 +27,12 @@
     explorer.setAttribute("aria-labelledby","pc-services-title-v2");
     explorer.innerHTML=`
       <div class="pp-container pc-services-shell-v2">
-        <header class="pc-services-heading-v2">
-          <p class="pp-kicker">Choose a service</p>
-          <h1 id="pc-services-title-v2">What would you like to book?</h1>
-          <p>Select a Precision Cuts service to review the price, appointment length, and booking details.</p>
-        </header>
         <div class="pc-services-layout-v2">
-          <nav class="pc-services-list-v2" aria-label="Precision Cuts services"></nav>
+          <aside class="pc-services-picker-v3">
+            <p class="pp-kicker">Choose a service</p>
+            <h2 id="pc-services-title-v2">What would you like to book?</h2>
+            <nav class="pc-services-list-v2" aria-label="Precision Cuts services"></nav>
+          </aside>
           <article class="pc-service-detail-v2" aria-live="polite"></article>
         </div>
       </div>`;
