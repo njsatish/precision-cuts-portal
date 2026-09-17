@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "business": {
+    "name": "Sample Barbershop",
+    "tagline": "Professional barbering with live Booksy availability",
+    "description": "Professional grooming services, clear choices, and convenient online scheduling in Roanoke, Virginia.",
+    "logo": "/assets/images/headlines-logo.jpg",
+    "domain": "sample.example.com",
+    "phoneDisplay": "(540) 524-8809",
+    "phoneHref": "+15405248809",
+    "email": "prvtmix99@gmail.com",
+    "addressLines": [
+      "2501 Hollins Rd NE",
+      "Roanoke, VA 24012"
+    ],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=2501+Hollins+Rd+NE+Roanoke+VA+24012",
+    "facebookUrl": "https://www.facebook.com/HeadlinesHollins/",
+    "booksyUrl": "https://booksy.com/en-us/94095_headlines_barber-shop_134579_roanoke",
+    "booksyBusinessId": 94095,
+    "timezone": "America/New_York",
+    "slug": "sample-barbershop",
+    "locale": "en-US",
+    "currency": "USD",
+    "country": "US"
+  },
+  "hours": [
+    {
+      "day": "Sunday",
+      "closed": true
+    },
+    {
+      "day": "Monday",
+      "closed": true
+    },
+    {
+      "day": "Tuesday",
+      "closed": true
+    },
+    {
+      "day": "Wednesday",
+      "open": "10:00 AM",
+      "close": "5:00 PM"
+    },
+    {
+      "day": "Thursday",
+      "open": "10:00 AM",
+      "close": "5:00 PM"
+    },
+    {
+      "day": "Friday",
+      "open": "10:00 AM",
+      "close": "5:00 PM"
+    },
+    {
+      "day": "Saturday",
+      "open": "10:00 AM",
+      "close": "2:00 PM"
+    }
+  ],
+  "staff": [],
+  "services": [
+    {
+      "slug": "signature-cut",
+      "name": "Signature Cut",
+      "displayName": "Signature Cut",
+      "description": "A detailed signature service.",
+      "serviceId": 100001,
+      "variantId": 200001,
+      "durationMinutes": 45,
+      "price": 50,
+      "currency": "USD",
+      "active": true,
+      "sortOrder": 1,
+      "availabilityPath": "/availability/signature-cut"
+    }
+  ],
+  "reviews": [],
+  "gallery": [],
+  "booking": {
+    "availabilityApiBase": "https://57z7wwag50.execute-api.us-east-1.amazonaws.com",
+    "lambdaRuntime": "nodejs22.x",
+    "awsRegion": "us-east-1"
+  },
+  "theme": {
+    "active": "headlines-dark",
+    "variables": {
+      "background": "#0b1014",
+      "surface": "#171d24",
+      "surfaceAlt": "#111820",
+      "text": "#ffffff",
+      "mutedText": "#aeb7c2",
+      "primary": "#43acd5",
+      "secondary": "#ff5d3a",
+      "accent": "#f0b93f",
+      "success": "#63c895",
+      "border": "#34404b",
+      "bodyFont": "Inter, system-ui, sans-serif",
+      "headingFont": "Inter, system-ui, sans-serif",
+      "contentWidth": "1120px",
+      "borderRadius": "14px"
+    }
+  },
+  "portalVersion": "1.0.0",
+  "bookingProvider": {
+    "type": "booksy",
+    "businessId": 123456,
+    "widgetId": 123456,
+    "stafferId": 1234567,
+    "country": "us",
+    "language": "en",
+    "profileUrl": "https://booksy.com/en-us/example",
+    "availabilityApiBase": "https://api.example.com",
+    "instantExperienceBase": "https://booksy.com/en-us/instant-experiences/widget"
+  },
+  "brand": {
+    "logo": "/assets/images/logo.jpg",
+    "favicon": "/assets/images/favicon-32.png",
+    "heroImage": "/assets/images/hero.jpg",
+    "theme": "theme-template",
+    "colors": {
+      "background": "#F4E9D3",
+      "surface": "#FFFDF7",
+      "ink": "#171714",
+      "muted": "#6B5A48",
+      "primary": "#487A35",
+      "accent": "#8BCF45",
+      "dark": "#171D24"
+    }
+  },
+  "features": {
+    "liveAvailability": true,
+    "booksyWidget": true,
+    "instantBooksyHandoff": true,
+    "reviews": true,
+    "gallery": true
+  },
+  "content": {}
+}

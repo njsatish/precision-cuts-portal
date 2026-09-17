@@ -1,0 +1,237 @@
+(() => {
+  "use strict";
+  const config = {
+  "schemaVersion": 1,
+  "portalVersion": "1.0.0",
+  "business": {
+    "name": "Precision Cuts",
+    "tagline": "Professional barbering with live Booksy availability",
+    "description": "Professional grooming services, clear choices, and convenient online scheduling in Roanoke, Virginia.",
+    "logo": "/assets/images/precision-cuts-logo.png",
+    "domain": "precision-cuts.denduluru.com",
+    "phoneDisplay": "(540) 556-2871",
+    "phoneHref": "+15405562871",
+    "email": "prvtmix99@gmail.com",
+    "addressLines": [
+      "6423 Williamson Rd",
+      "Roanoke, VA 24019"
+    ],
+    "mapsUrl": "https://www.google.com/maps/dir//Precision+Cuts,+6423+Williamson+Rd,+Roanoke,+VA+24019",
+    "facebookUrl": "https://www.facebook.com/precisioncutsvip/",
+    "booksyUrl": "https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke",
+    "booksyBusinessId": 97909,
+    "timezone": "America/New_York",
+    "slug": "precision-cuts",
+    "locale": "en-US",
+    "currency": "USD",
+    "country": "US"
+  },
+  "hours": [
+    {
+      "day": "Sunday",
+      "closed": true
+    },
+    {
+      "day": "Monday",
+      "closed": true
+    },
+    {
+      "day": "Tuesday",
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": "Wednesday",
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": "Thursday",
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": "Friday",
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": "Saturday",
+      "open": "10:00 AM",
+      "close": "5:00 PM"
+    }
+  ],
+  "staff": [
+    {
+      "slug": "primary-barber",
+      "name": "Precision Cuts Barber",
+      "booksyStafferId": 117783,
+      "photo": "/assets/images/staff/primary-barber.jpg",
+      "bio": "Professional barbering with detailed cuts, fades, beard work, eyebrow detailing, and clean finishes.",
+      "active": true
+    }
+  ],
+  "services": [
+    {
+      "slug": "haircut-no-beard-trim-19-up",
+      "name": "Haircut // NO BEARD TRIM! 19 & up!",
+      "displayName": "Adult Haircut",
+      "description": "An adult haircut for clients age 19 and older. Beard trimming is not included.",
+      "serviceId": 602728,
+      "variantId": 5519794,
+      "durationMinutes": 55,
+      "price": 40,
+      "currency": "USD",
+      "active": true,
+      "sortOrder": 1,
+      "availabilityPath": "/availability/haircut-no-beard-trim-19-up"
+    },
+    {
+      "slug": "kid-haircut-6-to-15",
+      "name": "Kid haircut 6yrs to 15yrs old",
+      "displayName": "Kid Haircut",
+      "description": "A detailed haircut for clients ages 6 through 15.",
+      "serviceId": 602733,
+      "variantId": 2060907,
+      "durationMinutes": 45,
+      "price": 30,
+      "currency": "USD",
+      "active": true,
+      "sortOrder": 2,
+      "availabilityPath": "/availability/kid-haircut-6-to-15"
+    },
+    {
+      "slug": "haircut-plus-beard",
+      "name": "Haircut plus Beard!",
+      "displayName": "Haircut + Beard",
+      "description": "A complete haircut with beard trimming, shaping, and detailed line work.",
+      "serviceId": 3365178,
+      "variantId": 6589869,
+      "durationMinutes": 60,
+      "price": 45,
+      "currency": "USD",
+      "active": true,
+      "sortOrder": 3,
+      "availabilityPath": "/availability/haircut-plus-beard"
+    },
+    {
+      "slug": "teenagers-15-to-18",
+      "name": "Teenagers 15 to 18",
+      "displayName": "Teen Haircut",
+      "description": "A detailed haircut for clients ages 15 through 18.",
+      "serviceId": 6836423,
+      "variantId": 15473908,
+      "durationMinutes": 35,
+      "price": 35,
+      "currency": "USD",
+      "active": true,
+      "sortOrder": 4,
+      "availabilityPath": "/availability/teenagers-15-to-18"
+    },
+    {
+      "slug": "eyebrows-clippers-or-razor-cut",
+      "name": "Eyebrows // Clippers or razor cut",
+      "displayName": "Eyebrows",
+      "description": "Eyebrow shaping and cleanup using clippers or a razor.",
+      "serviceId": 1981416,
+      "variantId": 3665636,
+      "durationMinutes": 30,
+      "price": 20,
+      "currency": "USD",
+      "active": true,
+      "sortOrder": 5,
+      "availabilityPath": "/availability/eyebrows-clippers-or-razor-cut"
+    }
+  ],
+  "reviews": [],
+  "gallery": [],
+  "booking": {
+    "availabilityApiBase": "https://precision-cuts-api.invalid",
+    "lambdaRuntime": "nodejs22.x",
+    "awsRegion": "us-east-1"
+  },
+  "theme": {
+    "active": "precision-cuts",
+    "variables": {
+      "background": "#09090C",
+      "surface": "#17171D",
+      "surfaceAlt": "#101014",
+      "text": "#FFFFFF",
+      "mutedText": "#C9C3B3",
+      "primary": "#D4AF37",
+      "secondary": "#F4DF8A",
+      "accent": "#B78918",
+      "success": "#63C895",
+      "border": "#5A4A20",
+      "bodyFont": "Inter, system-ui, sans-serif",
+      "headingFont": "Georgia, Times New Roman, serif",
+      "contentWidth": "1120px",
+      "borderRadius": "12px"
+    }
+  },
+  "bookingProvider": {
+    "type": "booksy",
+    "businessId": 97909,
+    "widgetId": 97909,
+    "stafferId": 117783,
+    "country": "us",
+    "language": "en",
+    "profileUrl": "https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke",
+    "availabilityApiBase": "https://precision-cuts-api.invalid",
+    "instantExperienceBase": "https://booksy.com/en-us/instant-experiences/widget"
+  },
+  "brand": {
+    "logo": "/assets/images/precision-cuts-logo.png",
+    "favicon": "/assets/images/favicon-32.png",
+    "heroImage": "/assets/images/precision-cuts-hero.jpg",
+    "theme": "precision-cuts",
+    "colors": {
+      "background": "#09090C",
+      "surface": "#17171D",
+      "ink": "#171714",
+      "muted": "#6B6250",
+      "primary": "#D4AF37",
+      "accent": "#F4DF8A",
+      "dark": "#101014"
+    }
+  },
+  "features": {
+    "liveAvailability": false,
+    "booksyWidget": true,
+    "instantBooksyHandoff": true,
+    "reviews": false,
+    "gallery": false
+  },
+  "content": {
+    "home": {
+      "kicker": "Roanoke, Virginia",
+      "headline": "Precision in Every Cut.",
+      "description": "Professional barbering, clear service options, and convenient online booking."
+    },
+    "about": {
+      "kicker": "About Precision Cuts",
+      "headline": "Detailed work. Consistent results.",
+      "description": "Precision Cuts brings professional barbering, clear service choices, and convenient online scheduling together in one straightforward experience."
+    },
+    "gallery": {
+      "kicker": "Precision Cuts Portfolio",
+      "headline": "Detail you can see.",
+      "description": "Explore selected haircuts, fades, beard grooming, eyebrow detailing, and finished line work."
+    },
+    "contact": {
+      "kicker": "Contact Precision Cuts",
+      "headline": "Reach out or book online.",
+      "description": "Call, get directions, or book an available appointment online."
+    }
+  },
+  "seo": {
+    "title": "Precision Cuts | Barber Shop in Roanoke, VA",
+    "description": "Explore Precision Cuts services, pricing, and convenient Booksy appointment booking in Roanoke, Virginia.",
+    "image": "/assets/images/precision-cuts-hero.jpg"
+  }
+};
+  const active = config.services.filter(service => service.active !== false).sort((a,b) => (a.sortOrder||0)-(b.sortOrder||0));
+  const bySlug = Object.freeze(Object.fromEntries(active.map(service => [service.slug, Object.freeze(service)])));
+  window.BOOKSY_PORTAL_CONFIG = Object.freeze({ ...config, services: Object.freeze(active), servicesBySlug: bySlug, getService(slug) { return bySlug[slug] || null; } });
+  document.dispatchEvent(new CustomEvent("booksy-portal-config-ready", { detail: window.BOOKSY_PORTAL_CONFIG }));
+})();

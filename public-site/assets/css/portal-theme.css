@@ -1,0 +1,783 @@
+/* Headlines Classic Barbershop Cream theme */
+:root {
+  --theme-background: #F4E9D3;
+  --theme-surface: #FFFDF7;
+  --theme-surface-alt: #EAD9BC;
+  --theme-text: #2C2118;
+  --theme-muted-text: #6B5A48;
+  --theme-menu-background: #282019;
+  --theme-menu-text: #F8EEDB;
+  --theme-menu-highlight-background: #8BCF45;
+  --theme-menu-highlight-text: #182015;
+  --theme-primary: #487A35;
+  --theme-primary-text: #FFFFFF;
+  --theme-secondary: #956B3E;
+  --theme-accent: #B77B22;
+  --theme-border: #CAB38E;
+  --theme-success: #487A35;
+  --theme-body-font: Arial, system-ui, sans-serif;
+  --theme-heading-font: Georgia, "Times New Roman", serif;
+  --theme-content-width: 1120px;
+  --theme-radius: 8px;
+}
+html{background:var(--theme-background)!important;color-scheme:light}
+body{background:var(--theme-background)!important;color:var(--theme-text)!important;font-family:var(--theme-body-font)!important}
+main,section{color:var(--theme-text)}
+h1,h2,h3,h4,h5,h6,.pp-heading,.pp-service-name{color:var(--theme-text)!important;font-family:var(--theme-heading-font)!important}
+p,li,small,blockquote,figcaption,.pp-service-meta,.pp-booking-status,.pp-description{color:var(--theme-muted-text)!important}
+a{color:var(--theme-primary)}a:hover{color:#365F27}
+header,.pp-header,.pp-site-header,.site-header,.pp-nav-shell,nav[aria-label="Primary navigation"]{background:var(--theme-menu-background)!important;border-color:#4A3A2C!important;box-shadow:0 4px 18px rgba(44,33,24,.14)!important}
+header a:not(.pp-button),nav a,.pp-nav a,.pp-site-nav a,.site-nav a{color:var(--theme-menu-text)!important}
+header a[aria-current="page"],nav a[aria-current="page"],.pp-nav a.is-active,.pp-site-nav a.is-active,.site-nav a.is-active{background:var(--theme-menu-highlight-background)!important;border-color:var(--theme-menu-highlight-background)!important;color:var(--theme-menu-highlight-text)!important}
+.pp-button-primary,.button-primary,.btn-primary,.pp-mobile-book,.pp-booksy-button,[data-primary-action],[data-booksy-link]{background:var(--theme-primary)!important;border-color:var(--theme-primary)!important;color:var(--theme-primary-text)!important}
+.pp-button-primary:hover,.button-primary:hover,.btn-primary:hover,.pp-mobile-book:hover{background:#365F27!important;border-color:#365F27!important;color:#fff!important}
+.pp-button-secondary,.button-secondary,.btn-secondary{background:transparent!important;border-color:var(--theme-secondary)!important;color:var(--theme-text)!important}
+.pp-button-secondary:hover,.button-secondary:hover,.btn-secondary:hover{background:var(--theme-secondary)!important;color:#fff!important}
+.pp-card,.pp-panel,.pp-service-card,.pp-service-summary,.pp-service-detail,.pp-service-choice-wrap,.pp-service-detail-wrap,.pp-booking-card,.pp-booking-shell,.pp-booking-results,.pp-review-card,.pp-home-review-card,.pp-home-service-card,.pp-contact-card,.pp-hours-card,.pp-book-help-compact,.card,.panel,.surface,[data-card],[data-panel]{background:var(--theme-surface)!important;border-color:var(--theme-border)!important;border-radius:var(--theme-radius)!important;box-shadow:0 8px 22px rgba(64,45,28,.10)!important}
+.pp-home-services-section,.pp-home-staff-section,.pp-home-reviews-section,.pp-staff-section,.pp-reviews-section,.pp-headlines-work-section{background:var(--theme-background)!important}
+.pp-home-service-card,.pp-home-staff-copy,.pp-home-review-card,.pp-staff-copy,.pp-staff-highlight,.pp-review-card{background:var(--theme-surface)!important;border-color:var(--theme-border)!important;color:var(--theme-text)!important}
+.pp-service-choice,.pp-headlines-service-buttons button,.pp-booking-time-list .pp-button{background:var(--theme-surface-alt)!important;border-color:var(--theme-border)!important;color:var(--theme-text)!important}
+.pp-service-choice.is-active,.pp-headlines-service-buttons button.is-active,.pp-headlines-service-buttons button[aria-pressed="true"]{background:var(--theme-primary)!important;border-color:var(--theme-primary)!important;color:#fff!important}
+input,select,textarea,.pp-field input,.pp-field select,.pp-field textarea{background:#fff!important;border-color:var(--theme-border)!important;color:var(--theme-text)!important}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--theme-menu-highlight-background)!important;outline-offset:3px}
+.pp-kicker,.eyebrow,.stage-label,.step-label{color:var(--theme-primary)!important}
+.pp-service-detail-price,.pp-service-price,.pp-review-stars,.pp-home-review-stars,.price,[data-price]{color:var(--theme-accent)!important}
+.pp-headlines-work-card{background:var(--theme-surface)!important;border:3px solid var(--theme-surface)!important;border-radius:var(--theme-radius)!important}
+.pp-headlines-lightbox,.pp-headlines-lightbox::backdrop{background:rgba(26,20,15,.96)!important}
+.pp-headlines-lightbox-nav{background:var(--theme-menu-highlight-background)!important;color:var(--theme-menu-highlight-text)!important}
+footer,.pp-footer,.site-footer{background:var(--theme-menu-background)!important;border-color:#4A3A2C!important;color:var(--theme-menu-text)!important}
+footer p,footer li,footer small,footer a,.pp-footer p,.pp-footer a,.site-footer p,.site-footer a{color:var(--theme-menu-text)!important}
+.pp-mobile-actions,.mobile-bottom-nav,.mobile-nav-bottom,[data-mobile-nav]{background:var(--theme-menu-background)!important;border-color:#4A3A2C!important}
+.pp-mobile-actions a,.mobile-bottom-nav a,.mobile-nav-bottom a,[data-mobile-nav] a{color:var(--theme-menu-text)!important}
+.pp-mobile-actions .pp-mobile-book{background:var(--theme-menu-highlight-background)!important;color:var(--theme-menu-highlight-text)!important}
+.pp-container{max-width:var(--theme-content-width)}
+img[src*="headlines-logo"],.brand-logo,.pp-logo img,.pp-footer-logo img{filter:none!important;mix-blend-mode:normal!important}
+
+/* HEADLINES-FOOTER-CONTRAST-V1-START */
+/* Improve readability of the footer contact and business-hours panels. */
+footer h2,
+footer h3,
+footer h4,
+.pp-footer h2,
+.pp-footer h3,
+.pp-footer h4,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+footer [class*="title"],
+footer [class*="heading"] {
+  color: #8BCF45 !important;
+  -webkit-text-fill-color: #8BCF45 !important;
+}
+
+footer p,
+footer span,
+footer li,
+footer dt,
+footer dd,
+footer address,
+.pp-footer p,
+.pp-footer span,
+.pp-footer li,
+.site-footer p,
+.site-footer span,
+.site-footer li {
+  color: #F8EEDB !important;
+  -webkit-text-fill-color: #F8EEDB !important;
+}
+
+footer a,
+.pp-footer a,
+.site-footer a {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-decoration-color: #8BCF45 !important;
+}
+
+footer a:hover,
+footer a:focus-visible,
+.pp-footer a:hover,
+.pp-footer a:focus-visible,
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: #8BCF45 !important;
+  -webkit-text-fill-color: #8BCF45 !important;
+}
+
+/* Keep secondary location and hours values softer but clearly readable. */
+footer [class*="address"],
+footer [class*="hours"] span,
+footer [class*="hours"] p,
+footer [class*="hours"] li,
+.pp-footer [class*="address"],
+.pp-footer [class*="hours"] span,
+.pp-footer [class*="hours"] p,
+.pp-footer [class*="hours"] li {
+  color: #D9D5C9 !important;
+  -webkit-text-fill-color: #D9D5C9 !important;
+}
+/* HEADLINES-FOOTER-CONTRAST-V1-END */
+
+/* HEADLINES-SERVICES-BOOK-CONTRAST-V1-START */
+/* Dark page bands need light typography even when Classic Cream is active. */
+body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type h1,
+body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type h2,
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type h1,
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type h2 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,.26) !important;
+}
+
+body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type p,
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type p {
+  color: #EAD9BC !important;
+  -webkit-text-fill-color: #EAD9BC !important;
+}
+
+/* Book page second dark heading area. */
+body:has(a[aria-current="page"][href*="book"]) main h2:not(.pp-service-name):not(#book-help-title) {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main .pp-kicker,
+body:has(a[aria-current="page"][href*="services"]) main .pp-kicker {
+  color: #8BCF45 !important;
+  -webkit-text-fill-color: #8BCF45 !important;
+}
+
+/* Keep cream cards dark-on-light. */
+body:has(a[aria-current="page"][href*="services"]) .pp-service-choice-wrap h2,
+body:has(a[aria-current="page"][href*="services"]) .pp-service-detail-wrap h2,
+body:has(a[aria-current="page"][href*="services"]) .pp-service-detail h2,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-results h2,
+body:has(a[aria-current="page"][href*="book"]) .pp-book-help-compact h2 {
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+  text-shadow: none !important;
+}
+
+/* Improve lower explanatory copy on the dark Book background. */
+body:has(a[aria-current="page"][href*="book"]) main > p,
+body:has(a[aria-current="page"][href*="book"]) main > section > p {
+  color: #D9D5C9 !important;
+  -webkit-text-fill-color: #D9D5C9 !important;
+}
+/* HEADLINES-SERVICES-BOOK-CONTRAST-V1-END */
+
+/* HEADLINES-HOME-SERVICE-CARD-CONTRAST-V1-START */
+/* The homepage service cards remain dark, so use high-contrast card text. */
+.pp-home-service-card h2,
+.pp-home-service-card h3,
+.pp-home-service-card h4 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.22) !important;
+}
+
+.pp-home-service-card p,
+.pp-home-service-card small,
+.pp-home-service-card span:not(.pp-button),
+.pp-home-service-card .pp-service-description {
+  color: #D9D5C9 !important;
+  -webkit-text-fill-color: #D9D5C9 !important;
+}
+
+.pp-home-service-card .pp-home-service-meta,
+.pp-home-service-card .pp-home-service-meta strong:first-child,
+.pp-home-service-card [class*="duration"] {
+  color: #F8EEDB !important;
+  -webkit-text-fill-color: #F8EEDB !important;
+}
+
+.pp-home-service-card .pp-home-service-meta strong:last-child,
+.pp-home-service-card [class*="price"] {
+  color: #F0B93F !important;
+  -webkit-text-fill-color: #F0B93F !important;
+}
+
+.pp-home-service-card .pp-button,
+.pp-home-service-card a.pp-button {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.pp-home-service-card hr,
+.pp-home-service-card .pp-divider,
+.pp-home-service-card .pp-home-service-meta {
+  border-color: rgba(248, 238, 219, 0.22) !important;
+}
+/* HEADLINES-HOME-SERVICE-CARD-CONTRAST-V1-END */
+
+/* HEADLINES-SERVICES-LAYOUT-V1-START */
+/* Compact the Services page while preserving its centered content width. */
+body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type {
+  padding-bottom: 42px !important;
+}
+
+body:has(a[aria-current="page"][href*="services"]) .pp-guided-services {
+  padding-top: 42px !important;
+  padding-bottom: 0 !important;
+}
+
+/* Improve the selected service option's metadata contrast. */
+body:has(a[aria-current="page"][href*="services"]) .pp-service-choice.is-active small,
+body:has(a[aria-current="page"][href*="services"]) .pp-service-choice.is-active span {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* Keep inactive service details readable on cream cards. */
+body:has(a[aria-current="page"][href*="services"]) .pp-service-choice:not(.is-active) small {
+  color: #6B5A48 !important;
+  -webkit-text-fill-color: #6B5A48 !important;
+}
+
+body:has(a[aria-current="page"][href*="services"]) .pp-service-choice:not(.is-active) span {
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+}
+
+/* Let the selected-service panel follow its content instead of stretching. */
+body:has(a[aria-current="page"][href*="services"]) .pp-service-detail-wrap {
+  align-self: start !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+body:has(a[aria-current="page"][href*="services"]) .pp-service-detail {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-bottom: 32px !important;
+}
+
+/* Keep the two primary panels aligned at the top. */
+body:has(a[aria-current="page"][href*="services"]) .pp-guided-services {
+  align-items: start !important;
+}
+
+/* Pull the live-availability callout closer to the service panels. */
+body:has(a[aria-current="page"][href*="services"]) .pp-guided-services + section,
+body:has(a[aria-current="page"][href*="services"]) .pp-guided-services + .pp-availability-cta,
+body:has(a[aria-current="page"][href*="services"]) [class*="availability-cta"] {
+  margin-top: 24px !important;
+}
+
+@media (max-width: 760px) {
+  body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type {
+    padding-bottom: 30px !important;
+  }
+
+  body:has(a[aria-current="page"][href*="services"]) .pp-guided-services {
+    padding-top: 30px !important;
+  }
+}
+/* HEADLINES-SERVICES-LAYOUT-V1-END */
+
+/* HEADLINES-SERVICES-CREAM-BACKGROUND-V1-START */
+/* Keep only the Services introduction dark. Use Classic Cream for the work area. */
+body:has(a[aria-current="page"][href*="services"]) main {
+  background: #F4E9D3 !important;
+}
+
+body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type {
+  background: #171D24 !important;
+  padding-bottom: 48px !important;
+}
+
+body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type h1,
+body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type h2 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type p {
+  color: #EAD9BC !important;
+  -webkit-text-fill-color: #EAD9BC !important;
+}
+
+/* Cream canvas around the two service panels and the availability callout. */
+body:has(a[aria-current="page"][href*="services"]) main section:has(.pp-guided-services),
+body:has(a[aria-current="page"][href*="services"]) main .pp-guided-services,
+body:has(a[aria-current="page"][href*="services"]) main section:has(.pp-availability-cta),
+body:has(a[aria-current="page"][href*="services"]) main [class*="availability-cta"] {
+  background: #F4E9D3 !important;
+}
+
+body:has(a[aria-current="page"][href*="services"]) main section:has(.pp-guided-services) {
+  padding-top: 58px !important;
+  padding-bottom: 58px !important;
+}
+
+/* Preserve ivory cards on the cream canvas. */
+body:has(a[aria-current="page"][href*="services"]) .pp-service-choice-wrap,
+body:has(a[aria-current="page"][href*="services"]) .pp-service-detail-wrap,
+body:has(a[aria-current="page"][href*="services"]) .pp-service-detail,
+body:has(a[aria-current="page"][href*="services"]) .pp-availability-cta,
+body:has(a[aria-current="page"][href*="services"]) [class*="availability-cta"] {
+  background: #FFFDF7 !important;
+  border-color: #CAB38E !important;
+}
+
+/* Remove the remaining dark strip between the callout and footer. */
+body:has(a[aria-current="page"][href*="services"]) main > section:not(:first-of-type) {
+  background-color: #F4E9D3 !important;
+}
+
+@media (max-width: 760px) {
+  body:has(a[aria-current="page"][href*="services"]) main > section:first-of-type {
+    padding-bottom: 34px !important;
+  }
+
+  body:has(a[aria-current="page"][href*="services"]) main section:has(.pp-guided-services) {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+}
+/* HEADLINES-SERVICES-CREAM-BACKGROUND-V1-END */
+
+/* HEADLINES-GALLERY-CENTER-V1-START */
+/* Keep the Gallery heading and image grid centered within one shared canvas. */
+.pp-headlines-work-section {
+  width: 100% !important;
+  overflow-x: clip !important;
+}
+
+.pp-headlines-work-section > .pp-container {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  width: min(1500px, calc(100% - 48px)) !important;
+  max-width: 1500px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  transform: none !important;
+}
+
+.pp-headlines-work-heading {
+  width: min(760px, 100%) !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  text-align: center !important;
+}
+
+.pp-headlines-work-grid {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  display: grid !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 34px auto 0 !important;
+  padding: 0 !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  justify-content: center !important;
+  justify-items: stretch !important;
+  gap: 18px !important;
+  transform: none !important;
+}
+
+.pp-headlines-work-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  transform: none;
+}
+
+.pp-headlines-work-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 900px) {
+  .pp-headlines-work-section > .pp-container {
+    width: min(100% - 28px, 1500px) !important;
+  }
+
+  .pp-headlines-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .pp-headlines-work-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .pp-headlines-work-card {
+    aspect-ratio: 4 / 3 !important;
+  }
+}
+/* HEADLINES-GALLERY-CENTER-V1-END */
+
+/* HEADLINES-BOOK-CREAM-AREA-V1-START */
+/* Keep the booking introduction dark, then transition to a warm cream work area. */
+body:has(a[aria-current="page"][href*="book"]) main {
+  background: #F4E9D3 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type {
+  background: #171D24 !important;
+  padding-bottom: 42px !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type h1,
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type h2 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type p {
+  color: #EAD9BC !important;
+  -webkit-text-fill-color: #EAD9BC !important;
+}
+
+/* Appointment-selection area and all remaining main sections use warm cream. */
+body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type),
+body:has(a[aria-current="page"][href*="book"]) main > div,
+body:has(a[aria-current="page"][href*="book"]) .pp-book-help-compact {
+  background-color: #F4E9D3 !important;
+}
+
+/* Main booking heading becomes dark brown on the cream canvas. */
+body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type) > .pp-container > h2,
+body:has(a[aria-current="page"][href*="book"]) main h2:not(.pp-service-name):not(#book-help-title) {
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+  text-shadow: none !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main .pp-kicker {
+  color: #487A35 !important;
+  -webkit-text-fill-color: #487A35 !important;
+}
+
+/* Ivory booking surfaces on the cream page canvas. */
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-card,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-shell,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-results,
+body:has(a[aria-current="page"][href*="book"]) .pp-service-summary,
+body:has(a[aria-current="page"][href*="book"]) .pp-book-help-compact {
+  background: #FFFDF7 !important;
+  border-color: #CAB38E !important;
+  color: #2C2118 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-card p,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-shell p,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-results p,
+body:has(a[aria-current="page"][href*="book"]) .pp-service-summary p,
+body:has(a[aria-current="page"][href*="book"]) .pp-book-help-compact p {
+  color: #6B5A48 !important;
+  -webkit-text-fill-color: #6B5A48 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-service-name,
+body:has(a[aria-current="page"][href*="book"]) #book-help-title {
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+}
+
+/* Compact vertical rhythm around the appointment interface. */
+body:has(a[aria-current="page"][href*="book"]) main section:has(.pp-booking-results),
+body:has(a[aria-current="page"][href*="book"]) main section:has(.pp-booking-shell),
+body:has(a[aria-current="page"][href*="book"]) main section:has(.pp-booking-card) {
+  padding-top: 52px !important;
+  padding-bottom: 38px !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-results,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-shell,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-card {
+  margin-bottom: 28px !important;
+}
+
+/* The Booksy disclaimer is readable on cream instead of disappearing in charcoal. */
+body:has(a[aria-current="page"][href*="book"]) main [class*="disclaimer"],
+body:has(a[aria-current="page"][href*="book"]) main [class*="policy"],
+body:has(a[aria-current="page"][href*="book"]) main small {
+  color: #6B5A48 !important;
+  -webkit-text-fill-color: #6B5A48 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-book-help-compact {
+  margin-top: 38px !important;
+  margin-bottom: 42px !important;
+}
+
+/* Appointment controls retain the Classic Cream hierarchy. */
+body:has(a[aria-current="page"][href*="book"]) input,
+body:has(a[aria-current="page"][href*="book"]) select,
+body:has(a[aria-current="page"][href*="book"]) textarea {
+  background: #FFFFFF !important;
+  border-color: #CAB38E !important;
+  color: #2C2118 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-time-list button,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-time-list .pp-button {
+  background: #EAD9BC !important;
+  border-color: #CAB38E !important;
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-time-list button:hover,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-time-list .pp-button:hover {
+  background: #487A35 !important;
+  border-color: #487A35 !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+@media (max-width: 760px) {
+  body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type {
+    padding-bottom: 32px !important;
+  }
+
+  body:has(a[aria-current="page"][href*="book"]) main section:has(.pp-booking-results),
+  body:has(a[aria-current="page"][href*="book"]) main section:has(.pp-booking-shell),
+  body:has(a[aria-current="page"][href*="book"]) main section:has(.pp-booking-card) {
+    padding-top: 38px !important;
+    padding-bottom: 30px !important;
+  }
+}
+/* HEADLINES-BOOK-CREAM-AREA-V1-END */
+
+/* HEADLINES-CONTACT-CLASSIC-V1-START */
+body[data-headlines-contact-page] main{background:#F4E9D3!important}
+body[data-headlines-contact-page] [data-contact-hero]{background:#171D24!important;padding-bottom:46px!important}
+body[data-headlines-contact-page] [data-contact-hero] .pp-kicker,body[data-headlines-contact-page] [data-contact-hero] [class*="kicker"]{color:#8BCF45!important;-webkit-text-fill-color:#8BCF45!important}
+body[data-headlines-contact-page] [data-contact-hero] h1,body[data-headlines-contact-page] [data-contact-hero] h2{color:#FFF!important;-webkit-text-fill-color:#FFF!important;text-shadow:0 2px 16px rgba(0,0,0,.24)!important}
+body[data-headlines-contact-page] [data-contact-hero] p{color:#EAD9BC!important;-webkit-text-fill-color:#EAD9BC!important}
+body[data-headlines-contact-page] main>section:not([data-contact-hero]),body[data-headlines-contact-page] main>div{background-color:#F4E9D3!important}
+body[data-headlines-contact-page] [data-contact-options-card],body[data-headlines-contact-page] [data-contact-schedule-card],body[data-headlines-contact-page] [data-contact-shop-card]{background:#FFFDF7!important;border-color:#CAB38E!important;color:#2C2118!important;min-height:0!important;height:auto!important;align-self:start!important}
+body[data-headlines-contact-page] [data-contact-options-card] h2,body[data-headlines-contact-page] [data-contact-options-card] h3,body[data-headlines-contact-page] [data-contact-schedule-card] h2,body[data-headlines-contact-page] [data-contact-schedule-card] h3,body[data-headlines-contact-page] [data-contact-shop-card] h2,body[data-headlines-contact-page] [data-contact-shop-card] h3{color:#2C2118!important;-webkit-text-fill-color:#2C2118!important}
+body[data-headlines-contact-page] [data-contact-options-card] p,body[data-headlines-contact-page] [data-contact-schedule-card] p,body[data-headlines-contact-page] [data-contact-shop-card] p,body[data-headlines-contact-page] [data-contact-shop-card] address{color:#6B5A48!important;-webkit-text-fill-color:#6B5A48!important}
+body[data-headlines-contact-page] [data-contact-step]{background:#454943!important;border-color:#5A6058!important;color:#FFF!important}
+body[data-headlines-contact-page] [data-contact-step-heading]{color:#FFF!important;-webkit-text-fill-color:#FFF!important;font-weight:800!important}
+body[data-headlines-contact-page] [data-contact-step] p,body[data-headlines-contact-page] [data-contact-step] span:not([data-contact-step-heading]),body[data-headlines-contact-page] [data-contact-step] small{color:#EAD9BC!important;-webkit-text-fill-color:#EAD9BC!important}
+body[data-headlines-contact-page] [data-contact-step] [class*="number"],body[data-headlines-contact-page] [data-contact-step] [class*="index"]{background:#487A35!important;color:#FFF!important;-webkit-text-fill-color:#FFF!important}
+body[data-headlines-contact-page] [data-contact-shop-card] a[href^="tel:"]{color:#487A35!important;-webkit-text-fill-color:#487A35!important;font-weight:900!important}
+body[data-headlines-contact-page] [data-contact-schedule-card]{min-height:0!important;height:fit-content!important}
+@media(max-width:760px){body[data-headlines-contact-page] [data-contact-hero]{padding-bottom:34px!important}}
+/* HEADLINES-CONTACT-CLASSIC-V1-END */
+
+/* HEADLINES-BOOK-LIGHT-LAYOUT-V2-START */
+/* Keep a compact dark introduction, then use Classic Cream for booking work. */
+body:has(a[aria-current="page"][href*="book"]) main {
+  background: #F4E9D3 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type {
+  background: #171D24 !important;
+  padding-top: 58px !important;
+  padding-bottom: 52px !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type h1,
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type h2 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type p {
+  color: #EAD9BC !important;
+  -webkit-text-fill-color: #EAD9BC !important;
+}
+
+/* Everything after the introduction sits on warm cream. */
+body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type),
+body:has(a[aria-current="page"][href*="book"]) main > div {
+  background: #F4E9D3 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type) {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type) h2,
+body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type) h3 {
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+  text-shadow: none !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type) p,
+body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type) small {
+  color: #6B5A48 !important;
+  -webkit-text-fill-color: #6B5A48 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) main .pp-kicker {
+  color: #487A35 !important;
+  -webkit-text-fill-color: #487A35 !important;
+}
+
+/* Appointment interface and helper panel remain ivory cards. */
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-card,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-shell,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-results,
+body:has(a[aria-current="page"][href*="book"]) .pp-service-summary,
+body:has(a[aria-current="page"][href*="book"]) .pp-book-help-compact {
+  background: #FFFDF7 !important;
+  border-color: #CAB38E !important;
+  color: #2C2118 !important;
+  box-shadow: 0 12px 30px rgba(64,45,28,.10) !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-card p,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-shell p,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-results p,
+body:has(a[aria-current="page"][href*="book"]) .pp-book-help-compact p {
+  color: #6B5A48 !important;
+  -webkit-text-fill-color: #6B5A48 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) input,
+body:has(a[aria-current="page"][href*="book"]) select,
+body:has(a[aria-current="page"][href*="book"]) textarea {
+  background: #FFFFFF !important;
+  border-color: #CAB38E !important;
+  color: #2C2118 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-time-list .pp-button {
+  background: #EAD9BC !important;
+  border-color: #CAB38E !important;
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+}
+
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-time-list .pp-button:hover,
+body:has(a[aria-current="page"][href*="book"]) .pp-booking-time-list .pp-button:focus-visible {
+  background: #487A35 !important;
+  border-color: #487A35 !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+@media (max-width: 760px) {
+  body:has(a[aria-current="page"][href*="book"]) main > section:first-of-type {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+
+  body:has(a[aria-current="page"][href*="book"]) main > section:not(:first-of-type) {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+}
+/* HEADLINES-BOOK-LIGHT-LAYOUT-V2-END */
+
+/* HEADLINES-CONTACT-DARK-CREAM-V1-START */
+/* Preserve the working Contact structure. Only compact the first dark band
+   and make all content after it a continuous edge-to-edge cream workspace. */
+body:has(a[aria-current="page"][href*="contact"]) main {
+  background: #F4E9D3 !important;
+}
+
+body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type {
+  min-height: 0 !important;
+  padding-top: clamp(34px, 3.5vw, 52px) !important;
+  padding-bottom: clamp(38px, 3.8vw, 58px) !important;
+  background: #171D24 !important;
+}
+
+body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type > .pp-container {
+  width: min(1120px, calc(100% - 40px)) !important;
+  max-width: 1120px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type h1,
+body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type h2 {
+  max-width: 980px !important;
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+  font-size: clamp(3.1rem, 4.45vw, 4.8rem) !important;
+  line-height: .94 !important;
+  letter-spacing: -.04em !important;
+  text-wrap: balance !important;
+}
+
+body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type p {
+  max-width: 760px !important;
+  margin-bottom: 0 !important;
+  font-size: clamp(.96rem, 1vw, 1.08rem) !important;
+  line-height: 1.5 !important;
+}
+
+/* Open the cream area immediately after the hero and keep it continuous
+   through the last Contact section, ending cleanly at the footer. */
+body:has(a[aria-current="page"][href*="contact"]) main > section:not(:first-of-type),
+body:has(a[aria-current="page"][href*="contact"]) main > div {
+  width: 100% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  background: #F4E9D3 !important;
+}
+
+body:has(a[aria-current="page"][href*="contact"]) main > section:nth-of-type(2) {
+  padding-top: 48px !important;
+}
+
+body:has(a[aria-current="page"][href*="contact"]) main > section:last-of-type {
+  padding-bottom: 64px !important;
+}
+
+body:has(a[aria-current="page"][href*="contact"]) main > section:not(:first-of-type) > .pp-container,
+body:has(a[aria-current="page"][href*="contact"]) main > div > .pp-container {
+  width: min(1120px, calc(100% - 40px)) !important;
+  max-width: 1120px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* Keep the established card layout, but define the card edges clearly. */
+body:has(a[aria-current="page"][href*="contact"]) main > section:not(:first-of-type) article,
+body:has(a[aria-current="page"][href*="contact"]) main > section:not(:first-of-type) aside,
+body:has(a[aria-current="page"][href*="contact"]) main > section:not(:first-of-type) [class*="card"] {
+  background: #FFFDF7 !important;
+  border-color: #CAB38E !important;
+}
+
+@media (max-width: 760px) {
+  body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type {
+    padding-top: 30px !important;
+    padding-bottom: 36px !important;
+  }
+
+  body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type > .pp-container,
+  body:has(a[aria-current="page"][href*="contact"]) main > section:not(:first-of-type) > .pp-container,
+  body:has(a[aria-current="page"][href*="contact"]) main > div > .pp-container {
+    width: min(100% - 28px, 1120px) !important;
+  }
+
+  body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type h1,
+  body:has(a[aria-current="page"][href*="contact"]) main > section:first-of-type h2 {
+    font-size: clamp(2.6rem, 11vw, 3.8rem) !important;
+    line-height: .98 !important;
+  }
+
+  body:has(a[aria-current="page"][href*="contact"]) main > section:nth-of-type(2) {
+    padding-top: 34px !important;
+  }
+
+  body:has(a[aria-current="page"][href*="contact"]) main > section:last-of-type {
+    padding-bottom: 44px !important;
+  }
+}
+/* HEADLINES-CONTACT-DARK-CREAM-V1-END */

@@ -1,0 +1,12 @@
+{
+  "apiName": "headlines-booksy-availability-api",
+  "apiId": "57z7wwag50",
+  "region": "us-east-1",
+  "endpoint": "https://57z7wwag50.execute-api.us-east-1.amazonaws.com",
+  "routes": {
+    "GET /availability/haircut": "headlines-haircut-availability",
+    "GET /availability/haircut-and-beard": "headlines-haircut-beard-availability",
+    "GET /availability/kids-cut": "headlines-kids-cut-availability",
+    "GET /availability/black-mask": "headlines-black-mask-availability"
+  }
+}

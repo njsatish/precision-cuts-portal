@@ -1,0 +1,2101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proud Pops Barbershop — Concept: Modern Fade</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/proud-pops-favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/proud-pops-icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/proud-pops-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#FF5A36; --teal:#0F7A72; --teal-bright:#17A398; --mustard:#F4B740;
+    --ink:#14181C; --ink-2:#1C2127; --paper:#F5F2EC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--paper);font-family:'Space Grotesk',sans-serif;line-height:1.55}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  h1,h2,h3,.display{font-family:'Archivo Black',sans-serif;font-weight:400;text-transform:uppercase;line-height:1.02}
+  a{color:inherit}
+
+  /* fade signature bar */
+  .fade-bar{height:10px;background:linear-gradient(90deg,var(--ink) 0%,var(--teal) 25%,var(--teal-bright) 50%,var(--mustard) 75%,var(--coral) 100%)}
+
+  header{padding:20px 0;background:var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand-mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--coral),var(--mustard))}
+  .brand-name{font-family:'Archivo Black',sans-serif;font-size:17px;text-transform:uppercase}
+  nav .links{display:flex;gap:28px;font-size:14px;font-weight:500}
+  nav .links a{text-decoration:none;color:#b9c2ca}
+  nav .links a:hover{color:var(--mustard)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 26px;border-radius:8px;font-weight:700;font-size:14px;
+    text-decoration:none;border:2px solid transparent;cursor:pointer}
+  .btn-coral{background:var(--coral);color:var(--ink)}
+  .btn-coral:hover{background:#ff7654}
+  .btn-line{background:transparent;color:var(--paper);border-color:#3a4249}
+
+  /* hero: asymmetric split */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;min-height:560px}
+  .hero-copy{padding:90px 48px 60px;display:flex;flex-direction:column;justify-content:center}
+  .eyebrow{color:var(--teal-bright);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+  .hero h1{font-size:clamp(40px,6vw,78px);margin-bottom:22px}
+  .hero h1 .hl{color:var(--coral)}
+  .hero p{max-width:44ch;color:#b9c2ca;font-size:17px;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-block{background:linear-gradient(160deg,var(--teal) 0%,var(--teal-bright) 45%,var(--mustard) 80%,var(--coral) 100%);
+    display:flex;align-items:flex-end;padding:36px}
+  .hero-block .price-chip{background:var(--ink);color:var(--paper);border-radius:10px;padding:20px 22px;font-family:'Archivo Black',sans-serif;
+    text-transform:uppercase;font-size:14px;line-height:1.4}
+  .hero-block .price-chip b{display:block;font-size:30px;color:var(--mustard)}
+
+  section{padding:76px 0}
+  .tag{display:inline-block;background:var(--teal-bright);color:var(--ink);font-weight:700;font-size:12px;letter-spacing:1px;
+    text-transform:uppercase;padding:6px 14px;border-radius:6px;margin-bottom:16px}
+  .section-head{max-width:600px;margin-bottom:44px}
+  .section-head h2{font-size:clamp(28px,4vw,44px)}
+  .section-head p{color:#b9c2ca;margin-top:12px}
+
+  /* services: bold color blocks */
+  .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .svc-card{border-radius:14px;padding:26px;position:relative;overflow:hidden}
+  .svc-card:nth-child(1){background:var(--teal)}
+  .svc-card:nth-child(2){background:var(--teal-bright)}
+  .svc-card:nth-child(3){background:#2a7a6f}
+  .svc-card:nth-child(4){background:var(--mustard);color:var(--ink)}
+  .svc-card:nth-child(5){background:var(--coral);color:var(--ink)}
+  .svc-card .svc{font-family:'Archivo Black',sans-serif;font-size:20px;text-transform:uppercase;margin-bottom:6px}
+  .svc-card .time{font-size:13px;opacity:.85;margin-bottom:20px}
+  .svc-card .price{font-family:'Archivo Black',sans-serif;font-size:36px;margin-bottom:18px}
+  .svc-card .book{display:inline-block;background:var(--ink);color:var(--paper);padding:9px 18px;border-radius:8px;font-weight:700;
+    font-size:13px;text-decoration:none}
+  .svc-card:nth-child(4) .book,.svc-card:nth-child(5) .book{background:var(--ink);color:var(--paper)}
+
+  /* about */
+  .about{background:var(--ink-2)}
+  .about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  .fade-disc{aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--teal),var(--teal-bright),var(--mustard),var(--coral),var(--teal));
+    display:flex;align-items:center;justify-content:center;padding:20px}
+  .fade-disc .core{width:78%;height:78%;border-radius:50%;background:var(--ink-2);display:flex;align-items:center;justify-content:center;
+    text-align:center;font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;padding:20px}
+  .about h2{margin-bottom:18px;font-size:clamp(28px,4vw,42px)}
+  .about p{color:#b9c2ca;margin-bottom:14px}
+  .stat-row{display:flex;gap:36px;margin-top:26px}
+  .stat b{display:block;font-family:'Archivo Black',sans-serif;font-size:30px;color:var(--mustard)}
+  .stat span{font-size:12px;color:#8b959d;letter-spacing:1px;text-transform:uppercase}
+
+  /* reviews */
+  .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .review{background:var(--ink-2);border-radius:14px;padding:30px;border-top:4px solid var(--mustard)}
+  .stars{color:var(--mustard);letter-spacing:2px;margin-bottom:14px}
+  .review p{font-size:16px;color:#dfe4e8;margin-bottom:16px}
+  .review cite{font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;color:var(--coral)}
+  .review small{display:block;color:#8b959d;font-size:12px;margin-top:2px}
+
+  .cta{text-align:center;background:linear-gradient(135deg,var(--teal) 0%,var(--teal-bright) 40%,var(--mustard) 75%,var(--coral) 100%);color:var(--ink)}
+  .cta h2{font-size:clamp(30px,5vw,48px);margin-bottom:12px}
+  .cta p{margin-bottom:28px;font-weight:500}
+  .cta .btn-coral{background:var(--ink);color:var(--paper)}
+  .cta .btn-coral:hover{background:#000}
+
+  footer{padding:30px 0;color:#8b959d;font-size:13px;text-align:center;background:var(--ink)}
+  .modal-overlay{display:none;position:fixed;inset:0;background:#000000c9;z-index:99;overflow-y:auto;padding:20px}
+  .modal-overlay.open{display:block}
+  .modal-panel{background:var(--ink-2);border-radius:14px;border-top:4px solid var(--mustard);max-width:600px;width:100%;margin:40px auto;padding:34px;position:relative;color:var(--paper)}
+  .modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:8px;background:var(--coral);border:none;color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .modal-close:hover{background:#ff7654}
+  .modal-panel h2{margin:6px 0 10px}
+  .modal-panel p{color:#b9c2ca;margin:0 0 24px}
+
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr}
+    .hero-block{min-height:220px}
+    .about .wrap{grid-template-columns:1fr}
+    nav .links{display:none}
+  }
+</style>
+<!-- PROUDPOPS-MODERN-EXACT-HERO-BLOCK-MOBILE-V2-START -->
+<style id="proudpops-modern-exact-hero-block-mobile-v2">
+  /* Exact element confirmed in Chrome DevTools:
+     section.hero > div.hero-block
+     Contains the legacy Haircut From $40 / 45 MIN card. */
+  @media (max-width: 760px) {
+    section.hero > div.hero-block,
+    .hero > .hero-block {
+      display: none !important;
+      visibility: hidden !important;
+      width: 0 !important;
+      height: 0 !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      overflow: hidden !important;
+      pointer-events: none !important;
+    }
+
+    /* Preserve the dedicated mobile featured image and its single price card. */
+    .pm-mobile-feature-photo {
+      display: block !important;
+      visibility: visible !important;
+      width: calc(100% - 28px) !important;
+      height: auto !important;
+      min-height: 440px !important;
+      max-width: none !important;
+      max-height: none !important;
+      margin: 34px auto 28px !important;
+      overflow: hidden !important;
+      pointer-events: auto !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .pm-mobile-feature-photo {
+      width: calc(100% - 20px) !important;
+      min-height: 400px !important;
+      margin-top: 26px !important;
+    }
+  }
+</style>
+<!-- PROUDPOPS-MODERN-EXACT-HERO-BLOCK-MOBILE-V2-END -->
+<!-- PROUDPOPS-BOOKSY-SPEED-V1-START -->
+<link rel="dns-prefetch" href="//booksy.com">
+<link rel="preconnect" href="https://booksy.com" crossorigin>
+<link rel="dns-prefetch" href="//wkpl27gu7j.execute-api.us-east-1.amazonaws.com">
+<link rel="preconnect" href="https://wkpl27gu7j.execute-api.us-east-1.amazonaws.com" crossorigin>
+<style id="proudpops-booksy-speed-v1-style">
+  .pp-booksy-loading {
+    display:none;
+    align-items:center;
+    gap:11px;
+    margin:14px 0 4px;
+    padding:13px 15px;
+    border:1px solid rgba(16,42,67,.12);
+    border-radius:10px;
+    background:#f4f7fa;
+    color:#102a43;
+    font:800 14px/1.3 Inter,system-ui,sans-serif;
+  }
+  .pp-booksy-loading.active { display:flex; }
+  .pp-booksy-spinner {
+    width:20px;height:20px;flex:0 0 20px;border:3px solid #d7e1ea;border-top-color:#159887;border-radius:50%;animation:ppBooksySpin .75s linear infinite;
+  }
+  @keyframes ppBooksySpin { to { transform:rotate(360deg); } }
+</style>
+<script id="proudpops-booksy-speed-v1-script">
+(function(){
+  var widgetUrl='https://booksy.com/widget/code.js?id=212027&country=us&lang=en';
+  var apiUrl='https://wkpl27gu7j.execute-api.us-east-1.amazonaws.com/booksy/availability';
+  var warmed=false;
+
+  function addHint(rel,href,as){
+    if(document.head.querySelector('link[href="'+href+'"]'))return;
+    var link=document.createElement('link');link.rel=rel;link.href=href;
+    if(as)link.as=as;
+    if(rel==='preload')link.crossOrigin='anonymous';
+    document.head.appendChild(link);
+  }
+
+  function warmConnections(){
+    if(warmed)return;warmed=true;
+    addHint('preload',widgetUrl,'script');
+    addHint('prefetch',widgetUrl);
+    try{fetch(apiUrl,{method:'GET',mode:'cors',cache:'no-store',credentials:'omit'}).catch(function(){});}catch(error){}
+  }
+
+  function installLoadingIndicator(){
+    var host=document.getElementById('booksy-official-host');
+    if(!host||document.querySelector('.pp-booksy-loading'))return;
+    var loading=document.createElement('div');loading.className='pp-booksy-loading';loading.setAttribute('role','status');loading.setAttribute('aria-live','polite');
+    loading.innerHTML='<span class="pp-booksy-spinner" aria-hidden="true"></span><span>Loading Booksy services and times…</span>';
+    host.parentElement.insertBefore(loading,host);
+  }
+
+  function showLoading(){
+    installLoadingIndicator();
+    var loading=document.querySelector('.pp-booksy-loading');if(loading)loading.classList.add('active');
+    window.setTimeout(hideLoading,9000);
+  }
+
+  function hideLoading(){
+    var loading=document.querySelector('.pp-booksy-loading');if(loading)loading.classList.remove('active');
+  }
+
+  function watchWidget(){
+    var modal=document.getElementById('booksy-modal');if(!modal)return;
+    new MutationObserver(function(){
+      var visibleWidget=modal.querySelector('iframe,.booksy-widget-container,.booksy-widget-button,a.booksy-widget-button,a.booksy-business-link');
+      if(visibleWidget)hideLoading();
+    }).observe(modal,{childList:true,subtree:true});
+  }
+
+  function primeOnIntent(){
+    document.querySelectorAll('a,button').forEach(function(element){
+      var text=(element.textContent||'').replace(/\s+/g,' ').trim().toUpperCase();
+      if(/BOOK NOW|BOOK APPOINTMENT|BOOK YOUR APPOINTMENT/.test(text)){
+        element.addEventListener('pointerenter',warmConnections,{once:true,passive:true});
+        element.addEventListener('touchstart',warmConnections,{once:true,passive:true});
+        element.addEventListener('pointerdown',function(){warmConnections();showLoading();},{passive:true});
+        element.addEventListener('click',function(){warmConnections();showLoading();});
+      }
+    });
+  }
+
+  function init(){
+    installLoadingIndicator();primeOnIntent();watchWidget();
+    var idle=window.requestIdleCallback||function(callback){return window.setTimeout(callback,1200)};
+    idle(warmConnections,{timeout:2500});
+  }
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<!-- PROUDPOPS-BOOKSY-SPEED-V1-END -->
+
+<style id="proudpops-booksy-selection-reminder-v1-style">
+  #pp-booksy-selection-reminder {
+    position:fixed;
+    z-index:10050;
+    left:50%;
+    top:14px;
+    transform:translateX(-50%);
+    width:min(760px,calc(100% - 28px));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 46px 13px 18px;
+    border:1px solid rgba(255,255,255,.18);
+    border-top:4px solid #f0b93f;
+    border-radius:12px;
+    background:rgba(14,19,24,.97);
+    color:#fff;
+    box-shadow:0 16px 40px rgba(0,0,0,.36);
+    font:700 14px/1.3 Inter,system-ui,sans-serif;
+    text-align:center;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+  #pp-booksy-selection-reminder strong { color:#f0b93f!important; }
+  #pp-booksy-selection-reminder button {
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+    width:30px;
+    height:30px;
+    border:0;
+    border-radius:8px;
+    background:#ff6548;
+    color:#111820;
+    font-size:20px;
+    font-weight:950;
+    cursor:pointer;
+  }
+  @media(max-width:620px) {
+    #pp-booksy-selection-reminder {
+      top:8px;
+      justify-content:flex-start;
+      padding-left:14px;
+      font-size:12px;
+      text-align:left;
+    }
+  }
+</style>
+
+  <!-- PROUDPOPS-OFFICIAL-LOGO-V1 -->
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">Proud Pops</div>
+    </div>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-coral" href="#" onclick="openBooksyModal();return false;">Book Now</a>
+  </div>
+</header>
+<div class="fade-bar"></div>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Roanoke, VA</div>
+    <h1>Sharp Fades.<br><span class="hl">Real</span> Craft.</h1>
+    <p>29 years behind the chair, zero compromise on the fade. Book online, walk out looking exactly how you pictured it.</p>
+    <div class="hero-actions">
+      <a class="btn btn-coral" href="#" onclick="openBooksyModal();return false;">Book Now</a>
+      <a class="btn btn-line" href="#about">Meet Steve</a>
+    </div>
+  </div>
+  <div class="hero-block">
+    <div class="price-chip">Haircut from<b>$40</b>45 min</div>
+  </div>
+</section>
+<!-- PROUDPOPS-MODERN-MAIN-HOME-PHOTOS-V1-START -->
+<style id="proudpops-modern-main-home-photos-v1-style">
+  .pm-main-photo-section {
+    padding:84px 0;
+    background:linear-gradient(145deg,#151a20,#222b34);
+    color:#fff;
+  }
+  .pm-main-photo-section .pm-photo-kicker {
+    margin:0 0 12px;
+    color:#45a99d;
+    letter-spacing:.2em;
+    font-size:12px;
+    font-weight:950;
+    text-transform:uppercase;
+  }
+  .pm-main-photo-section h2 {
+    margin:0 0 14px;
+    color:#fff !important;
+    font:950 clamp(42px,5vw,66px)/.98 Inter,system-ui,sans-serif !important;
+    letter-spacing:-.055em !important;
+  }
+  .pm-main-photo-intro {
+    max-width:720px;
+    margin:0 0 32px;
+    color:#aebcc7 !important;
+    font-size:18px;
+  }
+  .pm-main-photo-feature {
+    display:grid;
+    grid-template-columns:1.45fr .75fr;
+    gap:18px;
+    margin-bottom:36px;
+  }
+  .pm-main-photo-large,
+  .pm-main-photo-stack article {
+    position:relative;
+    margin:0;
+    overflow:hidden;
+    border-radius:12px;
+    background:#252c34;
+    box-shadow:0 20px 55px rgba(0,0,0,.32);
+  }
+  .pm-main-photo-large { min-height:560px; }
+  .pm-main-photo-stack { display:grid; grid-template-rows:1fr 1fr; gap:18px; }
+  .pm-main-photo-stack article { min-height:270px; }
+  .pm-main-photo-large img,
+  .pm-main-photo-stack img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 16%;
+    transition:transform .35s ease;
+  }
+  .pm-main-photo-large:hover img,
+  .pm-main-photo-stack article:hover img { transform:scale(1.025); }
+  .pm-photo-caption {
+    position:absolute;
+    inset:auto 0 0;
+    padding:58px 22px 20px;
+    background:linear-gradient(transparent,rgba(0,0,0,.88));
+  }
+  .pm-photo-caption small {
+    display:block;
+    color:#ffd36f !important;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.13em;
+  }
+  .pm-photo-caption strong {
+    display:block;
+    color:#fff !important;
+    font-size:24px;
+  }
+  .pm-main-photo-gallery {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+  }
+  .pm-main-photo-gallery figure {
+    display:flex;
+    flex-direction:column;
+    margin:0;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.12);
+    border-top:4px solid #316fd0;
+    border-radius:12px;
+    background:#181e25;
+    box-shadow:0 16px 38px rgba(0,0,0,.26);
+  }
+  .pm-main-photo-gallery figure:nth-child(3n+2) { border-top-color:#45a99d; }
+  .pm-main-photo-gallery figure:nth-child(3n) { border-top-color:#cc7045; }
+  .pm-main-photo-gallery img {
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    object-position:center 16%;
+  }
+  .pm-main-photo-gallery figcaption {
+    min-height:68px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:15px 16px;
+  }
+  .pm-main-photo-gallery figcaption b { color:#fff !important; font-size:17px; }
+  .pm-main-photo-gallery figcaption small {
+    color:#f0b93f !important;
+    font-size:9px;
+    font-weight:900;
+    text-align:right;
+  }
+  .pm-main-photo-disclosure {
+    margin-top:20px;
+    padding:16px 18px;
+    border-left:4px solid #f0b93f;
+    background:rgba(255,255,255,.06);
+    color:#b9c5ce;
+    font-size:13px;
+  }
+  @media(max-width:920px) {
+    .pm-main-photo-feature { grid-template-columns:1fr; }
+    .pm-main-photo-stack { grid-template-columns:1fr 1fr; grid-template-rows:none; }
+    .pm-main-photo-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  }
+  @media(max-width:580px) {
+    .pm-main-photo-section { padding:62px 0; }
+    .pm-main-photo-large { min-height:430px; }
+    .pm-main-photo-stack { grid-template-columns:1fr; }
+    .pm-main-photo-stack article { min-height:310px; }
+    .pm-main-photo-gallery { grid-template-columns:1fr; }
+  }
+</style>
+<section class="pm-main-photo-section" id="modern-main-photos">
+  <div class="wrap">
+    <p class="pm-photo-kicker">Photos from the main homepage</p>
+    <h2>Work worth a closer look.</h2>
+    <p class="pm-main-photo-intro">The Modern concept now uses the same hairstyle imagery as the main Proud Pops homepage, presented in an editorial feature and a consistent portrait gallery.</p>
+    
+<div class="pm-main-photo-feature">
+  <article class="pm-main-photo-large">
+    <img src="assets/images/low-skin-fade.png" alt="Low Skin Fade">
+    <div class="pm-photo-caption"><small>FEATURED STYLE</small><strong>Low Skin Fade</strong></div>
+  </article>
+  <div class="pm-main-photo-stack">
+    <article>
+      <img src="assets/images/high-taper.png" alt="High Taper">
+      <div class="pm-photo-caption"><small>MODERN DETAIL</small><strong>High Taper</strong></div>
+    </article>
+    <article>
+      <img src="assets/images/classic-cut.png" alt="Classic Cut">
+      <div class="pm-photo-caption"><small>PRECISION FINISH</small><strong>Classic Cut</strong></div>
+    </article>
+  </div>
+</div>
+    <div class="pm-main-photo-gallery">
+      <figure><img src="assets/images/low-skin-fade.png" alt="Low Skin Fade" loading="lazy"><figcaption><b>Low Skin Fade</b><small>MAIN HOMEPAGE PHOTO</small></figcaption></figure>
+<figure><img src="assets/images/high-taper.png" alt="High Taper" loading="lazy"><figcaption><b>High Taper</b><small>MAIN HOMEPAGE PHOTO</small></figcaption></figure>
+<figure><img src="assets/images/classic-cut.png" alt="Classic Cut" loading="lazy"><figcaption><b>Classic Cut</b><small>MAIN HOMEPAGE PHOTO</small></figcaption></figure>
+<figure><img src="assets/images/burst-fade.png" alt="Burst Fade" loading="lazy"><figcaption><b>Burst Fade</b><small>MAIN HOMEPAGE PHOTO</small></figcaption></figure>
+<figure><img src="assets/images/temple-taper.png" alt="Temple Taper + Beard" loading="lazy"><figcaption><b>Temple Taper + Beard</b><small>MAIN HOMEPAGE PHOTO</small></figcaption></figure>
+<figure><img src="assets/images/bald-fade-waves.png" alt="Bald Fade + Waves" loading="lazy"><figcaption><b>Bald Fade + Waves</b><small>MAIN HOMEPAGE PHOTO</small></figcaption></figure>
+    </div>
+    <div class="pm-main-photo-disclosure"><b>Photo disclosure:</b> Image descriptions and disclosure labels are retained from the main homepage. Confirm owner approval before presenting any image as actual customer work.</div>
+  </div>
+</section>
+<!-- PROUDPOPS-MODERN-MAIN-HOME-PHOTOS-V1-END -->
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Menu</div>
+      <h2>Pick Your Cut</h2>
+      <p>Straightforward pricing, no upsell.</p>
+    </div>
+    <div class="service-grid">
+      <div class="svc-card"><div class="svc">Haircut</div><div class="time">45 min</div><div class="price">$40</div><a class="book" href="#" onclick="openBooksyModal();return false;">Book</a></div>
+      <div class="svc-card"><div class="svc">Edgeup</div><div class="time">30 min</div><div class="price">$25</div><a class="book" href="#" onclick="openBooksyModal();return false;">Book</a></div>
+      <div class="svc-card"><div class="svc">Beard Trim</div><div class="time">25 min</div><div class="price">$20</div><a class="book" href="#" onclick="openBooksyModal();return false;">Book</a></div>
+      <div class="svc-card"><div class="svc">Shave</div><div class="time">20 min</div><div class="price">$15</div><a class="book" href="#" onclick="openBooksyModal();return false;">Book</a></div>
+      <div class="svc-card"><div class="svc">Cut + Enhancement</div><div class="time">1 hr</div><div class="price">$50</div><a class="book" href="#" onclick="openBooksyModal();return false;">Book</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="fade-disc"><div class="core">29 Years<br>Cutting Hair</div></div>
+    <div>
+      <div class="tag">The Barber</div>
+      <h2>Meet Steve</h2>
+      <p>Steve's been perfecting fades for 29 years — the kind of muscle memory that means every line's clean and every cut's consistent.</p>
+      <p>Proud Pops is laid-back, loud with laughter, and serious about one thing: sending you out looking sharp.</p>
+      <div class="stat-row">
+        <div class="stat"><b>29</b><span>Years Experience</span></div>
+        <div class="stat"><b>5.0</b><span>Rating</span></div>
+        <div class="stat"><b>5</b><span>Services</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Reviews</div>
+      <h2>What People Say</h2>
+    </div>
+    <div class="review-grid">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>“Steve is great at what he does and runs an awesome shop. From the first step in, it's comfortable and everyone is laughing and creating a great atmosphere. I'll be a client as long as I have hair!”</p>
+        <cite>Tim</cite><small>Haircut service</small>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>“Steve is just surgical with the clippers and blade. Precision and skill. Definitely would highly recommend.”</p>
+        <cite>Walter</cite><small>Haircut service</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="visit">
+  <div class="wrap">
+    <h2>1118 Main St SW, Roanoke</h2>
+    <p>VA 24015 · Reserve ahead, we book up fast</p>
+    <a class="btn btn-coral" href="#" onclick="openBooksyModal();return false;">Book Now</a>
+  </div>
+</section>
+
+<footer>© 2026 Proud Pops Barbershop · Design concept "Modern Fade" · <a href="https://www.facebook.com/p/Proud-Pops-Barbershop-100063230739040/" target="_blank" rel="noopener" style="color:inherit">Facebook</a> · Demo by Denduluru Technologies</footer>
+<div id="booksy-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="booksy-modal-title">
+  <div class="modal-panel">
+    <button type="button" class="modal-close" aria-label="Close" onclick="closeBooksyModal()">&times;</button>
+    <div class="tag" id="booksy-modal-title">BOOK YOUR APPOINTMENT</div>
+    <h2>Ready to Book?</h2>
+    <p>Tap below to see open times and reserve your spot.</p>
+    <div id="booksy-official-host"></div>
+  </div>
+</div>
+<script>
+(function () {
+  var modal = document.getElementById('booksy-modal');
+  var loaded = false;
+  function loadBooksyWidget() {
+    if (loaded) return;
+    loaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://booksy.com/widget/code.js?id=212027&country=us&lang=en';
+    s.async = true;
+    document.getElementById('booksy-official-host').appendChild(s);
+  }
+  window.openBooksyModal = function () {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    loadBooksyWidget();
+  };
+  window.closeBooksyModal = function () {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) window.closeBooksyModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      window.closeBooksyModal();
+    }
+  });
+})();
+</script>
+
+<!-- PROUDPOPS-MODERN-HERO-FEATURED-PHOTO-V1-START -->
+<style id="proudpops-modern-hero-featured-photo-v1-style">
+  .pm-feature-photo-panel {
+    position:relative !important;
+    isolation:isolate;
+    overflow:hidden !important;
+    background:
+      linear-gradient(145deg,rgba(13,148,136,.18),rgba(240,185,63,.20) 58%,rgba(255,91,57,.18)),
+      linear-gradient(90deg,rgba(9,11,14,.08),rgba(9,11,14,.20)),
+      url('assets/images/low-skin-fade.png') center 16%/cover no-repeat !important;
+  }
+  .pm-feature-photo-panel::before {
+    content:"";
+    position:absolute;
+    z-index:1;
+    inset:0;
+    pointer-events:none;
+    background:
+      linear-gradient(90deg,rgba(9,11,14,.15),transparent 38%),
+      linear-gradient(0deg,rgba(9,11,14,.54),transparent 46%);
+  }
+  .pm-feature-photo-panel > * {
+    position:relative;
+    z-index:2;
+  }
+  .pm-feature-style-label {
+    position:absolute !important;
+    z-index:4 !important;
+    top:24px;
+    right:24px;
+    max-width:220px;
+    padding:11px 14px;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:8px;
+    background:rgba(9,11,14,.78);
+    color:#fff;
+    box-shadow:0 12px 28px rgba(0,0,0,.25);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+  }
+  .pm-feature-style-label small {
+    display:block;
+    margin-bottom:3px;
+    color:#f0b93f !important;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .pm-feature-style-label strong {
+    display:block;
+    color:#fff !important;
+    font-size:17px;
+    line-height:1.15;
+  }
+  .pm-experience-badge {
+    position:absolute !important;
+    z-index:4 !important;
+    right:24px;
+    bottom:24px;
+    min-width:150px;
+    padding:15px 17px;
+    border-left:4px solid #45a99d;
+    border-radius:8px;
+    background:rgba(9,11,14,.86);
+    color:#fff;
+    box-shadow:0 12px 28px rgba(0,0,0,.28);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+  }
+  .pm-experience-badge strong {
+    display:block;
+    color:#f0b93f !important;
+    font-size:25px;
+    line-height:1;
+  }
+  .pm-experience-badge small {
+    display:block;
+    margin-top:5px;
+    color:#fff !important;
+    font-size:10px;
+    font-weight:850;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  @media(max-width:900px) {
+    .pm-feature-style-label { top:16px;right:16px; }
+    .pm-experience-badge { right:16px;bottom:16px; }
+  }
+  @media(max-width:620px) {
+    .pm-feature-photo-panel {
+      min-height:430px !important;
+      background-position:center 14% !important;
+    }
+    .pm-feature-style-label { max-width:180px; }
+    .pm-experience-badge { min-width:130px; }
+  }
+</style>
+<script id="proudpops-modern-hero-featured-photo-v1-script">
+(function(){
+  function visible(element){
+    if(!element)return false;
+    var style=getComputedStyle(element),rect=element.getBoundingClientRect();
+    return style.display!=='none'&&style.visibility!=='hidden'&&rect.width>0&&rect.height>0;
+  }
+  function identifyHero(){
+    return document.querySelector('.hero,[class*="hero"],main>section');
+  }
+  function identifyRightPanel(hero){
+    if(!hero)return null;
+    var heroRect=hero.getBoundingClientRect();
+    var candidates=Array.from(hero.querySelectorAll('div,aside,figure')).filter(function(element){
+      if(!visible(element))return false;
+      var rect=element.getBoundingClientRect();
+      var midpoint=rect.left+rect.width/2;
+      var within=rect.left>=heroRect.left+heroRect.width*.42&&rect.right<=heroRect.right+8;
+      var large=rect.width>=heroRect.width*.28&&rect.height>=heroRect.height*.48;
+      var rightSide=midpoint>heroRect.left+heroRect.width*.62;
+      return within&&large&&rightSide;
+    });
+    candidates.sort(function(a,b){
+      var ar=a.getBoundingClientRect(),br=b.getBoundingClientRect();
+      return (br.width*br.height)-(ar.width*ar.height);
+    });
+    return candidates[0]||null;
+  }
+  function enhance(){
+    var hero=identifyHero();
+    if(!hero)return;
+    var panel=identifyRightPanel(hero);
+    if(!panel)return;
+    panel.classList.add('pm-feature-photo-panel');
+    if(!panel.querySelector('.pm-feature-style-label')){
+      var label=document.createElement('div');
+      label.className='pm-feature-style-label';
+      label.innerHTML='<small>Featured Style</small><strong>Low Skin Fade</strong>';
+      panel.appendChild(label);
+    }
+    if(!panel.querySelector('.pm-experience-badge')){
+      var badge=document.createElement('div');
+      badge.className='pm-experience-badge';
+      badge.innerHTML='<strong>29+</strong><small>Years Experience</small>';
+      panel.appendChild(badge);
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enhance);else enhance();
+  window.addEventListener('load',enhance);
+})();
+</script>
+<!-- PROUDPOPS-MODERN-HERO-FEATURED-PHOTO-V1-END -->
+<!-- PROUDPOPS-MODERN-MOBILE-HERO-PHOTO-V2-START -->
+<style id="proudpops-modern-mobile-hero-photo-v2-style">
+  .pm-mobile-feature-photo {
+    display:none;
+  }
+
+  @media(max-width:760px) {
+    .pm-mobile-feature-photo {
+      position:relative;
+      display:block !important;
+      width:calc(100% - 28px);
+      min-height:440px;
+      margin:34px auto 28px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      background:
+        linear-gradient(145deg,rgba(13,148,136,.12),rgba(240,185,63,.18) 58%,rgba(255,91,57,.14)),
+        linear-gradient(0deg,rgba(9,11,14,.60),transparent 48%),
+        url('assets/images/low-skin-fade.png') center 13%/cover no-repeat !important;
+      box-shadow:0 20px 48px rgba(0,0,0,.34);
+    }
+
+    .pm-mobile-feature-photo::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(90deg,rgba(9,11,14,.10),transparent 42%);
+    }
+
+    .pm-mobile-feature-label,
+    .pm-mobile-feature-price,
+    .pm-mobile-feature-experience {
+      position:absolute;
+      z-index:2;
+      border:1px solid rgba(255,255,255,.17);
+      border-radius:9px;
+      background:rgba(9,11,14,.86);
+      color:#fff;
+      box-shadow:0 11px 25px rgba(0,0,0,.30);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .pm-mobile-feature-label {
+      top:15px;
+      right:15px;
+      max-width:170px;
+      padding:10px 13px;
+    }
+    .pm-mobile-feature-label small,
+    .pm-mobile-feature-price small,
+    .pm-mobile-feature-experience small {
+      display:block;
+      color:#f0b93f !important;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+    }
+    .pm-mobile-feature-label strong {
+      display:block;
+      margin-top:2px;
+      color:#fff !important;
+      font-size:16px;
+      line-height:1.15;
+    }
+
+    .pm-mobile-feature-price {
+      left:15px;
+      bottom:15px;
+      min-width:142px;
+      padding:13px 15px;
+      border-left:4px solid #ff5b39;
+    }
+    .pm-mobile-feature-price strong {
+      display:block;
+      margin:3px 0;
+      color:#f0b93f !important;
+      font-size:28px;
+      line-height:1;
+    }
+    .pm-mobile-feature-price span {
+      color:#fff !important;
+      font-size:11px;
+      font-weight:850;
+    }
+
+    .pm-mobile-feature-experience {
+      right:15px;
+      bottom:15px;
+      min-width:132px;
+      padding:13px 14px;
+      border-left:4px solid #45a99d;
+    }
+    .pm-mobile-feature-experience strong {
+      display:block;
+      color:#f0b93f !important;
+      font-size:25px;
+      line-height:1;
+    }
+
+    /* Keep the mobile photo between hero content and the next section. */
+    .hero,
+    [class*="hero"] {
+      height:auto !important;
+      max-height:none !important;
+      overflow:visible !important;
+    }
+  }
+
+  @media(max-width:390px) {
+    .pm-mobile-feature-photo {
+      min-height:400px;
+      width:calc(100% - 20px);
+    }
+    .pm-mobile-feature-price { left:10px;bottom:10px;min-width:128px;padding:11px 12px; }
+    .pm-mobile-feature-experience { right:10px;bottom:10px;min-width:118px;padding:11px 12px; }
+    .pm-mobile-feature-label { top:10px;right:10px; }
+  }
+</style>
+<script id="proudpops-modern-mobile-hero-photo-v2-script">
+(function(){
+  function findHero(){
+    var heading=Array.from(document.querySelectorAll('h1')).find(function(element){
+      return /SHARP\s*FADES|REAL\s*CRAFT/i.test(element.textContent||'');
+    });
+    return heading ? heading.closest('section,main>div,div') : document.querySelector('.hero,[class*="hero"]');
+  }
+
+  function createPanel(){
+    var panel=document.createElement('div');
+    panel.className='pm-mobile-feature-photo';
+    panel.setAttribute('role','img');
+    panel.setAttribute('aria-label','Featured Low Skin Fade hairstyle');
+    panel.innerHTML=''
+      +'<div class="pm-mobile-feature-label"><small>Featured Style</small><strong>Low Skin Fade</strong></div>'
+      +'<div class="pm-mobile-feature-price"><small>Haircut From</small><strong>$40</strong><span>45 MIN</span></div>'
+      +'<div class="pm-mobile-feature-experience"><strong>29+</strong><small>Years Experience</small></div>';
+    return panel;
+  }
+
+  function install(){
+    if(document.querySelector('.pm-mobile-feature-photo'))return;
+    var hero=findHero();
+    if(!hero)return;
+
+    /* Insert after the hero's text/layout wrapper when possible. */
+    var heroWrapper=hero.querySelector(':scope > .wrap,:scope > [class*="grid"],:scope > [class*="inner"]');
+    if(heroWrapper) heroWrapper.insertAdjacentElement('afterend',createPanel());
+    else hero.appendChild(createPanel());
+  }
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+  window.addEventListener('load',install);
+})();
+</script>
+<!-- PROUDPOPS-MODERN-MOBILE-HERO-PHOTO-V2-END -->
+<!-- PROUDPOPS-MODERN-MOBILE-ACTIONS-V1-START -->
+<style id="proudpops-modern-mobile-actions-v1-style">
+  .pp-modern-mobile-actions { display:none; }
+
+  @media(max-width:760px) {
+    body {
+      padding-bottom:calc(82px + env(safe-area-inset-bottom,0px)) !important;
+    }
+
+    .pp-modern-mobile-actions {
+      position:fixed;
+      z-index:10020;
+      left:0;
+      right:0;
+      bottom:0;
+      display:grid !important;
+      grid-template-columns:1fr 1.18fr;
+      gap:9px;
+      padding:9px 10px calc(9px + env(safe-area-inset-bottom,0px));
+      background:rgba(9,11,14,.96);
+      border-top:1px solid rgba(255,255,255,.14);
+      box-shadow:0 -10px 30px rgba(0,0,0,.30);
+      backdrop-filter:blur(15px);
+      -webkit-backdrop-filter:blur(15px);
+      transition:opacity .2s ease,visibility .2s ease,transform .2s ease;
+    }
+
+    .pp-modern-mobile-action {
+      min-height:54px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:9px 12px;
+      border:0;
+      border-radius:10px;
+      font:900 15px/1.1 Inter,system-ui,sans-serif;
+      text-decoration:none;
+      cursor:pointer;
+      touch-action:manipulation;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .pp-modern-mobile-call {
+      color:#111820 !important;
+      background:#ffffff !important;
+      border:1px solid #d7e1ea !important;
+    }
+
+    .pp-modern-mobile-book {
+      color:#17130b !important;
+      background:linear-gradient(135deg,#f0b93f,#ffd36f) !important;
+      box-shadow:0 8px 20px rgba(240,185,63,.25);
+    }
+
+    .pp-modern-mobile-action:active { transform:scale(.98); }
+    .pp-modern-mobile-action:focus-visible {
+      outline:3px solid #45a99d !important;
+      outline-offset:2px;
+    }
+
+    .pp-modern-action-icon {
+      width:23px;
+      height:23px;
+      display:grid;
+      place-items:center;
+      flex:0 0 23px;
+      font-size:21px;
+      line-height:1;
+    }
+
+    .pp-modern-action-copy {
+      display:flex;
+      min-width:0;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:2px;
+      color:inherit !important;
+    }
+    .pp-modern-action-copy small {
+      color:inherit !important;
+      font-size:9px;
+      font-weight:750;
+      line-height:1;
+      opacity:.72;
+    }
+    .pp-modern-action-copy strong {
+      color:inherit !important;
+      font-size:15px;
+      line-height:1.05;
+      white-space:nowrap;
+    }
+
+    body.pp-modern-booking-open .pp-modern-mobile-actions {
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transform:translateY(100%);
+    }
+  }
+
+  @media(max-width:375px) {
+    .pp-modern-mobile-actions { gap:7px;padding-inline:7px; }
+    .pp-modern-mobile-action { padding-inline:8px; }
+    .pp-modern-action-copy strong { font-size:13px; }
+  }
+</style>
+
+<nav class="pp-modern-mobile-actions" aria-label="Quick contact and booking actions">
+  <a class="pp-modern-mobile-action pp-modern-mobile-call" href="tel:+15408191346" aria-label="Call Proud Pops at (540) 819-1346">
+    <span class="pp-modern-action-icon" aria-hidden="true">☎</span>
+    <span class="pp-modern-action-copy"><small>Questions?</small><strong>Call Now</strong></span>
+  </a>
+  <button class="pp-modern-mobile-action pp-modern-mobile-book" type="button" aria-label="Book a Proud Pops appointment">
+    <span class="pp-modern-action-icon" aria-hidden="true">✦</span>
+    <span class="pp-modern-action-copy"><small>See open times</small><strong>Book Appointment</strong></span>
+  </button>
+</nav>
+
+<script id="proudpops-modern-mobile-actions-v1-script">
+(function(){
+  function visible(element){
+    if(!element)return false;
+    var style=getComputedStyle(element),rect=element.getBoundingClientRect();
+    return style.display!=='none'&&style.visibility!=='hidden'&&rect.width>0&&rect.height>0;
+  }
+
+  function findBookingTrigger(){
+    return Array.from(document.querySelectorAll('a,button')).find(function(element){
+      if(element.classList.contains('pp-modern-mobile-book'))return false;
+      var text=(element.textContent||'').replace(/\s+/g,' ').trim().toUpperCase();
+      return /^(BOOK NOW|BOOK APPOINTMENT|BOOK YOUR APPOINTMENT)$/.test(text)&&visible(element);
+    })||null;
+  }
+
+  function openBooking(){
+    if(typeof window.openBooksyModal==='function'){
+      window.openBooksyModal();
+      return;
+    }
+    var trigger=findBookingTrigger();
+    if(trigger){
+      trigger.click();
+      return;
+    }
+    var modal=document.getElementById('booksy-modal');
+    if(modal){
+      modal.classList.add('open');
+      modal.style.display='flex';
+      document.body.style.overflow='hidden';
+      return;
+    }
+    var booksy=Array.from(document.querySelectorAll('a[href*="booksy.com"]'))[0];
+    if(booksy)booksy.click();
+  }
+
+  function updateBookingState(){
+    var modal=document.getElementById('booksy-modal');
+    document.body.classList.toggle('pp-modern-booking-open',Boolean(modal&&visible(modal)));
+  }
+
+  function initialize(){
+    var bookButton=document.querySelector('.pp-modern-mobile-book');
+    if(bookButton)bookButton.addEventListener('click',openBooking);
+
+    var modal=document.getElementById('booksy-modal');
+    if(modal){
+      new MutationObserver(updateBookingState).observe(modal,{attributes:true,childList:true,subtree:true});
+      updateBookingState();
+    }
+  }
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize);else initialize();
+})();
+</script>
+<!-- PROUDPOPS-MODERN-MOBILE-ACTIONS-V1-END -->
+<!-- PROUDPOPS-MODERN-HIDE-DUPLICATE-MOBILE-PRICE-V1-START -->
+<style id="proudpops-modern-hide-duplicate-mobile-price-v1-style">
+  /* The original desktop right-side gradient panel remains visible on desktop. */
+  .pp-modern-desktop-hero-panel {
+    display:block;
+  }
+
+  @media(max-width:760px) {
+    /* Hide only the legacy desktop gradient panel and its duplicate price card. */
+    .pp-modern-desktop-hero-panel {
+      display:none !important;
+      visibility:hidden !important;
+      width:0 !important;
+      height:0 !important;
+      min-width:0 !important;
+      min-height:0 !important;
+      max-width:0 !important;
+      max-height:0 !important;
+      margin:0 !important;
+      padding:0 !important;
+      border:0 !important;
+      overflow:hidden !important;
+      pointer-events:none !important;
+    }
+
+    /* Preserve the replacement photo card added specifically for phones. */
+    .pm-mobile-feature-photo {
+      display:block !important;
+      visibility:visible !important;
+      width:calc(100% - 28px) !important;
+      height:auto !important;
+      min-height:440px !important;
+      max-width:none !important;
+      max-height:none !important;
+      margin:34px auto 28px !important;
+      overflow:hidden !important;
+      pointer-events:auto !important;
+    }
+  }
+
+  @media(max-width:390px) {
+    .pm-mobile-feature-photo {
+      width:calc(100% - 20px) !important;
+      min-height:400px !important;
+      margin-top:26px !important;
+    }
+  }
+</style>
+<script id="proudpops-modern-hide-duplicate-mobile-price-v1-script">
+(function () {
+  function normalizedText(element) {
+    return (element.textContent || '').replace(/\s+/g, ' ').trim().toUpperCase();
+  }
+
+  function findHero() {
+    var heading = Array.from(document.querySelectorAll('h1')).find(function (element) {
+      return /SHARP\s*FADES|REAL\s*CRAFT/i.test(element.textContent || '');
+    });
+    return heading ? heading.closest('section, main > div, div') : document.querySelector('.hero, [class*="hero"]');
+  }
+
+  function findLegacyPriceText(hero) {
+    if (!hero) return null;
+    return Array.from(hero.querySelectorAll('*')).find(function (element) {
+      if (element.closest('.pm-mobile-feature-photo')) return false;
+      var text = normalizedText(element);
+      return text === 'HAIRCUT FROM' || text === 'HAIRCUT FROM $40 45 MIN';
+    }) || null;
+  }
+
+  function findLegacyPanel(hero, priceElement) {
+    if (!hero || !priceElement) return null;
+    var heroRect = hero.getBoundingClientRect();
+    var node = priceElement;
+    var best = null;
+
+    while (node && node !== hero && node.parentElement) {
+      if (node.classList && node.classList.contains('pm-mobile-feature-photo')) return null;
+      var rect = node.getBoundingClientRect();
+      var computed = getComputedStyle(node);
+      var onRight = rect.left >= heroRect.left + heroRect.width * 0.40;
+      var panelSized = rect.width >= Math.min(280, heroRect.width * 0.28) && rect.height >= 260;
+      var coloredPanel = computed.backgroundImage !== 'none' || computed.backgroundColor !== 'rgba(0, 0, 0, 0)';
+
+      if (onRight && panelSized && coloredPanel && node !== hero) {
+        best = node;
+      }
+
+      if (node.parentElement === hero) break;
+      node = node.parentElement;
+    }
+    return best;
+  }
+
+  function markLegacyPanel() {
+    var hero = findHero();
+    var price = findLegacyPriceText(hero);
+    var panel = findLegacyPanel(hero, price);
+
+    if (panel) {
+      panel.classList.add('pp-modern-desktop-hero-panel');
+      panel.setAttribute('data-pp-mobile-hidden', 'true');
+    }
+  }
+
+  function initialize() {
+    markLegacyPanel();
+    window.setTimeout(markLegacyPanel, 250);
+    window.setTimeout(markLegacyPanel, 1000);
+
+    var hero = findHero();
+    if (hero) {
+      new MutationObserver(markLegacyPanel).observe(hero, { childList: true, subtree: true });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize);
+  } else {
+    initialize();
+  }
+  window.addEventListener('load', markLegacyPanel);
+  window.addEventListener('resize', markLegacyPanel);
+})();
+</script>
+<!-- PROUDPOPS-MODERN-HIDE-DUPLICATE-MOBILE-PRICE-V1-END -->
+<!-- PROUDPOPS-MODERN-NEXT-AVAILABLE-V1-START -->
+<style id="proudpops-modern-next-available-v1-style">
+  .pm-availability {
+    padding:78px 0;
+    background:linear-gradient(145deg,#111820,#1d2934);
+    color:#fff;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .pm-availability-head {
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:26px;
+    margin-bottom:28px;
+  }
+  .pm-availability-kicker {
+    margin:0 0 10px;
+    color:#45a99d;
+    font-size:12px;
+    font-weight:950;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+  }
+  .pm-availability h2 {
+    margin:0;
+    max-width:700px;
+    color:#fff !important;
+    font:950 clamp(42px,5vw,64px)/.98 Inter,system-ui,sans-serif !important;
+    letter-spacing:-.055em !important;
+  }
+  .pm-availability-intro {
+    max-width:460px;
+    margin:0;
+    color:#aebcc7;
+    font-size:16px;
+  }
+  .pm-availability-card {
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:26px;
+    padding:28px;
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:14px;
+    background:#0c1015;
+    box-shadow:0 22px 54px rgba(0,0,0,.32);
+  }
+  .pm-date-badge {
+    min-height:148px;
+    display:grid;
+    place-items:center;
+    align-self:start;
+    padding:18px;
+    border-left:5px solid #ff5b39;
+    border-radius:11px;
+    background:linear-gradient(145deg,#202a34,#151b22);
+    text-align:center;
+  }
+  .pm-date-badge small {
+    display:block;
+    color:#45a99d !important;
+    font-size:12px;
+    font-weight:950;
+    letter-spacing:.14em;
+  }
+  .pm-date-badge strong {
+    display:block;
+    margin:5px 0;
+    color:#f0b93f !important;
+    font-size:52px;
+    line-height:.95;
+  }
+  .pm-date-badge span {
+    display:block;
+    color:#fff !important;
+    font-size:11px;
+    font-weight:850;
+  }
+  .pm-availability-date {
+    margin:0 0 6px;
+    color:#fff !important;
+    font-size:28px;
+    font-weight:950;
+    letter-spacing:-.025em;
+  }
+  .pm-availability-note {
+    margin:0 0 20px;
+    color:#9eacb7 !important;
+    font-size:14px;
+  }
+  .pm-time-grid {
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:10px;
+  }
+  .pm-time-slot {
+    min-height:54px;
+    display:grid;
+    place-items:center;
+    padding:10px;
+    border:1px solid #245caa;
+    border-radius:9px;
+    background:#316fd0;
+    color:#fff !important;
+    font:900 16px/1 Inter,system-ui,sans-serif;
+    text-align:center;
+  }
+  .pm-time-slot:hover {
+    background:#159887;
+    border-color:#117568;
+  }
+  .pm-availability-actions {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:22px;
+  }
+  .pm-availability-book {
+    min-height:48px;
+    padding:0 24px;
+    border:0;
+    border-radius:9px;
+    background:linear-gradient(135deg,#f0b93f,#ffd36f);
+    color:#17130b !important;
+    font:900 15px/1 Inter,system-ui,sans-serif;
+    cursor:pointer;
+  }
+  .pm-availability-refresh {
+    min-height:44px;
+    padding:0 17px;
+    border:1px solid rgba(255,255,255,.24);
+    border-radius:9px;
+    background:transparent;
+    color:#fff;
+    font:800 13px/1 Inter,system-ui,sans-serif;
+    cursor:pointer;
+  }
+  .pm-availability-status {
+    min-height:24px;
+    color:#9eacb7;
+    font-size:13px;
+  }
+  .pm-availability-spinner {
+    width:18px;
+    height:18px;
+    display:inline-block;
+    margin-right:8px;
+    border:3px solid #394653;
+    border-top-color:#45a99d;
+    border-radius:50%;
+    vertical-align:-4px;
+    animation:pmAvailabilitySpin .75s linear infinite;
+  }
+  @keyframes pmAvailabilitySpin { to { transform:rotate(360deg); } }
+
+  @media(max-width:900px) {
+    .pm-availability-head { display:block; }
+    .pm-availability-intro { margin-top:14px; }
+    .pm-time-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  }
+  @media(max-width:620px) {
+    .pm-availability { padding:62px 0; }
+    .pm-availability-card { grid-template-columns:1fr;gap:20px;padding:20px; }
+    .pm-date-badge { width:128px;min-height:128px;margin:auto; }
+    .pm-availability-date { text-align:center;font-size:24px; }
+    .pm-availability-note { text-align:center; }
+    .pm-time-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .pm-availability-actions { justify-content:center; }
+    .pm-availability-book { width:100%; }
+  }
+</style>
+
+<section class="pm-availability" id="modern-availability">
+  <div class="wrap">
+    <div class="pm-availability-head">
+      <div>
+        <p class="pm-availability-kicker">Live Booksy Availability</p>
+        <h2>Next available times.</h2>
+      </div>
+      <p class="pm-availability-intro">See the next available day and appointment times before opening the booking experience.</p>
+    </div>
+
+    <div class="pm-availability-card">
+      <div class="pm-date-badge" aria-hidden="true">
+        <div><small id="pm-availability-day">--</small><strong id="pm-availability-number">--</strong><span id="pm-availability-month">LOADING</span></div>
+      </div>
+      <div>
+        <h3 class="pm-availability-date" id="pm-availability-date">Checking the next available appointment…</h3>
+        <p class="pm-availability-note">Times shown are provided by the Proud Pops Booksy availability service.</p>
+        <div class="pm-availability-status" id="pm-availability-status"><span class="pm-availability-spinner" aria-hidden="true"></span>Loading available times…</div>
+        <div class="pm-time-grid" id="pm-availability-times" aria-live="polite"></div>
+        <div class="pm-availability-actions">
+          <button class="pm-availability-book" type="button">Book Appointment</button>
+          <button class="pm-availability-refresh" type="button">Refresh Times</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script id="proudpops-modern-next-available-v1-script">
+(function(){
+  var API_URL='https://wkpl27gu7j.execute-api.us-east-1.amazonaws.com/booksy/availability';
+  var dateFormatter=new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric'});
+
+  function arrayFromResponse(data){
+    if(Array.isArray(data))return data;
+    if(Array.isArray(data.slots))return data.slots;
+    if(Array.isArray(data.times))return data.times;
+    if(Array.isArray(data.availability))return data.availability;
+    if(data.data){
+      if(Array.isArray(data.data))return data.data;
+      if(Array.isArray(data.data.slots))return data.data.slots;
+      if(Array.isArray(data.data.times))return data.data.times;
+      if(Array.isArray(data.data.availability))return data.data.availability;
+    }
+    return [];
+  }
+
+  function normalize(data){
+    var items=arrayFromResponse(data);
+    var dateValue=data.date||data.nextDate||data.next_available_date||data.nextAvailableDate||data.day||data.data?.date||data.data?.nextDate;
+    var times=[];
+
+    items.forEach(function(item){
+      if(typeof item==='string')times.push(item);
+      else if(item){
+        var value=item.time||item.label||item.startTime||item.start||item.displayTime;
+        var available=item.available!==false&&!item.fullyBooked&&!item.booked;
+        if(value&&available)times.push(value);
+        if(!dateValue)dateValue=item.date||item.day||item.startDate;
+      }
+    });
+
+    if(!times.length){
+      var direct=data.availableTimes||data.available_times||data.nextAvailableTimes||data.data?.availableTimes;
+      if(Array.isArray(direct))times=direct.map(function(item){return typeof item==='string'?item:(item.time||item.label||item.startTime)}).filter(Boolean);
+    }
+    return {date:dateValue,times:times.slice(0,10)};
+  }
+
+  function parseDate(value){
+    if(!value)return null;
+    var date=new Date(value);
+    return Number.isNaN(date.getTime())?null:date;
+  }
+
+  function setDate(date,value){
+    var title=document.getElementById('pm-availability-date');
+    var day=document.getElementById('pm-availability-day');
+    var number=document.getElementById('pm-availability-number');
+    var month=document.getElementById('pm-availability-month');
+    if(date){
+      title.textContent=dateFormatter.format(date);
+      day.textContent=date.toLocaleDateString('en-US',{weekday:'short'}).toUpperCase();
+      number.textContent=date.getDate();
+      month.textContent=date.toLocaleDateString('en-US',{month:'short'}).toUpperCase();
+    }else{
+      title.textContent=value||'Next available appointment';
+      day.textContent='NEXT';number.textContent='•';month.textContent='OPENING';
+    }
+  }
+
+  function renderTimes(times){
+    var container=document.getElementById('pm-availability-times');
+    container.innerHTML='';
+    times.forEach(function(time){
+      var slot=document.createElement('div');slot.className='pm-time-slot';slot.textContent=time;container.appendChild(slot);
+    });
+  }
+
+  function setStatus(message,loading){
+    var status=document.getElementById('pm-availability-status');
+    status.innerHTML=(loading?'<span class="pm-availability-spinner" aria-hidden="true"></span>':'')+message;
+  }
+
+  function load(){
+    setStatus('Loading available times…',true);
+    fetch(API_URL,{cache:'no-store',credentials:'omit'})
+      .then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json();})
+      .then(function(data){
+        var result=normalize(data);setDate(parseDate(result.date),result.date);
+        if(result.times.length){renderTimes(result.times);setStatus(result.times.length+' appointment times available.',false);}
+        else{renderTimes([]);setStatus('See Booksy for the latest available times.',false);}
+      })
+      .catch(function(){setDate(null,'Next available appointment');renderTimes([]);setStatus('Availability is taking longer than expected. Open Booksy to view current times.',false);});
+  }
+
+  function openBooking(){
+    if(typeof window.openBooksyModal==='function')return window.openBooksyModal();
+    var trigger=Array.from(document.querySelectorAll('a,button')).find(function(element){
+      if(element.classList.contains('pm-availability-book'))return false;
+      return /BOOK NOW|BOOK APPOINTMENT/i.test((element.textContent||'').trim());
+    });
+    if(trigger)return trigger.click();
+    var link=document.querySelector('a[href*="booksy.com"]');if(link)link.click();
+  }
+
+  function insertAfterHero(){
+    var section=document.getElementById('modern-availability');
+    var hero=document.querySelector('section.hero,.hero');
+    if(section&&hero&&section.previousElementSibling!==hero)hero.insertAdjacentElement('afterend',section);
+  }
+
+  function init(){
+    insertAfterHero();
+    document.querySelector('.pm-availability-book')?.addEventListener('click',openBooking);
+    document.querySelector('.pm-availability-refresh')?.addEventListener('click',load);
+    load();
+  }
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<!-- PROUDPOPS-MODERN-NEXT-AVAILABLE-V1-END -->
+<!-- PROUDPOPS-MODERN-SERVICE-CARDS-V1-START -->
+<style id="proudpops-modern-service-cards-v1-style">
+  .pp-modern-service-grid {
+    display:grid !important;
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+    align-items:stretch !important;
+    gap:18px !important;
+    width:100% !important;
+  }
+
+  .pp-modern-service-card {
+    min-width:0 !important;
+    width:auto !important;
+    min-height:345px !important;
+    height:100% !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    margin:0 !important;
+    padding:30px 27px !important;
+    border-radius:18px !important;
+  }
+
+  .pp-modern-service-card h3 {
+    min-height:58px !important;
+    margin:0 0 10px !important;
+    font-size:clamp(22px,1.7vw,30px) !important;
+    line-height:1.1 !important;
+    overflow-wrap:anywhere;
+  }
+
+  .pp-modern-service-card .pp-modern-service-duration {
+    min-height:26px !important;
+    margin:0 0 34px !important;
+    font-size:17px !important;
+    line-height:1.35 !important;
+  }
+
+  .pp-modern-service-card .pp-modern-service-price {
+    margin:0 0 32px !important;
+    font-size:clamp(42px,3vw,56px) !important;
+    line-height:1 !important;
+    font-weight:950 !important;
+  }
+
+  .pp-modern-service-card .pp-modern-service-book {
+    min-height:54px !important;
+    margin-top:auto !important;
+    padding:0 25px !important;
+    align-self:flex-start !important;
+  }
+
+  @media(max-width:1180px) {
+    .pp-modern-service-grid {
+      grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    }
+    .pp-modern-service-card {
+      min-height:320px !important;
+    }
+  }
+
+  @media(max-width:760px) {
+    .pp-modern-service-grid {
+      grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+      gap:14px !important;
+    }
+    .pp-modern-service-card {
+      min-height:300px !important;
+      padding:24px 20px !important;
+      border-radius:14px !important;
+    }
+    .pp-modern-service-card h3 {
+      min-height:48px !important;
+      font-size:22px !important;
+    }
+    .pp-modern-service-card .pp-modern-service-duration {
+      margin-bottom:25px !important;
+      font-size:15px !important;
+    }
+    .pp-modern-service-card .pp-modern-service-price {
+      margin-bottom:25px !important;
+      font-size:42px !important;
+    }
+  }
+
+  @media(max-width:420px) {
+    .pp-modern-service-grid {
+      grid-template-columns:1fr !important;
+    }
+    .pp-modern-service-card {
+      min-height:260px !important;
+    }
+    .pp-modern-service-card h3 {
+      min-height:0 !important;
+    }
+  }
+</style>
+<script id="proudpops-modern-service-cards-v1-script">
+(function(){
+  function normalized(element){
+    return (element.textContent||'').replace(/\s+/g,' ').trim().toUpperCase();
+  }
+
+  function findSection(){
+    var heading=Array.from(document.querySelectorAll('h1,h2,h3')).find(function(element){
+      return normalized(element)==='PICK YOUR CUT';
+    });
+    return heading ? heading.closest('section,main>div,div') : null;
+  }
+
+  function findCards(section){
+    if(!section)return [];
+    var names=['HAIRCUT','EDGEUP','BEARD TRIM','SHAVE','CUT + ENHANCEMENT'];
+    return Array.from(section.querySelectorAll('article,div,li')).filter(function(element){
+      var text=normalized(element);
+      var hasService=names.some(function(name){return text.includes(name);});
+      var hasPrice=/\$\s*(15|20|25|40|50)\b/.test(text);
+      var hasBook=/\bBOOK\b/.test(text);
+      if(!hasService||!hasPrice||!hasBook)return false;
+      return !Array.from(element.children).some(function(child){
+        var childText=normalized(child);
+        return names.filter(function(name){return childText.includes(name);}).length>1;
+      });
+    });
+  }
+
+  function smallestCommonParent(cards,section){
+    if(!cards.length)return null;
+    var parent=cards[0].parentElement;
+    while(parent&&parent!==section){
+      if(cards.every(function(card){return card.parentElement===parent;}))return parent;
+      parent=parent.parentElement;
+    }
+    return cards[0].parentElement;
+  }
+
+  function markParts(card){
+    card.classList.add('pp-modern-service-card');
+    var children=Array.from(card.querySelectorAll('h3,h4,p,small,span,strong,b,a,button'));
+    var duration=children.find(function(element){return /^\d+\s*(MIN|HR|HOUR)/i.test((element.textContent||'').trim());});
+    var price=children.find(function(element){return /^\$\s*\d+/i.test((element.textContent||'').trim());});
+    var book=children.find(function(element){return /^BOOK$/i.test((element.textContent||'').trim());});
+    if(duration)duration.classList.add('pp-modern-service-duration');
+    if(price)price.classList.add('pp-modern-service-price');
+    if(book)book.classList.add('pp-modern-service-book');
+  }
+
+  function install(){
+    var section=findSection();
+    var cards=findCards(section);
+    if(cards.length<5)return;
+    cards=cards.slice(0,5);
+    var grid=smallestCommonParent(cards,section);
+    if(!grid)return;
+    grid.classList.add('pp-modern-service-grid');
+    cards.forEach(markParts);
+  }
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+  window.addEventListener('load',install);
+})();
+</script>
+<!-- PROUDPOPS-MODERN-SERVICE-CARDS-V1-END -->
+<!-- PROUDPOPS-MODERN-SERVICES-EXACT-V2-START -->
+<style id="proudpops-modern-services-exact-v2-style">
+  .pp-exact-service-grid {
+    display:grid !important;
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+    align-items:stretch !important;
+    gap:18px !important;
+    width:100% !important;
+  }
+  .pp-exact-service-card {
+    box-sizing:border-box !important;
+    width:auto !important;
+    max-width:none !important;
+    min-width:0 !important;
+    min-height:344px !important;
+    height:100% !important;
+    display:flex !important;
+    flex-direction:column !important;
+    margin:0 !important;
+    padding:28px 24px !important;
+  }
+  .pp-exact-service-card > :first-child,
+  .pp-exact-service-card h3,
+  .pp-exact-service-card h4 {
+    min-height:66px !important;
+    margin-top:0 !important;
+    margin-bottom:8px !important;
+    font-size:clamp(20px,1.55vw,28px) !important;
+    line-height:1.12 !important;
+    overflow-wrap:anywhere !important;
+  }
+  .pp-exact-service-card .pp-exact-duration {
+    min-height:25px !important;
+    margin:0 0 30px !important;
+  }
+  .pp-exact-service-card .pp-exact-price {
+    margin:0 0 30px !important;
+    font-size:clamp(42px,3vw,56px) !important;
+    line-height:1 !important;
+    font-weight:950 !important;
+  }
+  .pp-exact-service-card .pp-exact-book {
+    margin-top:auto !important;
+    align-self:flex-start !important;
+  }
+  @media(max-width:1250px){
+    .pp-exact-service-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  }
+  @media(max-width:760px){
+    .pp-exact-service-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px !important}
+    .pp-exact-service-card{min-height:292px !important;padding:22px 18px !important}
+    .pp-exact-service-card > :first-child,.pp-exact-service-card h3,.pp-exact-service-card h4{min-height:52px !important;font-size:21px !important}
+  }
+  @media(max-width:420px){
+    .pp-exact-service-grid{grid-template-columns:1fr !important}
+    .pp-exact-service-card{min-height:250px !important}
+    .pp-exact-service-card > :first-child,.pp-exact-service-card h3,.pp-exact-service-card h4{min-height:0 !important}
+  }
+</style>
+<script id="proudpops-modern-services-exact-v2-script">
+(function(){
+  var names=['HAIRCUT','EDGEUP','BEARD TRIM','SHAVE','CUT + ENHANCEMENT'];
+  function norm(e){return(e.textContent||'').replace(/\s+/g,' ').trim().toUpperCase()}
+  function directServiceName(e){
+    var text=norm(e);
+    return names.find(function(name){return text.startsWith(name)||text.includes(name+' ')})||null;
+  }
+  function findSection(){
+    var heading=Array.from(document.querySelectorAll('h1,h2,h3')).find(function(e){return norm(e)==='PICK YOUR CUT'});
+    return heading?heading.closest('section'):null;
+  }
+  function findExactCards(section){
+    if(!section)return[];
+    var all=Array.from(section.querySelectorAll('div,article,li'));
+    return names.map(function(name){
+      var matches=all.filter(function(e){
+        var text=norm(e);
+        if(!text.includes(name)||!text.includes('BOOK')||!text.match(/\$\s*\d+/))return false;
+        var nested=Array.from(e.children).some(function(child){
+          var childText=norm(child);
+          return childText.includes(name)&&childText.includes('BOOK')&&childText.match(/\$\s*\d+/);
+        });
+        return !nested;
+      });
+      matches.sort(function(a,b){return a.querySelectorAll('*').length-b.querySelectorAll('*').length});
+      return matches[0]||null;
+    }).filter(Boolean);
+  }
+  function commonParent(cards){
+    if(cards.length!==5)return null;
+    var ancestors=[];var n=cards[0].parentElement;
+    while(n){ancestors.push(n);n=n.parentElement}
+    return ancestors.find(function(parent){return cards.every(function(card){return parent.contains(card)})})||null;
+  }
+  function directChildrenFor(parent,cards){
+    return cards.map(function(card){
+      var node=card;
+      while(node.parentElement&&node.parentElement!==parent)node=node.parentElement;
+      return node;
+    });
+  }
+  function markParts(card){
+    card.classList.add('pp-exact-service-card');
+    Array.from(card.querySelectorAll('*')).forEach(function(e){
+      var t=(e.textContent||'').trim();
+      if(/^\d+\s*(min|hr|hour)/i.test(t))e.classList.add('pp-exact-duration');
+      if(/^\$\s*\d+/i.test(t))e.classList.add('pp-exact-price');
+      if(/^book$/i.test(t))e.classList.add('pp-exact-book');
+    });
+  }
+  function install(){
+    var section=findSection(),cards=findExactCards(section);
+    if(cards.length!==5)return;
+    var parent=commonParent(cards);if(!parent)return;
+    var gridChildren=directChildrenFor(parent,cards);
+    if(new Set(gridChildren).size!==5){
+      parent=cards[0].parentElement;
+      gridChildren=cards;
+    }
+    parent.classList.add('pp-exact-service-grid');
+    gridChildren.forEach(function(child,index){child.classList.add('pp-exact-service-card');markParts(cards[index])});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+  window.addEventListener('load',install);
+})();
+</script>
+<!-- PROUDPOPS-MODERN-SERVICES-EXACT-V2-END -->
+
+<!-- PROUDPOPS-SERVICE-DATE-AVAILABILITY-V1-START -->
+<style id="proudpops-service-date-availability-v1-style">
+  .pp-sda { padding:78px 0;background:linear-gradient(145deg,#171c22,#232a32);color:#fff;border-block:1px solid rgba(255,255,255,.08) }
+  .pp-sda * { box-sizing:border-box }
+  .pp-sda-kicker { margin:0 0 9px;color:#45a99d;font-size:12px;font-weight:950;letter-spacing:.2em;text-transform:uppercase }
+  .pp-sda h2 { margin:0;color:#fff!important;font:950 clamp(42px,5vw,64px)/.98 Inter,system-ui,sans-serif!important;letter-spacing:-.055em!important }
+  .pp-sda-intro { max-width:760px;margin:14px 0 30px;color:#aeb8c2!important;font-size:17px }
+  .pp-sda-card { max-width:1000px;padding:28px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:#0e1318;box-shadow:0 22px 58px rgba(0,0,0,.32) }
+  .pp-sda-controls { display:grid;grid-template-columns:minmax(240px,1.35fr) minmax(230px,1fr) auto;gap:14px;align-items:end }
+  .pp-sda-field { display:flex;flex-direction:column;gap:8px }
+  .pp-sda-field span { color:#aeb8c2!important;font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase }
+  .pp-sda-field select { width:100%;min-height:54px;padding:0 16px;border:1px solid #4a535d;border-radius:10px;background:#20262d;color:#fff;color-scheme:dark;font:850 16px/1 Inter,system-ui,sans-serif;outline:0 }
+  .pp-sda-field select:focus { border-color:#45a99d;box-shadow:0 0 0 3px rgba(69,169,157,.17) }
+  .pp-sda-field option { background:#20262d;color:#fff }
+  .pp-sda-refresh { min-height:54px;padding:0 18px;border:1px solid #4a535d;border-radius:10px;background:transparent;color:#fff;font:850 14px/1 Inter,system-ui,sans-serif;cursor:pointer }
+  .pp-sda-summary { display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:18px;align-items:center;margin-top:24px;padding:24px 0;border-block:1px solid #3d454e }
+  .pp-sda-icon { width:76px;height:76px;display:grid;place-items:center;border-radius:14px;background:#414850;color:#dde3e8;font-size:30px }
+  .pp-sda-name { margin:0 0 5px;color:#fff!important;font-size:25px;font-weight:950;letter-spacing:-.02em }
+  .pp-sda-meta { color:#aeb8c2;font-size:15px }
+  .pp-sda-price { color:#f0b93f;font-size:33px;font-weight:950 }
+  .pp-sda-status { min-height:54px;display:flex;align-items:center;gap:10px;padding-top:20px;color:#aeb8c2;font-size:14px }
+  .pp-sda-spinner { width:19px;height:19px;flex:0 0 19px;border:3px solid #4a535d;border-top-color:#45a99d;border-radius:50%;animation:ppSdaSpin .75s linear infinite }
+  @keyframes ppSdaSpin { to { transform:rotate(360deg) } }
+  .pp-sda-times { display:grid;grid-template-columns:repeat(5,minmax(105px,1fr));gap:11px;margin-top:4px }
+  .pp-sda-time { min-height:52px;border:1px solid #4d5965;border-radius:999px;background:#20262d;color:#c2d3ff;font:900 16px/1 Inter,system-ui,sans-serif;cursor:pointer }
+  .pp-sda-time:hover,.pp-sda-time.selected { border-color:#45a99d;background:#173f3b;color:#fff }
+  .pp-sda-selection { display:none;align-items:center;justify-content:space-between;gap:18px;margin-top:22px;padding:16px 18px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:#161c22 }
+  .pp-sda-selection.active { display:flex }
+  .pp-sda-selection strong { display:block;color:#fff }
+  .pp-sda-selection small { color:#aeb8c2 }
+  .pp-sda-book { min-height:50px;padding:0 24px;border:0;border-radius:10px;background:linear-gradient(135deg,#f0b93f,#ffd36f);color:#17130b;font:900 15px/1 Inter,system-ui,sans-serif;cursor:pointer;white-space:nowrap }
+  .pp-sda-fallback { display:none;margin-top:20px;padding:17px 18px;border-left:4px solid #f0b93f;border-radius:8px;background:#20262d;color:#b8c3cc;font-size:14px }
+  .pp-sda-fallback.active { display:block }
+  .pp-sda-fallback strong { display:block;margin-bottom:4px;color:#fff!important }
+  .pp-sda-fallback button { margin-top:12px }
+  .pp-sda-note { margin:16px 0 0;color:#8e99a3;font-size:12px }
+  @media(max-width:900px) { .pp-sda-controls { grid-template-columns:1fr 1fr } .pp-sda-refresh { grid-column:1/3 } .pp-sda-times { grid-template-columns:repeat(3,minmax(100px,1fr)) } }
+  @media(max-width:620px) {
+    .pp-sda { padding:62px 0 } .pp-sda-card { padding:21px } .pp-sda-controls { grid-template-columns:1fr } .pp-sda-refresh { grid-column:auto;width:100% }
+    .pp-sda-summary { grid-template-columns:60px minmax(0,1fr) auto;gap:12px } .pp-sda-icon { width:60px;height:60px;font-size:24px } .pp-sda-name { font-size:20px } .pp-sda-price { font-size:25px }
+    .pp-sda-times { grid-template-columns:repeat(2,minmax(0,1fr)) } .pp-sda-selection { align-items:stretch;flex-direction:column } .pp-sda-book { width:100% }
+  }
+</style>
+<section class="pp-sda" id="modern-service-date-availability">
+  <div class="wrap">
+    <p class="pp-sda-kicker">Live Booksy availability</p>
+    <h2>Choose a service and date.</h2>
+    <p class="pp-sda-intro">Available dates and times come directly from the selected service endpoint. Final confirmation is completed through Booksy.</p>
+    <div class="pp-sda-card">
+      <div class="pp-sda-controls">
+        <label class="pp-sda-field"><span>Service</span><select id="pp-sda-service">
+          <option value="haircut">Haircut</option>
+          <option value="beard-trim">Beard Trim</option>
+          <option value="shave">Shave</option>
+          <option value="haircut-enhancement">Haircut With Enhancement</option>
+          <option value="edgeup">Edgeup</option>
+        </select></label>
+        <label class="pp-sda-field"><span>Available date</span><select id="pp-sda-date" disabled><option>Loading dates…</option></select></label>
+        <button class="pp-sda-refresh" id="pp-sda-refresh" type="button">Refresh Availability</button>
+      </div>
+      <div class="pp-sda-summary">
+        <div class="pp-sda-icon" aria-hidden="true">✂</div>
+        <div><h3 class="pp-sda-name" id="pp-sda-name">Haircut</h3><div class="pp-sda-meta" id="pp-sda-meta">45 min • Booksy availability</div></div>
+        <div class="pp-sda-price" id="pp-sda-price">$40</div>
+      </div>
+      <div class="pp-sda-status" id="pp-sda-status" role="status" aria-live="polite"></div>
+      <div class="pp-sda-times" id="pp-sda-times"></div>
+      <div class="pp-sda-selection" id="pp-sda-selection">
+        <div><strong id="pp-sda-selection-main"></strong><small id="pp-sda-selection-detail"></small></div>
+        <button class="pp-sda-book" type="button">Confirm Availability in Booksy</button>
+      </div>
+      <div class="pp-sda-fallback" id="pp-sda-fallback">
+        <strong>Live times are unavailable for this service right now.</strong>
+        Use Booksy to see current availability and complete the appointment.
+        <br><button class="pp-sda-book pp-sda-fallback-book" type="button">View Live Times in Booksy</button>
+      </div>
+      <p class="pp-sda-note"><strong>Next step:</strong> Booksy will reopen its official booking flow so the customer can verify the service, date, and time. A selected time is not reserved until Booksy confirms the appointment.</p>
+    </div>
+  </div>
+</section>
+<script id="proudpops-service-date-availability-v1-script">
+(function(){
+  var API_BASE='https://wkpl27gu7j.execute-api.us-east-1.amazonaws.com';
+  var services={
+    'haircut':{name:'Haircut',duration:45,price:40,variantId:7331041,path:'/booksy/availability'},
+    'beard-trim':{name:'Beard Trim',duration:25,price:20,variantId:7331042,path:'/booksy/availability/beard-trim'},
+    'shave':{name:'Shave',duration:20,price:15,variantId:7331043,path:'/booksy/availability/shave'},
+    'haircut-enhancement':{name:'Haircut With Enhancement',duration:60,price:50,variantId:7331044,path:'/booksy/availability/haircut-enhancement'},
+    'edgeup':{name:'Edgeup',duration:30,price:25,variantId:7331046,path:'/booksy/availability/edgeup'}
+  };
+  var state={serviceKey:'haircut',slots:[],selectedDate:'',selectedSlot:null,controller:null};
+  function service(){return services[state.serviceKey]}
+  function formatDate(value){return new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric'}).format(new Date(value+'T12:00:00'))}
+  function formatTime(value){var p=String(value).split(':'),h=Number(p[0]),m=p[1]||'00',period=h>=12?'PM':'AM';return(h%12||12)+':'+m+' '+period}
+  function uniqueDates(){return Array.from(new Set(state.slots.map(function(s){return s.date}).filter(Boolean))).sort()}
+  function endpoint(){return API_BASE+service().path+'?v='+Date.now()}
+  function setStatus(message,loading){document.getElementById('pp-sda-status').innerHTML=(loading?'<span class="pp-sda-spinner" aria-hidden="true"></span>':'')+message}
+  function updateServiceSummary(){var s=service();document.getElementById('pp-sda-name').textContent=s.name;document.getElementById('pp-sda-meta').textContent=s.duration+' min • Booksy availability';document.getElementById('pp-sda-price').textContent='$'+s.price}
+  function clearSelection(){state.selectedSlot=null;document.getElementById('pp-sda-selection').classList.remove('active');document.querySelectorAll('.pp-sda-time').forEach(function(b){b.classList.remove('selected')})}
+  function showFallback(show){document.getElementById('pp-sda-fallback').classList.toggle('active',show)}
+  function renderDates(){
+    var select=document.getElementById('pp-sda-date'),dates=uniqueDates();select.innerHTML='';
+    if(!dates.length){select.disabled=true;select.innerHTML='<option>No dates returned</option>';state.selectedDate='';return false}
+    dates.forEach(function(value){var o=document.createElement('option');o.value=value;o.textContent=formatDate(value);select.appendChild(o)});
+    select.disabled=false;state.selectedDate=dates[0];select.value=state.selectedDate;return true;
+  }
+  function renderTimes(){
+    clearSelection();var root=document.getElementById('pp-sda-times');root.innerHTML='';
+    var matches=state.slots.filter(function(slot){return slot.date===state.selectedDate});
+    if(!matches.length){setStatus('No times were returned for '+formatDate(state.selectedDate)+'.',false);return}
+    setStatus(matches.length+' available time'+(matches.length===1?'':'s')+' for '+formatDate(state.selectedDate)+'.',false);
+    matches.forEach(function(slot){var b=document.createElement('button');b.type='button';b.className='pp-sda-time';b.textContent=formatTime(slot.time);b.addEventListener('click',function(){clearSelection();b.classList.add('selected');state.selectedSlot=slot;var s=service();document.getElementById('pp-sda-selection-main').textContent='Your selection: '+s.name+' at '+formatTime(slot.time);document.getElementById('pp-sda-selection-detail').textContent=formatDate(slot.date)+' • '+s.duration+' min • $'+s.price+' • Booksy will verify this opening';document.getElementById('pp-sda-selection').classList.add('active')});root.appendChild(b)});
+  }
+  function load(){
+    if(state.controller)state.controller.abort();state.controller=new AbortController();clearSelection();showFallback(false);document.getElementById('pp-sda-times').innerHTML='';document.getElementById('pp-sda-date').disabled=true;setStatus('Checking '+service().name+' availability…',true);
+    fetch(endpoint(),{cache:'no-store',credentials:'omit',signal:state.controller.signal})
+      .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
+      .then(function(data){if(data.success!==true||!Array.isArray(data.slots))throw new Error('Invalid availability response');state.slots=data.slots.filter(function(slot){return slot&&slot.date&&slot.time});if(!renderDates()){setStatus('No upcoming availability was returned.',false);showFallback(true);return}renderTimes()})
+      .catch(function(error){if(error.name==='AbortError')return;state.slots=[];document.getElementById('pp-sda-date').innerHTML='<option>Unavailable</option>';setStatus('Could not load verified '+service().name+' times.',false);showFallback(true)});
+  }
+  function hideIntermediateBooksyModal(){
+    var modal=document.getElementById('booksy-modal');
+    if(!modal)return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    modal.style.setProperty('display','none','important');
+    document.body.classList.remove('pp-modern-booking-open');
+    document.body.style.removeProperty('overflow');
+  }
+
+  function findOfficialBooksyTrigger(){
+    var selectors=[
+      '#booksy-official-host .booksy-widget-button',
+      '#booksy-official-host a[href*="booksy.com"]',
+      '#booksy-official-host button',
+      '.booksy-widget-button',
+      'a.booksy-business-link',
+      'a[href*="booksy.com"][data-booksy-widget]',
+      'a[href*="booksy.com"]'
+    ];
+
+    for(var index=0;index<selectors.length;index+=1){
+      var candidates=Array.from(document.querySelectorAll(selectors[index]));
+      var trigger=candidates.find(function(element){
+        if(element.classList.contains('pp-sda-book'))return false;
+        if(element.closest('.pp-sda'))return false;
+        return typeof element.click==='function';
+      });
+      if(trigger)return trigger;
+    }
+    return null;
+  }
+
+  function showBooksySelectionReminder(){
+    var old=document.getElementById('pp-booksy-selection-reminder');
+    if(old)old.remove();
+
+    var selectedService=typeof service==='function'?service():null;
+    var selectedSlot=(typeof state!=='undefined'&&state&&state.selectedSlot)?state.selectedSlot:null;
+    if(!selectedService||!selectedSlot||!selectedSlot.date||!selectedSlot.time)return;
+
+    var reminder=document.createElement('div');
+    reminder.id='pp-booksy-selection-reminder';
+    reminder.setAttribute('role','status');
+    reminder.innerHTML='<strong>Confirm in Booksy:</strong> '
+      +selectedService.name+' • '+formatDate(selectedSlot.date)+' • '+formatTime(selectedSlot.time)
+      +'<button type="button" aria-label="Dismiss selection reminder">×</button>';
+    reminder.querySelector('button').addEventListener('click',function(){reminder.remove();});
+    document.body.appendChild(reminder);
+  }
+
+  function buildVerifiedBooksyDeepLink(selectedService,selectedSlot){
+    var allowedVariants=new Set(['7331041','7331042','7331043','7331044','7331046']);
+    var variantId=String(selectedService&&selectedService.variantId||'');
+    var selectedDate=String(selectedSlot&&selectedSlot.date||'');
+    var selectedTime=String(selectedSlot&&selectedSlot.time||'');
+
+    if(!allowedVariants.has(variantId))throw new Error('Unsupported Booksy service variant.');
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(selectedDate))throw new Error('Invalid appointment date.');
+    if(!/^\d{2}:\d{2}$/.test(selectedTime))throw new Error('Invalid appointment time.');
+
+    var url=new URL('https://booksy.com/en-us/instant-experiences/widget/212027');
+    url.searchParams.set('variantId',variantId);
+    url.searchParams.set('date',selectedDate+'T'+selectedTime);
+    return url.toString();
+  }
+
+  function openOfficialBooksyFallback(){
+    if(typeof window.openBooksyModal==='function'){
+      window.openBooksyModal();
+      return true;
+    }
+
+    var trigger=Array.from(document.querySelectorAll('a,button')).find(function(element){
+      if(element.classList.contains('pp-sda-book'))return false;
+      var label=(element.textContent||'').replace(/\s+/g,' ').trim();
+      return /BOOK NOW|BOOK APPOINTMENT|BOOK YOUR APPOINTMENT/i.test(label);
+    });
+    if(trigger){trigger.click();return true;}
+
+    var officialLink=document.querySelector('a[href*="booksy.com"]');
+    if(officialLink){officialLink.click();return true;}
+    return false;
+  }
+
+  function openBooksy(event){
+    var selectedService=typeof service==='function'?service():null;
+    var selectedSlot=(typeof state!=='undefined'&&state&&state.selectedSlot)?state.selectedSlot:null;
+    var sourceButton=event&&event.currentTarget?event.currentTarget:null;
+    var isFallback=Boolean(sourceButton&&sourceButton.classList&&sourceButton.classList.contains('pp-sda-fallback-book'));
+
+    if(!isFallback&&(!selectedService||!selectedSlot||!selectedSlot.date||!selectedSlot.time)){
+      console.warn('A complete service, date, and time selection is required.');
+      return;
+    }
+
+    if(selectedService&&selectedSlot){
+      try{
+        sessionStorage.setItem('proudpopsBookingSelection',JSON.stringify({
+          service:selectedService.name||'',
+          variantId:selectedService.variantId||'',
+          date:selectedSlot.date||'',
+          time:selectedSlot.time||'',
+          displayDate:selectedSlot.date?formatDate(selectedSlot.date):'',
+          displayTime:selectedSlot.time?formatTime(selectedSlot.time):'',
+          durationMinutes:Number(selectedService.duration)||0,
+          price:Number(selectedService.price)||0,
+          savedAt:new Date().toISOString()
+        }));
+      }catch(error){
+        console.warn('Could not preserve the Proud Pops booking selection.',error);
+      }
+    }
+
+    if(!isFallback&&selectedService&&selectedSlot){
+      try{
+        var directUrl=buildVerifiedBooksyDeepLink(selectedService,selectedSlot);
+        var openedWindow=window.open(directUrl,'_blank','noopener,noreferrer');
+        if(openedWindow)return;
+        console.warn('The browser blocked the direct Booksy window. Opening the official widget instead.');
+      }catch(error){
+        console.warn('Direct Booksy handoff failed. Opening the official widget instead.',error);
+      }
+    }
+
+    if(!openOfficialBooksyFallback()){
+      console.warn('Official Booksy booking flow could not be opened.');
+    }
+  }
+  function placeAfterHero(){var section=document.getElementById('modern-service-date-availability'),hero=document.querySelector('section.hero,.hero');if(section&&hero&&section.previousElementSibling!==hero)hero.insertAdjacentElement('afterend',section)}
+  function init(){placeAfterHero();var serviceSelect=document.getElementById('pp-sda-service'),dateSelect=document.getElementById('pp-sda-date');serviceSelect.addEventListener('change',function(e){state.serviceKey=e.target.value;updateServiceSummary();load()});dateSelect.addEventListener('change',function(e){state.selectedDate=e.target.value;renderTimes()});document.getElementById('pp-sda-refresh').addEventListener('click',load);document.querySelectorAll('.pp-sda-book').forEach(function(b){b.addEventListener('click',openBooksy)});updateServiceSummary();load()}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<!-- PROUDPOPS-BOOKING-SELECTION-SUMMARY-V1 -->
+<!-- PROUDPOPS-BOOKING-SELECTION-SUMMARY-V2-1 -->
+<!-- PROUDPOPS-DIRECT-OFFICIAL-BOOKSY-V1 -->
+<!-- PROUDPOPS-VERIFIED-BOOKSY-DEEP-LINK-V1 -->
+<!-- PROUDPOPS-SERVICE-DATE-AVAILABILITY-V1-END -->
+</body>
+</html>

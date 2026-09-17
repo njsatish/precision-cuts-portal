@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portal Theme Editor</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;padding:32px}.editor{width:min(1180px,100%);margin:auto}.intro{margin-bottom:24px}.layout{display:grid;grid-template-columns:minmax(320px,440px) minmax(0,1fr);gap:24px}.controls,.preview{padding:24px;border:1px solid var(--theme-border);border-radius:var(--theme-radius);background:var(--theme-surface)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field label{font-weight:800}.field input,.field select{width:100%;min-height:44px;padding:8px;border:1px solid var(--theme-border);border-radius:9px}.field input[type=color]{padding:3px}.wide{grid-column:1/-1}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.actions button,.actions a{padding:12px 16px;border:1px solid var(--theme-border);border-radius:10px;font-weight:800;cursor:pointer}.save{background:var(--theme-primary);color:var(--theme-primary-text)}.preview-nav{display:flex;gap:8px;align-items:center;padding:14px;background:var(--theme-menu-background);border-radius:10px}.preview-nav span{padding:10px;color:var(--theme-menu-text)}.preview-nav .active{background:var(--theme-menu-highlight-background);color:var(--theme-menu-highlight-text);border-radius:8px}.sample-card{margin-top:20px;padding:24px;border:1px solid var(--theme-border);border-radius:var(--theme-radius);background:var(--theme-surface-alt)}.sample-primary{display:inline-block;margin-top:14px;padding:12px 16px;border-radius:9px;background:var(--theme-primary);color:var(--theme-primary-text);font-weight:800}.notice{margin-top:20px;padding:14px;border-left:4px solid var(--theme-accent);background:var(--theme-surface-alt)}code{color:var(--theme-accent)}@media(max-width:850px){body{padding:16px}.layout{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+  </style>
+  <link rel="stylesheet" href="/assets/css/portal-theme.css?v=20260916-3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png?v=1">
+  <link rel="manifest" href="/site.webmanifest?v=1">
+  <meta name="theme-color" content="#282019">
+</head>
+<body>
+  <main class="editor">
+    <div class="intro"><h1>Portal Theme Editor</h1><p>Choose colors, fonts, width, and corner radius. Save applies the theme to this browser. Download CSS creates a file that can be committed for all visitors.</p></div>
+    <div class="layout">
+      <form class="controls" id="theme-form">
+        <div class="grid" id="fields"></div>
+        <div class="actions">
+          <button class="save" type="submit">Save Browser Theme</button>
+          <button type="button" id="reset">Reset</button>
+          <button type="button" id="download-css">Download CSS</button>
+          <button type="button" id="download-json">Download JSON</button>
+          <a href="/" target="_blank">Open Site</a>
+        </div>
+      </form>
+      <section class="preview">
+        <h2>Live Preview</h2>
+        <div class="preview-nav"><span class="active">Home</span><span>Services</span><span>Book</span><span>About</span></div>
+        <div class="sample-card"><p class="pp-kicker">Live Preview</p><h2>Business portal heading</h2><p>This sample shows the selected background, surface, menu, text, accent, and button colors.</p><span class="sample-primary">Primary Action</span></div>
+        <div class="notice"><strong>Publishing:</strong> local Save affects only this browser. To publish globally, download the CSS and replace <code>assets/css/portal-theme.css</code>, then commit and deploy.</div>
+      </section>
+    </div>
+  </main>
+  <script>
+    const labels={background:"Page Background",surface:"Card Background",surfaceAlt:"Input/Alternate Background",text:"Font Color",mutedText:"Muted Font Color",menuBackground:"Menu Background",menuText:"Menu Font Color",menuHighlightBackground:"Menu Highlight Color",menuHighlightText:"Menu Highlight Font",primary:"Primary Button",primaryText:"Primary Button Font",secondary:"Secondary Color",accent:"Accent Color",border:"Border Color",success:"Success Color",bodyFont:"Body Font",headingFont:"Heading Font",contentWidth:"Content Width",radius:"Corner Radius"};
+    const colorKeys=new Set(["background","surface","surfaceAlt","text","mutedText","menuBackground","menuText","menuHighlightBackground","menuHighlightText","primary","primaryText","secondary","accent","border","success"]);
+    const form=document.querySelector("#theme-form"),fields=document.querySelector("#fields");
+    function render(theme){fields.innerHTML="";Object.keys(PortalTheme.defaults).forEach(key=>{const wrap=document.createElement("div");wrap.className="field";const label=document.createElement("label");label.htmlFor=`theme-${key}`;label.textContent=labels[key]||key;const input=document.createElement("input");input.id=`theme-${key}`;input.name=key;input.type=colorKeys.has(key)?"color":"text";input.value=theme[key];input.addEventListener("input",()=>PortalTheme.apply(read()));wrap.append(label,input);fields.append(wrap)});}
+    function read(){return Object.fromEntries(new FormData(form).entries())}
+    function download(name,type,content){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([content],{type}));a.download=name;a.click();URL.revokeObjectURL(a.href)}
+    form.addEventListener("submit",event=>{event.preventDefault();PortalTheme.save(read());alert("Theme saved in this browser.")});
+    document.querySelector("#reset").addEventListener("click",()=>render(PortalTheme.reset()));
+    document.querySelector("#download-css").addEventListener("click",()=>download("portal-theme-custom.css","text/css",PortalTheme.css(read())));
+    document.querySelector("#download-json").addEventListener("click",()=>download("portal-theme.json","application/json",JSON.stringify(read(),null,2)+"\n"));
+    render(PortalTheme.load());
+  </script>
+  <script src="/assets/js/config/theme-manager.js?v=20260916-3"></script>
+</body>
+</html>

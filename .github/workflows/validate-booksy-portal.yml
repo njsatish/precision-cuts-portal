@@ -1,0 +1,22 @@
+name: Validate Booksy Portal
+on:
+  pull_request:
+  push:
+    branches: [develop, main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: python3 tools/validate_portal_config.py public-site/assets/config/portal.json
+      - run: |
+          python3 tools/generate_portal_config.py
+          git diff --exit-code -- public-site/assets/js/config/generated-portal.js
+      - run: find public-site/assets/js -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+      - run: git diff --check

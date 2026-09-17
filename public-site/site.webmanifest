@@ -1,0 +1,21 @@
+{
+  "name": "Headlines",
+  "short_name": "Headlines",
+  "description": "Headlines barbering and live appointment availability.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4E9D3",
+  "theme_color": "#282019",
+  "icons": [
+    {
+      "src": "/assets/images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

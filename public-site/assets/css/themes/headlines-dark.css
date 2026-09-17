@@ -1,0 +1,16 @@
+:root {
+  --portal-background: #0b1014;
+  --portal-surface: #171d24;
+  --portal-surface-alt: #111820;
+  --portal-text: #ffffff;
+  --portal-muted-text: #aeb7c2;
+  --portal-primary: #43acd5;
+  --portal-secondary: #ff5d3a;
+  --portal-accent: #f0b93f;
+  --portal-success: #63c895;
+  --portal-border: #34404b;
+  --portal-body-font: Inter, system-ui, sans-serif;
+  --portal-heading-font: Inter, system-ui, sans-serif;
+  --portal-content-width: 1120px;
+  --portal-radius: 14px;
+}
