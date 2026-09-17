@@ -1,41 +1,29 @@
-/* Precision Cuts service explorer styled like the compact Headlines layout. */
-.pc-services-explorer-v2 {
+.pc-services-explorer-v3 {
   padding: clamp(60px, 7vw, 108px) 0 !important;
   background: #F4E9D3 !important;
 }
-
-.pc-services-explorer-v2 .pc-services-shell-v2 {
-  display: block !important;
+.pc-services-shell-v3 {
   width: min(1440px, calc(100% - 40px)) !important;
   max-width: 1440px !important;
   margin: 0 auto !important;
   padding: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
 }
-
-.pc-services-explorer-v2 .pc-services-layout-v2 {
+.pc-services-layout-v3 {
   display: grid !important;
   grid-template-columns: minmax(330px, .72fr) minmax(0, 1.7fr) !important;
   gap: 28px !important;
   align-items: stretch !important;
-  margin: 0 !important;
 }
-
-.pc-services-explorer-v2 .pc-services-picker-v3,
-.pc-services-explorer-v2 .pc-service-detail-v2 {
+.pc-services-picker-v3,
+.pc-service-detail-v3 {
   background: #FFFDF7 !important;
   border: 1px solid #CAB38E !important;
   border-radius: 12px !important;
   box-shadow: 0 14px 32px rgba(44, 33, 24, .10) !important;
 }
-
-.pc-services-explorer-v2 .pc-services-picker-v3 {
-  padding: 30px !important;
-}
-
-.pc-services-explorer-v2 .pc-services-picker-v3 .pp-kicker {
+.pc-services-picker-v3 { padding: 30px !important; }
+.pc-services-picker-v3 .pp-kicker,
+.pc-service-detail-v3 .pp-kicker {
   margin: 0 0 12px !important;
   color: #B78918 !important;
   -webkit-text-fill-color: #B78918 !important;
@@ -44,8 +32,7 @@
   letter-spacing: .18em !important;
   text-transform: uppercase !important;
 }
-
-.pc-services-explorer-v2 .pc-services-picker-v3 h2 {
+.pc-services-picker-v3 h2 {
   margin: 0 0 24px !important;
   color: #2C2118 !important;
   -webkit-text-fill-color: #2C2118 !important;
@@ -53,57 +40,75 @@
   font-size: clamp(2.1rem, 3.2vw, 3rem) !important;
   line-height: 1.02 !important;
   letter-spacing: -.025em !important;
-  text-shadow: none !important;
 }
-
-.pc-services-explorer-v2 .pc-services-list-v2 {
+.pc-services-list-v3 {
   display: flex !important;
   flex-direction: column !important;
   gap: 12px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
 }
-
-.pc-services-explorer-v2 .pc-service-choice-v2 {
+.pc-service-choice-v3 {
+  display: flex !important;
   min-height: 92px !important;
+  width: 100% !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  padding: 18px 20px !important;
+  border: 1px solid #CAB38E !important;
+  border-left: 5px solid transparent !important;
+  border-radius: 10px !important;
+  background: #F2E2C4 !important;
+  text-align: left !important;
+  cursor: pointer !important;
 }
-
-.pc-services-explorer-v2 .pc-service-detail-v2 {
+.pc-service-choice-v3 strong { color: #2C2118 !important; -webkit-text-fill-color: #2C2118 !important; font-size: 1.08rem !important; }
+.pc-service-choice-v3 span { color: #6B5A48 !important; -webkit-text-fill-color: #6B5A48 !important; }
+.pc-service-choice-v3:hover,
+.pc-service-choice-v3:focus-visible,
+.pc-service-choice-v3.is-selected {
+  background: #17171D !important;
+  border-color: #D4AF37 !important;
+  border-left-color: #D4AF37 !important;
+  outline: none !important;
+}
+.pc-service-choice-v3:hover strong,
+.pc-service-choice-v3:focus-visible strong,
+.pc-service-choice-v3.is-selected strong { color: #FFF !important; -webkit-text-fill-color: #FFF !important; }
+.pc-service-choice-v3:hover span,
+.pc-service-choice-v3:focus-visible span,
+.pc-service-choice-v3.is-selected span { color: #F4DF8A !important; -webkit-text-fill-color: #F4DF8A !important; }
+.pc-service-detail-v3 {
+  display: flex !important;
   min-height: 610px !important;
+  flex-direction: column !important;
+  justify-content: center !important;
   padding: clamp(38px, 5vw, 66px) !important;
 }
-
-/* Suppress any obsolete v2 heading left in the document by cache or markup. */
-.pc-services-explorer-v2 > .pc-services-heading-v2,
-.pc-services-explorer-v2 .pc-services-shell-v2 > .pc-services-heading-v2 {
-  display: none !important;
+.pc-detail-head-v3 { display: flex !important; justify-content: space-between !important; gap: 24px !important; align-items: flex-start !important; }
+.pc-detail-head-v3 h2 {
+  margin: 8px 0 0 !important;
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(3rem, 6vw, 5.5rem) !important;
+  line-height: .95 !important;
 }
-
+.pc-detail-price-v3 { color: #B77B22 !important; -webkit-text-fill-color: #B77B22 !important; font-size: clamp(3rem, 6vw, 5rem) !important; }
+.pc-detail-description-v3 { margin: 30px 0 !important; color: #6B5A48 !important; -webkit-text-fill-color: #6B5A48 !important; font-size: 1.12rem !important; line-height: 1.6 !important; }
+.pc-detail-facts-v3 { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 24px !important; margin: 18px 0 36px !important; }
+.pc-detail-facts-v3 > div { display: flex !important; flex-direction: column !important; gap: 8px !important; }
+.pc-detail-facts-v3 strong { color: #2C2118 !important; -webkit-text-fill-color: #2C2118 !important; }
+.pc-detail-facts-v3 span { color: #8B8173 !important; -webkit-text-fill-color: #8B8173 !important; }
+.pc-detail-actions-v3 { display: flex !important; flex-wrap: wrap !important; gap: 14px !important; }
 @media (max-width: 900px) {
-  .pc-services-explorer-v2 .pc-services-layout-v2 {
-    grid-template-columns: 1fr !important;
-  }
-
-  .pc-services-explorer-v2 .pc-service-detail-v2 {
-    min-height: 0 !important;
-  }
+  .pc-services-layout-v3 { grid-template-columns: 1fr !important; }
+  .pc-service-detail-v3 { min-height: 0 !important; }
 }
-
 @media (max-width: 650px) {
-  .pc-services-explorer-v2 {
-    padding: 40px 0 54px !important;
-  }
-
-  .pc-services-explorer-v2 .pc-services-shell-v2 {
-    width: min(100% - 28px, 1440px) !important;
-  }
-
-  .pc-services-explorer-v2 .pc-services-picker-v3,
-  .pc-services-explorer-v2 .pc-service-detail-v2 {
-    padding: 20px !important;
-  }
+  .pc-services-explorer-v3 { padding: 40px 0 54px !important; }
+  .pc-services-shell-v3 { width: min(100% - 28px, 1440px) !important; }
+  .pc-services-picker-v3, .pc-service-detail-v3 { padding: 20px !important; }
+  .pc-detail-head-v3 { flex-direction: column !important; }
+  .pc-detail-facts-v3 { grid-template-columns: 1fr !important; }
+  .pc-detail-actions-v3 a { width: 100% !important; text-align: center !important; }
 }
