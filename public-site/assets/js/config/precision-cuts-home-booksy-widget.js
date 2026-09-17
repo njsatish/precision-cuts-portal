@@ -15,7 +15,7 @@
       return;
     }
 
-    const params=new URLSearchParams({
+    const widgetParams=new URLSearchParams({
       id:widgetId,
       businessId:"",
       appointmentId:"",
@@ -23,33 +23,41 @@
       country:provider.country || "us",
       mode:"dialog",
       theme:"default",
-      uniqueId:`precision-cuts-${Date.now()}`
+      uniqueId:"precision-cuts-home"
     });
-    const widgetUrl=`https://booksy.com/widget-2021/index.html?${params}`;
+    const widgetUrl=`https://booksy.com/widget-2021/index.html?${widgetParams}`;
 
-    const candidates=[...document.querySelectorAll("a,button")].filter(element => {
-      const value=String(element.textContent || "").replace(/\s+/g," ").trim().toLowerCase();
-      const href=element.getAttribute?.("href") || "";
-      return value === "book on booksy"
-        || value === "book now"
-        || /widget-2021|booksy\.com\/widget/.test(href)
-        || element.hasAttribute?.("data-booksy-widget-button");
-    });
-
-    candidates.forEach(element => {
+    function markButton(element) {
       if(!(element instanceof HTMLAnchorElement)) return;
+
+      // Booksy's launcher can intercept this same-page link. If interception is
+      // unavailable, the browser follows the URL in the current tab.
       element.href=widgetUrl;
-      element.target="_blank";
-      element.rel="noopener noreferrer";
+      element.removeAttribute("target");
+      element.removeAttribute("rel");
       element.setAttribute("data-booksy-widget-button","");
       element.setAttribute("data-booksy-business-id",widgetId);
-      element.setAttribute("data-booksy-profile-url",provider.profileUrl);
+      element.setAttribute("data-booksy-mode","dialog");
       element.setAttribute("aria-label","Book Precision Cuts on Booksy");
-    });
 
-    // If the official Booksy launcher script is available, it may intercept
-    // the marked link and open a dialog. The href remains a functional secure
-    // fallback if dialog interception is unavailable.
+      element.addEventListener("click",event=>{
+        // Give the official Booksy script first opportunity to handle the click.
+        // Keep the interaction in the current page and avoid forced new tabs.
+        if(element.target === "_blank") element.removeAttribute("target");
+      });
+    }
+
+    [...document.querySelectorAll("a")]
+      .filter(element=>{
+        const value=String(element.textContent || "").replace(/\s+/g," ").trim().toLowerCase();
+        const href=element.getAttribute("href") || "";
+        return value === "book on booksy"
+          || value === "book now"
+          || /widget-2021|booksy\.com\/widget/.test(href)
+          || element.hasAttribute("data-booksy-widget-button");
+      })
+      .forEach(markButton);
+
     document.documentElement.setAttribute("data-precision-booksy-widget",widgetId);
   }
 
