@@ -1,0 +1,21 @@
+.pc-book-service-options {
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:12px !important;
+}
+.pc-book-service-option {
+  display:flex !important;
+  flex-direction:column !important;
+  gap:5px !important;
+  padding:16px !important;
+  background:#17171d !important;
+  border:1px solid #5a4a20 !important;
+  border-radius:9px !important;
+  color:#fff !important;
+  text-decoration:none !important;
+}
+.pc-book-service-option:hover,
+.pc-book-service-option:focus-visible { border-color:#d4af37 !important; }
+.pc-book-service-option strong { color:#fff !important; -webkit-text-fill-color:#fff !important; }
+.pc-book-service-option span { color:#f4df8a !important; -webkit-text-fill-color:#f4df8a !important; }
+@media(max-width:760px){ .pc-book-service-options{grid-template-columns:1fr !important;} }
