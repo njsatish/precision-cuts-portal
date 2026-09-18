@@ -261,7 +261,8 @@
     "booksyWidget": true,
     "instantBooksyHandoff": true,
     "reviews": false,
-    "gallery": true
+    "gallery": true,
+    "barberDirectory": true
   },
   "content": {
     "home": {
@@ -289,7 +290,57 @@
     "title": "Precision Cuts | Barber Shop in Roanoke, VA",
     "description": "Explore Precision Cuts services, pricing, and convenient Booksy appointment booking in Roanoke, Virginia.",
     "image": "/assets/images/precision-cuts-hero.jpg"
-  }
+  },
+  "barbers": [
+    {
+      "id": "keith-lemon",
+      "name": "Keith Lemon",
+      "title": "Master Barber & Founder",
+      "booksyBusinessId": 97909,
+      "booksyStafferId": 117783,
+      "profileUrl": "https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke",
+      "specialties": [
+        "Adult Haircuts",
+        "Beard Sculpting",
+        "Youth Cuts"
+      ],
+      "photo": "/assets/images/gallery/precision-cuts-01.jpg",
+      "liveAvailability": true,
+      "active": true
+    },
+    {
+      "id": "christopher-meadows",
+      "name": "Christopher Meadows",
+      "title": "Fade & Line-Up Specialist",
+      "booksyBusinessId": 1648732,
+      "booksyStafferId": null,
+      "profileUrl": "https://2windabarber.booksy.com",
+      "specialties": [
+        "Skin Fades",
+        "Hot Towel Shaves",
+        "Razor Edges"
+      ],
+      "photo": "/assets/images/gallery/precision-cuts-02.jpg",
+      "liveAvailability": false,
+      "active": true
+    },
+    {
+      "id": "ron-the-barber",
+      "name": "Ron The Barber",
+      "title": "Taper & Edge-Up Specialist",
+      "booksyBusinessId": 1700058,
+      "booksyStafferId": null,
+      "profileUrl": "https://booksy.com/en-us/1700058_precision-cuts_barber-shop_134579_roanoke",
+      "specialties": [
+        "Tapers",
+        "Line-Ups",
+        "Beard Shaping"
+      ],
+      "photo": "/assets/images/gallery/precision-cuts-03.jpg",
+      "liveAvailability": false,
+      "active": true
+    }
+  ]
 };
   const active = config.services.filter(service => service.active !== false).sort((a,b) => (a.sortOrder||0)-(b.sortOrder||0));
   const bySlug = Object.freeze(Object.fromEntries(active.map(service => [service.slug, Object.freeze(service)])));
