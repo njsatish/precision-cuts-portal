@@ -1,0 +1,89 @@
+.pc-home-gallery-v1 {
+  padding: clamp(52px, 6vw, 86px) 0 !important;
+  background: #F4E9D3 !important;
+}
+.pc-home-gallery-shell-v1 {
+  width: min(1320px, calc(100% - 40px)) !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+}
+.pc-home-gallery-heading-v1 {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  margin-bottom: 28px !important;
+}
+.pc-home-gallery-heading-v1 .pp-kicker {
+  margin: 0 0 10px !important;
+  color: #B78918 !important;
+  -webkit-text-fill-color: #B78918 !important;
+}
+.pc-home-gallery-heading-v1 h2 {
+  margin: 0 !important;
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(2.7rem, 5vw, 4.6rem) !important;
+  line-height: .98 !important;
+}
+.pc-home-gallery-grid-v1 {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+}
+.pc-home-gallery-item-v1 {
+  display: block !important;
+  overflow: hidden !important;
+  padding: 10px !important;
+  background: #FFFDF7 !important;
+  border: 2px solid #171714 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 26px rgba(23, 23, 20, .12) !important;
+  color: #2C2118 !important;
+  text-decoration: none !important;
+}
+.pc-home-gallery-item-v1 img {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(320px, 38vw, 520px) !important;
+  object-fit: cover !important;
+  background: #171714 !important;
+  transition: transform .25s ease !important;
+}
+.pc-home-gallery-item-v1 span {
+  display: block !important;
+  padding: 12px 6px 4px !important;
+  color: #2C2118 !important;
+  -webkit-text-fill-color: #2C2118 !important;
+  font-weight: 800 !important;
+}
+.pc-home-gallery-item-v1:hover img,
+.pc-home-gallery-item-v1:focus-visible img {
+  transform: scale(1.025) !important;
+}
+.pc-home-gallery-item-v1:focus-visible {
+  outline: 3px solid #63C895 !important;
+  outline-offset: 4px !important;
+}
+@media (max-width: 820px) {
+  .pc-home-gallery-heading-v1 {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+  .pc-home-gallery-grid-v1 {
+    grid-template-columns: 1fr !important;
+  }
+  .pc-home-gallery-item-v1 img {
+    height: min(118vw, 640px) !important;
+  }
+}
+@media (max-width: 600px) {
+  .pc-home-gallery-shell-v1 {
+    width: min(100% - 28px, 1320px) !important;
+  }
+  .pc-home-gallery-heading-v1 a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}

@@ -142,7 +142,68 @@
     }
   ],
   "reviews": [],
-  "gallery": [],
+  "gallery": [
+    {
+      "src": "/assets/images/gallery/precision-cuts-01.jpg",
+      "alt": "Precision Cuts finished barbering work 01",
+      "caption": "Precision Cuts Work 01"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-02.jpg",
+      "alt": "Precision Cuts finished barbering work 02",
+      "caption": "Precision Cuts Work 02"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-03.jpg",
+      "alt": "Precision Cuts finished barbering work 03",
+      "caption": "Precision Cuts Work 03"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-04.jpg",
+      "alt": "Precision Cuts finished barbering work 04",
+      "caption": "Precision Cuts Work 04"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-05.jpg",
+      "alt": "Precision Cuts finished barbering work 05",
+      "caption": "Precision Cuts Work 05"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-06.jpg",
+      "alt": "Precision Cuts finished barbering work 06",
+      "caption": "Precision Cuts Work 06"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-07.jpg",
+      "alt": "Precision Cuts finished barbering work 07",
+      "caption": "Precision Cuts Work 07"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-08.jpg",
+      "alt": "Precision Cuts finished barbering work 08",
+      "caption": "Precision Cuts Work 08"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-09.jpg",
+      "alt": "Precision Cuts finished barbering work 09",
+      "caption": "Precision Cuts Work 09"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-10.jpg",
+      "alt": "Precision Cuts finished barbering work 10",
+      "caption": "Precision Cuts Work 10"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-11.jpg",
+      "alt": "Precision Cuts finished barbering work 11",
+      "caption": "Precision Cuts Work 11"
+    },
+    {
+      "src": "/assets/images/gallery/precision-cuts-12.jpg",
+      "alt": "Precision Cuts finished barbering work 12",
+      "caption": "Precision Cuts Work 12"
+    }
+  ],
   "booking": {
     "availabilityApiBase": "https://precision-cuts-api.invalid",
     "lambdaRuntime": "nodejs22.x",
@@ -198,7 +259,7 @@
     "booksyWidget": true,
     "instantBooksyHandoff": true,
     "reviews": false,
-    "gallery": false
+    "gallery": true
   },
   "content": {
     "home": {

@@ -1,0 +1,29 @@
+[data-pc-footer-hours] h3 {
+  margin:0 0 14px !important;
+  color:#D4AF37 !important;
+  -webkit-text-fill-color:#D4AF37 !important;
+}
+.pc-footer-hours-list {
+  display:flex !important;
+  flex-direction:column !important;
+  gap:0 !important;
+}
+.pc-footer-hours-row {
+  display:flex !important;
+  justify-content:space-between !important;
+  gap:18px !important;
+  padding:6px 0 !important;
+  border-bottom:1px solid rgba(212,175,55,.17) !important;
+  color:#FFFFFF !important;
+}
+.pc-footer-hours-row:last-child { border-bottom:0 !important; }
+.pc-footer-hours-row span {
+  color:#FFFFFF !important;
+  -webkit-text-fill-color:#FFFFFF !important;
+}
+.pc-footer-hours-row strong {
+  color:#F4DF8A !important;
+  -webkit-text-fill-color:#F4DF8A !important;
+  font-weight:800 !important;
+  text-align:right !important;
+}
