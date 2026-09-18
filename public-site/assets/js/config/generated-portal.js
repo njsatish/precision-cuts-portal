@@ -207,7 +207,7 @@
     }
   ],
   "booking": {
-    "availabilityApiBase": "https://precision-cuts-api.invalid",
+    "availabilityApiBase": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
     "lambdaRuntime": "nodejs22.x",
     "awsRegion": "us-east-1"
   },
@@ -238,7 +238,7 @@
     "country": "us",
     "language": "en",
     "profileUrl": "https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke",
-    "availabilityApiBase": "https://precision-cuts-api.invalid",
+    "availabilityApiBase": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
     "instantExperienceBase": "https://booksy.com/en-us/instant-experiences/widget"
   },
   "brand": {
@@ -257,7 +257,7 @@
     }
   },
   "features": {
-    "liveAvailability": false,
+    "liveAvailability": true,
     "booksyWidget": true,
     "instantBooksyHandoff": true,
     "reviews": false,

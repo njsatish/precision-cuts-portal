@@ -24,6 +24,8 @@
       BOOKSY_WIDGET_ID:provider.widgetId,
       BOOKSY_STAFFER_ID:provider.stafferId,
       BOOKSY_PROFILE_URL:provider.profileUrl,
+      BOOKSY_URL:provider.profileUrl,
+      BOOKSY_INSTANT_BASE:provider.instantExperienceBase,
       SERVICES:bySlug,
       services:Object.freeze(services),
       bySlug,

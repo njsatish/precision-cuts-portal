@@ -69,8 +69,9 @@
     const services = cfg.SERVICES;
     const validSlugs = Object.keys(services);
     const params = new URLSearchParams(window.location.search);
-    let selectedSlug = params.get("service") || serviceSelect.value || "haircut";
-    if (!services[selectedSlug]) selectedSlug = "haircut";
+    const firstSlug = validSlugs[0];
+    let selectedSlug = params.get("service") || serviceSelect.value || firstSlug;
+    if (!services[selectedSlug]) selectedSlug = firstSlug;
     let availableSlots = [];
 
     function formatDate(value) {
@@ -98,7 +99,7 @@
         date: `${slot.date}T${slot.time}`
       });
 
-      return `https://booksy.com/en-us/instant-experiences/widget/94095?${parameters.toString()}`;
+      return `${cfg.BOOKSY_INSTANT_BASE || "https://booksy.com/en-us/instant-experiences/widget"}/${cfg.BOOKSY_WIDGET_ID}?${parameters.toString()}`;
     }
     /* HEADLINES-BOOKSY-INSTANT-URL-V1-END */
 
@@ -108,6 +109,7 @@
 
     function updateSummary(slug) {
       const service = services[slug];
+      if (!service) return;
       if (serviceName) serviceName.textContent = service.name;
       if (serviceMeta) serviceMeta.textContent = `${service.duration} min · Live Booksy availability`;
       if (servicePrice) servicePrice.textContent = `$${service.price}`;
@@ -157,7 +159,7 @@
 
     async function loadAvailability() {
       selectedSlug = serviceSelect.value;
-      if (!services[selectedSlug]) selectedSlug = "haircut";
+      if (!services[selectedSlug]) selectedSlug = validSlugs[0];
       updateSummary(selectedSlug);
       dateSelect.disabled = true;
       dateSelect.innerHTML = "";
@@ -212,7 +214,7 @@
       continueLink.href = cfg.BOOKSY_URL;
       continueLink.target = "_blank";
       continueLink.rel = "noopener noreferrer";
-      continueLink.setAttribute("aria-label", "Open Headlines on Booksy");
+      continueLink.setAttribute("aria-label", "Open Precision Cuts on Booksy");
     }
 
     loadAvailability();
