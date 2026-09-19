@@ -64,3 +64,7 @@
     width: 100%;
   }
 }
+
+/* Direct selected-timeslot Booksy link v2.1. */
+a.pc-v2-book{display:block;text-align:center;text-decoration:none}
+a.pc-v2-book.pc-v2-book-disabled{background:#c9c2b6!important;color:#675f56!important;cursor:not-allowed!important}
