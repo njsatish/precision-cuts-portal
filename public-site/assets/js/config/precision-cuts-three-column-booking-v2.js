@@ -8,6 +8,54 @@
     "head-shave":"Head Shave","head-shave-beard":"Head Shave & Beard Trim","hot-towel-shave":"Hot Towel Shave",
     "straight-razor-shave":"Straight Razor Shave","eyebrows":"Eyebrows","hair-wash":"Hair Wash","facial":"Facial","full-service":"Full Service"
   };
+  const serviceFamilies=[
+    {
+      id:"cuts",
+      name:"Haircuts",
+      description:"Core haircut services",
+      categories:["haircut","kids-haircut","teen-haircut","skin-fade","buzz-cut"]
+    },
+    {
+      id:"combos",
+      name:"Combos",
+      description:"Haircut and grooming combinations",
+      categories:["haircut-beard","head-shave-beard","full-service"]
+    },
+    {
+      id:"beard-shave",
+      name:"Beard & Shave",
+      description:"Beard, line-up, and shave services",
+      categories:["beard","line-up","head-shave","hot-towel-shave","straight-razor-shave"]
+    },
+    {
+      id:"finishing-care",
+      name:"Finishing & Care",
+      description:"Detailing and finishing services",
+      categories:["eyebrows","hair-wash","facial"]
+    }
+  ];
+  const familyFor=category=>serviceFamilies.find(family=>family.categories.includes(category))
+    || {id:"other",name:"Other Services",description:"Additional services",categories:[category]};
+
+  function groupedServiceMarkup(items,renderItem,selectedCategory){
+    const groups=[];
+    for(const family of serviceFamilies){
+      const familyItems=items.filter(item=>family.categories.includes(item.category));
+      if(familyItems.length) groups.push({family,items:familyItems});
+    }
+    const uncategorized=items.filter(item=>!serviceFamilies.some(family=>family.categories.includes(item.category)));
+    if(uncategorized.length) groups.push({family:{id:"other",name:"Other Services",description:"Additional services"},items:uncategorized});
+
+    return groups.map(({family,items:familyItems},index)=>{
+      const containsSelection=familyItems.some(item=>item.category===selectedCategory);
+      const open=containsSelection || (!selectedCategory && index===0);
+      return `<details class="pc-v2-service-family" data-service-family="${esc(family.id)}" ${open?"open":""}>
+        <summary><span><strong>${esc(family.name)}</strong><small>${esc(family.description)}</small></span><em>${familyItems.length}</em></summary>
+        <div class="pc-v2-family-items">${familyItems.map(renderItem).join("")}</div>
+      </details>`;
+    }).join("");
+  }
+
   const config=()=>window.BOOKSY_PORTAL_CONFIG;
   const barbers=()=>config().barbers.filter(b=>b.active!==false&&b.liveAvailability);
   const apiBase=()=>String(config().booking?.availabilityApiBase||config().bookingProvider?.availabilityApiBase||"").replace(/\/$/,"");
@@ -41,7 +89,12 @@
   function workspace(){return document.querySelector("[data-pc-booking-v2]");}
   function selectCategory(category){
     state.category=category; state.barber=null; state.service=null; state.date=null; state.time=null; state.slots=[]; state.dateLimit=6; state.timeLimit=9;
-    render(); workspace()?.scrollIntoView({behavior:"smooth",block:"start"});
+    render();
+    const selectedFamily=familyFor(category);
+    workspace()?.querySelectorAll("[data-pc-services] details").forEach(details=>{
+      details.open=details.dataset.serviceFamily===selectedFamily.id;
+    });
+    workspace()?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   function selectBarber(slug){
     const b=barbers().find(x=>x.id===slug); if(!b) return;
@@ -159,7 +212,11 @@
   function render(){
     const root=workspace(); if(!root) return;
     const cats=categories(); if(!state.category) state.category=cats[0]?.category;
-    root.querySelector("[data-pc-services]").innerHTML=cats.map(c=>`<button data-category="${esc(c.category)}" class="pc-v2-option ${c.category===state.category?'selected':''}"><strong>${esc(c.name)}</strong><span>${c.offers.length} barber option${c.offers.length===1?'':'s'}</span></button>`).join("");
+    root.querySelector("[data-pc-services]").innerHTML=groupedServiceMarkup(
+      cats,
+      c=>`<button data-category="${esc(c.category)}" class="pc-v2-option ${c.category===state.category?'selected':''}"><strong>${esc(c.name)}</strong><span>${c.offers.length} barber option${c.offers.length===1?'':'s'}</span></button>`,
+      state.category
+    );
     const compatible=barbers().filter(b=>servicesFor(b,state.category).length);
     root.querySelector("[data-pc-barbers]").innerHTML=compatible.map(b=>{
       const s=servicesFor(b,state.category)[0];
@@ -178,7 +235,12 @@
     </div><section class="pc-v2-catalog"><h2>All Precision Cuts services</h2><div data-pc-catalog></div></section></div>`;
     const barberDirectory=main.querySelector("[data-pc-barber-directory]");
     barberDirectory?barberDirectory.insertAdjacentElement("afterend",section):main.appendChild(section);
-    section.querySelector("[data-pc-catalog]").innerHTML=categories().map(c=>`<article><h3>${esc(c.name)}</h3><p>${c.offers.map(o=>`${esc(o.barber.name)}: $${esc(o.service.price)}, ${esc(o.service.durationMinutes)} min`).join("<br>")}</p><button data-category="${esc(c.category)}">Select service</button></article>`).join("");
+    const catalogItems=categories();
+    section.querySelector("[data-pc-catalog]").innerHTML=groupedServiceMarkup(
+      catalogItems,
+      c=>`<article><h3>${esc(c.name)}</h3><p>${c.offers.map(o=>`${esc(o.barber.name)}: $${esc(o.service.price)}, ${esc(o.service.durationMinutes)} min`).join("<br>")}</p><button data-category="${esc(c.category)}">Select service</button></article>`,
+      null
+    );
     section.addEventListener("click",e=>{
       const cat=e.target.closest("[data-category]"); if(cat){selectCategory(cat.dataset.category);return;}
       const barber=e.target.closest("[data-barber]"); if(barber){selectBarber(barber.dataset.barber);return;}
