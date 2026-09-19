@@ -108,18 +108,53 @@
       : "Select a date and time to continue";
   }
   function openBooksy(){
-    if(!state.barber) return;
-    const fallback=state.barber.profileUrl;
-    const old=document.getElementById("pc-booksy-v2-script"); old?.remove();
-    document.querySelectorAll('.booksy-widget-button,[class*="booksy-widget-button"]').forEach(x=>x.remove());
-    const script=document.createElement("script"); script.id="pc-booksy-v2-script";
-    script.src=`https://booksy.com/widget/code.js?id=${encodeURIComponent(state.barber.booksyWidgetId||state.barber.booksyBusinessId)}&country=us&lang=en`;
-    script.onload=()=>setTimeout(()=>{
-      const button=document.querySelector('.booksy-widget-button,[class*="booksy-widget-button"]');
-      if(button){button.style.display="none";button.click();} else window.open(fallback,"_blank","noopener");
-    },400);
-    script.onerror=()=>window.open(fallback,"_blank","noopener");
-    document.body.appendChild(script);
+    if(!state.barber || !state.service || !state.date || !state.time){
+      console.error("Select a barber, service, date, and time before opening Booksy.");
+      return;
+    }
+
+    const businessId=state.barber.booksyWidgetId || state.barber.booksyBusinessId;
+    const variantId=state.service.variantId
+      || state.service.booksyVariantId
+      || state.service.serviceVariantId;
+
+    const rawTime=String(state.time).trim();
+    let bookingTime=rawTime;
+    const twelveHour=rawTime.match(/^(\d{1,2}):(\d{2})\s*([AP]M)$/i);
+    if(twelveHour){
+      let hour=Number(twelveHour[1]);
+      const minute=twelveHour[2];
+      const meridiem=twelveHour[3].toUpperCase();
+      if(meridiem==="AM" && hour===12) hour=0;
+      if(meridiem==="PM" && hour!==12) hour+=12;
+      bookingTime=`${String(hour).padStart(2,"0")}:${minute}`;
+    }else if(/^\d{2}:\d{2}:\d{2}$/.test(rawTime)){
+      bookingTime=rawTime.slice(0,5);
+    }
+
+    if(!businessId || !variantId || !/^\d{2}:\d{2}$/.test(bookingTime)){
+      console.error("The selected Booksy business, variant, or time is invalid.",{
+        businessId,variantId,bookingTime
+      });
+      return;
+    }
+
+    const url=new URL(
+      `https://booksy.com/en-us/instant-experiences/widget/${encodeURIComponent(businessId)}`
+    );
+    url.searchParams.set("variantId",String(variantId));
+    url.searchParams.set("date",`${state.date}T${bookingTime}`);
+    url.searchParams.set("attribution_source","precision_cuts_portal");
+    url.searchParams.set("utm_medium","timeslots");
+    url.hash="ba_s=seo";
+
+    const newTab=window.open("about:blank","_blank");
+    if(newTab){
+      newTab.opener=null;
+      newTab.location.href=url.toString();
+    }else{
+      window.location.href=url.toString();
+    }
   }
   function render(){
     const root=workspace(); if(!root) return;
