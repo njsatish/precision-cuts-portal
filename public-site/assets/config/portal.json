@@ -309,18 +309,194 @@
     {
       "id": "christopher-meadows",
       "name": "Christopher Meadows",
-      "title": "Fade & Line-Up Specialist",
+      "title": "Haircut, Fade & Grooming Specialist",
       "booksyBusinessId": 1648732,
-      "booksyStafferId": null,
+      "booksyStafferId": 1568123,
       "profileUrl": "https://2windabarber.booksy.com",
       "specialties": [
-        "Skin Fades",
-        "Hot Towel Shaves",
-        "Razor Edges"
+        "Haircuts & Skin Fades",
+        "Haircut & Beard",
+        "Hot Towel & Razor Shaves"
       ],
-      "photo": "/assets/images/gallery/precision-cuts-02.jpg",
+      "photo": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1648732/biz_photo/b899468b99a54eb7b08c94c705f965-percision-cuts-biz-photo-41fd2116b4f24679bb8c68115c6bbd-booksy.jpeg?size=750x500",
       "liveAvailability": false,
-      "active": true
+      "active": true,
+      "booksyWidgetId": 1648732,
+      "rating": 5.0,
+      "reviewCount": 23,
+      "location": {
+        "address": "6423 Williamson Rd",
+        "city": "Roanoke",
+        "state": "VA",
+        "postalCode": "24019"
+      },
+      "bookingLabel": "Verified Booksy service catalog",
+      "bookingNote": "Live website availability will be enabled only after Christopher API routes pass deployment tests.",
+      "apiReady": true,
+      "services": [
+        {
+          "slug": "christopher-haircut",
+          "category": "haircut",
+          "name": "Haircut",
+          "serviceId": 10705836,
+          "variantId": 19563486,
+          "price": 40,
+          "durationMinutes": 45
+        },
+        {
+          "slug": "christopher-mens-haircut",
+          "category": "haircut",
+          "name": "Men's Haircut",
+          "serviceId": 10705843,
+          "variantId": 19563493,
+          "price": 40,
+          "durationMinutes": 30
+        },
+        {
+          "slug": "christopher-haircut-beard",
+          "category": "haircut-beard",
+          "name": "Haircut & Beard",
+          "serviceId": 10705838,
+          "variantId": 19563488,
+          "price": 40,
+          "durationMinutes": 45
+        },
+        {
+          "slug": "christopher-kids-haircut",
+          "category": "kids-haircut",
+          "name": "Kid's Haircut",
+          "serviceId": 10705839,
+          "variantId": 19563489,
+          "price": 30,
+          "durationMinutes": 30
+        },
+        {
+          "slug": "christopher-skin-fade",
+          "category": "skin-fade",
+          "name": "Skin Fade",
+          "serviceId": 10705846,
+          "variantId": 19563496,
+          "price": 35,
+          "durationMinutes": 30
+        },
+        {
+          "slug": "christopher-buzz-cut",
+          "category": "buzz-cut",
+          "name": "Buzz Cut",
+          "serviceId": 10705848,
+          "variantId": 19563498,
+          "price": 30,
+          "durationMinutes": 30
+        },
+        {
+          "slug": "christopher-beard-trim",
+          "category": "beard",
+          "name": "Beard Trim",
+          "serviceId": 10705847,
+          "variantId": 19563497,
+          "price": 20,
+          "durationMinutes": 15
+        },
+        {
+          "slug": "christopher-beard-shaping",
+          "category": "beard",
+          "name": "Beard Shaping",
+          "serviceId": 10705840,
+          "variantId": 19563490,
+          "price": 20,
+          "durationMinutes": 15
+        },
+        {
+          "slug": "christopher-line-up",
+          "category": "line-up",
+          "name": "Line Up",
+          "serviceId": 10705841,
+          "variantId": 19563491,
+          "price": 30,
+          "durationMinutes": 20
+        },
+        {
+          "slug": "christopher-edge-up",
+          "category": "line-up",
+          "name": "Edge Up",
+          "serviceId": 10705845,
+          "variantId": 19563495,
+          "price": 30,
+          "durationMinutes": 15
+        },
+        {
+          "slug": "christopher-head-shave",
+          "category": "head-shave",
+          "name": "Head Shave",
+          "serviceId": 10705842,
+          "variantId": 19563492,
+          "price": 30,
+          "durationMinutes": 30
+        },
+        {
+          "slug": "christopher-head-shave-beard-trim",
+          "category": "head-shave-beard",
+          "name": "Head Shave & Beard Trim",
+          "serviceId": 10705850,
+          "variantId": 19563500,
+          "price": 40,
+          "durationMinutes": 45
+        },
+        {
+          "slug": "christopher-hot-towel-shave",
+          "category": "hot-towel-shave",
+          "name": "Hot Towel Shave",
+          "serviceId": 10705852,
+          "variantId": 19563502,
+          "price": 40,
+          "durationMinutes": 30
+        },
+        {
+          "slug": "christopher-straight-razor-shave",
+          "category": "straight-razor-shave",
+          "name": "Straight Razor Shave",
+          "serviceId": 10705853,
+          "variantId": 19563503,
+          "price": 35,
+          "durationMinutes": 30
+        },
+        {
+          "slug": "christopher-eyebrow-shaping",
+          "category": "eyebrows",
+          "name": "Eyebrow Shaping",
+          "serviceId": 10705844,
+          "variantId": 19563494,
+          "price": 10,
+          "durationMinutes": 10
+        },
+        {
+          "slug": "christopher-hair-wash",
+          "category": "hair-wash",
+          "name": "Hair Wash",
+          "serviceId": 10705856,
+          "variantId": 19563506,
+          "price": 10,
+          "durationMinutes": 10
+        },
+        {
+          "slug": "christopher-facial",
+          "category": "facial",
+          "name": "Facial",
+          "serviceId": 10705859,
+          "variantId": 19563509,
+          "price": 30,
+          "durationMinutes": 30
+        },
+        {
+          "slug": "christopher-full-service",
+          "category": "full-service",
+          "name": "Full Service",
+          "serviceId": 10705851,
+          "variantId": 19563501,
+          "price": 60,
+          "durationMinutes": 60
+        }
+      ]
     },
     {
       "id": "ron-the-barber",
