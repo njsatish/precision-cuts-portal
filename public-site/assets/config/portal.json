@@ -356,7 +356,13 @@
           "variantId": 3665636
         }
       ],
-      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
+      "location": {
+        "address": "6423 Williamson Rd",
+        "city": "Roanoke",
+        "state": "VA",
+        "postalCode": "24019"
+      }
     },
     {
       "id": "christopher-meadows",
