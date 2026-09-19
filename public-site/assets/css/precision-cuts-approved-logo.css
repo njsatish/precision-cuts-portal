@@ -1,0 +1,23 @@
+/* Approved Precision Cuts black, white, and red scissors logo. */
+body img[src*="precision-cuts-logo-approved.png"] {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+header img[src*="precision-cuts-logo-approved.png"] {
+  width: min(42vw, 360px) !important;
+  max-width: 360px !important;
+  max-height: 90px !important;
+}
+main img[src*="precision-cuts-logo-approved.png"] {
+  width: min(92vw, 720px) !important;
+  max-width: 720px !important;
+  margin-inline: auto !important;
+}
+@media (max-width: 640px) {
+  header img[src*="precision-cuts-logo-approved.png"] {
+    width: min(68vw, 250px) !important;
+    max-height: 66px !important;
+  }
+}

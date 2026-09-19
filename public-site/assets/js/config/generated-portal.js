@@ -242,7 +242,7 @@
     "instantExperienceBase": "https://booksy.com/en-us/instant-experiences/widget"
   },
   "brand": {
-    "logo": "/assets/images/precision-cuts-logo.png",
+    "logo": "/assets/images/precision-cuts-logo-approved.png",
     "favicon": "/assets/images/favicon-32.png",
     "heroImage": "/assets/images/precision-cuts-hero.jpg",
     "theme": "precision-cuts",
