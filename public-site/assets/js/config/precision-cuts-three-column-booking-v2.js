@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  const state={category:null,barber:null,service:null,date:null,time:null,slots:[]};
+  const state={category:null,barber:null,service:null,date:null,time:null,slots:[],dateLimit:6,timeLimit:9};
   const label={
     "haircut":"Haircut","haircut-beard":"Haircut & Beard","kids-haircut":"Kid's Haircut","teen-haircut":"Teen Haircut",
     "skin-fade":"Skin Fade","buzz-cut":"Buzz Cut","beard":"Beard Service","line-up":"Line Up / Edge Up",
@@ -24,13 +24,13 @@
 
   function workspace(){return document.querySelector("[data-pc-booking-v2]");}
   function selectCategory(category){
-    state.category=category; state.barber=null; state.service=null; state.date=null; state.time=null; state.slots=[];
+    state.category=category; state.barber=null; state.service=null; state.date=null; state.time=null; state.slots=[]; state.dateLimit=6; state.timeLimit=9;
     render(); workspace()?.scrollIntoView({behavior:"smooth",block:"start"});
   }
   function selectBarber(slug){
     const b=barbers().find(x=>x.id===slug); if(!b) return;
     const options=servicesFor(b,state.category); if(!options.length) return;
-    state.barber=b; state.service=options[0]; state.date=null; state.time=null; state.slots=[];
+    state.barber=b; state.service=options[0]; state.date=null; state.time=null; state.slots=[]; state.dateLimit=6; state.timeLimit=9;
     render(); loadAvailability();
   }
   async function loadAvailability(){
@@ -47,11 +47,49 @@
     }
   }
   function renderDates(){
-    const root=workspace(); const dates=[...new Set(state.slots.map(s=>s.date))];
-    root.querySelector("[data-pc-dates]").innerHTML=dates.map(d=>`<button data-date="${esc(d)}" class="${d===state.date?'selected':''}">${esc(new Date(`${d}T12:00:00`).toLocaleDateString(undefined,{month:'short',day:'numeric',weekday:'short'}))}</button>`).join("");
-    const times=state.date?state.slots.filter(s=>s.date===state.date):[];
-    root.querySelector("[data-pc-times]").innerHTML=times.map(s=>`<button data-time="${esc(s.time)}" class="${s.time===state.time?'selected':''}">${esc(s.time)}</button>`).join("");
-    root.querySelector("[data-pc-open-booksy]").disabled=!state.barber;
+    const root=workspace();
+    if(!root) return;
+
+    const allDates=[...new Set(state.slots.map(slot=>slot.date))];
+    const dateRoot=root.querySelector("[data-pc-dates]");
+    const timeRoot=root.querySelector("[data-pc-times]");
+    const bookButton=root.querySelector("[data-pc-open-booksy]");
+
+    if(state.date){
+      const selectedLabel=new Date(`${state.date}T12:00:00`).toLocaleDateString(undefined,{
+        weekday:"long",month:"long",day:"numeric"
+      });
+      dateRoot.innerHTML=`<div class="pc-v2-selected-date"><span><small>Selected date</small><strong>${esc(selectedLabel)}</strong></span><button type="button" data-change-date>Change date</button></div>`;
+    }else{
+      const visibleDates=allDates.slice(0,state.dateLimit);
+      dateRoot.innerHTML=visibleDates.map(date=>`<button type="button" data-date="${esc(date)}">${esc(new Date(`${date}T12:00:00`).toLocaleDateString(undefined,{month:"short",day:"numeric",weekday:"short"}))}</button>`).join("");
+      if(allDates.length>state.dateLimit){
+        dateRoot.insertAdjacentHTML("beforeend",`<button type="button" class="pc-v2-more" data-more-dates>Show 6 more dates</button>`);
+      }
+    }
+
+    const daySlots=state.date?state.slots.filter(slot=>slot.date===state.date):[];
+    if(!state.date){
+      timeRoot.innerHTML="";
+      timeRoot.hidden=true;
+    }else{
+      timeRoot.hidden=false;
+      const visibleTimes=daySlots.slice(0,state.timeLimit);
+      const heading=`<h4>Available times</h4>`;
+      const buttons=visibleTimes.map(slot=>{
+        const raw=String(slot.time);
+        const parsed=new Date(`2000-01-01T${raw.length===5?`${raw}:00`:raw}`);
+        const display=Number.isNaN(parsed.getTime())?raw:parsed.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"});
+        return `<button type="button" data-time="${esc(raw)}" class="${raw===state.time?"selected":""}">${esc(display)}</button>`;
+      }).join("");
+      const more=daySlots.length>state.timeLimit?`<button type="button" class="pc-v2-more" data-more-times>Show more times</button>`:"";
+      timeRoot.innerHTML=heading+buttons+more;
+    }
+
+    bookButton.disabled=!(state.barber&&state.date&&state.time);
+    bookButton.textContent=state.date&&state.time
+      ? `Continue with Booksy · ${new Date(`${state.date}T12:00:00`).toLocaleDateString(undefined,{month:"short",day:"numeric"})} at ${state.time}`
+      : "Select a date and time to continue";
   }
   function openBooksy(){
     if(!state.barber) return;
@@ -93,7 +131,10 @@
     section.addEventListener("click",e=>{
       const cat=e.target.closest("[data-category]"); if(cat){selectCategory(cat.dataset.category);return;}
       const barber=e.target.closest("[data-barber]"); if(barber){selectBarber(barber.dataset.barber);return;}
-      const date=e.target.closest("[data-date]"); if(date){state.date=date.dataset.date;state.time=null;renderDates();return;}
+      const moreDates=e.target.closest("[data-more-dates]"); if(moreDates){state.dateLimit+=6;renderDates();return;}
+      const changeDate=e.target.closest("[data-change-date]"); if(changeDate){state.date=null;state.time=null;state.timeLimit=9;renderDates();return;}
+      const date=e.target.closest("[data-date]"); if(date){state.date=date.dataset.date;state.time=null;state.timeLimit=9;renderDates();return;}
+      const moreTimes=e.target.closest("[data-more-times]"); if(moreTimes){state.timeLimit+=9;renderDates();return;}
       const time=e.target.closest("[data-time]"); if(time){state.time=time.dataset.time;renderDates();return;}
       if(e.target.closest("[data-pc-open-booksy]")) openBooksy();
     });
