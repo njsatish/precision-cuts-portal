@@ -503,18 +503,86 @@
     {
       "id": "ron-the-barber",
       "name": "Ron The Barber",
-      "title": "Taper & Edge-Up Specialist",
+      "title": "Haircut, Beard & Edge-Up Specialist",
       "booksyBusinessId": 1700058,
-      "booksyStafferId": null,
-      "profileUrl": "https://booksy.com/en-us/1700058_precision-cuts_barber-shop_134579_roanoke",
+      "booksyStafferId": 1622181,
+      "profileUrl": "https://precisioncutz23.booksy.com",
       "specialties": [
-        "Tapers",
-        "Line-Ups",
-        "Beard Shaping"
+        "Haircuts",
+        "Haircut & Beard",
+        "Edge-Ups & Beard Services"
       ],
-      "photo": "/assets/images/gallery/precision-cuts-03.jpg",
+      "photo": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1700058/resource_photos/b142be5fe72947a4b84ed561cc3d71b7.jpeg",
       "liveAvailability": false,
-      "active": true
+      "active": true,
+      "booksyWidgetId": 1700058,
+      "rating": 5.0,
+      "reviewCount": 11,
+      "location": {
+        "address": "6423 Williamson Rd",
+        "city": "Roanoke",
+        "state": "VA",
+        "postalCode": "24019"
+      },
+      "bookingLabel": "Verified Booksy service catalog",
+      "bookingNote": "Live website availability will be enabled only after Ron API routes pass deployment tests.",
+      "apiReady": true,
+      "services": [
+        {
+          "slug": "ron-haircut",
+          "category": "haircut",
+          "name": "Haircut",
+          "serviceId": 11308609,
+          "variantId": 20194286,
+          "price": 40,
+          "durationMinutes": 45
+        },
+        {
+          "slug": "ron-haircut-beard",
+          "category": "haircut-beard",
+          "name": "Haircut & Beard",
+          "serviceId": 11595370,
+          "variantId": 20506298,
+          "price": 45,
+          "durationMinutes": 45
+        },
+        {
+          "slug": "ron-kids-haircut-7-up",
+          "category": "kids-haircut",
+          "name": "Kid's Haircut, Age 7+",
+          "serviceId": 11308612,
+          "variantId": 20194287,
+          "price": 30,
+          "durationMinutes": 45
+        },
+        {
+          "slug": "ron-head-shave",
+          "category": "head-shave",
+          "name": "Head Shave",
+          "serviceId": 12128174,
+          "variantId": 21102277,
+          "price": 40,
+          "durationMinutes": 45
+        },
+        {
+          "slug": "ron-edge-up",
+          "category": "line-up",
+          "name": "Edge Up Only",
+          "serviceId": 11308613,
+          "variantId": 20194244,
+          "price": 20,
+          "durationMinutes": 25
+        },
+        {
+          "slug": "ron-beard-only",
+          "category": "beard",
+          "name": "Beard Only",
+          "serviceId": 11308610,
+          "variantId": 20194250,
+          "price": 20,
+          "durationMinutes": 25
+        }
+      ]
     }
   ]
 };
