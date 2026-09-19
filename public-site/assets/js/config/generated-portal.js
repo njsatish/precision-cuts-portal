@@ -306,7 +306,58 @@
       ],
       "photo": "/assets/images/gallery/precision-cuts-01.jpg",
       "liveAvailability": true,
-      "active": true
+      "active": true,
+      "booksyWidgetId": 97909,
+      "apiReady": true,
+      "bookingLabel": "Live dates and times on this website",
+      "bookingNote": "Choose a service, date, and available time before continuing to Booksy.",
+      "services": [
+        {
+          "slug": "haircut-no-beard-trim-19-up",
+          "category": "haircut",
+          "name": "Haircut // NO BEARD TRIM! 19 & up!",
+          "price": 40,
+          "durationMinutes": 55,
+          "serviceId": 602728,
+          "variantId": 5519794
+        },
+        {
+          "slug": "kid-haircut-6-to-15",
+          "category": "kids-haircut",
+          "name": "Kid haircut 6yrs to 15yrs old",
+          "price": 30,
+          "durationMinutes": 45,
+          "serviceId": 602733,
+          "variantId": 2060907
+        },
+        {
+          "slug": "haircut-plus-beard",
+          "category": "haircut-beard",
+          "name": "Haircut plus Beard!",
+          "price": 45,
+          "durationMinutes": 60,
+          "serviceId": 3365178,
+          "variantId": 6589869
+        },
+        {
+          "slug": "teenagers-15-to-18",
+          "category": "teen-haircut",
+          "name": "Teenagers 15 to 18",
+          "price": 35,
+          "durationMinutes": 35,
+          "serviceId": 6836423,
+          "variantId": 15473908
+        },
+        {
+          "slug": "eyebrows-clippers-or-razor-cut",
+          "category": "eyebrows",
+          "name": "Eyebrows // Clippers or razor cut",
+          "price": 20,
+          "durationMinutes": 30,
+          "serviceId": 1981416,
+          "variantId": 3665636
+        }
+      ]
     },
     {
       "id": "christopher-meadows",
