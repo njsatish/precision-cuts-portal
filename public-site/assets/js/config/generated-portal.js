@@ -357,7 +357,8 @@
           "serviceId": 1981416,
           "variantId": 3665636
         }
-      ]
+      ],
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
     },
     {
       "id": "christopher-meadows",
@@ -372,7 +373,7 @@
         "Hot Towel & Razor Shaves"
       ],
       "photo": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1648732/biz_photo/b899468b99a54eb7b08c94c705f965-percision-cuts-biz-photo-41fd2116b4f24679bb8c68115c6bbd-booksy.jpeg?size=750x500",
-      "liveAvailability": false,
+      "liveAvailability": true,
       "active": true,
       "booksyWidgetId": 1648732,
       "rating": 5.0,
@@ -549,7 +550,8 @@
           "price": 60,
           "durationMinutes": 60
         }
-      ]
+      ],
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
     },
     {
       "id": "ron-the-barber",
@@ -564,7 +566,7 @@
         "Edge-Ups & Beard Services"
       ],
       "photo": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1700058/resource_photos/b142be5fe72947a4b84ed561cc3d71b7.jpeg",
-      "liveAvailability": false,
+      "liveAvailability": true,
       "active": true,
       "booksyWidgetId": 1700058,
       "rating": 5.0,
@@ -633,7 +635,8 @@
           "price": 20,
           "durationMinutes": 25
         }
-      ]
+      ],
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
     }
   ]
 };
