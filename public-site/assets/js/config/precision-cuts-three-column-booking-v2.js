@@ -11,13 +11,29 @@
   const config=()=>window.BOOKSY_PORTAL_CONFIG;
   const barbers=()=>config().barbers.filter(b=>b.active!==false&&b.liveAvailability);
   const apiBase=()=>String(config().booking?.availabilityApiBase||config().bookingProvider?.availabilityApiBase||"").replace(/\/$/,"");
-  const servicesFor=(b,category)=>(b.services||[]).filter(s=>s.category===category);
+  const preferredServiceSlugs={
+    "christopher-meadows":{
+      "haircut":"christopher-haircut"
+    }
+  };
+  const servicesFor=(barber,category)=>{
+    const matches=(barber.services||[]).filter(service=>service.category===category);
+    if(matches.length<=1) return matches;
+    const preferredSlug=preferredServiceSlugs[barber.id]?.[category];
+    const preferred=matches.find(service=>service.slug===preferredSlug);
+    return [preferred||matches[0]];
+  };
 
   function categories(){
     const map=new Map();
-    for(const b of barbers()) for(const s of b.services||[]){
-      if(!map.has(s.category)) map.set(s.category,{category:s.category,name:label[s.category]||s.name,offers:[]});
-      map.get(s.category).offers.push({barber:b,service:s});
+    for(const barber of barbers()){
+      const barberCategories=[...new Set((barber.services||[]).map(service=>service.category))];
+      for(const category of barberCategories){
+        const service=servicesFor(barber,category)[0];
+        if(!service) continue;
+        if(!map.has(category)) map.set(category,{category,name:label[category]||service.name,offers:[]});
+        map.get(category).offers.push({barber,service});
+      }
     }
     return [...map.values()];
   }
