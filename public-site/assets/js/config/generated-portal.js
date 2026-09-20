@@ -665,7 +665,7 @@
       },
       "liveAvailability": true,
       "bookingMode": "live",
-      "photoUrl": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1814949/biz_photo/ab5a8142192e482a951d0d0f19c89e-cuts-by-levar-biz-photo-053f9ced8eba44aea679085f36731a-booksy.jpeg?size=750x500",
+      "photoUrl": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
       "rating": 5.0,
       "reviewLabel": "5.0 Booksy rating",
       "services": [
@@ -827,7 +827,10 @@
       "availabilityApiUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
       "availabilityBaseUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
       "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
-      "bookingStatus": "verified-live-availability"
+      "bookingStatus": "verified-live-availability",
+      "photo": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
+      "profilePhoto": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
+      "photoStatus": "verified-local-booksy-photo"
     },
     {
       "id": "lamar-the-barber",
@@ -962,8 +965,8 @@
       "professionalName": "Var da Barber",
       "title": "Haircut, Shave & Beard Specialist",
       "location": "6423 Williamson Rd, Roanoke, VA 24019",
-      "photo": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1814949/biz_photo/ab5a8142192e482a951d0d0f19c89e-cuts-by-levar-biz-photo-053f9ced8eba44aea679085f36731a-booksy.jpeg?size=750x500",
-      "photoStatus": "verified-booksy-photo",
+      "photo": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
+      "photoStatus": "verified-local-booksy-photo",
       "photoAlt": "Var da Barber Booksy business profile image",
       "overview": "Levar Neal, professionally known as Var da Barber, provides men’s haircuts, kids haircuts, head shaves, beard trims, and hot towel services at the Williamson Road shop.",
       "specialties": [
@@ -976,7 +979,8 @@
       "booksyUrl": "https://booksy.com/en-us/1814949_var-da-barber_barber-shop_134579_roanoke#ba_s=sr_1",
       "bookingStatus": "verified-booksy-profile",
       "rating": 5.0,
-      "reviewDisplay": "5.0 Booksy rating"
+      "reviewDisplay": "5.0 Booksy rating",
+      "photoUrl": "/assets/images/barbers/levar-neal-booksy.jpg?v=1"
     },
     {
       "id": "lamar-the-barber",
