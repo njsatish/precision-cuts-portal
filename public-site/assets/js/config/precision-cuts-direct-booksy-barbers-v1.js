@@ -37,6 +37,23 @@
     return barber.photoUrl || barber.photo || barber.profilePhoto || "";
   }
 
+  function openServiceGroup(barberId, shouldScroll = true) {
+    const group = document.querySelector(`.pc-direct-booksy-services[data-barber-id="${barberId}"]`);
+    if (!group) return false;
+    document.querySelectorAll(".pc-direct-booksy-services[open]").forEach(item => {
+      if (item !== group) item.removeAttribute("open");
+    });
+    group.setAttribute("open", "");
+    group.classList.add("is-active");
+    document.querySelectorAll(".pc-direct-booksy-services.is-active").forEach(item => {
+      if (item !== group) item.classList.remove("is-active");
+    });
+    if (shouldScroll) {
+      setTimeout(() => group.scrollIntoView({behavior:"smooth", block:"center"}), 60);
+    }
+    return true;
+  }
+
   function showDirectBooking(barber, service) {
     const datePanel = panelFor("3. AVAILABLE DATES");
     if (!datePanel) return;
@@ -75,6 +92,7 @@
     article.querySelector("button").addEventListener("click", () => {
       document.querySelectorAll(".pc-direct-booksy-barber.is-selected").forEach(node => node.classList.remove("is-selected"));
       article.classList.add("is-selected");
+      openServiceGroup(barber.id, true);
       showDirectBooking(barber, null);
     });
     return article;
@@ -101,10 +119,41 @@
         const card = document.querySelector(`.pc-direct-booksy-barber[data-barber-id="${barber.id}"]`);
         document.querySelectorAll(".pc-direct-booksy-barber.is-selected").forEach(node => node.classList.remove("is-selected"));
         card?.classList.add("is-selected");
+        openServiceGroup(barber.id, false);
         showDirectBooking(barber, service);
       });
       list.appendChild(button);
     });
+    const summary = details.querySelector("summary");
+    summary.setAttribute("role", "button");
+    summary.setAttribute("tabindex", "0");
+    summary.setAttribute("aria-expanded", "false");
+
+    const syncState = () => {
+      summary.setAttribute("aria-expanded", details.open ? "true" : "false");
+      details.classList.toggle("is-active", details.open);
+    };
+
+    summary.addEventListener("click", event => {
+      event.preventDefault();
+      const willOpen = !details.open;
+      if (willOpen) {
+        openServiceGroup(barber.id, false);
+      } else {
+        details.removeAttribute("open");
+        details.classList.remove("is-active");
+      }
+      syncState();
+    });
+
+    summary.addEventListener("keydown", event => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      summary.click();
+    });
+
+    details.addEventListener("toggle", syncState);
+    syncState();
     return details;
   }
 
