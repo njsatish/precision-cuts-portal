@@ -683,9 +683,9 @@
       "booksyHandle": "2windabarber",
       "bookingStatus": "verified-live",
       "bookingBarberId": "christopher-meadows",
-      "photo": "/assets/images/team-placeholders/christopher-placeholder.jpg",
+      "photo": "/assets/images/team-placeholders/christopher-single-v2.jpg?v=2",
       "photoStatus": "ai-placeholder",
-      "photoAlt": "Temporary AI-generated team profile image"
+      "photoAlt": "Temporary AI-generated single-person team profile image"
     },
     {
       "id": "ron-the-barber",
@@ -696,9 +696,9 @@
       "booksyHandle": "precisioncutz23",
       "bookingStatus": "verified-live",
       "bookingBarberId": "ron-the-barber",
-      "photo": "/assets/images/team-placeholders/ron-placeholder.jpg",
+      "photo": "/assets/images/team-placeholders/ron-single-v2.jpg?v=2",
       "photoStatus": "ai-placeholder",
-      "photoAlt": "Temporary AI-generated team profile image"
+      "photoAlt": "Temporary AI-generated single-person team profile image"
     },
     {
       "id": "marcus-vance",
@@ -709,9 +709,9 @@
       "booksyHandle": "marcus-vip-precisioncuts",
       "bookingStatus": "profile-preview",
       "bookingBarberId": null,
-      "photo": "/assets/images/team-placeholders/marcus-placeholder.jpg",
+      "photo": "/assets/images/team-placeholders/marcus-single-v2.jpg?v=2",
       "photoStatus": "ai-placeholder",
-      "photoAlt": "Temporary AI-generated team profile image"
+      "photoAlt": "Temporary AI-generated single-person team profile image"
     },
     {
       "id": "jaylen-brooks",
@@ -722,9 +722,9 @@
       "booksyHandle": "jaylen-fresh-fades",
       "bookingStatus": "profile-preview",
       "bookingBarberId": null,
-      "photo": "/assets/images/team-placeholders/jaylen-placeholder.jpg",
+      "photo": "/assets/images/team-placeholders/jaylen-single-v2.jpg?v=2",
       "photoStatus": "ai-placeholder",
-      "photoAlt": "Temporary AI-generated team profile image"
+      "photoAlt": "Temporary AI-generated single-person team profile image"
     }
   ]
 };
