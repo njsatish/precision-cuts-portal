@@ -20,7 +20,6 @@
     if (specialties.length) return specialties.slice(0, 3);
     return (barber.services || []).slice(0, 3).map(service => service.name);
   };
-
   function bookingLink(barber) {
     return `#booking-workspace?barber=${encodeURIComponent(barber.id)}`;
   }
