@@ -304,7 +304,7 @@
         "Beard Sculpting",
         "Youth Cuts"
       ],
-      "photo": "/assets/images/gallery/precision-cuts-01.jpg",
+      "photo": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
       "liveAvailability": true,
       "active": true,
       "booksyWidgetId": 97909,
@@ -364,7 +364,10 @@
         "city": "Roanoke",
         "state": "VA",
         "postalCode": "24019"
-      }
+      },
+      "photoUrl": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
+      "profilePhoto": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
+      "photoSource": "Booksy business profile"
     },
     {
       "id": "christopher-meadows",
