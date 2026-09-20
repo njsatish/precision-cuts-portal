@@ -29,19 +29,36 @@
   "hours": [
     {
       "day": "Sunday",
-      "hours": "Closed"
+      "closed": true
     },
     {
       "day": "Monday",
-      "hours": "Closed"
+      "closed": true
     },
     {
-      "day": "Tuesday-Friday",
-      "hours": "10:00 AM-6:00 PM"
+      "day": "Tuesday",
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": "Wednesday",
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": "Thursday",
+      "open": "10:00 AM",
+      "close": "6:00 PM"
+    },
+    {
+      "day": "Friday",
+      "open": "10:00 AM",
+      "close": "6:00 PM"
     },
     {
       "day": "Saturday",
-      "hours": "10:00 AM-5:00 PM"
+      "open": "10:00 AM",
+      "close": "5:00 PM"
     }
   ],
   "staff": [
@@ -640,25 +657,7 @@
     "quote": "Precision is not an extra step. It is the standard behind every cut.",
     "bookingBarberId": "keith-lemon",
     "liveAvailability": true
-  },
-  "businessHoursCompact": [
-    {
-      "day": "Sunday",
-      "hours": "Closed"
-    },
-    {
-      "day": "Monday",
-      "hours": "Closed"
-    },
-    {
-      "day": "Tuesday-Friday",
-      "hours": "10:00 AM-6:00 PM"
-    },
-    {
-      "day": "Saturday",
-      "hours": "10:00 AM-5:00 PM"
-    }
-  ]
+  }
 };
   const active = config.services.filter(service => service.active !== false).sort((a,b) => (a.sortOrder||0)-(b.sortOrder||0));
   const bySlug = Object.freeze(Object.fromEntries(active.map(service => [service.slug, Object.freeze(service)])));
