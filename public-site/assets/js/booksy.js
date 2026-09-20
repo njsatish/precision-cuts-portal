@@ -1,4 +1,6 @@
 (function(global){
+var VAR_LIVE_VARIANTS_V1=new Set(["21524117","21524984","21525019","21525074","21525078","21525090","21525107","21525127","21526440"]);
+
   'use strict';
 
   var BUSINESS_ID='212027';
@@ -9,7 +11,7 @@
     var date=String(slot&&slot.date||'');
     var time=String(slot&&slot.time||'');
 
-    if(!ALLOWED_VARIANTS.has(variantId))throw new Error('Unsupported Booksy service variant.');
+    if(!ALLOWED_VARIANTS.has(variantId)&&!VAR_LIVE_VARIANTS_V1.has(variantId))throw new Error('Unsupported Booksy service variant.');
     if(!/^\d{4}-\d{2}-\d{2}$/.test(date))throw new Error('Invalid appointment date.');
     if(!/^\d{2}:\d{2}$/.test(time))throw new Error('Invalid appointment time.');
 

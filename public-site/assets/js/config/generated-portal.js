@@ -663,8 +663,8 @@
         "state": "VA",
         "postalCode": "24019"
       },
-      "liveAvailability": false,
-      "bookingMode": "booksy-profile",
+      "liveAvailability": true,
+      "bookingMode": "live",
       "photoUrl": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1814949/biz_photo/ab5a8142192e482a951d0d0f19c89e-cuts-by-levar-biz-photo-053f9ced8eba44aea679085f36731a-booksy.jpeg?size=750x500",
       "rating": 5.0,
       "reviewLabel": "5.0 Booksy rating",
@@ -680,8 +680,10 @@
           "price": 35,
           "stafferId": 1741554,
           "category": "haircut",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/levar-neal/mens-hair-cut",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/mens-hair-cut"
         },
         {
           "id": "kids-haircut-6-12",
@@ -694,8 +696,10 @@
           "price": 30,
           "stafferId": 1741554,
           "category": "kids-haircut",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/levar-neal/kids-haircut-6-12",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/kids-haircut-6-12"
         },
         {
           "id": "head-shave",
@@ -708,8 +712,10 @@
           "price": 30,
           "stafferId": 1741554,
           "category": "head-shave",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/levar-neal/head-shave",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/head-shave"
         },
         {
           "id": "beard-trim",
@@ -722,8 +728,10 @@
           "price": 30,
           "stafferId": 1741554,
           "category": "beard",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/levar-neal/beard-trim",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/beard-trim"
         },
         {
           "id": "hot-towel-shave",
@@ -736,8 +744,10 @@
           "price": 30,
           "stafferId": 1741554,
           "category": "hot-towel-shave",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/levar-neal/hot-towel-shave",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/hot-towel-shave"
         },
         {
           "id": "head-shave-beard-trim",
@@ -750,9 +760,11 @@
           "price": 60,
           "stafferId": 1741554,
           "category": "combo",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile",
-          "comboService": true
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "comboService": true,
+          "availabilityPath": "/availability/levar-neal/head-shave-beard-trim",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/head-shave-beard-trim"
         },
         {
           "id": "haircut-hot-towel-shave",
@@ -765,9 +777,11 @@
           "price": 65,
           "stafferId": 1741554,
           "category": "combo",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile",
-          "comboService": true
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "comboService": true,
+          "availabilityPath": "/availability/levar-neal/haircut-hot-towel-shave",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/haircut-hot-towel-shave"
         },
         {
           "id": "shampoo",
@@ -780,8 +794,10 @@
           "price": 10,
           "stafferId": 1741554,
           "category": "hair-care",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/levar-neal/shampoo",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/shampoo"
         },
         {
           "id": "haircut-beard-trim",
@@ -794,9 +810,11 @@
           "price": 65,
           "stafferId": 1741554,
           "category": "combo",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile",
-          "comboService": true
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "comboService": true,
+          "availabilityPath": "/availability/levar-neal/haircut-beard-trim",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/haircut-beard-trim"
         }
       ],
       "specialties": [
@@ -805,7 +823,11 @@
         "Head Shaves",
         "Beard Trims",
         "Hot Towel Shaves"
-      ]
+      ],
+      "availabilityApiUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
+      "availabilityBaseUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
+      "bookingStatus": "verified-live-availability"
     },
     {
       "id": "lamar-the-barber",
