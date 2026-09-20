@@ -86,3 +86,84 @@
     font-size: .68rem !important;
   }
 }
+
+/* Founder Minimal Circle layout v1.
+   Layout-only override: existing colors, typography, borders, shadows, and
+   button treatments remain controlled by the established Founder Spotlight. */
+.pc-founder-spotlight-v1 .pc-founder-shell {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: min(100%, 1040px) !important;
+  max-width: 1040px !important;
+  gap: clamp(28px, 4vw, 46px) !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+.pc-founder-spotlight-v1 .pc-founder-shell figure {
+  order: 1 !important;
+  width: clamp(300px, 31vw, 460px) !important;
+  max-width: min(86vw, 460px) !important;
+  margin: 0 auto !important;
+}
+
+.pc-founder-spotlight-v1 .pc-founder-copy {
+  order: 2 !important;
+  width: min(100%, 900px) !important;
+  max-width: 900px !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+.pc-founder-spotlight-v1 .pc-founder-copy h2 {
+  max-width: 880px !important;
+  margin-inline: auto !important;
+  font-size: clamp(2.8rem, 5.5vw, 5.7rem) !important;
+}
+
+.pc-founder-spotlight-v1 .pc-founder-copy h3,
+.pc-founder-spotlight-v1 .pc-founder-role,
+.pc-founder-spotlight-v1 .pc-founder-summary {
+  margin-inline: auto !important;
+}
+
+.pc-founder-spotlight-v1 .pc-founder-summary {
+  max-width: 780px !important;
+}
+
+.pc-founder-spotlight-v1 .pc-founder-copy blockquote {
+  max-width: 760px !important;
+  margin: 28px auto !important;
+  text-align: center !important;
+}
+
+.pc-founder-spotlight-v1 .pc-founder-services,
+.pc-founder-spotlight-v1 .pc-founder-actions {
+  justify-content: center !important;
+}
+
+@media (max-width: 720px) {
+  .pc-founder-spotlight-v1 .pc-founder-shell {
+    gap: 28px !important;
+  }
+
+  .pc-founder-spotlight-v1 .pc-founder-shell figure {
+    width: min(82vw, 370px) !important;
+  }
+
+  .pc-founder-spotlight-v1 .pc-founder-copy h2 {
+    font-size: clamp(2.5rem, 12vw, 4rem) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .pc-founder-spotlight-v1 .pc-founder-shell figure {
+    width: min(86vw, 330px) !important;
+  }
+
+  .pc-founder-spotlight-v1 .pc-founder-actions a {
+    width: 100% !important;
+  }
+}
