@@ -22,16 +22,13 @@
   };
 
   function bookingLink(barber) {
-    if (barber.liveAvailability) {
-      return `/book.html?barber=${encodeURIComponent(barber.id)}`;
-    }
-    return barber.booksyUrl || "#";
+    return `#booking-workspace?barber=${encodeURIComponent(barber.id)}`;
   }
 
   function card(barber, index) {
     const direct = !barber.liveAvailability;
-    const target = direct ? ' target="_blank" rel="noopener noreferrer"' : "";
-    const action = direct ? `Book ${esc(displayName(barber))} on Booksy` : `View ${esc(displayName(barber))}'s availability`;
+    const target = "";
+    const action = direct ? `View ${esc(displayName(barber))}'s services` : `View ${esc(displayName(barber))}'s availability`;
     const status = direct ? "VERIFIED BOOKSY PROFILE" : "LIVE AVAILABILITY";
     const image = imageOf(barber);
     const fallback = esc(displayName(barber).split(/\s+/).map(part => part[0]).join("").slice(0,2));
