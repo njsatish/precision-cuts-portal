@@ -650,8 +650,8 @@
     "eyebrow": "Founder spotlight",
     "headline": "Built on precision. Led by craft.",
     "location": "6423 Williamson Rd, Roanoke, VA 24019",
-    "photo": "/assets/images/precision-cuts-founder-keith.jpg?v=02",
-    "summary": "Keith Lemon founded Precision Cuts around a straightforward standard: every client deserves careful consultation, consistent technique, and a finish built around the individual.",
+    "photo": "/assets/images/precision-cuts-founder-keith-about.jpg?v=1",
+    "summary": "Keith Lemon is the founder and a top-rated professional barber at Precision Cuts on Williamson Road in Roanoke, Virginia. Keith is renowned for expert beard shaping, sharp line-ups, and precision haircuts for adults and kids. Keith maintains a flawless 5.0-star rating on Booksy, with hundreds of client reviews reflecting consistent results and strong customer service. Keith is widely recognized in the local community for attention to detail, consistency, and an exceptional client experience. Through hands-on leadership and a high standard of craft, Keith continues to shape the Precision Cuts experience for every client and every barber on the team.",
     "quote": "Precision is not an extra step. It is the standard behind every cut.",
     "bookingBarberId": "keith-lemon",
     "liveAvailability": true
@@ -662,13 +662,15 @@
       "name": "Keith Lemon",
       "title": "Founder & Master Barber",
       "location": "6423 Williamson Rd, Roanoke, VA 24019",
-      "overview": "Keith leads Precision Cuts through careful consultation, consistent technique, and precision finishing tailored to each client.",
+      "overview": "Keith Lemon is the founder and a top-rated professional barber at Precision Cuts on Williamson Road in Roanoke, Virginia. Keith is renowned for expert beard shaping, sharp line-ups, and precision haircuts for adults and kids. Keith maintains a flawless 5.0-star rating on Booksy, with hundreds of client reviews reflecting consistent results and strong customer service. Keith is widely recognized in the local community for attention to detail, consistency, and an exceptional client experience. Through hands-on leadership and a high standard of craft, Keith continues to shape the Precision Cuts experience for every client and every barber on the team.",
       "booksyHandle": "precision-cuts-keith-lemon",
       "bookingStatus": "verified-live",
       "bookingBarberId": "keith-lemon",
-      "photo": "/assets/images/precision-cuts-founder-keith.jpg?v=02",
+      "photo": "/assets/images/precision-cuts-founder-keith-about.jpg?v=1",
       "photoStatus": "approved-founder-photo",
-      "photoAlt": "Precision Cuts founder portrait"
+      "photoAlt": "Precision Cuts founder portrait",
+      "rating": 5.0,
+      "reviewDisplay": "Hundreds of Booksy reviews"
     },
     {
       "id": "christopher-meadows",
