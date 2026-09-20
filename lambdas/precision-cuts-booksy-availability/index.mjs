@@ -178,6 +178,16 @@ const BARBERS = {
       "haircut-beard-trim": { "variantId": 21526440, "name": "Men’s haircut and beard trim" }
     }
   }
+,
+  "lamar-the-barber": {
+    "businessId": 1098810,
+    "stafferId": 1046876,
+    "services": {
+      "male-haircut": { "variantId": 15714477, "name": "Male Haircut" },
+      "beard-shaping": { "variantId": 15714478, "name": "Beard Shaping" },
+      "kids-cut": { "variantId": 15714487, "name": "Kids cut" }
+    }
+  }
 };
 const LEGACY_BARBER = "keith-lemon";
 

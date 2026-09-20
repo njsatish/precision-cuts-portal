@@ -848,9 +848,9 @@
         "state": "VA",
         "postalCode": "24019"
       },
-      "liveAvailability": false,
-      "bookingMode": "booksy-profile",
-      "photoUrl": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1098810/biz_photo/eb0637466704418697698c4c94e9d2-precision-cuts-biz-photo-e057ba896c1b4563ad078dfb6b1c26-booksy.jpeg?size=750x500",
+      "liveAvailability": true,
+      "bookingMode": "live",
+      "photoUrl": "/assets/images/barbers/lamar-the-barber-booksy.jpg?v=1",
       "rating": 4.9,
       "reviewLabel": "4.9 Booksy rating",
       "services": [
@@ -865,8 +865,10 @@
           "price": 40,
           "stafferId": 1046876,
           "category": "haircut",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/lamar-the-barber/male-haircut",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/male-haircut"
         },
         {
           "id": "beard-shaping",
@@ -879,8 +881,10 @@
           "price": 20,
           "stafferId": 1046876,
           "category": "beard",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/lamar-the-barber/beard-shaping",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/beard-shaping"
         },
         {
           "id": "kids-cut",
@@ -893,15 +897,24 @@
           "price": 25,
           "stafferId": 1046876,
           "category": "kids-haircut",
-          "liveAvailability": false,
-          "bookingMode": "booksy-profile"
+          "liveAvailability": true,
+          "bookingMode": "live",
+          "availabilityPath": "/availability/lamar-the-barber/kids-cut",
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/kids-cut"
         }
       ],
       "specialties": [
         "Male Haircuts",
         "Beard Shaping",
         "Kids Cuts"
-      ]
+      ],
+      "photo": "/assets/images/barbers/lamar-the-barber-booksy.jpg?v=1",
+      "profilePhoto": "/assets/images/barbers/lamar-the-barber-booksy.jpg?v=1",
+      "photoStatus": "verified-local-booksy-photo",
+      "availabilityApiUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
+      "availabilityBaseUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
+      "bookingStatus": "verified-live-availability"
     }
   ],
   "founderSpotlight": {
@@ -988,8 +1001,8 @@
       "professionalName": "Lamar the barber",
       "title": "Haircut, Beard & Kids Cut Specialist",
       "location": "6423 Williamson Rd, Roanoke, VA 24019",
-      "photo": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1098810/biz_photo/eb0637466704418697698c4c94e9d2-precision-cuts-biz-photo-e057ba896c1b4563ad078dfb6b1c26-booksy.jpeg?size=750x500",
-      "photoStatus": "verified-booksy-photo",
+      "photo": "/assets/images/barbers/lamar-the-barber-booksy.jpg?v=1",
+      "photoStatus": "verified-local-booksy-photo",
       "photoAlt": "Lamar the barber Booksy business profile image",
       "overview": "Lamar the barber provides male haircuts, beard shaping, and kids cuts at the Williamson Road shop, with direct booking through a verified Booksy profile.",
       "specialties": [
@@ -998,9 +1011,10 @@
         "Kids Cuts"
       ],
       "booksyUrl": "https://booksy.com/en-us/1098810_precision-cuts_barber-shop_134579_roanoke#ba_s=seo",
-      "bookingStatus": "verified-booksy-profile",
+      "bookingStatus": "verified-live-availability",
       "rating": 4.9,
-      "reviewDisplay": "4.9 Booksy rating"
+      "reviewDisplay": "4.9 Booksy rating",
+      "photoUrl": "/assets/images/barbers/lamar-the-barber-booksy.jpg?v=1"
     }
   ]
 };
