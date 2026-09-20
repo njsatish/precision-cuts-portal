@@ -652,7 +652,7 @@
     "eyebrow": "Founder spotlight",
     "headline": "Built on precision. Led by craft.",
     "location": "6423 Williamson Rd, Roanoke, VA 24019",
-    "photo": "/assets/images/precision-cuts-founder-keith.jpg",
+    "photo": "/assets/images/precision-cuts-founder-keith.jpg?v=02",
     "summary": "Keith Lemon founded Precision Cuts around a straightforward standard: every client deserves careful consultation, consistent technique, and a finish built around the individual. Keith leads the team while continuing to serve clients through classic cuts, beard detailing, youth services, and precision finishing.",
     "quote": "Precision is not an extra step. It is the standard behind every cut.",
     "bookingBarberId": "keith-lemon",
