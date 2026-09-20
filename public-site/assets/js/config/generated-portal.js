@@ -653,11 +653,78 @@
     "headline": "Built on precision. Led by craft.",
     "location": "6423 Williamson Rd, Roanoke, VA 24019",
     "photo": "/assets/images/precision-cuts-founder-keith.jpg?v=02",
-    "summary": "Keith Lemon founded Precision Cuts around a straightforward standard: every client deserves careful consultation, consistent technique, and a finish built around the individual. Keith leads the team while continuing to serve clients through classic cuts, beard detailing, youth services, and precision finishing.",
+    "summary": "Keith Lemon founded Precision Cuts around a straightforward standard: every client deserves careful consultation, consistent technique, and a finish built around the individual.",
     "quote": "Precision is not an extra step. It is the standard behind every cut.",
     "bookingBarberId": "keith-lemon",
     "liveAvailability": true
-  }
+  },
+  "teamProfiles": [
+    {
+      "id": "keith-lemon",
+      "name": "Keith Lemon",
+      "title": "Founder & Master Barber",
+      "location": "6423 Williamson Rd, Roanoke, VA 24019",
+      "overview": "Keith leads Precision Cuts through careful consultation, consistent technique, and precision finishing tailored to each client.",
+      "booksyHandle": "precision-cuts-keith-lemon",
+      "bookingStatus": "verified-live",
+      "bookingBarberId": "keith-lemon",
+      "photo": "/assets/images/precision-cuts-founder-keith.jpg?v=02",
+      "photoStatus": "approved-founder-photo",
+      "photoAlt": "Precision Cuts founder portrait"
+    },
+    {
+      "id": "christopher-meadows",
+      "name": "Christopher Meadows",
+      "title": "Haircut, Fade & Grooming Specialist",
+      "location": "6423 Williamson Rd, Roanoke, VA 24019",
+      "overview": "Christopher specializes in skin fades, detailed beard work, line-ups, hot towel services, and straight-razor grooming.",
+      "booksyHandle": "2windabarber",
+      "bookingStatus": "verified-live",
+      "bookingBarberId": "christopher-meadows",
+      "photo": "/assets/images/team-placeholders/christopher-placeholder.jpg",
+      "photoStatus": "ai-placeholder",
+      "photoAlt": "Temporary AI-generated team profile image"
+    },
+    {
+      "id": "ron-the-barber",
+      "name": "Ron The Barber",
+      "title": "Haircut, Beard & Edge-Up Specialist",
+      "location": "6423 Williamson Rd, Roanoke, VA 24019",
+      "overview": "Ron provides clean haircuts, detailed beard work, edge-ups, and head-shave services.",
+      "booksyHandle": "precisioncutz23",
+      "bookingStatus": "verified-live",
+      "bookingBarberId": "ron-the-barber",
+      "photo": "/assets/images/team-placeholders/ron-placeholder.jpg",
+      "photoStatus": "ai-placeholder",
+      "photoAlt": "Temporary AI-generated team profile image"
+    },
+    {
+      "id": "marcus-vance",
+      "name": "Marcus “VIP” Vance",
+      "title": "Hot Towel & Razor Sculptor",
+      "location": "6423 Williamson Rd, Roanoke, VA 24019",
+      "overview": "Marcus focuses on executive grooming, hot towel treatments, and detailed razor sculpting.",
+      "booksyHandle": "marcus-vip-precisioncuts",
+      "bookingStatus": "profile-preview",
+      "bookingBarberId": null,
+      "photo": "/assets/images/team-placeholders/marcus-placeholder.jpg",
+      "photoStatus": "ai-placeholder",
+      "photoAlt": "Temporary AI-generated team profile image"
+    },
+    {
+      "id": "jaylen-brooks",
+      "name": "Jaylen “Fresh Fades” Brooks",
+      "title": "Athletic Cuts & Hair Art",
+      "location": "6423 Williamson Rd, Roanoke, VA 24019",
+      "overview": "Jaylen focuses on modern athletic cuts, current styling, and custom hair-design work.",
+      "booksyHandle": "jaylen-fresh-fades",
+      "bookingStatus": "profile-preview",
+      "bookingBarberId": null,
+      "photo": "/assets/images/team-placeholders/jaylen-placeholder.jpg",
+      "photoStatus": "ai-placeholder",
+      "photoAlt": "Temporary AI-generated team profile image"
+    }
+  ]
 };
   const active = config.services.filter(service => service.active !== false).sort((a,b) => (a.sortOrder||0)-(b.sortOrder||0));
   const bySlug = Object.freeze(Object.fromEntries(active.map(service => [service.slug, Object.freeze(service)])));
