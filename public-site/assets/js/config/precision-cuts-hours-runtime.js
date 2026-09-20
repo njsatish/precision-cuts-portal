@@ -44,7 +44,7 @@
     document.querySelectorAll("main address, main p, main span, main a, footer address, footer p, footer span, footer a").forEach(element=>{
       if(element.children.length) return;
       const value=element.textContent || "";
-      if(/2501 Hollins|6423 Williamson|Roanoke, VA 24019/i.test(value)) element.textContent=addressText;
+      if(/6423 Williamson|Roanoke, VA 24019/i.test(value)) element.textContent=addressText;
     });
 
     document.querySelectorAll("a[href]").forEach(link=>{

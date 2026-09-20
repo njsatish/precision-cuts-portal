@@ -17,7 +17,7 @@
   team.className="pc-final-team";team.setAttribute("data-pc-about-barbers","");
   team.innerHTML=`<div class="pc-final-team-shell"><header><p>Meet the team</p><h2>About Our Barbers</h2><span>Temporary AI-generated images will be replaced with approved portraits.</span></header><div class="pc-final-team-grid">${profiles.map(p=>`<article><div class="photo"><img src="${esc(p.photo)}" alt="${esc(p.photoAlt)}"><span>AI placeholder</span></div><div class="copy"><h3>${esc(p.name)}</h3><p class="role">${esc(p.title)}</p><p>${esc(p.overview)}</p><small>${esc(p.location)}</small>${p.bookingStatus==="verified-live"?`<a href="/index.html?barber=${encodeURIComponent(p.bookingBarberId)}#pc-barbers-title">View services and availability</a>`:`<em>Profile preview. Live booking will be enabled after Booksy records are verified.</em>`}</div></article>`).join("")}</div></div>`;
   [...main.querySelectorAll("section")].forEach(s=>{if(s!==team&&s!==hero&&/About Our Barbers/i.test(s.textContent))s.remove();});
-  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);while(walker.nextNode())walker.currentNode.nodeValue=walker.currentNode.nodeValue.replace(/2501 Hollins Rd NE,?\s*/gi,"").replace(/4211 Plantation Rd NE,?\s*Roanoke,?\s*(VA)?\s*24012/gi,"6423 Williamson Rd, Roanoke, VA 24019").replace(/Plantation (Rd|Road)/gi,"Williamson Road");
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);while(walker.nextNode())walker.currentNode.nodeValue=walker.currentNode.nodeValue;
  }
  document.readyState==="loading"?document.addEventListener("DOMContentLoaded",start,{once:true}):start();
 })();

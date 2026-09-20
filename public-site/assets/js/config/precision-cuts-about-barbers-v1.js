@@ -54,7 +54,7 @@
       id: "jaylen-brooks",
       name: "Jaylen “Fresh Fades” Brooks",
       role: "Athletic Cuts & Hair Art",
-      location: "4211 Plantation Rd NE, Roanoke, VA 24012",
+      location: "6423 Williamson Rd, Roanoke, VA 24019",
       rating: null,
       reviews: null,
       featured: "Athletic cuts, current styles, and custom hair art",
