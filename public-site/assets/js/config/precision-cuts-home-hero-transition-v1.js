@@ -58,7 +58,7 @@
   function start(){
     const dots=$("pch-transition-dots");
     if(!dots)return;
-    dots.innerHTML=slides.map((_,i)=>`<button type="button" data-home-slide="${i}" aria-label="Show photo ${i+1}" aria-current="${i===0}"></button>`).join("");
+    if(!dots.children.length)dots.innerHTML=slides.map((_,i)=>`<button type="button" data-home-slide="${i}" aria-label="Show photo ${i+1}" aria-current="${i===0}"></button>`).join("");
     removeLegacyHeroBadges();
     show(0,true);
     if(!matchMedia("(prefers-reduced-motion: reduce)").matches){timer=setInterval(()=>show(index+1),5000);}

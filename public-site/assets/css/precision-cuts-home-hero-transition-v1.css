@@ -24,3 +24,15 @@
     margin-inline:0!important;
   }
 }
+
+/* Source-level homepage hero repair v1.3. */
+#pch-transition {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+#pch-transition-image {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1;
+}
