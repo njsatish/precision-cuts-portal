@@ -51,3 +51,60 @@
   visibility: visible !important;
   opacity: 1;
 }
+
+/* Carousel framing repair v1.6.
+   The previous 120% width placed both arrow buttons outside the visual parent's
+   clipping boundary. Keep the carousel inside its parent and fit full photos. */
+.pp-concept-home-visual:has(#pch-transition) {
+  overflow: visible !important;
+}
+#pch-transition,
+.pch-transition {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  overflow: hidden !important;
+  background: #111 !important;
+}
+#pch-transition-image,
+.pch-transition-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #111 !important;
+}
+#pch-transition .pch-transition-arrow {
+  z-index: 30 !important;
+  display: grid !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 52px !important;
+  height: 52px !important;
+  border: 2px solid rgba(255,255,255,.95) !important;
+  background: rgba(17,17,17,.82) !important;
+  color: #fff !important;
+  box-shadow: 0 5px 18px rgba(0,0,0,.4) !important;
+  pointer-events: auto !important;
+}
+#pch-transition .pch-transition-prev {
+  left: 16px !important;
+  right: auto !important;
+}
+#pch-transition .pch-transition-next {
+  right: 16px !important;
+  left: auto !important;
+}
+#pch-transition .pch-transition-dots {
+  z-index: 31 !important;
+  right: 18px !important;
+}
+@media (max-width: 700px) {
+  #pch-transition .pch-transition-arrow {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  #pch-transition .pch-transition-prev { left: 10px !important; }
+  #pch-transition .pch-transition-next { right: 10px !important; }
+}
