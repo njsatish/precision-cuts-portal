@@ -1,0 +1,94 @@
+/* Balanced Gallery Lightbox v3
+   Full image remains visible. Portrait images use a centered 70% visual area;
+   landscape images may use up to 88%. Controls and caption remain in frame. */
+
+.pcglb-lightbox {
+  position: relative !important;
+  isolation: isolate !important;
+  display: grid !important;
+  grid-template-rows: minmax(0, 1fr) auto !important;
+  width: min(1320px, calc(100vw - 40px)) !important;
+  height: min(860px, calc(100dvh - 40px)) !important;
+  max-width: 1320px !important;
+  max-height: 860px !important;
+  padding: 64px 86px 38px !important;
+  overflow: hidden !important;
+  background: #0d0d10 !important;
+}
+
+.pcglb-stage {
+  position: absolute !important;
+  inset: 58px 74px 82px !important;
+  z-index: 1 !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.pcglb-backdrop {
+  position: absolute !important;
+  z-index: 0 !important;
+  inset: -28px !important;
+  width: calc(100% + 56px) !important;
+  height: calc(100% + 56px) !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: blur(26px) brightness(.28) saturate(.75) !important;
+  transform: scale(1.08) !important;
+  opacity: .72 !important;
+}
+
+.pcglb-lightbox .pcglb-image {
+  position: relative !important;
+  z-index: 3 !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 70% !important;
+  max-height: 82% !important;
+  margin: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: transparent !important;
+  box-shadow: 0 16px 45px rgba(0,0,0,.48) !important;
+  transform: none !important;
+}
+
+.pcglb-lightbox.pcglb-landscape .pcglb-image {
+  max-width: 88% !important;
+  max-height: 82% !important;
+}
+
+.pcglb-lightbox .pcglb-caption {
+  position: relative !important;
+  z-index: 12 !important;
+  grid-row: 2 !important;
+  min-height: 42px !important;
+  display: grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+  color: #ffe36b !important;
+  -webkit-text-fill-color: #ffe36b !important;
+  text-align: center !important;
+  font-weight: 800 !important;
+}
+
+.pcglb-lightbox :is(button,[role="button"]){
+  z-index: 30 !important;
+}
+
+@media(max-width:760px){
+  .pcglb-lightbox{
+    width:calc(100vw - 16px)!important;
+    height:calc(100dvh - 16px)!important;
+    padding:58px 18px 34px!important;
+  }
+  .pcglb-stage{inset:54px 14px 74px!important}
+  .pcglb-lightbox .pcglb-image,
+  .pcglb-lightbox.pcglb-landscape .pcglb-image{
+    max-width:94%!important;
+    max-height:86%!important;
+  }
+}
