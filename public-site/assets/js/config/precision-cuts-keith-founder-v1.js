@@ -8,6 +8,45 @@
   const dateLabel=value=>new Date(`${value}T12:00:00`).toLocaleDateString([], {weekday:"short",month:"short",day:"numeric"});
   let config,keith;
 
+  const founderSlides=[
+    {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_01.jpg",href:"/index.html#booking-workspace?barber=keith-lemon",title:"View Keith’s availability",caption:"Open the live booking workspace"},
+    {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_02.jpg",href:"/about.html",title:"Read the Precision Cuts story",caption:"Visit the About page"},
+    {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_03.jpg",href:"/gallery.html",title:"Explore the gallery",caption:"View more Precision Cuts work"},
+    {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_04.jpg",href:"/services.html",title:"Browse Precision Cuts services",caption:"Review the complete service catalog"},
+    {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_05.jpg",href:"/contact.html",title:"Visit Precision Cuts",caption:"View location, hours, and contact details"}
+  ];
+  let founderSlideIndex=0;
+  let founderSlideTimer=null;
+
+  function showFounderSlide(index){
+    const image=$("pcf-transition-image");
+    const link=$("pcf-transition-link");
+    if(!image||!link)return;
+    founderSlideIndex=(index+founderSlides.length)%founderSlides.length;
+    const slide=founderSlides[founderSlideIndex];
+    image.classList.add("is-changing");
+    setTimeout(()=>{
+      image.src=slide.src;
+      image.alt=`Precision Cuts founder gallery photo ${founderSlideIndex+1} of ${founderSlides.length}`;
+      link.href=slide.href;
+      $("pcf-transition-title").textContent=slide.title;
+      $("pcf-transition-caption").textContent=slide.caption;
+      [...$("pcf-transition-dots").children].forEach((dot,i)=>dot.setAttribute("aria-current",i===founderSlideIndex?"true":"false"));
+      image.classList.remove("is-changing");
+    },120);
+  }
+
+  function startFounderTransition(){
+    const dots=$("pcf-transition-dots");
+    if(!dots)return;
+    dots.innerHTML=founderSlides.map((_,i)=>`<button type="button" data-slide="${i}" aria-label="Show founder photo ${i+1}" aria-current="${i===0}"></button>`).join("");
+    showFounderSlide(0);
+    if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+      founderSlideTimer=setInterval(()=>showFounderSlide(founderSlideIndex+1),5000);
+    }
+  }
+
+
   function imageOf(barber){return barber.photoUrl||barber.photo||barber.profilePhoto||"/assets/images/precision-cuts-logo.png";}
   function business(){return config.business||config.businessInfo||{};}
   function bookingHref(service){return `/index.html#booking-workspace?barber=keith-lemon${service?`&service=${encodeURIComponent(service.slug)}`:""}`;}
@@ -49,6 +88,18 @@
   }
 
   document.addEventListener("click",event=>{
+    const transition=event.target.closest("[data-transition]");
+    if(transition){
+      event.preventDefault();
+      showFounderSlide(founderSlideIndex+(transition.dataset.transition==="next"?1:-1));
+      return;
+    }
+    const dot=event.target.closest("[data-slide]");
+    if(dot){
+      event.preventDefault();
+      showFounderSlide(Number(dot.dataset.slide));
+      return;
+    }
     const button=event.target.closest("[data-preview]");
     if(!button)return;
     const service=keith.services.find(item=>item.slug===button.dataset.preview);
@@ -59,6 +110,6 @@
     config=data;
     keith=config.barbers.find(item=>item.id==="keith-lemon");
     if(!keith||keith.services.length!==5)throw new Error("Keith registry is unavailable.");
-    renderProfile();renderServices();renderTeam();preview(keith.services[0]);
+    renderProfile();renderServices();renderTeam();startFounderTransition();preview(keith.services[0]);
   }).catch(error=>{console.error(error);$("pcf-service-grid").innerHTML="<p>Keith’s profile data could not be loaded.</p>";});
 })();
