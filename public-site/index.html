@@ -596,7 +596,7 @@
   <link rel="stylesheet" href="/assets/css/precision-cuts-wide-logo-header-v3.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/precision-cuts-three-column-booking-v2.css?v=3.2">
   <link rel="stylesheet" href="/assets/css/precision-cuts-home-five-barbers-v1.css?v=1">
-  <link rel="stylesheet" href="/assets/css/precision-cuts-home-hero-transition-v1.css?v=1.3">
+  <link rel="stylesheet" href="/assets/css/precision-cuts-home-hero-transition-v1.css?v=1.4">
 </head>
 <body class="pp-homepage">
   <a class="pp-skip-link" href="#main-content">Skip to main content</a>
@@ -785,136 +785,6 @@
 <!-- PROUDPOPS-ACTUAL-HOME-SERVICE-ACCENTS-V1-END -->
   <script src="/assets/js/config/theme-manager.js?v=20260916-3"></script>
 
-<script id="headlines-ai-hero-cleanup-v2">
-(() => {
-  "use strict";
-  function normalizeText(value) {
-    return String(value || "").replace(/\s+/g, " ").trim().toUpperCase();
-  }
-  function start() {
-    const image = document.querySelector("[data-headlines-ai-hero]");
-    if (!image) return;
-
-    const frame = image.closest("picture, figure, [class*='media'], [class*='image']") || image.parentElement;
-    if (frame) frame.setAttribute("data-headlines-ai-hero-frame", "");
-
-    const markers = ["FEATURED STYLE", "HAIRCUT FROM", "REVIEWS ON BOOKSY", "YEARS OF EXPERIENCE"];
-    const scope = image.closest("section") || document;
-    [...scope.querySelectorAll("div, aside, article, span, p")].forEach(element => {
-      if (element === frame || element.contains(image)) return;
-      const text = normalizeText(element.textContent);
-      if (!markers.some(marker => text.includes(marker))) return;
-
-      let target = element.closest("[class*='badge'], [class*='metric'], [class*='stat'], [class*='featured'], [class*='price']");
-      if (!target) {
-        target = element;
-        while (target.parentElement && target.parentElement !== scope) {
-          const parentText = normalizeText(target.parentElement.textContent);
-          if (parentText.length > 90) break;
-          target = target.parentElement;
-        }
-      }
-      if (target && !target.contains(image)) {
-        target.setAttribute("data-headlines-legacy-hero-overlay", "");
-      }
-    });
-  }
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", start, { once: true })
-    : start();
-})();
-</script>
-
-
-<script id="headlines-home-hero-reviews-width-sync-v2">
-(() => {
-  "use strict";
-  function syncHeroWidth() {
-    const hero = document.querySelector("[data-headlines-home-hero-inner]");
-    const reviews = document.querySelector("#home-customer-reviews > .pp-container, [data-home-headlines-reviews] > .pp-container, #customer-reviews > .pp-container");
-    if (!hero || !reviews) return;
-    const width = Math.round(reviews.getBoundingClientRect().width);
-    if (width > 0) document.documentElement.style.setProperty("--reviews-content-width", `${width}px`);
-  }
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", syncHeroWidth, { once: true })
-    : syncHeroWidth();
-  window.addEventListener("resize", syncHeroWidth, { passive: true });
-})();
-</script>
-
-
-<script id="headlines-home-hero-auto-balance-script-v2">
-(() => {
-  "use strict";
-
-  let resizeTimer;
-
-  function findElements() {
-    const hero = document.querySelector("[data-headlines-home-hero-inner]");
-    const heading = document.querySelector("[data-headlines-hero-heading]");
-    const imageFrame = document.querySelector("[data-headlines-ai-hero-frame]")
-      || document.querySelector("img[src*='precision-cuts-logo.png']")?.parentElement;
-    const left = hero?.firstElementChild;
-    return { hero, heading, imageFrame, left };
-  }
-
-  function balance() {
-    const { hero, heading, imageFrame, left } = findElements();
-    if (!hero || !heading || !imageFrame || !left) return;
-
-    /* Mobile is intentionally content-driven and stacked. */
-    if (window.matchMedia("(max-width: 980px)").matches) {
-      document.documentElement.style.removeProperty("--headlines-hero-heading-size");
-      return;
-    }
-
-    const imageHeight = imageFrame.getBoundingClientRect().height;
-    if (imageHeight < 100) return;
-
-    /* Begin near the current visual scale, then reduce only as much as needed. */
-    let size = Math.min(116, Math.max(76, imageHeight * 0.19));
-    document.documentElement.style.setProperty("--headlines-hero-heading-size", `${size}px`);
-
-    for (let attempt = 0; attempt < 24; attempt += 1) {
-      const leftHeight = left.getBoundingClientRect().height;
-      if (leftHeight <= imageHeight + 12 || size <= 72) break;
-      size -= 2;
-      document.documentElement.style.setProperty("--headlines-hero-heading-size", `${size}px`);
-    }
-
-    /* If the text is much shorter, increase carefully without exceeding the image. */
-    for (let attempt = 0; attempt < 8; attempt += 1) {
-      const leftHeight = left.getBoundingClientRect().height;
-      if (imageHeight - leftHeight < 44 || size >= 116) break;
-      size += 2;
-      document.documentElement.style.setProperty("--headlines-hero-heading-size", `${size}px`);
-      if (left.getBoundingClientRect().height > imageHeight + 12) {
-        size -= 2;
-        document.documentElement.style.setProperty("--headlines-hero-heading-size", `${size}px`);
-        break;
-      }
-    }
-  }
-
-  function scheduleBalance() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(balance, 80);
-  }
-
-  function start() {
-    const image = document.querySelector("img[src*='precision-cuts-logo.png']");
-    if (image && !image.complete) image.addEventListener("load", balance, { once: true });
-    balance();
-  }
-
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", start, { once: true })
-    : start();
-  window.addEventListener("resize", scheduleBalance, { passive: true });
-})();
-</script>
-
   <script src="/assets/js/config/headlines-services.js?v=20260916-3"></script>
 
 
@@ -963,6 +833,7 @@
   <script src="/assets/js/config/precision-cuts-compact-hours-v2.js?v=2"></script>
   <script src="/assets/js/config/precision-cuts-home-five-barbers-v1.js?v=1.2"></script>
   <script src="/assets/js/config/precision-cuts-barber-preselect-v1.js?v=1"></script>
-  <script src="/assets/js/config/precision-cuts-home-hero-transition-v1.js?v=1.3"></script>
+  <script src="/assets/js/config/precision-cuts-home-hero-transition-v1.js?v=1.4"></script>
+  <script src="/assets/js/config/precision-cuts-home-hero-visibility-guard-v1.js?v=1"></script>
 </body>
 </html>

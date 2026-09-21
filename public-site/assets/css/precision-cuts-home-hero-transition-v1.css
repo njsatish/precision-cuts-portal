@@ -36,3 +36,18 @@
   visibility: visible !important;
   opacity: 1;
 }
+
+/* Hero visibility repair v1.4. Scoped only to the existing homepage carousel. */
+#pch-transition,
+#pch-transition[hidden],
+#pch-transition[aria-hidden="true"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+#pch-transition-image,
+#pch-transition-image[hidden] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1;
+}
