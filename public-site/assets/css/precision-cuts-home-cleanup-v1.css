@@ -1,0 +1,36 @@
+/* Homepage cleanup v1: barber heading contrast only. */
+.pch-barber-heading-panel {
+  background: #f6ead2 !important;
+  background-image: none !important;
+  border: 1px solid #d4bd98 !important;
+  border-radius: 14px !important;
+  padding: clamp(1rem, 2.2vw, 1.8rem) !important;
+  box-shadow: none !important;
+}
+
+.pch-barber-heading-title,
+.pch-barber-heading-title *,
+.pch-barber-heading-title::before,
+.pch-barber-heading-title::after {
+  color: #241811 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: #241811 !important;
+}
+
+.pch-barber-heading-copy,
+.pch-barber-heading-panel p {
+  color: #4d3b2d !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.pch-barber-heading-panel .eyebrow,
+.pch-barber-heading-panel [class*="eyebrow"],
+.pch-barber-heading-panel [class*="kicker"] {
+  color: #9d6f1f !important;
+  background: transparent !important;
+  letter-spacing: 0.14em;
+}
