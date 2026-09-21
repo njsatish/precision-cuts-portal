@@ -1,0 +1,10 @@
+/* Text-only contrast repair. This does not alter section backgrounds or cards. */
+.pch-barber-title-v3,
+.pch-barber-title-v3 * {
+  color: #2b1b12 !important;
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-text-fill-color: #2b1b12 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
