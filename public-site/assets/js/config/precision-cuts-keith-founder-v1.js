@@ -18,14 +18,13 @@
   let founderSlideIndex=0;
   let founderSlideTimer=null;
 
-  function showFounderSlide(index){
+  function showFounderSlide(index, immediate=false){
     const image=$("pcf-transition-image");
     const link=$("pcf-transition-link");
     if(!image||!link)return;
     founderSlideIndex=(index+founderSlides.length)%founderSlides.length;
     const slide=founderSlides[founderSlideIndex];
-    image.classList.add("is-changing");
-    setTimeout(()=>{
+    const applySlide=()=>{
       image.src=slide.src;
       image.alt=`Precision Cuts founder gallery photo ${founderSlideIndex+1} of ${founderSlides.length}`;
       link.href=slide.href;
@@ -33,14 +32,17 @@
       $("pcf-transition-caption").textContent=slide.caption;
       [...$("pcf-transition-dots").children].forEach((dot,i)=>dot.setAttribute("aria-current",i===founderSlideIndex?"true":"false"));
       image.classList.remove("is-changing");
-    },120);
+    };
+    if(immediate){applySlide();return;}
+    image.classList.add("is-changing");
+    setTimeout(applySlide,120);
   }
 
   function startFounderTransition(){
     const dots=$("pcf-transition-dots");
     if(!dots)return;
     dots.innerHTML=founderSlides.map((_,i)=>`<button type="button" data-slide="${i}" aria-label="Show founder photo ${i+1}" aria-current="${i===0}"></button>`).join("");
-    showFounderSlide(0);
+    showFounderSlide(0,true);
     if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
       founderSlideTimer=setInterval(()=>showFounderSlide(founderSlideIndex+1),5000);
     }
@@ -52,7 +54,8 @@
   function bookingHref(service){return `/index.html#booking-workspace?barber=keith-lemon${service?`&service=${encodeURIComponent(service.slug)}`:""}`;}
 
   function renderProfile(){
-    $("pcf-photo").src=imageOf(keith);
+    const legacyPhoto=$("pcf-photo");
+    if(legacyPhoto) legacyPhoto.src=imageOf(keith);
     $("pcf-service-count").textContent=`${keith.services.length} verified`;
     const biz=business();
     const phone=biz.phone||config.phone||"";
