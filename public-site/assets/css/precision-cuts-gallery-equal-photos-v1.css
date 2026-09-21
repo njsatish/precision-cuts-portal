@@ -1,0 +1,102 @@
+/* Equal gallery dimensions v1.
+   Cards use a consistent square canvas. Full photographs remain uncropped in
+   the lightbox because the popup uses object-fit: contain. */
+
+/* Support the current gallery renderer and legacy gallery class names. */
+.pp-headlines-work-grid,
+.pc-gallery-grid-v1,
+[class*="gallery-grid"] {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-auto-rows: 1fr !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+}
+
+.pp-headlines-work-card,
+.pc-gallery-item-v1,
+[class*="gallery-card"],
+[class*="gallery-item"] {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 10px !important;
+}
+
+.pp-headlines-work-card img,
+.pc-gallery-item-v1 img,
+[class*="gallery-card"] img,
+[class*="gallery-item"] img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Keep each lightbox at one consistent canvas size. */
+.pp-headlines-lightbox,
+.pc-gallery-lightbox,
+dialog[class*="lightbox"] {
+  width: min(1180px, calc(100vw - 48px)) !important;
+  height: min(820px, calc(100dvh - 48px)) !important;
+  max-width: 1180px !important;
+  max-height: 820px !important;
+  padding: 68px 74px 56px !important;
+  overflow: hidden !important;
+}
+
+.pp-headlines-lightbox img,
+.pc-gallery-lightbox img,
+dialog[class*="lightbox"] img {
+  display: block !important;
+  width: 100% !important;
+  height: calc(100% - 54px) !important;
+  max-width: 100% !important;
+  max-height: calc(100% - 54px) !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #0e0e10 !important;
+}
+
+.pp-headlines-lightbox figcaption,
+.pc-gallery-lightbox figcaption,
+dialog[class*="lightbox"] figcaption {
+  min-height: 42px !important;
+  display: grid !important;
+  place-items: center !important;
+  margin: 8px 0 0 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 900px) {
+  .pp-headlines-work-grid,
+  .pc-gallery-grid-v1,
+  [class*="gallery-grid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .pp-headlines-work-grid,
+  .pc-gallery-grid-v1,
+  [class*="gallery-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .pp-headlines-lightbox,
+  .pc-gallery-lightbox,
+  dialog[class*="lightbox"] {
+    width: calc(100vw - 20px) !important;
+    height: calc(100dvh - 20px) !important;
+    padding: 62px 18px 48px !important;
+  }
+}
