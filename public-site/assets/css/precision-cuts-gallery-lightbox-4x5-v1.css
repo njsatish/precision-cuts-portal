@@ -1,0 +1,68 @@
+/* Centered 4:5 Gallery Lightbox v1 */
+.pc45-lightbox {
+  position: relative !important;
+  display: grid !important;
+  place-items: center !important;
+  width: min(1440px, calc(100vw - 40px)) !important;
+  height: min(920px, calc(100dvh - 40px)) !important;
+  max-width: 1440px !important;
+  max-height: 920px !important;
+  padding: 28px 92px 34px !important;
+  overflow: hidden !important;
+  background: rgba(7, 8, 11, .98) !important;
+}
+
+.pc45-lightbox .pc45-image {
+  position: relative !important;
+  display: block !important;
+  width: auto !important;
+  height: min(82vh, 820px) !important;
+  max-width: min(72vw, 760px) !important;
+  max-height: calc(100dvh - 100px) !important;
+  aspect-ratio: 4 / 5 !important;
+  margin: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #0b0c0f !important;
+  border-radius: 16px !important;
+  box-shadow: 0 18px 54px rgba(0,0,0,.5) !important;
+  transform: none !important;
+}
+
+.pc45-lightbox .pc45-caption {
+  position: absolute !important;
+  z-index: 12 !important;
+  right: 92px !important;
+  bottom: 12px !important;
+  left: 92px !important;
+  min-height: 30px !important;
+  display: grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+  color: #ffe36b !important;
+  -webkit-text-fill-color: #ffe36b !important;
+  text-align: center !important;
+  font-weight: 800 !important;
+}
+
+.pc45-lightbox :is(button,[role="button"]){
+  z-index: 30 !important;
+}
+
+@media(max-width:760px){
+  .pc45-lightbox{
+    width:calc(100vw - 16px)!important;
+    height:calc(100dvh - 16px)!important;
+    padding:58px 16px 46px!important;
+  }
+  .pc45-lightbox .pc45-image{
+    width:min(92vw, 620px)!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:calc(100dvh - 120px)!important;
+  }
+  .pc45-lightbox .pc45-caption{
+    right:16px!important;
+    left:16px!important;
+  }
+}
