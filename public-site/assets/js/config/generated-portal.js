@@ -319,7 +319,11 @@
           "price": 40,
           "durationMinutes": 55,
           "serviceId": 602728,
-          "variantId": 5519794
+          "variantId": 5519794,
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "haircut-beard",
+          "canonicalServiceName": "Haircut and Beard"
         },
         {
           "slug": "kid-haircut-6-to-15",
@@ -328,7 +332,11 @@
           "price": 30,
           "durationMinutes": 45,
           "serviceId": 602733,
-          "variantId": 2060907
+          "variantId": 2060907,
+          "canonicalCategory": "kids-teens",
+          "canonicalCategoryName": "Kids & Teens",
+          "canonicalService": "kids-haircut",
+          "canonicalServiceName": "Kids Haircut"
         },
         {
           "slug": "haircut-plus-beard",
@@ -337,7 +345,11 @@
           "price": 45,
           "durationMinutes": 60,
           "serviceId": 3365178,
-          "variantId": 6589869
+          "variantId": 6589869,
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "haircut-beard",
+          "canonicalServiceName": "Haircut and Beard"
         },
         {
           "slug": "teenagers-15-to-18",
@@ -346,7 +358,11 @@
           "price": 35,
           "durationMinutes": 35,
           "serviceId": 6836423,
-          "variantId": 15473908
+          "variantId": 15473908,
+          "canonicalCategory": "kids-teens",
+          "canonicalCategoryName": "Kids & Teens",
+          "canonicalService": "teen-haircut",
+          "canonicalServiceName": "Teen Haircut"
         },
         {
           "slug": "eyebrows-clippers-or-razor-cut",
@@ -355,7 +371,11 @@
           "price": 20,
           "durationMinutes": 30,
           "serviceId": 1981416,
-          "variantId": 3665636
+          "variantId": 3665636,
+          "canonicalCategory": "lineups-detailing",
+          "canonicalCategoryName": "Lineups & Detailing",
+          "canonicalService": "eyebrow-shaping",
+          "canonicalServiceName": "Eyebrow Shaping"
         }
       ],
       "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
@@ -404,7 +424,11 @@
           "serviceId": 10705836,
           "variantId": 19563486,
           "price": 40,
-          "durationMinutes": 45
+          "durationMinutes": 45,
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "mens-haircut",
+          "canonicalServiceName": "Men’s Haircut"
         },
         {
           "slug": "christopher-mens-haircut",
@@ -413,7 +437,11 @@
           "serviceId": 10705843,
           "variantId": 19563493,
           "price": 40,
-          "durationMinutes": 30
+          "durationMinutes": 30,
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "mens-haircut",
+          "canonicalServiceName": "Men’s Haircut"
         },
         {
           "slug": "christopher-haircut-beard",
@@ -422,7 +450,11 @@
           "serviceId": 10705838,
           "variantId": 19563488,
           "price": 40,
-          "durationMinutes": 45
+          "durationMinutes": 45,
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "haircut-beard",
+          "canonicalServiceName": "Haircut and Beard"
         },
         {
           "slug": "christopher-kids-haircut",
@@ -431,7 +463,11 @@
           "serviceId": 10705839,
           "variantId": 19563489,
           "price": 30,
-          "durationMinutes": 30
+          "durationMinutes": 30,
+          "canonicalCategory": "kids-teens",
+          "canonicalCategoryName": "Kids & Teens",
+          "canonicalService": "kids-haircut",
+          "canonicalServiceName": "Kids Haircut"
         },
         {
           "slug": "christopher-skin-fade",
@@ -440,7 +476,11 @@
           "serviceId": 10705846,
           "variantId": 19563496,
           "price": 35,
-          "durationMinutes": 30
+          "durationMinutes": 30,
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "skin-fade",
+          "canonicalServiceName": "Skin Fade"
         },
         {
           "slug": "christopher-buzz-cut",
@@ -449,7 +489,11 @@
           "serviceId": 10705848,
           "variantId": 19563498,
           "price": 30,
-          "durationMinutes": 30
+          "durationMinutes": 30,
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "buzz-cut",
+          "canonicalServiceName": "Buzz Cut"
         },
         {
           "slug": "christopher-beard-trim",
@@ -458,7 +502,11 @@
           "serviceId": 10705847,
           "variantId": 19563497,
           "price": 20,
-          "durationMinutes": 15
+          "durationMinutes": 15,
+          "canonicalCategory": "beard-services",
+          "canonicalCategoryName": "Beard Services",
+          "canonicalService": "beard-trim-shaping",
+          "canonicalServiceName": "Beard Trim and Shaping"
         },
         {
           "slug": "christopher-beard-shaping",
@@ -467,7 +515,11 @@
           "serviceId": 10705840,
           "variantId": 19563490,
           "price": 20,
-          "durationMinutes": 15
+          "durationMinutes": 15,
+          "canonicalCategory": "beard-services",
+          "canonicalCategoryName": "Beard Services",
+          "canonicalService": "beard-trim-shaping",
+          "canonicalServiceName": "Beard Trim and Shaping"
         },
         {
           "slug": "christopher-line-up",
@@ -476,7 +528,11 @@
           "serviceId": 10705841,
           "variantId": 19563491,
           "price": 30,
-          "durationMinutes": 20
+          "durationMinutes": 20,
+          "canonicalCategory": "lineups-detailing",
+          "canonicalCategoryName": "Lineups & Detailing",
+          "canonicalService": "line-up",
+          "canonicalServiceName": "Line Up and Shape Up"
         },
         {
           "slug": "christopher-edge-up",
@@ -485,7 +541,11 @@
           "serviceId": 10705845,
           "variantId": 19563495,
           "price": 30,
-          "durationMinutes": 15
+          "durationMinutes": 15,
+          "canonicalCategory": "lineups-detailing",
+          "canonicalCategoryName": "Lineups & Detailing",
+          "canonicalService": "line-up",
+          "canonicalServiceName": "Line Up and Shape Up"
         },
         {
           "slug": "christopher-head-shave",
@@ -494,7 +554,11 @@
           "serviceId": 10705842,
           "variantId": 19563492,
           "price": 30,
-          "durationMinutes": 30
+          "durationMinutes": 30,
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "head-shave",
+          "canonicalServiceName": "Head Shave"
         },
         {
           "slug": "christopher-head-shave-beard-trim",
@@ -503,7 +567,11 @@
           "serviceId": 10705850,
           "variantId": 19563500,
           "price": 40,
-          "durationMinutes": 45
+          "durationMinutes": 45,
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "head-shave-beard-trim",
+          "canonicalServiceName": "Head Shave and Beard Trim"
         },
         {
           "slug": "christopher-hot-towel-shave",
@@ -512,7 +580,11 @@
           "serviceId": 10705852,
           "variantId": 19563502,
           "price": 40,
-          "durationMinutes": 30
+          "durationMinutes": 30,
+          "canonicalCategory": "shaves",
+          "canonicalCategoryName": "Traditional Shaves",
+          "canonicalService": "hot-towel-shave",
+          "canonicalServiceName": "Hot Towel Shave"
         },
         {
           "slug": "christopher-straight-razor-shave",
@@ -521,7 +593,11 @@
           "serviceId": 10705853,
           "variantId": 19563503,
           "price": 35,
-          "durationMinutes": 30
+          "durationMinutes": 30,
+          "canonicalCategory": "shaves",
+          "canonicalCategoryName": "Traditional Shaves",
+          "canonicalService": "straight-razor-shave",
+          "canonicalServiceName": "Straight Razor Shave"
         },
         {
           "slug": "christopher-eyebrow-shaping",
@@ -530,7 +606,11 @@
           "serviceId": 10705844,
           "variantId": 19563494,
           "price": 10,
-          "durationMinutes": 10
+          "durationMinutes": 10,
+          "canonicalCategory": "lineups-detailing",
+          "canonicalCategoryName": "Lineups & Detailing",
+          "canonicalService": "eyebrow-shaping",
+          "canonicalServiceName": "Eyebrow Shaping"
         },
         {
           "slug": "christopher-hair-wash",
@@ -539,7 +619,11 @@
           "serviceId": 10705856,
           "variantId": 19563506,
           "price": 10,
-          "durationMinutes": 10
+          "durationMinutes": 10,
+          "canonicalCategory": "add-ons",
+          "canonicalCategoryName": "Add-ons",
+          "canonicalService": "hair-wash-shampoo",
+          "canonicalServiceName": "Hair Wash and Shampoo"
         },
         {
           "slug": "christopher-facial",
@@ -548,7 +632,11 @@
           "serviceId": 10705859,
           "variantId": 19563509,
           "price": 30,
-          "durationMinutes": 30
+          "durationMinutes": 30,
+          "canonicalCategory": "skin-facial",
+          "canonicalCategoryName": "Skin & Facial Care",
+          "canonicalService": "facial",
+          "canonicalServiceName": "Facial"
         },
         {
           "slug": "christopher-full-service",
@@ -557,7 +645,11 @@
           "serviceId": 10705851,
           "variantId": 19563501,
           "price": 60,
-          "durationMinutes": 60
+          "durationMinutes": 60,
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "haircut-beard",
+          "canonicalServiceName": "Haircut and Beard"
         }
       ],
       "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
@@ -597,7 +689,11 @@
           "serviceId": 11308609,
           "variantId": 20194286,
           "price": 40,
-          "durationMinutes": 45
+          "durationMinutes": 45,
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "mens-haircut",
+          "canonicalServiceName": "Men’s Haircut"
         },
         {
           "slug": "ron-haircut-beard",
@@ -606,7 +702,11 @@
           "serviceId": 11595370,
           "variantId": 20506298,
           "price": 45,
-          "durationMinutes": 45
+          "durationMinutes": 45,
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "haircut-beard",
+          "canonicalServiceName": "Haircut and Beard"
         },
         {
           "slug": "ron-kids-haircut-7-up",
@@ -615,7 +715,11 @@
           "serviceId": 11308612,
           "variantId": 20194287,
           "price": 30,
-          "durationMinutes": 45
+          "durationMinutes": 45,
+          "canonicalCategory": "kids-teens",
+          "canonicalCategoryName": "Kids & Teens",
+          "canonicalService": "kids-haircut",
+          "canonicalServiceName": "Kids Haircut"
         },
         {
           "slug": "ron-head-shave",
@@ -624,7 +728,11 @@
           "serviceId": 12128174,
           "variantId": 21102277,
           "price": 40,
-          "durationMinutes": 45
+          "durationMinutes": 45,
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "head-shave",
+          "canonicalServiceName": "Head Shave"
         },
         {
           "slug": "ron-edge-up",
@@ -633,7 +741,11 @@
           "serviceId": 11308613,
           "variantId": 20194244,
           "price": 20,
-          "durationMinutes": 25
+          "durationMinutes": 25,
+          "canonicalCategory": "lineups-detailing",
+          "canonicalCategoryName": "Lineups & Detailing",
+          "canonicalService": "line-up",
+          "canonicalServiceName": "Line Up and Shape Up"
         },
         {
           "slug": "ron-beard-only",
@@ -642,7 +754,11 @@
           "serviceId": 11308610,
           "variantId": 20194250,
           "price": 20,
-          "durationMinutes": 25
+          "durationMinutes": 25,
+          "canonicalCategory": "beard-services",
+          "canonicalCategoryName": "Beard Services",
+          "canonicalService": "beard-trim-shaping",
+          "canonicalServiceName": "Beard Trim and Shaping"
         }
       ],
       "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
@@ -683,7 +799,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/levar-neal/mens-hair-cut",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/mens-hair-cut"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/mens-hair-cut",
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "mens-haircut",
+          "canonicalServiceName": "Men’s Haircut"
         },
         {
           "id": "kids-haircut-6-12",
@@ -699,7 +819,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/levar-neal/kids-haircut-6-12",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/kids-haircut-6-12"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/kids-haircut-6-12",
+          "canonicalCategory": "kids-teens",
+          "canonicalCategoryName": "Kids & Teens",
+          "canonicalService": "kids-haircut",
+          "canonicalServiceName": "Kids Haircut"
         },
         {
           "id": "head-shave",
@@ -715,7 +839,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/levar-neal/head-shave",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/head-shave"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/head-shave",
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "head-shave",
+          "canonicalServiceName": "Head Shave"
         },
         {
           "id": "beard-trim",
@@ -731,7 +859,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/levar-neal/beard-trim",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/beard-trim"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/beard-trim",
+          "canonicalCategory": "beard-services",
+          "canonicalCategoryName": "Beard Services",
+          "canonicalService": "beard-trim-shaping",
+          "canonicalServiceName": "Beard Trim and Shaping"
         },
         {
           "id": "hot-towel-shave",
@@ -747,7 +879,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/levar-neal/hot-towel-shave",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/hot-towel-shave"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/hot-towel-shave",
+          "canonicalCategory": "shaves",
+          "canonicalCategoryName": "Traditional Shaves",
+          "canonicalService": "hot-towel-shave",
+          "canonicalServiceName": "Hot Towel Shave"
         },
         {
           "id": "head-shave-beard-trim",
@@ -764,7 +900,11 @@
           "bookingMode": "live",
           "comboService": true,
           "availabilityPath": "/availability/levar-neal/head-shave-beard-trim",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/head-shave-beard-trim"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/head-shave-beard-trim",
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "head-shave-beard-trim",
+          "canonicalServiceName": "Head Shave and Beard Trim"
         },
         {
           "id": "haircut-hot-towel-shave",
@@ -781,7 +921,11 @@
           "bookingMode": "live",
           "comboService": true,
           "availabilityPath": "/availability/levar-neal/haircut-hot-towel-shave",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/haircut-hot-towel-shave"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/haircut-hot-towel-shave",
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "haircut-hot-towel-shave",
+          "canonicalServiceName": "Haircut and Hot Towel Shave"
         },
         {
           "id": "shampoo",
@@ -797,7 +941,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/levar-neal/shampoo",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/shampoo"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/shampoo",
+          "canonicalCategory": "add-ons",
+          "canonicalCategoryName": "Add-ons",
+          "canonicalService": "hair-wash-shampoo",
+          "canonicalServiceName": "Hair Wash and Shampoo"
         },
         {
           "id": "haircut-beard-trim",
@@ -814,7 +962,11 @@
           "bookingMode": "live",
           "comboService": true,
           "availabilityPath": "/availability/levar-neal/haircut-beard-trim",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/haircut-beard-trim"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/levar-neal/haircut-beard-trim",
+          "canonicalCategory": "combination-services",
+          "canonicalCategoryName": "Combination Services",
+          "canonicalService": "haircut-beard",
+          "canonicalServiceName": "Haircut and Beard"
         }
       ],
       "specialties": [
@@ -868,7 +1020,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/lamar-the-barber/male-haircut",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/male-haircut"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/male-haircut",
+          "canonicalCategory": "haircuts",
+          "canonicalCategoryName": "Haircuts",
+          "canonicalService": "mens-haircut",
+          "canonicalServiceName": "Men’s Haircut"
         },
         {
           "id": "beard-shaping",
@@ -884,7 +1040,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/lamar-the-barber/beard-shaping",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/beard-shaping"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/beard-shaping",
+          "canonicalCategory": "beard-services",
+          "canonicalCategoryName": "Beard Services",
+          "canonicalService": "beard-trim-shaping",
+          "canonicalServiceName": "Beard Trim and Shaping"
         },
         {
           "id": "kids-cut",
@@ -900,7 +1060,11 @@
           "liveAvailability": true,
           "bookingMode": "live",
           "availabilityPath": "/availability/lamar-the-barber/kids-cut",
-          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/kids-cut"
+          "availabilityUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com/availability/lamar-the-barber/kids-cut",
+          "canonicalCategory": "kids-teens",
+          "canonicalCategoryName": "Kids & Teens",
+          "canonicalService": "kids-haircut",
+          "canonicalServiceName": "Kids Haircut"
         }
       ],
       "specialties": [
