@@ -31,12 +31,43 @@
     setTimeout(apply,140);
   }
 
+
+  function removeLegacyHeroBadges(){
+    const hero=$("pch-transition")?.closest("section") || $("pch-transition")?.parentElement;
+    if(!hero)return;
+    const normalized=node=>(node.textContent||"").replace(/\s+/g," ").trim();
+    const targets=[...hero.querySelectorAll("div,aside,span,p,strong")]
+      .filter(node=>{
+        if(node.closest("#pch-transition"))return false;
+        const text=normalized(node);
+        const review=/450\+\s*5-star reviews on booksy/i.test(text);
+        const price=/\$50(?:\.00)?/.test(text) && /haircut|from|45\s*min/i.test(text);
+        return review||price;
+      })
+      .sort((a,b)=>a.querySelectorAll("*").length-b.querySelectorAll("*").length);
+    const hidden=[];
+    for(const node of targets){
+      if(hidden.some(parent=>parent.contains(node)))continue;
+      node.dataset.pchLegacyBadgeHidden="true";
+      node.hidden=true;
+      node.setAttribute("aria-hidden","true");
+      hidden.push(node);
+    }
+  }
+
   function start(){
     const dots=$("pch-transition-dots");
     if(!dots)return;
     dots.innerHTML=slides.map((_,i)=>`<button type="button" data-home-slide="${i}" aria-label="Show photo ${i+1}" aria-current="${i===0}"></button>`).join("");
+    removeLegacyHeroBadges();
     show(0,true);
     if(!matchMedia("(prefers-reduced-motion: reduce)").matches){timer=setInterval(()=>show(index+1),5000);}
+    const hero=$("pch-transition")?.closest("section");
+    if(hero){
+      const observer=new MutationObserver(removeLegacyHeroBadges);
+      observer.observe(hero,{childList:true,subtree:true});
+      setTimeout(()=>observer.disconnect(),10000);
+    }
   }
 
   document.addEventListener("click",event=>{
