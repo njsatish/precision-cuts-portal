@@ -597,6 +597,7 @@
   <link rel="stylesheet" href="/assets/css/precision-cuts-wide-logo-header-v3.css?v=3.1">
   <link rel="stylesheet" href="/assets/css/precision-cuts-three-column-booking-v2.css?v=3.2">
   <link rel="stylesheet" href="/assets/css/precision-cuts-home-five-barbers-v1.css?v=1">
+  <link rel="stylesheet" href="/assets/css/precision-cuts-home-hero-transition-v1.css?v=1">
 </head>
 <body class="pp-homepage">
   <a class="pp-skip-link" href="#main-content">Skip to main content</a>
@@ -615,7 +616,15 @@
       </div>
     </div>
     <div class="pp-concept-home-visual">
-      <img src="/assets/images/precision-cuts-logo.png?v=precision-cuts-v1" alt="Finished low fade haircut in a premium barbershop" fetchpriority="high" decoding="async" data-headlines-ai-hero>
+      <div class="pch-transition" id="pch-transition" aria-roledescription="carousel" aria-label="Precision Cuts homepage photo gallery">
+  <a id="pch-transition-link" class="pch-transition-link" href="#booking-workspace" aria-label="Open Precision Cuts booking">
+    <img id="pch-transition-image" alt="Precision Cuts gallery photo" decoding="async">
+    <span class="pch-transition-overlay"><strong id="pch-transition-title">Book at Precision Cuts</strong><small id="pch-transition-caption">View live services, barbers, dates, and times</small></span>
+  </a>
+  <button class="pch-transition-arrow pch-transition-prev" type="button" data-home-transition="previous" aria-label="Previous photo">‹</button>
+  <button class="pch-transition-arrow pch-transition-next" type="button" data-home-transition="next" aria-label="Next photo">›</button>
+  <div class="pch-transition-dots" id="pch-transition-dots" aria-label="Choose photo"></div>
+</div>
       <div class="pp-concept-badge pp-concept-price"><small>Haircut from</small><strong>$50</strong><span>45 min</span></div>
       <div class="pp-concept-badge pp-concept-style"><small>Featured style</small><strong>Low Skin Fade</strong></div>
       <div class="pp-concept-badge pp-concept-experience"><strong>450+ 5-Star Reviews on Booksy</span></div>
@@ -994,5 +1003,6 @@
   <script src="/assets/js/config/precision-cuts-compact-hours-v2.js?v=2"></script>
   <script src="/assets/js/config/precision-cuts-home-five-barbers-v1.js?v=1.2"></script>
   <script src="/assets/js/config/precision-cuts-barber-preselect-v1.js?v=1"></script>
+  <script src="/assets/js/config/precision-cuts-home-hero-transition-v1.js?v=1"></script>
 </body>
 </html>
