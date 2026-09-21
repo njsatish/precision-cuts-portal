@@ -23,10 +23,26 @@
   const chosenProvider = () => providers().find(s => s.barber.id===state.barber) || null;
 
   function oldWorkspace(){
-    return [...document.querySelectorAll("section,main,div")].find(node => {
-      const text=(node.textContent||"").replace(/\s+/g," ").toLowerCase();
-      return text.includes("1. services") && text.includes("2. barbers") && text.includes("available dates");
+    const matches = [...document.querySelectorAll("section,div")].filter(node => {
+      if (node.id === "pc-four-column-booking") return false;
+      if (node.closest("header,footer")) return false;
+      const text = (node.textContent || "").replace(/\s+/g, " ").toLowerCase();
+      return text.includes("1. services") &&
+        text.includes("2. barbers") &&
+        text.includes("available dates");
     });
+
+    // Select the smallest matching subtree. Never treat the page-level main
+    // container as the legacy booking workspace.
+    matches.sort((a, b) =>
+      a.querySelectorAll("*").length - b.querySelectorAll("*").length
+    );
+
+    const candidate = matches[0] || null;
+    if (!candidate) return null;
+    if (candidate.matches("main,body,html")) return null;
+    if (candidate.contains(document.querySelector("footer"))) return null;
+    return candidate;
   }
 
   function mount(){
@@ -36,9 +52,10 @@
     root=document.createElement("section");
     root.id="pc-four-column-booking";
     root.className="pc4-shell";
+    if (old.matches("main,body,html") || old.closest("header,footer")) return false;
     old.before(root);
-    old.hidden=true;
-    old.dataset.pcFourColumnReplaced="true";
+    old.hidden = true;
+    old.dataset.pcFourColumnReplaced = "true";
     render();
     return true;
   }
