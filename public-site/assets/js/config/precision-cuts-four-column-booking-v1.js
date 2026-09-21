@@ -7,7 +7,7 @@
     "haircuts", "kids-teens", "beard-services", "combination-services",
     "lineups-detailing", "shaves", "add-ons", "skin-facial", "other-services"
   ];
-  const state = { config:null, category:null, canonical:null, barber:null, service:null, slots:[], date:null, time:null, loading:false, error:"" };
+  const state = { config:null, category:null, canonical:null, barber:null, service:null, slots:[], date:null, time:null, loading:false, error:"", datesVisible:6, timesVisible:9 };
   let root;
   let requestController;
 
@@ -63,14 +63,14 @@
   function resetAfter(level){
     if(level<=1){state.canonical=null;}
     if(level<=2){state.barber=null;state.service=null;state.slots=[];}
-    if(level<=3){state.date=null;state.time=null;state.error="";}
+    if(level<=3){state.date=null;state.time=null;state.error="";state.datesVisible=6;state.timesVisible=9;}
   }
 
   async function loadSlots(){
     if(!state.barber || !state.service) return;
     requestController?.abort();
     requestController=new AbortController();
-    state.loading=true; state.error=""; state.slots=[]; state.date=null; state.time=null; render();
+    state.loading=true; state.error=""; state.slots=[]; state.date=null; state.time=null; state.datesVisible=6; state.timesVisible=9; render();
     try{
       const response=await fetch(`${API_BASE}/availability/${encodeURIComponent(state.barber)}/${encodeURIComponent(state.service.slug)}`,{signal:requestController.signal});
       if(!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -102,7 +102,20 @@
     const barberCards=state.canonical ? providers().map(s => `<button class="pc4-card pc4-barber ${state.barber===s.barber.id?'is-selected':''}" data-action="barber" data-id="${esc(s.barber.id)}" aria-pressed="${state.barber===s.barber.id}"><img src="${esc(s.barber.photoUrl||s.barber.photo||s.barber.profilePhoto||'/assets/images/precision-cuts-logo.png')}" alt=""><span><strong>${esc(s.barber.name||s.barber.displayName)}</strong><small>${esc(s.name)} · ${Number(s.durationMinutes)} min · ${money(s.price)}</small></span></button>`).join("") : `<p class="pc4-empty">Choose a service first.</p>`;
     const dates=[...new Set(state.slots.map(x=>x.date))];
     const times=state.date ? state.slots.filter(x=>x.date===state.date).map(x=>x.time) : [];
-    const availability=!state.barber ? `<p class="pc4-empty">Choose a barber first.</p>` : state.loading ? `<p class="pc4-status">Loading live availability…</p>` : state.error ? `<p class="pc4-error">${esc(state.error)}</p>` : !state.slots.length ? `<p class="pc4-empty">No current openings were returned.</p>` : `<div class="pc4-dates">${dates.map(d=>`<button data-action="date" data-id="${d}" class="${state.date===d?'is-selected':''}">${dateLabel(d)}</button>`).join("")}</div>${state.date?`<h4>Available times</h4><div class="pc4-times">${times.map(t=>`<button data-action="time" data-id="${t}" class="${state.time===t?'is-selected':''}">${timeLabel(t)}</button>`).join("")}</div>`:""}${state.time?`<a class="pc4-book" href="${esc(bookingUrl())}" target="_blank" rel="noopener noreferrer">Continue with Booksy · ${dateLabel(state.date)} at ${timeLabel(state.time)}</a>`:""}`;
+    const visibleDates=dates.slice(0,state.datesVisible);
+    const visibleTimes=times.slice(0,state.timesVisible);
+    const dateChooser=`<div class="pc4-dates">${visibleDates.map(d=>`<button data-action="date" data-id="${d}" class="${state.date===d?'is-selected':''}">${dateLabel(d)}</button>`).join("")}</div>${dates.length>visibleDates.length?`<button class="pc4-more" data-action="more-dates">Show more dates</button>`:""}`;
+    const selectedDate=state.date?`<div class="pc4-selected-date"><span><small>Selected date</small><strong>${new Date(`${state.date}T12:00:00`).toLocaleDateString([], {weekday:"long",month:"long",day:"numeric"})}</strong></span><button data-action="change-date">Change date</button></div>`:"";
+    const timeChooser=state.date?`<h4>Available times</h4><div class="pc4-times">${visibleTimes.map(t=>`<button data-action="time" data-id="${t}" class="${state.time===t?'is-selected':''}">${timeLabel(t)}</button>`).join("")}</div>${times.length>visibleTimes.length?`<button class="pc4-more" data-action="more-times">Show more times</button>`:""}`:"";
+    const availability=!state.barber
+      ? `<p class="pc4-empty">Choose a barber first.</p>`
+      : state.loading
+        ? `<p class="pc4-status">Loading live availability…</p>`
+        : state.error
+          ? `<p class="pc4-error">${esc(state.error)}</p>`
+          : !state.slots.length
+            ? `<p class="pc4-empty">No current openings were returned.</p>`
+            : `${state.date?selectedDate:dateChooser}${timeChooser}${state.time?`<a class="pc4-book" href="${esc(bookingUrl())}" target="_blank" rel="noopener noreferrer">Continue with Booksy · ${dateLabel(state.date)} at ${timeLabel(state.time)}</a>`:""}`;
 
     root.innerHTML=`<div class="pc4-intro"><p>Live booking</p><h2>Choose a category, service, barber, date, and time.</h2><span>Equivalent services are grouped by customer intent. Each barber’s exact price, duration, variant, and live availability remain provider-specific.</span></div><div class="pc4-grid"><section><h3>1. Main Category</h3><div class="pc4-list">${categoryCards}</div></section><section><h3>2. Service</h3><div class="pc4-list">${serviceCards}</div></section><section><h3>3. Barber</h3><div class="pc4-list">${barberCards}</div></section><section><h3>4. Date &amp; Time</h3><div class="pc4-availability">${availability}</div></section></div>`;
   }
@@ -116,8 +129,11 @@
     if(action==="category"){state.category=id;resetAfter(1);render();}
     if(action==="service"){state.canonical=id;resetAfter(2);render();}
     if(action==="barber"){state.barber=id;state.service=chosenProvider();resetAfter(3);loadSlots();}
-    if(action==="date"){state.date=id;state.time=null;render();}
+    if(action==="date"){state.date=id;state.time=null;state.timesVisible=9;render();}
     if(action==="time"){state.time=id;render();}
+    if(action==="more-dates"){state.datesVisible+=6;render();}
+    if(action==="more-times"){state.timesVisible+=9;render();}
+    if(action==="change-date"){state.date=null;state.time=null;state.timesVisible=9;render();}
   });
 
   async function init(){
