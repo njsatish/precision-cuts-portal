@@ -93,9 +93,6 @@
     const serviceId=service.serviceId||service.booksyServiceId;
     const staff=service.stafferId||service.booksyStafferId||barber.stafferId||barber.booksyStafferId;
 
-    // Use only absolute Booksy URLs. Relative values such as
-    // "christopher-meadows" are profile slugs and must never resolve against
-    // localhost or the Precision Cuts domain.
     const candidates=[
       service.bookingUrl,
       service.instantExperienceUrl,
