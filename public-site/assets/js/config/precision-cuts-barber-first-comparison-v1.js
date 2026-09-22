@@ -64,11 +64,34 @@
   function insert(){
     if(document.querySelector("#pc-barber-first-comparison"))return;
     const headings=[...document.querySelectorAll("main h1,main h2,main h3,h4")];
+    const serviceHeading=headings.find(node=>/^1\.?\s*services?/i.test(node.textContent.trim()));
+    const barberHeading=headings.find(node=>/^2\.?\s*barbers?/i.test(node.textContent.trim()));
     const dateHeading=headings.find(node=>/^3\.?\s*(available\s+)?dates?/i.test(node.textContent.trim()));
-    const workspace=dateHeading?.closest("section")||dateHeading?.parentElement?.parentElement;
-    if(!workspace)return;
-    root=document.createElement("section");root.id="pc-barber-first-comparison";root.className="pcbf-workspace";root.setAttribute("aria-label","Option 2 barber-first booking workspace");
-    workspace.insertAdjacentElement("afterend",root);render();
+    if(!serviceHeading||!barberHeading||!dateHeading)return;
+
+    const main=document.querySelector("main");
+    if(!main)return;
+
+    // Find the smallest shared ancestor containing all three columns, then
+    // promote to the direct child of main. This prevents Option 2 from being
+    // inserted inside Column 3, which limited it to roughly one-third width.
+    let shared=dateHeading.parentElement;
+    while(shared&&shared!==main&&!(shared.contains(serviceHeading)&&shared.contains(barberHeading)&&shared.contains(dateHeading))){
+      shared=shared.parentElement;
+    }
+    if(!shared||shared===main)return;
+    let bookingBlock=shared;
+    while(bookingBlock.parentElement&&bookingBlock.parentElement!==main){
+      bookingBlock=bookingBlock.parentElement;
+    }
+
+    root=document.createElement("section");
+    root.id="pc-barber-first-comparison";
+    root.className="pcbf-workspace";
+    root.setAttribute("aria-label","Option 2 barber-first booking workspace");
+    root.dataset.pcbfFullWidth="true";
+    bookingBlock.insertAdjacentElement("afterend",root);
+    render();
   }
 
   document.addEventListener("click",event=>{
