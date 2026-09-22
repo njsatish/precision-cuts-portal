@@ -82,9 +82,46 @@
     link.dataset.selectedTime=time||"";
   }
   function bookingUrl(){
-    const date=modal.querySelector("#pchbm-date").value,time=modal.querySelector("#pchbm-time").value;
-    const base=service.bookingUrl||barber.bookingUrl||barber.profileUrl||config.bookingProvider?.profileUrl||"https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke";
-    try{const url=new URL(base,location.href),variant=service.variantId||service.booksyVariantId,staff=service.stafferId||service.booksyStafferId||barber.stafferId||barber.booksyStafferId,business=barber.booksyBusinessId||barber.businessId||97909;if(variant)url.searchParams.set("variantId",variant);if(staff)url.searchParams.set("stafferId",staff);if(business)url.searchParams.set("businessId",business);url.searchParams.set("date",date);url.searchParams.set("time",time);url.searchParams.set("start",`${date}T${time}`);return url.toString();}catch(_){return base;}
+    const root=buildModal();
+    const date=root.querySelector("#pchbm-date").value;
+    const time=root.querySelector("#pchbm-time").value;
+    if(!barber||!service||!date||!time)return "#";
+
+    const business=barber.booksyBusinessId||barber.businessId||config.booksyBusinessId||config.booksy?.businessId||97909;
+    const widget=barber.booksyWidgetId||barber.widgetId||config.booksyWidgetId||config.booksy?.widgetId;
+    const variant=service.variantId||service.booksyVariantId;
+    const serviceId=service.serviceId||service.booksyServiceId;
+    const staff=service.stafferId||service.booksyStafferId||barber.stafferId||barber.booksyStafferId;
+
+    // Use only absolute Booksy URLs. Relative values such as
+    // "christopher-meadows" are profile slugs and must never resolve against
+    // localhost or the Precision Cuts domain.
+    const candidates=[
+      service.bookingUrl,
+      service.instantExperienceUrl,
+      barber.bookingUrl,
+      barber.instantExperienceUrl,
+      barber.booksyUrl,
+      config.bookingProvider?.profileUrl,
+      config.booksy?.bookingUrl,
+      config.booksy?.instantExperienceUrl
+    ].filter(value=>typeof value==="string"&&/^https:\/\/(?:www\.)?booksy\.com\//i.test(value));
+
+    const base=candidates[0]||(
+      widget
+        ?`https://booksy.com/widget/instant-experiences/${encodeURIComponent(widget)}`
+        :`https://booksy.com/en-us/dl/show-business/${encodeURIComponent(business)}`
+    );
+
+    const url=new URL(base);
+    if(business)url.searchParams.set("businessId",String(business));
+    if(staff)url.searchParams.set("stafferId",String(staff));
+    if(serviceId)url.searchParams.set("serviceId",String(serviceId));
+    if(variant)url.searchParams.set("variantId",String(variant));
+    url.searchParams.set("date",date);
+    url.searchParams.set("time",time);
+    url.searchParams.set("start",`${date}T${time}`);
+    return url.toString();
   }
   function close(){if(!modal)return;modal.hidden=true;document.documentElement.classList.remove("pchbm-open");}
 
