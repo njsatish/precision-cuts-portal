@@ -69,13 +69,52 @@
     const times=[...new Set(slots.filter(item=>dateOf(item)===value).map(timeOf).filter(Boolean))];
     const select=modal.querySelector("#pchbm-time");select.disabled=!times.length;select.innerHTML=`<option value="">Choose a time</option>${times.map(time=>`<option value="${time}">${timeLabel(time)}</option>`).join("")}`;setStatus(times.length?`${times.length} live times available on ${dateLabel(value)}.`:"No times are available on that date.",!times.length);updateSubmit();
   }
-  function updateSubmit(){const form=buildModal().querySelector("#pchbm-form");buildModal().querySelector("#pchbm-submit").disabled=!(barber&&service&&form.querySelector("#pchbm-date").value&&form.querySelector("#pchbm-time").value);}
-  function bookingUrl(){
-    const date=modal.querySelector("#pchbm-date").value,time=modal.querySelector("#pchbm-time").value;
-    const base=service.bookingUrl||barber.bookingUrl||barber.profileUrl||config.bookingProvider?.profileUrl||"https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke";
-    try{const url=new URL(base,location.href),variant=service.variantId||service.booksyVariantId,staff=service.stafferId||service.booksyStafferId||barber.stafferId||barber.booksyStafferId,business=barber.booksyBusinessId||barber.businessId||97909;if(variant)url.searchParams.set("variantId",variant);if(staff)url.searchParams.set("stafferId",staff);if(business)url.searchParams.set("businessId",business);url.searchParams.set("date",`${date}T${time}`);return url.toString();}catch(_){return base;}
+  function updateSubmit(){
+    const root=buildModal();
+    const action=root.querySelector("#pchbm-submit");
+    const date=root.querySelector("#pchbm-date").value;
+    const time=root.querySelector("#pchbm-time").value;
+    const url=bookingUrl();
+    const ready=Boolean(barber&&service&&date&&time&&url);
+
+    action.disabled=!ready;
+    action.dataset.booksyUrl=ready?url:"";
+    action.textContent=ready
+      ?`Continue with Booksy · ${dateLabel(date)} at ${timeLabel(time)}`
+      :"Select a date and time";
+    action.title=ready?url:"Select a barber, service, date, and time";
   }
-  function submit(event){event.preventDefault();if(event.currentTarget.reportValidity()&&!modal.querySelector("#pchbm-submit").disabled){setStatus("Opening secure Booksy confirmation…");window.open(bookingUrl(),"_blank","noopener,noreferrer");}}
+  function bookingUrl(){
+    const root=buildModal();
+    const date=root.querySelector("#pchbm-date").value;
+    const time=root.querySelector("#pchbm-time").value;
+    if(!barber||!service||!date||!time)return "";
+
+    const businessId=barber.booksyBusinessId||barber.businessId;
+    const variantId=service.variantId||service.booksyVariantId;
+    if(!businessId||!variantId)return "";
+
+    const start=`${date}T${time}`;
+    const url=new URL(`https://booksy.com/en-us/instant-experiences/widget/${encodeURIComponent(String(businessId))}`);
+    url.searchParams.set("variantId",String(variantId));
+    url.searchParams.set("date",start);
+    url.searchParams.set("attribution_source","precision_cuts_portal");
+    url.searchParams.set("utm_medium","timeslots");
+    url.hash="ba_s=seo";
+    return url.toString();
+  }
+  function submit(event){
+    event.preventDefault();
+    const root=buildModal();
+    const action=root.querySelector("#pchbm-submit");
+    const url=action.dataset.booksyUrl||bookingUrl();
+    if(action.disabled||!url){
+      setStatus("Select a live date and time before continuing.",true);
+      return;
+    }
+    setStatus("Opening secure Booksy confirmation…");
+    window.location.assign(url);
+  }
   async function open(barberId=""){
     buildModal();
     if(!config){setStatus("Loading booking details…");config=await fetch(CONFIG_URL,{cache:"no-store"}).then(response=>response.json());}
