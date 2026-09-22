@@ -135,7 +135,14 @@
   window.openPrecisionCutsHomeBooking=open;
   document.addEventListener("click",event=>{
     const barberLink=event.target.closest("[data-pick-barber]");
-    if(barberLink){event.preventDefault();event.stopImmediatePropagation();open(barberLink.dataset.pickBarber);return;}
+    if(barberLink){
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      const barberId=barberLink.dataset.pickBarber;
+      if(barberId)open(barberId);
+      return;
+    }
     const book=event.target.closest("a.pcx-book,button.pcx-book,[href='#booking']");
     if(book&&!book.closest("#pc-home-booking-modal")){event.preventDefault();open(book.dataset.barber||"");}
   },true);
