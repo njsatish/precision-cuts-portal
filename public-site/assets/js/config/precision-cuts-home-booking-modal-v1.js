@@ -113,7 +113,13 @@
       return;
     }
     setStatus("Opening secure Booksy confirmation…");
-    window.location.assign(url);
+    const booksyWindow=window.open(url,"_blank","noopener,noreferrer");
+    if(booksyWindow){
+      booksyWindow.opener=null;
+      setStatus("Booksy opened in a new tab. This booking window remains available.");
+    }else{
+      setStatus("The browser blocked the new Booksy tab. Allow pop-ups for this site and try again.",true);
+    }
   }
   async function open(barberId=""){
     buildModal();
