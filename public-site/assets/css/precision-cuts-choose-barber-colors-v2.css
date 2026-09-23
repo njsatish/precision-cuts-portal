@@ -1,0 +1,27 @@
+html body [data-pc-choose-barber-card="cream"] {
+  box-sizing: border-box !important;
+  background: #fbf7ee !important;
+  background-color: #fbf7ee !important;
+  background-image: none !important;
+  border: 1px solid #ded4c4 !important;
+  border-top: 6px solid #d9ad24 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 18px 42px rgba(72,53,25,.12) !important;
+  color: #211712 !important;
+}
+html body [data-pc-choose-barber-card="cream"] [data-pc-choose-barber-kicker] {
+  color: #986610 !important;
+  -webkit-text-fill-color: #986610 !important;
+  text-shadow: none !important;
+}
+html body [data-pc-choose-barber-card="cream"] [data-pc-choose-barber-title],
+html body [data-pc-choose-barber-card="cream"] [data-pc-choose-barber-title] * {
+  color: #211712 !important;
+  -webkit-text-fill-color: #211712 !important;
+  text-shadow: none !important;
+}
+html body [data-pc-choose-barber-card="cream"] [data-pc-choose-barber-description] {
+  color: #4b3c31 !important;
+  -webkit-text-fill-color: #4b3c31 !important;
+  text-shadow: none !important;
+}
