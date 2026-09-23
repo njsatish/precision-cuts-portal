@@ -67,3 +67,42 @@ html.pchbm-open{overflow:hidden}#pc-home-booking-modal[hidden]{display:none!impo
   }
 }
 /* HOME-MODAL-SIZE-90-PERCENT-V1-END */
+
+/* POPUP-FIRST-SCREEN-CONTRAST-V1-START */
+#pc-home-booking-modal .pchbm-dialog {
+  background-color: #171717 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+#pc-home-booking-modal .pchbm-header,
+#pc-home-booking-modal .pchbm-heading,
+#pc-home-booking-modal .pchbm-intro,
+#pc-home-booking-modal .pchbm-title-wrap {
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+#pc-home-booking-modal h1,
+#pc-home-booking-modal h2,
+#pc-home-booking-modal h3,
+#pc-home-booking-modal .pchbm-title,
+#pc-home-booking-modal [data-booking-title] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: transparent !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+#pc-home-booking-modal .pchbm-kicker {
+  color: #e4c253 !important;
+  -webkit-text-fill-color: #e4c253 !important;
+  opacity: 1 !important;
+}
+#pc-home-booking-modal .pchbm-subtitle,
+#pc-home-booking-modal .pchbm-description {
+  color: #b8b8c2 !important;
+  -webkit-text-fill-color: #b8b8c2 !important;
+  opacity: 1 !important;
+}
+/* POPUP-FIRST-SCREEN-CONTRAST-V1-END */
