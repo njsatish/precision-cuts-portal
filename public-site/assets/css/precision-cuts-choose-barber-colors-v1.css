@@ -1,0 +1,50 @@
+/* Match Choose your barber card to the cream Live Booksy Availability card. */
+.pc-choose-barber-card-cream {
+  box-sizing: border-box !important;
+  width: min(100%, 1368px) !important;
+  max-width: 1368px !important;
+  margin-inline: auto !important;
+  padding: clamp(28px, 3vw, 48px) clamp(24px, 4vw, 64px) !important;
+  background: #fbf7ee !important;
+  background-color: #fbf7ee !important;
+  background-image: none !important;
+  border: 1px solid #ded4c4 !important;
+  border-top: 6px solid #d9ad24 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 18px 42px rgba(72, 53, 25, 0.12) !important;
+  color: #211712 !important;
+  text-align: center !important;
+}
+
+.pc-choose-barber-card-cream .pc-choose-barber-kicker-cream {
+  color: #986610 !important;
+  -webkit-text-fill-color: #986610 !important;
+  background: transparent !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+.pc-choose-barber-card-cream .pc-choose-barber-title-cream,
+.pc-choose-barber-card-cream .pc-choose-barber-title-cream * {
+  color: #211712 !important;
+  -webkit-text-fill-color: #211712 !important;
+  background: transparent !important;
+  background-image: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.pc-choose-barber-card-cream .pc-choose-barber-description-cream {
+  color: #4b3c31 !important;
+  -webkit-text-fill-color: #4b3c31 !important;
+  background: transparent !important;
+  text-shadow: none !important;
+}
+
+@media (max-width: 640px) {
+  .pc-choose-barber-card-cream {
+    padding: 24px 16px !important;
+    border-top-width: 5px !important;
+    border-radius: 16px !important;
+  }
+}
