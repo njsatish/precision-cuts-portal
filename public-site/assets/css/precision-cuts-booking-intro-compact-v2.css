@@ -1,0 +1,58 @@
+/* Compact booking introduction v2. */
+.pc-booking-intro-card-v2 {
+  width: min(100%, 1360px) !important;
+  max-width: 1360px !important;
+  min-height: 0 !important;
+  margin: 0 auto 26px !important;
+  padding: 22px 34px 24px !important;
+  border-radius: 18px !important;
+  text-align: center !important;
+}
+
+.pc-booking-intro-kicker-v2 {
+  margin: 0 0 7px !important;
+  font-size: clamp(.72rem, .8vw, .88rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: .16em !important;
+  white-space: nowrap !important;
+}
+
+.pc-booking-intro-title-v2 {
+  max-width: none !important;
+  margin: 0 !important;
+  font-size: clamp(2.65rem, 3.7vw, 3.55rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -.045em !important;
+  white-space: nowrap !important;
+  text-wrap: nowrap !important;
+}
+
+@media (max-width: 1120px) {
+  .pc-booking-intro-card-v2 {
+    padding: 20px 24px 22px !important;
+  }
+
+  .pc-booking-intro-title-v2 {
+    font-size: clamp(2rem, 4.2vw, 2.85rem) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .pc-booking-intro-card-v2 {
+    margin-bottom: 20px !important;
+    padding: 18px 16px 20px !important;
+    border-radius: 14px !important;
+  }
+
+  .pc-booking-intro-kicker-v2 {
+    white-space: normal !important;
+  }
+
+  .pc-booking-intro-title-v2 {
+    font-size: clamp(2rem, 10vw, 2.75rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -.035em !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+  }
+}
