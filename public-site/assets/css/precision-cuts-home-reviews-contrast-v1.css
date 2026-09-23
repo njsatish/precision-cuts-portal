@@ -1,0 +1,54 @@
+/* Why Clients Choose Precision Cuts contrast repair v1. */
+#reviews.pcx-dark,
+#reviews {
+  color: #ffffff !important;
+}
+
+#reviews .pcx-section-head .pcx-kicker {
+  color: #d4af37 !important;
+  -webkit-text-fill-color: #d4af37 !important;
+  background: transparent !important;
+  text-shadow: none !important;
+}
+
+#reviews .pcx-section-head h2,
+#reviews .pcx-section-head h2 * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: transparent !important;
+  background-image: none !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45) !important;
+}
+
+#reviews .pcx-section-head > p:last-child {
+  color: #d7d7dc !important;
+  -webkit-text-fill-color: #d7d7dc !important;
+}
+
+#reviews .pcx-review-grid article {
+  background: #18181b !important;
+  border-color: #3d3d43 !important;
+  color: #ffffff !important;
+}
+
+#reviews .pcx-review-grid article > b,
+#reviews .pcx-review-grid article :is(h3, h4, strong) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: transparent !important;
+  background-image: none !important;
+  text-shadow: none !important;
+}
+
+#reviews .pcx-review-grid article p,
+#reviews .pcx-review-grid article span,
+#reviews .pcx-review-grid article small {
+  color: #c9c9cf !important;
+  -webkit-text-fill-color: #c9c9cf !important;
+  background: transparent !important;
+}
+
+#reviews .pcx-review-grid article:hover {
+  border-color: rgba(212, 175, 55, 0.65) !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22) !important;
+}
