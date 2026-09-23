@@ -1,0 +1,30 @@
+/* Precision Cuts booking intro heading: compact, one line on desktop. */
+.pc-booking-intro-one-line {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+  font-size: clamp(2rem, 4.15vw, 4.35rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.035em !important;
+  white-space: nowrap !important;
+  text-wrap: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+@media (max-width: 900px) {
+  .pc-booking-intro-one-line {
+    font-size: clamp(1.65rem, 5.7vw, 3rem) !important;
+    letter-spacing: -0.04em !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .pc-booking-intro-one-line {
+    font-size: clamp(1.35rem, 6.1vw, 2.15rem) !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+    line-height: 1.08 !important;
+  }
+}
