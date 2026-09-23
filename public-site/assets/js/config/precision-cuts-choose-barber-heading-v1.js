@@ -28,6 +28,32 @@
     for (const heading of root.querySelectorAll?.("h1,h2,h3,h4,[role='heading']") || []) {
       if (normalize(heading.textContent) !== TARGET) continue;
       fit(heading);
+
+      // Mark the smallest introduction container so the complete panel can
+      // share the cream-and-gold treatment used by the next booking screen.
+      const candidates=[];
+      let container=heading.parentElement;
+      while(container && container!==document.body){
+        const text=normalize(container.textContent);
+        if(container.matches("header,section,article,div") &&
+           text.includes("meet the precision cuts team") &&
+           text.includes("choose your barber") &&
+           text.includes("five verified professionals")){
+          candidates.push(container);
+        }
+        if(container.matches("main"))break;
+        container=container.parentElement;
+      }
+      candidates.sort((a,b)=>a.querySelectorAll("*").length-b.querySelectorAll("*").length);
+      const panel=candidates[0];
+      if(panel){
+        panel.classList.add("pc-choose-barber-panel-cream");
+        const textNodes=[...panel.querySelectorAll("p,span,small")];
+        const kicker=textNodes.find(node=>normalize(node.textContent)==="meet the precision cuts team");
+        const support=textNodes.find(node=>normalize(node.textContent).includes("five verified professionals"));
+        kicker?.classList.add("pc-choose-barber-kicker-cream");
+        support?.classList.add("pc-choose-barber-support-cream");
+      }
       count += 1;
     }
     document.documentElement.dataset.pcChooseBarberHeadingMatches = String(count);
