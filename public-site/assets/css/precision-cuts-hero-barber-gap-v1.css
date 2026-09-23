@@ -1,0 +1,26 @@
+/* Tighten only the boundary between the homepage hero and barber introduction. */
+html body [data-pc-home-hero-gap="compact"] {
+  min-height: auto !important;
+  height: auto !important;
+  margin-bottom: 0 !important;
+  padding-bottom: clamp(30px, 3vw, 46px) !important;
+}
+
+html body [data-pc-barber-section-gap="compact"] {
+  margin-top: 0 !important;
+  padding-top: clamp(34px, 4vw, 52px) !important;
+}
+
+html body [data-pc-barber-section-gap="compact"] > [data-pc-choose-barber-card="cream"],
+html body [data-pc-barber-section-gap="compact"] [data-pc-choose-barber-card="cream"] {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 640px) {
+  html body [data-pc-home-hero-gap="compact"] {
+    padding-bottom: 24px !important;
+  }
+  html body [data-pc-barber-section-gap="compact"] {
+    padding-top: 28px !important;
+  }
+}
