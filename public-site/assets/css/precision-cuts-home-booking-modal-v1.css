@@ -106,3 +106,57 @@ html.pchbm-open{overflow:hidden}#pc-home-booking-modal[hidden]{display:none!impo
   opacity: 1 !important;
 }
 /* POPUP-FIRST-SCREEN-CONTRAST-V1-END */
+
+/* HOME-MODAL-UNIFORM-CHARCOAL-V2 */
+#pc-home-booking-modal .pchbm-dialog {
+  background: #171717 !important;
+  background-color: #171717 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+#pc-home-booking-modal .pchbm-dialog header,
+#pc-home-booking-modal .pchbm-header,
+#pc-home-booking-modal .pchbm-heading,
+#pc-home-booking-modal .pchbm-intro,
+#pc-home-booking-modal .pchbm-title-wrap {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+#pc-home-booking-modal .pchbm-dialog header::before,
+#pc-home-booking-modal .pchbm-dialog header::after,
+#pc-home-booking-modal .pchbm-header::before,
+#pc-home-booking-modal .pchbm-header::after {
+  content: none !important;
+  display: none !important;
+}
+#pc-home-booking-modal h1,
+#pc-home-booking-modal h2,
+#pc-home-booking-modal h3,
+#pc-home-booking-modal .pchbm-title,
+#pc-home-booking-modal [data-booking-title] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: transparent !important;
+  background-image: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+#pc-home-booking-modal .pchbm-kicker,
+#pc-home-booking-modal .pchbm-dialog header > p:first-child {
+  color: #e4c253 !important;
+  -webkit-text-fill-color: #e4c253 !important;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+#pc-home-booking-modal .pchbm-subtitle,
+#pc-home-booking-modal .pchbm-description,
+#pc-home-booking-modal .pchbm-dialog header > span {
+  color: #b8b8c2 !important;
+  -webkit-text-fill-color: #b8b8c2 !important;
+  background: transparent !important;
+  opacity: 1 !important;
+}
