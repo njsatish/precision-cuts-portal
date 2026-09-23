@@ -1,0 +1,26 @@
+/* Remove blank vertical space inside the homepage hero below its visible columns. */
+html body [data-pc-home-hero-internal="compact"] {
+  min-height: 0 !important;
+  height: auto !important;
+  block-size: auto !important;
+  max-height: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 32px !important;
+  align-content: start !important;
+}
+
+html body [data-pc-home-hero-inner="compact"] {
+  min-height: 0 !important;
+  height: auto !important;
+  block-size: auto !important;
+  max-height: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  align-items: center !important;
+}
+
+@media (max-width: 640px) {
+  html body [data-pc-home-hero-internal="compact"] {
+    padding-bottom: 24px !important;
+  }
+}
