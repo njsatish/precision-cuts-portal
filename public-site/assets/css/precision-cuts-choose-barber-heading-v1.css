@@ -1,0 +1,39 @@
+/* Match Choose your barber. to the compact booking-intro heading. */
+.pc-choose-barber-heading-compact {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding-inline: clamp(18px, 3vw, 52px) !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(2rem, 3.15vw, 3.25rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.035em !important;
+  white-space: nowrap !important;
+  text-wrap: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (max-width: 900px) {
+  .pc-choose-barber-heading-compact {
+    padding-inline: 20px !important;
+    font-size: clamp(1.55rem, 4.7vw, 2.6rem) !important;
+    letter-spacing: -0.04em !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .pc-choose-barber-heading-compact {
+    padding-inline: 12px !important;
+    font-size: clamp(1.3rem, 5.6vw, 2rem) !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+    line-height: 1.08 !important;
+  }
+}
