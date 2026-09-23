@@ -47,3 +47,23 @@ html.pchbm-open{overflow:hidden}#pc-home-booking-modal[hidden]{display:none!impo
   }
 }
 /* HOME-MODAL-COMPACT-SIZE-V1-END */
+
+/* HOME-MODAL-SIZE-90-PERCENT-V1-START */
+/* 680 x 720 reduced by exactly 10 percent to 612 x 648. */
+#pc-home-booking-modal .pchbm-dialog {
+  width: min(612px, calc(100vw - 40px)) !important;
+  max-width: 612px !important;
+  max-height: min(648px, calc(100dvh - 40px)) !important;
+  padding: 38px 41px 40px !important;
+}
+
+@media (max-width: 680px) {
+  #pc-home-booking-modal .pchbm-dialog {
+    width: 100vw !important;
+    max-width: none !important;
+    min-height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding: 56px 16px 28px !important;
+  }
+}
+/* HOME-MODAL-SIZE-90-PERCENT-V1-END */
