@@ -46,7 +46,31 @@
     const uncategorized=items.filter(item=>!serviceFamilies.some(family=>family.categories.includes(item.category)));
     if(uncategorized.length) groups.push({family:{id:"other",name:"Additional Services",description:"Finishing, care, and additional services"},items:uncategorized});
 
-    return groups.map(({family,items:familyItems},index)=>{
+    const consolidatedGroups=[];
+    for(const group of groups){
+      if(group.family&&group.family.name==="Additional Services"){
+        const existing=consolidatedGroups.find(entry=>entry.family&&entry.family.name==="Additional Services");
+        if(existing){
+          const seen=new Set(existing.items.map(item=>item.slug||item.id||item.variantId||item.name));
+          for(const item of group.items){
+            const key=item.slug||item.id||item.variantId||item.name;
+            if(!seen.has(key)){
+              existing.items.push(item);
+              seen.add(key);
+            }
+          }
+          if(existing.family.categories&&group.family.categories){
+            existing.family.categories=[...new Set([...existing.family.categories,...group.family.categories])];
+          }
+        }else{
+          consolidatedGroups.push({family:{...group.family},items:[...group.items]});
+        }
+      }else{
+        consolidatedGroups.push(group);
+      }
+    }
+
+    return consolidatedGroups.map(({family,items:familyItems},index)=>{
       const containsSelection=familyItems.some(item=>item.category===selectedCategory);
       const open=containsSelection || (!selectedCategory && index===0);
       return `<details class="pc-v2-service-family" data-service-family="${esc(family.id)}" ${open?"open":""}>
