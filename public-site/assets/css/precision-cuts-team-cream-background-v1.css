@@ -1,0 +1,80 @@
+/* Cream surface for both the team introduction and five-barber card area. */
+html body [data-pc-team-section="cream"] {
+  background: #f4ede1 !important;
+  background-color: #f4ede1 !important;
+  background-image: none !important;
+  color: #241a14 !important;
+  border-top: 1px solid #e0d5c5 !important;
+  border-bottom: 1px solid #e0d5c5 !important;
+  padding-top: clamp(48px, 5.5vw, 76px) !important;
+  padding-bottom: clamp(58px, 6.5vw, 88px) !important;
+}
+
+html body [data-pc-team-section="cream"]::before,
+html body [data-pc-team-section="cream"]::after {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+html body [data-pc-team-intro="cream"] {
+  background: #fffaf1 !important;
+  background-color: #fffaf1 !important;
+  background-image: none !important;
+  border: 1px solid #dccfbd !important;
+  border-top: 6px solid #d7ad24 !important;
+  box-shadow: 0 16px 40px rgba(67, 47, 28, .11) !important;
+  color: #241a14 !important;
+}
+
+html body [data-pc-team-intro="cream"] h1,
+html body [data-pc-team-intro="cream"] h2,
+html body [data-pc-team-intro="cream"] h3 {
+  color: #241a14 !important;
+  -webkit-text-fill-color: #241a14 !important;
+}
+
+html body [data-pc-team-intro="cream"] p,
+html body [data-pc-team-intro="cream"] span {
+  color: #625246 !important;
+  -webkit-text-fill-color: #625246 !important;
+}
+
+html body [data-pc-team-intro="cream"] [data-pc-team-kicker="true"] {
+  color: #94630d !important;
+  -webkit-text-fill-color: #94630d !important;
+}
+
+html body [data-pc-five-barber-grid="true"] {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+html body [data-pc-five-barber-card="true"] {
+  background: #fffaf1 !important;
+  background-color: #fffaf1 !important;
+  color: #241a14 !important;
+  box-shadow: 0 14px 34px rgba(60, 43, 25, .13) !important;
+}
+
+html body [data-pc-five-barber-card="true"] h1,
+html body [data-pc-five-barber-card="true"] h2,
+html body [data-pc-five-barber-card="true"] h3,
+html body [data-pc-five-barber-card="true"] h4,
+html body [data-pc-five-barber-card="true"] p,
+html body [data-pc-five-barber-card="true"] span {
+  color: #241a14 !important;
+  -webkit-text-fill-color: #241a14 !important;
+}
+
+html body [data-pc-five-barber-card="true"] [class*="status"],
+html body [data-pc-five-barber-card="true"] [class*="availability"] {
+  color: #58483d !important;
+  -webkit-text-fill-color: #58483d !important;
+}
+
+@media (max-width: 640px) {
+  html body [data-pc-team-section="cream"] {
+    padding-top: 38px !important;
+    padding-bottom: 50px !important;
+  }
+}
