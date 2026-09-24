@@ -1,0 +1,86 @@
+/* Persistent colors anchored to the production booking hooks.
+   These rules survive card rerenders because they do not depend on JS-added classes. */
+
+html body [data-index-profile-booking="keith-lemon"] {
+  --pc-fixed-accent: #F2C23A;
+  --pc-fixed-hover: #FFD45C;
+  --pc-fixed-text: #17120A;
+}
+html body [data-index-profile-booking="christopher-meadows"] {
+  --pc-fixed-accent: #16A9E0;
+  --pc-fixed-hover: #35BCEC;
+  --pc-fixed-text: #FFFFFF;
+}
+html body [data-index-profile-booking="ron-the-barber"] {
+  --pc-fixed-accent: #FF6A12;
+  --pc-fixed-hover: #FF8439;
+  --pc-fixed-text: #FFFFFF;
+}
+html body [data-index-profile-booking="levar-neal"] {
+  --pc-fixed-accent: #E9164B;
+  --pc-fixed-hover: #F23867;
+  --pc-fixed-text: #FFFFFF;
+}
+html body [data-index-profile-booking="lamar-the-barber"] {
+  --pc-fixed-accent: #0AA06E;
+  --pc-fixed-hover: #16B982;
+  --pc-fixed-text: #FFFFFF;
+}
+
+html body [data-index-profile-booking] {
+  position: relative !important;
+  z-index: 20 !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  margin-top: auto !important;
+  padding: 12px 18px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: var(--pc-fixed-accent) !important;
+  background-color: var(--pc-fixed-accent) !important;
+  background-image: none !important;
+  color: var(--pc-fixed-text) !important;
+  -webkit-text-fill-color: var(--pc-fixed-text) !important;
+  box-shadow: 0 11px 25px color-mix(in srgb, var(--pc-fixed-accent) 30%, transparent) !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  transition: transform .16s ease, background-color .16s ease, box-shadow .16s ease !important;
+}
+
+html body [data-index-profile-booking]:hover {
+  transform: translateY(-2px) !important;
+  background: var(--pc-fixed-hover) !important;
+  background-color: var(--pc-fixed-hover) !important;
+  box-shadow: 0 15px 30px color-mix(in srgb, var(--pc-fixed-accent) 42%, transparent) !important;
+}
+
+html body [data-index-profile-booking]:focus-visible {
+  outline: 3px solid var(--pc-fixed-accent) !important;
+  outline-offset: 3px !important;
+}
+
+/* Match the specialty line to the corresponding persistent button color. */
+html body article:has([data-index-profile-booking="keith-lemon"]) [data-pc-barber-role="true"],
+html body article:has([data-index-profile-booking="keith-lemon"]) [data-pc-color-role="true"] { color:#F2C23A !important; -webkit-text-fill-color:#F2C23A !important; }
+html body article:has([data-index-profile-booking="christopher-meadows"]) [data-pc-barber-role="true"],
+html body article:has([data-index-profile-booking="christopher-meadows"]) [data-pc-color-role="true"] { color:#16A9E0 !important; -webkit-text-fill-color:#16A9E0 !important; }
+html body article:has([data-index-profile-booking="ron-the-barber"]) [data-pc-barber-role="true"],
+html body article:has([data-index-profile-booking="ron-the-barber"]) [data-pc-color-role="true"] { color:#FF6A12 !important; -webkit-text-fill-color:#FF6A12 !important; }
+html body article:has([data-index-profile-booking="levar-neal"]) [data-pc-barber-role="true"],
+html body article:has([data-index-profile-booking="levar-neal"]) [data-pc-color-role="true"] { color:#E9164B !important; -webkit-text-fill-color:#E9164B !important; }
+html body article:has([data-index-profile-booking="lamar-the-barber"]) [data-pc-barber-role="true"],
+html body article:has([data-index-profile-booking="lamar-the-barber"]) [data-pc-color-role="true"] { color:#0AA06E !important; -webkit-text-fill-color:#0AA06E !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  html body [data-index-profile-booking] { transition: none !important; }
+  html body [data-index-profile-booking]:hover { transform: none !important; }
+}
