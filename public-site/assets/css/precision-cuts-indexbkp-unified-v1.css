@@ -1,0 +1,169 @@
+/* Precision Cuts unified indexbkp visual system. */
+:root {
+  --pc-ink: #111820;
+  --pc-ink-soft: #151e26;
+  --pc-plum: #15121d;
+  --pc-plum-soft: #1c1824;
+  --pc-cream: #f5efe4;
+  --pc-paper: #fffaf1;
+  --pc-brown: #2a2018;
+  --pc-brown-soft: #34271d;
+  --pc-gold: #d8ad28;
+  --pc-gold-dark: #986610;
+  --pc-coral: #ff654f;
+  --pc-cyan: #2aa8cf;
+  --pc-text: #211712;
+  --pc-muted: #6c5a49;
+  --pc-radius: 20px;
+  --pc-content: 1180px;
+  --pc-section-y: clamp(54px, 7vw, 92px);
+}
+
+html { scroll-behavior: smooth; background: var(--pc-ink); }
+body {
+  margin: 0 !important;
+  background: var(--pc-ink) !important;
+  color: #f8f3e8 !important;
+  overflow-x: hidden !important;
+}
+body *, body *::before, body *::after { box-sizing: border-box; }
+
+/* Consistent page width and vertical rhythm. */
+[data-pc-bkp-section] {
+  margin: 0 !important;
+  padding-block: var(--pc-section-y) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  background-image: none !important;
+}
+[data-pc-bkp-section] > :where(.container,.wrap,.inner,[class*="container"],[class*="wrap"],[class*="inner"]) {
+  width: min(calc(100% - 40px), var(--pc-content)) !important;
+  max-width: var(--pc-content) !important;
+  margin-inline: auto !important;
+}
+
+/* Header and navigation. */
+[data-pc-bkp-role="header"] {
+  background: #0f0d12 !important;
+  border-bottom: 1px solid rgba(216,173,40,.22) !important;
+  box-shadow: 0 10px 32px rgba(0,0,0,.2) !important;
+}
+[data-pc-bkp-role="header"] nav,
+[data-pc-bkp-role="header"] [class*="nav"] {
+  background: var(--pc-brown) !important;
+  border-radius: 0 !important;
+}
+
+/* Hero: compact dark navy, no viewport-height blank area. */
+[data-pc-bkp-role="hero"] {
+  background: linear-gradient(135deg,var(--pc-ink) 0%,var(--pc-ink-soft) 74%,#21191b 100%) !important;
+  color: #f9f4e9 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: clamp(54px,6vw,84px) !important;
+  padding-bottom: clamp(42px,5vw,64px) !important;
+}
+[data-pc-bkp-role="hero"] h1,
+[data-pc-bkp-role="hero"] h2 { color: var(--pc-coral) !important; }
+[data-pc-bkp-role="hero"] img { display: block; max-width: 100%; }
+
+/* Team and barber-card region. */
+[data-pc-bkp-role="team"] {
+  background: var(--pc-plum) !important;
+  color: #f9f4e9 !important;
+  padding-top: clamp(42px,5vw,68px) !important;
+  padding-bottom: clamp(60px,7vw,92px) !important;
+}
+[data-pc-bkp-role="team-intro"] {
+  width: min(calc(100% - 40px), var(--pc-content)) !important;
+  margin: 0 auto clamp(30px,4vw,48px) !important;
+  padding: clamp(28px,3vw,44px) clamp(22px,4vw,60px) !important;
+  background: var(--pc-paper) !important;
+  background-image: none !important;
+  border: 1px solid #ded4c4 !important;
+  border-top: 6px solid var(--pc-gold) !important;
+  border-radius: var(--pc-radius) !important;
+  box-shadow: 0 18px 42px rgba(0,0,0,.18) !important;
+  color: var(--pc-text) !important;
+  text-align: center !important;
+}
+[data-pc-bkp-role="team-intro"] h1,
+[data-pc-bkp-role="team-intro"] h2,
+[data-pc-bkp-role="team-intro"] h3 {
+  color: var(--pc-text) !important;
+  -webkit-text-fill-color: var(--pc-text) !important;
+}
+[data-pc-bkp-role="team-intro"] p,
+[data-pc-bkp-role="team-intro"] span {
+  color: var(--pc-muted) !important;
+  -webkit-text-fill-color: var(--pc-muted) !important;
+}
+
+/* Barber cards keep identity accents but share one paper surface. */
+[data-pc-bkp-role="barber-card"] {
+  background: var(--pc-paper) !important;
+  color: var(--pc-text) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 34px rgba(0,0,0,.2) !important;
+  overflow: hidden !important;
+}
+[data-pc-bkp-role="barber-card"] h2,
+[data-pc-bkp-role="barber-card"] h3,
+[data-pc-bkp-role="barber-card"] h4,
+[data-pc-bkp-role="barber-card"] p,
+[data-pc-bkp-role="barber-card"] span { color: var(--pc-text) !important; }
+[data-pc-bkp-role="barber-card"] img { width: 100%; display: block; object-fit: cover; }
+
+/* Booking workspace: one warm cream zone. */
+[data-pc-bkp-role="booking"] {
+  background: var(--pc-cream) !important;
+  color: var(--pc-text) !important;
+  padding-top: clamp(52px,6vw,78px) !important;
+  padding-bottom: clamp(64px,8vw,104px) !important;
+}
+[data-pc-bkp-role="booking"] h1,
+[data-pc-bkp-role="booking"] h2,
+[data-pc-bkp-role="booking"] h3,
+[data-pc-bkp-role="booking"] h4,
+[data-pc-bkp-role="booking"] p,
+[data-pc-bkp-role="booking"] label,
+[data-pc-bkp-role="booking"] span { color: var(--pc-text) !important; }
+[data-pc-bkp-role="booking-intro"] {
+  width: min(calc(100% - 40px), 980px) !important;
+  margin: 0 auto clamp(28px,4vw,46px) !important;
+  padding: clamp(26px,3vw,40px) !important;
+  background: var(--pc-paper) !important;
+  border: 1px solid #ded4c4 !important;
+  border-top: 6px solid var(--pc-gold) !important;
+  border-radius: var(--pc-radius) !important;
+  box-shadow: 0 16px 36px rgba(72,53,25,.12) !important;
+  text-align: center !important;
+}
+
+/* Footer: one dark brown closure. */
+[data-pc-bkp-role="footer"] {
+  background: var(--pc-brown) !important;
+  color: #fbf5e9 !important;
+  border-top: 1px solid rgba(216,173,40,.22) !important;
+}
+[data-pc-bkp-role="footer"] h1,
+[data-pc-bkp-role="footer"] h2,
+[data-pc-bkp-role="footer"] h3 { color: var(--pc-gold) !important; }
+
+/* Remove accidental spacer blocks without touching functional widgets. */
+[data-pc-bkp-spacer="remove"] {
+  display: none !important;
+  min-height: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 760px) {
+  :root { --pc-section-y: 44px; }
+  [data-pc-bkp-section] > :where(.container,.wrap,.inner,[class*="container"],[class*="wrap"],[class*="inner"]) {
+    width: min(calc(100% - 24px), var(--pc-content)) !important;
+  }
+  [data-pc-bkp-role="team-intro"],
+  [data-pc-bkp-role="booking-intro"] { width: calc(100% - 24px) !important; }
+}
