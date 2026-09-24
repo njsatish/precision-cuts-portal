@@ -35,8 +35,8 @@ html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [da
 }
 
 html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-pc-barber-role="true"] {
-  color: #f0c92f !important;
-  -webkit-text-fill-color: #f0c92f !important;
+  color: var(--pc-barber-accent, #f0c92f) !important;
+  -webkit-text-fill-color: var(--pc-barber-accent, #f0c92f) !important;
   font-weight: 800 !important;
 }
 
@@ -48,15 +48,15 @@ html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] spa
 }
 
 html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-pc-book-with-button="true"] {
-  background: #1b202a !important;
-  color: #f7f8fb !important;
-  -webkit-text-fill-color: #f7f8fb !important;
+  background: var(--pc-fixed-accent, var(--pc-barber-accent, #1b202a)) !important;
+  color: var(--pc-fixed-text, #f7f8fb) !important;
+  -webkit-text-fill-color: var(--pc-fixed-text, #f7f8fb) !important;
   border: 1px solid rgba(255, 255, 255, .04) !important;
   box-shadow: none !important;
 }
 
 html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-pc-book-with-button="true"]:hover {
-  background: #252c38 !important;
+  background: var(--pc-fixed-hover, var(--pc-barber-hover, #252c38)) !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }

@@ -84,3 +84,32 @@ html body article:has([data-index-profile-booking="lamar-the-barber"]) [data-pc-
   html body [data-index-profile-booking] { transition: none !important; }
   html body [data-index-profile-booking]:hover { transform: none !important; }
 }
+
+/* BARBER-COLOR-CONFLICT-FIX-V3-START
+   Must outrank the dark-card component rules that load elsewhere. */
+html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-index-profile-booking="keith-lemon"] {
+  --pc-fixed-accent:#F2C23A;--pc-fixed-hover:#FFD45C;--pc-fixed-text:#17120A;
+}
+html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-index-profile-booking="christopher-meadows"] {
+  --pc-fixed-accent:#16A9E0;--pc-fixed-hover:#35BCEC;--pc-fixed-text:#FFFFFF;
+}
+html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-index-profile-booking="ron-the-barber"] {
+  --pc-fixed-accent:#FF6A12;--pc-fixed-hover:#FF8439;--pc-fixed-text:#FFFFFF;
+}
+html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-index-profile-booking="levar-neal"] {
+  --pc-fixed-accent:#E9164B;--pc-fixed-hover:#F23867;--pc-fixed-text:#FFFFFF;
+}
+html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-index-profile-booking="lamar-the-barber"] {
+  --pc-fixed-accent:#0AA06E;--pc-fixed-hover:#16B982;--pc-fixed-text:#FFFFFF;
+}
+html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-index-profile-booking] {
+  background:var(--pc-fixed-accent)!important;
+  background-color:var(--pc-fixed-accent)!important;
+  color:var(--pc-fixed-text)!important;
+  -webkit-text-fill-color:var(--pc-fixed-text)!important;
+}
+html body [data-pc-five-barber-card="true"][data-pc-dark-barber-card="true"] [data-index-profile-booking]:hover {
+  background:var(--pc-fixed-hover)!important;
+  background-color:var(--pc-fixed-hover)!important;
+}
+/* BARBER-COLOR-CONFLICT-FIX-V3-END */
