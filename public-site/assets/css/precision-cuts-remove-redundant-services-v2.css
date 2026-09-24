@@ -1,5 +1,4 @@
-/* Hide the redundant All Precision Cuts services catalog immediately. */
-html body [data-pc-redundant-all-services="true"] {
+html body [data-pc-redundant-service-catalog="true"] {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
