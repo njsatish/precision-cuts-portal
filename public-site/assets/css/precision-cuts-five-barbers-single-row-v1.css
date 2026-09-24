@@ -1,0 +1,67 @@
+/* Five homepage barbers in one balanced desktop row. */
+html body [data-pc-five-barber-grid="true"] {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  grid-auto-flow: row !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: clamp(14px, 1.35vw, 22px) !important;
+  width: min(calc(100% - 40px), 1480px) !important;
+  max-width: 1480px !important;
+  margin: 0 auto !important;
+}
+
+html body [data-pc-five-barber-card="true"] {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 100% !important;
+  margin: 0 !important;
+  align-self: stretch !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+html body [data-pc-five-barber-card="true"] > :last-child {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+html body [data-pc-five-barber-card="true"] img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+html body [data-pc-five-barber-card="true"] [data-index-profile-booking],
+html body [data-pc-five-barber-card="true"] button:last-child,
+html body [data-pc-five-barber-card="true"] a:last-child {
+  margin-top: auto !important;
+}
+
+@media (max-width: 1180px) {
+  html body [data-pc-five-barber-grid="true"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: min(calc(100% - 32px), 980px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html body [data-pc-five-barber-grid="true"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: calc(100% - 24px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  html body [data-pc-five-barber-grid="true"] {
+    grid-template-columns: 1fr !important;
+    width: calc(100% - 24px) !important;
+  }
+}
