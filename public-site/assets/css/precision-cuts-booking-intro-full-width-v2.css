@@ -1,0 +1,35 @@
+/* Force the booking intro to the same broad page width as Choose your barber.
+   Width is based on the viewport, so a narrow parent cannot constrain it. */
+html body [data-pc-booking-intro-full-width="true"] {
+  position: relative !important;
+  left: 50% !important;
+  right: auto !important;
+  width: calc(100vw - 152px) !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-left: -50vw !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
+  transform: translateX(76px) !important;
+}
+
+/* Neutralize width limits on the immediate wrapper without changing its height. */
+html body [data-pc-booking-intro-wrapper-full-width="true"] {
+  width: 100% !important;
+  max-width: none !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 1200px) {
+  html body [data-pc-booking-intro-full-width="true"] {
+    width: calc(100vw - 48px) !important;
+    transform: translateX(24px) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  html body [data-pc-booking-intro-full-width="true"] {
+    width: calc(100vw - 24px) !important;
+    transform: translateX(12px) !important;
+  }
+}
