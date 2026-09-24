@@ -1,0 +1,70 @@
+/* Individual accent colors for the five homepage barber cards. */
+html body [data-pc-color-barber-card="true"] {
+  --pc-barber-accent: #f2c23a;
+  --pc-barber-hover: #ffd45c;
+  --pc-barber-button-text: #17120a;
+}
+
+html body [data-pc-color-barber-card="true"] [data-pc-color-photo="true"] {
+  border-color: var(--pc-barber-accent) !important;
+  box-shadow: 0 11px 26px rgba(0, 0, 0, .38),
+              0 0 0 1px color-mix(in srgb, var(--pc-barber-accent) 35%, transparent) !important;
+}
+
+html body [data-pc-color-barber-card="true"] [data-pc-color-role="true"] {
+  color: var(--pc-barber-accent) !important;
+  -webkit-text-fill-color: var(--pc-barber-accent) !important;
+}
+
+html body [data-pc-color-barber-card="true"] [data-pc-color-status="true"] {
+  border-color: color-mix(in srgb, var(--pc-barber-accent) 36%, transparent) !important;
+  background: color-mix(in srgb, var(--pc-barber-accent) 12%, transparent) !important;
+  color: var(--pc-barber-accent) !important;
+  -webkit-text-fill-color: var(--pc-barber-accent) !important;
+}
+
+html body [data-pc-color-barber-card="true"] [data-pc-color-book-button="true"] {
+  position: relative !important;
+  z-index: 5 !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  margin-top: auto !important;
+  padding: 12px 18px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: var(--pc-barber-accent) !important;
+  color: var(--pc-barber-button-text) !important;
+  -webkit-text-fill-color: var(--pc-barber-button-text) !important;
+  box-shadow: 0 11px 25px color-mix(in srgb, var(--pc-barber-accent) 30%, transparent) !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  transition: transform .16s ease, background-color .16s ease, box-shadow .16s ease !important;
+}
+
+html body [data-pc-color-barber-card="true"] [data-pc-color-book-button="true"]:hover {
+  transform: translateY(-2px) !important;
+  background: var(--pc-barber-hover) !important;
+  box-shadow: 0 15px 30px color-mix(in srgb, var(--pc-barber-accent) 40%, transparent) !important;
+}
+
+html body [data-pc-color-barber-card="true"] [data-pc-color-book-button="true"]:focus-visible {
+  outline: 3px solid var(--pc-barber-accent) !important;
+  outline-offset: 3px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body [data-pc-color-book-button="true"] {
+    transition: none !important;
+  }
+  html body [data-pc-color-book-button="true"]:hover {
+    transform: none !important;
+  }
+}
