@@ -29,13 +29,13 @@
     },
     {
       id:"finishing-care",
-      name:"Finishing & Care",
-      description:"Detailing and finishing services",
+      name:"Additional Services",
+      description:"Finishing, care, and additional services",
       categories:["eyebrows","hair-wash","facial"]
     }
   ];
   const familyFor=category=>serviceFamilies.find(family=>family.categories.includes(category))
-    || {id:"other",name:"Other Services",description:"Additional services",categories:[category]};
+    || {id:"other",name:"Additional Services",description:"Finishing, care, and additional services",categories:[category]};
 
   function groupedServiceMarkup(items,renderItem,selectedCategory){
     const groups=[];
@@ -44,7 +44,7 @@
       if(familyItems.length) groups.push({family,items:familyItems});
     }
     const uncategorized=items.filter(item=>!serviceFamilies.some(family=>family.categories.includes(item.category)));
-    if(uncategorized.length) groups.push({family:{id:"other",name:"Other Services",description:"Additional services"},items:uncategorized});
+    if(uncategorized.length) groups.push({family:{id:"other",name:"Additional Services",description:"Finishing, care, and additional services"},items:uncategorized});
 
     return groups.map(({family,items:familyItems},index)=>{
       const containsSelection=familyItems.some(item=>item.category===selectedCategory);
