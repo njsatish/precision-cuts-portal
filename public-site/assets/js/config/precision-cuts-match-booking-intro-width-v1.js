@@ -1,18 +1,23 @@
 (() => {
   "use strict";
 
-  const TARGET = "choose a service, barber, and time.";
   const normalize = value => String(value || "").replace(/\s+/g, " ").trim().toLowerCase();
 
-  function findPanel(heading) {
-    let current = heading.parentElement;
+  function heading(text) {
+    return [...document.querySelectorAll("h1,h2,h3,h4,[role='heading']")]
+      .find(node => normalize(node.textContent) === text);
+  }
+
+  function panelFor(node) {
+    if (!node) return null;
+    let current = node.parentElement;
     const candidates = [];
     while (current && current !== document.body) {
       const rect = current.getBoundingClientRect();
       const style = getComputedStyle(current);
       const text = normalize(current.textContent);
       const framed = parseFloat(style.borderTopWidth) > 0 || parseFloat(style.borderRadius) >= 10;
-      if (framed && rect.height >= 100 && rect.height <= 420 && text.includes(TARGET) && text.length < 320) {
+      if (framed && rect.width >= 500 && rect.height >= 100 && rect.height <= 420 && text.length < 320) {
         candidates.push(current);
       }
       current = current.parentElement;
@@ -22,25 +27,30 @@
   }
 
   function apply() {
-    const heading = [...document.querySelectorAll("h1,h2,h3,h4,[role='heading']")]
-      .find(node => normalize(node.textContent) === TARGET && !node.closest("#pc-home-booking-modal"));
-    if (!heading) return false;
-    const panel = findPanel(heading);
-    if (!panel) return false;
+    const teamHeading = heading("choose your barber.");
+    const bookingHeading = heading("choose a service, barber, and time.");
+    const teamPanel = panelFor(teamHeading);
+    const bookingPanel = panelFor(bookingHeading);
+    if (!teamPanel || !bookingPanel || teamPanel === bookingPanel) return false;
 
-    panel.dataset.pcBookingIntroFullWidth = "true";
-    const wrapper = panel.parentElement;
-    if (wrapper && wrapper !== document.body) wrapper.dataset.pcBookingIntroWrapperFullWidth = "true";
-    document.documentElement.dataset.pcBookingIntroFullWidthApplied = "true";
+    const teamRect = teamPanel.getBoundingClientRect();
+    if (teamRect.width < 500) return false;
+
+    const rootRect = document.documentElement.getBoundingClientRect();
+    document.documentElement.style.setProperty("--pc-team-intro-width", `${teamRect.width}px`);
+    document.documentElement.style.setProperty("--pc-team-intro-left", `${teamRect.left - rootRect.left}px`);
+    teamPanel.dataset.pcTeamIntroWidthSource = "true";
+    bookingPanel.dataset.pcBookingIntroWidthMatch = "true";
+    document.documentElement.dataset.pcBookingIntroWidthMatched = "true";
     return true;
   }
 
   let queued = false;
-  const schedule = () => {
+  function schedule() {
     if (queued) return;
     queued = true;
     requestAnimationFrame(() => { queued = false; apply(); });
-  };
+  }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule, {once:true});
   else schedule();
