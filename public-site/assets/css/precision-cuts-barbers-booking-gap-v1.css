@@ -1,0 +1,25 @@
+/* Tight boundary between the five-barber team and booking workspace. */
+html body [data-pc-team-gap="compact"] {
+  min-height: 0 !important;
+  height: auto !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 32px !important;
+}
+
+html body [data-pc-booking-gap="compact"] {
+  min-height: 0 !important;
+  height: auto !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html body [data-pc-booking-intro-gap="compact"] {
+  margin-top: 0 !important;
+  margin-bottom: clamp(24px, 3vw, 38px) !important;
+}
+
+@media (max-width: 640px) {
+  html body [data-pc-team-gap="compact"] {
+    padding-bottom: 24px !important;
+  }
+}
