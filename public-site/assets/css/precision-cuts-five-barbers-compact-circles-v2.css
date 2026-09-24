@@ -1,0 +1,119 @@
+/* Compact five-card team row modeled after the selected reference. */
+html body [data-pc-five-barber-grid="true"] {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(220px, 1fr)) !important;
+  align-items: stretch !important;
+  gap: clamp(16px, 1.4vw, 24px) !important;
+  width: min(calc(100% - 40px), 1680px) !important;
+  max-width: 1680px !important;
+  margin-inline: auto !important;
+}
+
+html body [data-pc-five-barber-card="true"] {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 320px !important;
+  min-height: 500px !important;
+  height: 500px !important;
+  margin: 0 auto !important;
+  padding: 24px 20px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  overflow: hidden !important;
+  border-radius: 20px !important;
+}
+
+html body [data-pc-five-barber-photo-frame="true"] {
+  flex: 0 0 178px !important;
+  width: 100% !important;
+  min-height: 178px !important;
+  height: 178px !important;
+  margin: 0 auto 10px !important;
+  padding: 8px !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: visible !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body [data-pc-five-barber-photo="true"] {
+  display: block !important;
+  width: 160px !important;
+  height: 160px !important;
+  min-width: 160px !important;
+  min-height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--pc-card-accent, #d7ad24) !important;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .22) !important;
+}
+
+html body [data-pc-five-barber-content="true"] {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  padding: 2px 0 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: center !important;
+  overflow: visible !important;
+}
+
+html body [data-pc-five-barber-card="true"] h2,
+html body [data-pc-five-barber-card="true"] h3,
+html body [data-pc-five-barber-card="true"] h4 {
+  margin: 8px 0 7px !important;
+  font-size: clamp(1.45rem, 1.55vw, 1.85rem) !important;
+  line-height: 1.02 !important;
+  text-align: center !important;
+}
+
+html body [data-pc-five-barber-card="true"] p {
+  margin-top: 0 !important;
+  text-align: center !important;
+}
+
+html body [data-pc-five-barber-card="true"] [data-index-profile-booking] {
+  width: 100% !important;
+  min-height: 48px !important;
+  margin-top: auto !important;
+  border-radius: 10px !important;
+}
+
+@media (max-width: 1240px) {
+  html body [data-pc-five-barber-grid="true"] {
+    grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
+    width: min(calc(100% - 32px), 980px) !important;
+  }
+  html body [data-pc-five-barber-card="true"] {
+    max-width: 320px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  html body [data-pc-five-barber-grid="true"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: calc(100% - 24px) !important;
+  }
+}
+
+@media (max-width: 540px) {
+  html body [data-pc-five-barber-grid="true"] {
+    grid-template-columns: 1fr !important;
+  }
+  html body [data-pc-five-barber-card="true"] {
+    width: min(100%, 340px) !important;
+    max-width: 340px !important;
+    min-height: 480px !important;
+    height: auto !important;
+  }
+}
