@@ -5,34 +5,34 @@
     {
       name: "Keith Lemon",
       description: "Founder & Master Barber · Adult Haircuts · Beard Sculpting · Youth Cuts",
-      href: "/barbers/keith-lemon.html",
+      href: "/keith-lemon.html",
       imageNumber: "01"
     },
     {
       name: "Christopher Meadows",
       description: "Haircuts & Skin Fades · Haircut & Beard · Hot Towel & Razor Shaves",
-      href: "/barbers/christopher-meadows.html",
+      href: "/christopher-meadows.html",
       image: "/assets/images/barbers/christopher-meadows/transitions/christopher_meadows_02.jpg",
       imageNumber: "02"
     },
     {
       name: "Ron The Barber",
       description: "Haircuts · Haircut & Beard · Edge-Ups & Beard Services",
-      href: "/barbers/ron-the-barber.html",
+      href: "/ron-the-barber.html",
       image: "/assets/images/barbers/ron-the-barber/transitions/ron_01.jpeg",
       imageNumber: "03"
     },
     {
       name: "Var da Barber",
       description: "Men's Haircuts · Head Shaves · Beard Trims · Hot Towel Shaves",
-      href: "/barbers/var-da-barber.html",
+      href: "/var-da-barber.html",
       image: "/assets/images/barbers/levar-neal/transitions/Levar_Neal_02.jpg",
       imageNumber: "04"
     },
     {
       name: "Lamar the barber",
       description: "Male Haircuts · Beard Shaping · Kids Cuts",
-      href: "/barbers/lamar-the-barber.html",
+      href: "/lamar-the-barber.html",
       image: "/assets/images/barbers/lamar-the-barber/transitions/lamar-the-barber.jpg",
       imageNumber: "05"
     }

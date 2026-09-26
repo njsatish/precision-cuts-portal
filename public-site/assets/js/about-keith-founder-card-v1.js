@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const PROFILE = "/barbers/keith-lemon.html";
+  const PROFILE = "/keith-lemon.html";
   const PHOTO = "/assets/images/barbers/keith-booksy-profile.jpg?v=1";
 
   const locateBarberSection = () => {

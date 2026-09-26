@@ -4,13 +4,13 @@
   const profiles = [
     {
       names: ["levar neal", "var da barber"],
-      href: "/barbers/var-da-barber.html",
+      href: "/var-da-barber.html",
       label: "View Levar Neal’s profile",
       key: "levar"
     },
     {
       names: ["lamar the barber"],
-      href: "/barbers/lamar-the-barber.html",
+      href: "/lamar-the-barber.html",
       label: "View Lamar the barber’s profile",
       key: "lamar"
     }

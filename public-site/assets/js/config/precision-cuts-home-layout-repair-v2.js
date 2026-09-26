@@ -3,7 +3,7 @@
 
   const slides = [
     {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_01.jpg",href:"#booking-workspace",title:"Book at Precision Cuts",caption:"View live services, barbers, dates, and times"},
-    {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_02.jpg",href:"/barbers/keith-lemon.html",title:"Meet the Founder",caption:"Explore the founder profile"},
+    {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_02.jpg",href:"/keith-lemon.html",title:"Meet the Founder",caption:"Explore the founder profile"},
     {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_03.jpg",href:"/gallery.html",title:"View the Gallery",caption:"Explore more Precision Cuts work"},
     {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_04.jpg",href:"/services.html",title:"Browse Services",caption:"Review the Precision Cuts service catalog"},
     {src:"/assets/images/barbers/keith-lemon/transitions/precision_cuts_transition_05.jpg",href:"/contact.html",title:"Visit Precision Cuts",caption:"View location, hours, and contact details"}

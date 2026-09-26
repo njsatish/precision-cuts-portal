@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const PHOTO = "/assets/images/barbers/levar-neal/Levar_Neal_01.jpg";
-  const PROFILE = "/barbers/var-da-barber.html";
+  const PROFILE = "/var-da-barber.html";
 
   const findCard = () => {
     const heading = [...document.querySelectorAll("main h1, main h2, main h3, main h4")]

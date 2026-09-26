@@ -2,7 +2,7 @@
   "use strict";
 
   const PHOTO = "/assets/images/barbers/christopher-meadows/christopher_meadows_03.png";
-  const PROFILE = "/barbers/christopher-meadows.html";
+  const PROFILE = "/christopher-meadows.html";
 
   const findCard = () => {
     const heading = [...document.querySelectorAll("main h1, main h2, main h3, main h4")]

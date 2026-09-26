@@ -2,11 +2,11 @@
   "use strict";
 
   const barbers = [
-    { names: ["Keith Lemon"], image: "/assets/images/barbers/keith-booksy-profile.jpg?v=1", profile: "/barbers/keith-lemon.html", button: "View Keith Lemon’s profile" },
-    { names: ["Christopher Meadows"], image: "/assets/images/barbers/christopher-meadows/transitions/christopher_meadows_02.jpg", profile: "/barbers/christopher-meadows.html", button: "View Christopher Meadows’ profile" },
-    { names: ["Ron The Barber", "Ron the Barber"], image: "/assets/images/barbers/ron-the-barber/transitions/ron_01.jpeg", profile: "/barbers/ron-the-barber.html", button: "View Ron The Barber’s profile" },
-    { names: ["Levar Neal", "Var da Barber"], image: "/assets/images/barbers/levar-neal/transitions/Levar_Neal_02.jpg", profile: "/barbers/var-da-barber.html", button: "View Levar Neal’s profile" },
-    { names: ["Lamar the barber", "Lamar The Barber"], image: "/assets/images/barbers/lamar-the-barber/transitions/lamar-the-barber.jpg", profile: "/barbers/lamar-the-barber.html", button: "View Lamar the barber’s profile" }
+    { names: ["Keith Lemon"], image: "/assets/images/barbers/keith-booksy-profile.jpg?v=1", profile: "/keith-lemon.html", button: "View Keith Lemon’s profile" },
+    { names: ["Christopher Meadows"], image: "/assets/images/barbers/christopher-meadows/transitions/christopher_meadows_02.jpg", profile: "/christopher-meadows.html", button: "View Christopher Meadows’ profile" },
+    { names: ["Ron The Barber", "Ron the Barber"], image: "/assets/images/barbers/ron-the-barber/transitions/ron_01.jpeg", profile: "/ron-the-barber.html", button: "View Ron The Barber’s profile" },
+    { names: ["Levar Neal", "Var da Barber"], image: "/assets/images/barbers/levar-neal/transitions/Levar_Neal_02.jpg", profile: "/var-da-barber.html", button: "View Levar Neal’s profile" },
+    { names: ["Lamar the barber", "Lamar The Barber"], image: "/assets/images/barbers/lamar-the-barber/transitions/lamar-the-barber.jpg", profile: "/lamar-the-barber.html", button: "View Lamar the barber’s profile" }
   ];
 
   const findCard = names => {
