@@ -131,3 +131,17 @@ body.pc-lightbox-open { overflow: hidden !important; }
   display: flex !important;
 }
 /* PRECISION-CUTS-HOME-FOOTER-ON-BARBER-PAGES-V1-END */
+
+/* PRECISION-CUTS-SIMPLE-HOME-FOOTER-V2-START */
+#shared-footer{display:block!important;width:100%!important;margin:0!important;padding:0!important}
+.pc-home-footer{width:100%;margin:0;background:#1f1712;color:#fff8e9;border-top:1px solid rgba(226,181,47,.18);border-radius:0 0 24px 24px}
+.pc-home-footer-inner{width:min(100% - 40px,1620px);margin:0 auto;padding:38px 0 24px}
+.pc-home-footer-top{display:flex;align-items:center;justify-content:space-between;gap:44px;padding-bottom:26px}
+.pc-home-footer-logo{display:inline-flex;align-items:center;flex:0 0 auto}
+.pc-home-footer-logo img{display:block;width:min(385px,32vw);height:auto;max-height:112px;object-fit:contain}
+.pc-home-footer-links{display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));column-gap:54px;row-gap:16px;min-width:310px}
+.pc-home-footer-links a{color:#fff8e9!important;font-size:1rem;font-weight:800;text-decoration:none!important}
+.pc-home-footer-links a:hover,.pc-home-footer-links a:focus-visible{color:#e2b52f!important}
+.pc-home-footer-bottom{display:flex;justify-content:space-between;gap:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);color:#c8bda8;font-size:.82rem;font-weight:700}
+@media(max-width:760px){.pc-home-footer-inner{width:min(100% - 28px,1620px)}.pc-home-footer-top{align-items:flex-start;flex-direction:column}.pc-home-footer-logo img{width:min(360px,86vw)}.pc-home-footer-links{width:100%;min-width:0;grid-template-columns:1fr 1fr}.pc-home-footer-bottom{flex-direction:column;gap:8px}.pc-home-footer-bottom span:last-child{line-height:1.45}}
+/* PRECISION-CUTS-SIMPLE-HOME-FOOTER-V2-END */

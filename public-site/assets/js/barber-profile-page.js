@@ -123,4 +123,38 @@ document.addEventListener('keydown',event=>{
   if(event.key==='ArrowLeft')showGalleryImage(activeGalleryIndex-1);
   if(event.key==='ArrowRight')showGalleryImage(activeGalleryIndex+1);
 })}
-async function init(){try{await injectSharedLayout();const data=await fetch('../assets/config/portal.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(`portal.json ${r.status}`);return r.json()});const key=document.body.dataset.barberKey,b=findBarber(data,key);if(!b)throw Error(`No configured profile found for ${key}`);render(data,b,key)}catch(e){document.querySelector('#barber-profile-root').innerHTML=`<div class="pc-error"><h1>Profile unavailable</h1><p>${esc(e.message)}</p><a href="../index.html">Return to Precision Cuts</a></div>`;console.error(e)}}init();
+// PRECISION-CUTS-SIMPLE-HOME-FOOTER-V2-START
+function renderSharedHomeFooter(data){
+  const target=document.querySelector('#shared-footer');
+  if(!target)return;
+  const business=data?.business||{};
+  const brand=data?.brand||{};
+  const address=Array.isArray(business.addressLines)?business.addressLines.join(', '):'6423 Williamson Rd, Roanoke, VA 24019';
+  const logo=brand.logo||business.logo||'/assets/images/precision-cuts-logo-approved.png';
+  const phoneDisplay=business.phoneDisplay||'(540) 556-2871';
+  const phoneHref=business.phoneHref||'+15405562871';
+  const facebook=business.facebookUrl||'#';
+  const booking=business.booksyUrl||'../book.html';
+  target.innerHTML=`
+    <footer class="pc-home-footer" aria-label="Precision Cuts footer">
+      <div class="pc-home-footer-inner">
+        <div class="pc-home-footer-top">
+          <a class="pc-home-footer-logo" href="../index.html" aria-label="Precision Cuts home">
+            <img src="..${esc(logo)}" alt="Precision Cuts logo" loading="lazy" decoding="async">
+          </a>
+          <nav class="pc-home-footer-links" aria-label="Footer navigation">
+            <a href="tel:${esc(phoneHref)}">${esc(phoneDisplay)}</a>
+            <a href="${esc(facebook)}" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="../services.html">Services</a>
+            <a href="${esc(booking)}" target="_blank" rel="noopener noreferrer">Booking</a>
+          </nav>
+        </div>
+        <div class="pc-home-footer-bottom">
+          <span>© 2026 Precision Cuts</span>
+          <span>${esc(address)}</span>
+        </div>
+      </div>
+    </footer>`;
+}
+// PRECISION-CUTS-SIMPLE-HOME-FOOTER-V2-END
+async function init(){try{await injectSharedLayout();const data=await fetch('../assets/config/portal.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(`portal.json ${r.status}`);return r.json()});renderSharedHomeFooter(data);const key=document.body.dataset.barberKey,b=findBarber(data,key);if(!b)throw Error(`No configured profile found for ${key}`);render(data,b,key)}catch(e){document.querySelector('#barber-profile-root').innerHTML=`<div class="pc-error"><h1>Profile unavailable</h1><p>${esc(e.message)}</p><a href="../index.html">Return to Precision Cuts</a></div>`;console.error(e)}}init();
