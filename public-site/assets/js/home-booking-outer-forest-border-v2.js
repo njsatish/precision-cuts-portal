@@ -1,38 +1,67 @@
 (() => {
   "use strict";
 
-  const textOf = element =>
+  const borderClass = "pc-home-booking-outer-frame-v2";
+  const normalized = element =>
     (element?.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
 
-  const includesAny = (element, values) => {
-    const text = textOf(element);
-    return values.some(value => text.includes(value));
+  const findStepHeading = label =>
+    [...document.querySelectorAll("main h2, main h3, main h4, main header, main [class*='title']")]
+      .find(element => normalized(element).includes(label));
+
+  const findStepCard = heading => {
+    if (!heading) return null;
+    return heading.closest(
+      "[data-booking-step], .booking-step, .booking-column, .booking-panel, .step-card, .pp-booking-step, section, article"
+    ) || heading.parentElement;
   };
 
-  const locateHomeBookingWorkflow = () => {
-    const explicit = document.querySelector(
-      "[data-booking-workflow], #booking-workflow, .booking-workflow, .booking-grid, .booking-steps, .pp-booking-grid, .pc-booking-grid"
-    );
-    if (explicit) return explicit;
+  const lowestCommonAncestor = elements => {
+    if (!elements.length || elements.some(element => !element)) return null;
+    let candidate = elements[0];
+    while (candidate && !elements.every(element => candidate.contains(element))) {
+      candidate = candidate.parentElement;
+    }
+    return candidate;
+  };
 
-    const candidates = [...document.querySelectorAll("main section, main form, main > div")]
-      .filter(element => {
-        const services = includesAny(element, ["1. services", "services"]);
-        const barbers = includesAny(element, ["2. barbers", "barbers"]);
-        const dates = includesAny(element, ["3. available dates", "available dates"]);
-        return services && barbers && dates;
-      })
+  const locateThreeColumnGrid = () => {
+    const services = findStepCard(findStepHeading("1. services"));
+    const barbers = findStepCard(findStepHeading("2. barbers"));
+    const dates = findStepCard(findStepHeading("3. available dates"));
+    const common = lowestCommonAncestor([services, barbers, dates]);
+    if (!common) return null;
+
+    /* The workflow heading must not be inside the bordered element. */
+    const headingText = "live booksy availability";
+    if (!normalized(common).includes(headingText)) return common;
+
+    /* Prefer a descendant that still contains all three step cards but not the heading. */
+    const descendants = [...common.querySelectorAll("div, section, form")]
+      .filter(element =>
+        element.contains(services) &&
+        element.contains(barbers) &&
+        element.contains(dates) &&
+        !normalized(element).startsWith(headingText)
+      )
       .sort((a, b) => a.querySelectorAll("*").length - b.querySelectorAll("*").length);
 
-    return candidates[0] || null;
+    return descendants[0] || common;
   };
 
   const applyBorder = () => {
-    if (document.querySelector(".pc-home-booking-outer-frame-v2")) return true;
-    const workflow = locateHomeBookingWorkflow();
-    if (!workflow) return false;
-    workflow.classList.add("pc-home-booking-outer-frame-v2");
-    workflow.dataset.homeBookingOuterBorder = "forest-v2";
+    const grid = locateThreeColumnGrid();
+    if (!grid) return false;
+
+    document.querySelectorAll(`.${borderClass}`).forEach(element => {
+      if (element !== grid) {
+        element.classList.remove(borderClass);
+        delete element.dataset.homeBookingOuterBorder;
+      }
+    });
+
+    grid.classList.add(borderClass);
+    grid.dataset.homeBookingOuterBorder = "forest-v4";
     return true;
   };
 
