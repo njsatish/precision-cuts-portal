@@ -258,7 +258,7 @@
     "liveAvailability": true,
     "booksyWidget": true,
     "instantBooksyHandoff": true,
-    "reviews": false,
+    "reviews": true,
     "gallery": true,
     "barberDirectory": true
   },
@@ -365,7 +365,30 @@
       },
       "photoUrl": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
       "profilePhoto": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
-      "photoSource": "Booksy business profile"
+      "photoSource": "Booksy business profile",
+      "reviews": [
+        {
+          "name": "Sample Client A",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The appointment started on time, the cut was detailed, and the finished style was clean and precise.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client B",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The service was professional from consultation through the final lineup, with careful attention to detail.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client C",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The haircut and beard service produced a polished result, and the booking process was straightforward.",
+          "sample": true
+        }
+      ]
     },
     {
       "id": "christopher-meadows",
@@ -558,7 +581,30 @@
           "durationMinutes": 60
         }
       ],
-      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
+      "reviews": [
+        {
+          "name": "Sample Client A",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The fade was blended smoothly and the edges were finished with precise detail.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client B",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The consultation was clear, the service was efficient, and the final cut matched the requested style.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client C",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The grooming service was thorough and the finished haircut looked clean from every angle.",
+          "sample": true
+        }
+      ]
     },
     {
       "id": "ron-the-barber",
@@ -643,7 +689,30 @@
           "durationMinutes": 25
         }
       ],
-      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
+      "reviews": [
+        {
+          "name": "Sample Client A",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The edge-up was sharp, balanced, and carefully finished around the hairline.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client B",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The haircut and beard shaping were completed with consistent detail and a clean finish.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client C",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The appointment was organized, the service was focused, and the final result was polished.",
+          "sample": true
+        }
+      ]
     },
     {
       "id": "levar-neal",
@@ -828,7 +897,30 @@
       "bookingStatus": "verified-live-availability",
       "photo": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
       "profilePhoto": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
-      "photoStatus": "verified-local-booksy-photo"
+      "photoStatus": "verified-local-booksy-photo",
+      "reviews": [
+        {
+          "name": "Sample Client A",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The haircut was shaped carefully and the final detailing created a clean, professional finish.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client B",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The beard trim was even and well defined, with close attention to the outline.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client C",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The service selection and booking steps were clear, and the appointment result was consistent.",
+          "sample": true
+        }
+      ]
     },
     {
       "id": "lamar-the-barber",
@@ -912,7 +1004,30 @@
       "availabilityApiUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
       "availabilityBaseUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
       "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
-      "bookingStatus": "verified-live-availability"
+      "bookingStatus": "verified-live-availability",
+      "reviews": [
+        {
+          "name": "Sample Client A",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The haircut was completed carefully with a clean shape and detailed finishing work.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client B",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The service was organized and the finished beard shaping had a precise outline.",
+          "sample": true
+        },
+        {
+          "name": "Sample Client C",
+          "rating": 5,
+          "date": "Sample review",
+          "comment": "The appointment experience was straightforward and the final cut matched the selected service.",
+          "sample": true
+        }
+      ]
     }
   ],
   "founderSpotlight": {
