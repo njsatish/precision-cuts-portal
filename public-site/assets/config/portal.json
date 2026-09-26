@@ -378,7 +378,8 @@
           "description": "Keith appears with his wife in a short studio performance, sharing a lighthearted moment together in front of the microphone.",
           "poster": "/assets/images/barbers/keith-lemon/videos/keith_video_01_thumbnail.jpg",
           "controls": true,
-          "preload": "metadata"
+          "preload": "metadata",
+          "thumbnailTimeSeconds": 1
         },
         {
           "type": "local-mp4",
@@ -387,7 +388,8 @@
           "description": "Keith appears with a friend in a second studio performance, exchanging verses in front of the microphone against the signature orange backdrop.",
           "poster": "/assets/images/barbers/keith-lemon/videos/keith_video_02_thumbnail.jpg",
           "controls": true,
-          "preload": "metadata"
+          "preload": "metadata",
+          "thumbnailTimeSeconds": 1
         }
       ]
     },
