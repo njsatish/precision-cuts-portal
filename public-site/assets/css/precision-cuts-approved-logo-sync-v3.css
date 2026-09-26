@@ -1,1 +1,81 @@
-.pc-approved-wide-brand{display:inline-flex!important;align-items:center!important;min-width:min(430px,42vw)!important;padding:0!important;background:transparent!important}.pc-approved-wide-logo{display:block!important;width:min(410px,40vw)!important;max-width:100%!important;height:auto!important;max-height:82px!important;object-fit:contain!important;object-position:left center!important;border:0!important;border-radius:0!important;background:#000!important}.pc-hide-old-brand-content{display:none!important}@media(max-width:760px){.pc-approved-wide-brand{min-width:min(260px,68vw)!important}.pc-approved-wide-logo{width:min(250px,66vw)!important;max-height:62px!important}}
+/* Approved Precision Cuts wordmark without the inherited gold brand block. */
+.pc-approved-wide-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex: 0 0 auto !important;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: min(430px, 42vw) !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.pc-approved-wide-brand::before,
+.pc-approved-wide-brand::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.pc-approved-wide-logo {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: min(410px, 40vw) !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 82px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  background: #000 !important;
+}
+
+.pc-hide-old-brand-content {
+  display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove legacy gold styling from the header link that holds the approved logo. */
+#shared-header .pc-approved-wide-brand,
+header .pc-approved-wide-brand,
+.pp-site-header .pc-approved-wide-brand,
+.pp-header .pc-approved-wide-brand {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 760px) {
+  .pc-approved-wide-brand {
+    width: fit-content !important;
+    min-width: 0 !important;
+    max-width: min(260px, 68vw) !important;
+  }
+
+  .pc-approved-wide-logo {
+    width: min(250px, 66vw) !important;
+    max-height: 62px !important;
+  }
+}
