@@ -12,6 +12,64 @@ const serviceHtml=services.map(s=>`<article class="pc-service"><div class="pc-se
 const links=Object.entries(PAGE_MAP).map(([k,f])=>`<a href="${f}" ${k===key?'aria-current="page"':''}>${esc(k==='var'?'Var':k[0].toUpperCase()+k.slice(1))}</a>`).join('');
 const galleryHtml=gallery.map(g=>`<button class="pc-gallery-card" type="button" data-lightbox-src="${esc(g.src)}" aria-label="Enlarge ${esc(g.title)}"><img src="${esc(g.src)}" alt="${esc(g.title)}" loading="lazy"><span class="pc-gallery-overlay"></span>${g.ai?'<span class="pc-ai-label">AI placeholder</span>':''}<span class="pc-gallery-copy"><span class="pc-gallery-category">${esc(g.category)}</span><span class="pc-gallery-title">${esc(g.title)}</span></span></button>`).join('');
 const reviewsHtml=reviews.length?reviews.map(r=>`<article class="pc-review-card"><div class="pc-review-top"><span class="pc-review-name">${esc(pick(r,['name','client','author'],'Client'))}</span><span class="pc-review-date">${esc(pick(r,['date','timeAgo'],''))}</span></div><div class="pc-review-stars" aria-label="${esc(pick(r,['rating'],5))} out of 5 stars">★★★★★</div><p class="pc-review-quote">“${esc(pick(r,['comment','text','review'],''))}”</p></article>`).join(''):`<article class="pc-review-card"><div class="pc-review-name">Reviews coming soon</div><div class="pc-review-stars" aria-hidden="true">★★★★★</div><p class="pc-review-quote">Client review excerpts will appear here after verified review text is added to the Precision Cuts configuration.</p></article>`;
-const photo=pick(b,['photo','photoUrl','profilePhoto'],'../assets/images/precision-cuts-logo.png');document.querySelector('#barber-profile-root').innerHTML=`<div class="pc-profile"><section class="pc-hero"><img class="pc-photo" src="${esc(photo)}" alt="${esc(name)} profile"><div><div class="pc-kicker">Precision Cuts · Roanoke, Virginia</div><h1 class="pc-title">${esc(name)}</h1><div class="pc-role">${esc(role)}</div><p class="pc-bio">${esc(bio)}</p>${tags.length?`<div class="pc-tags">${tags.map(t=>`<span class="pc-tag">${esc(t)}</span>`).join('')}</div>`:''}<div class="pc-actions"><a class="pc-button pc-button-primary" href="${esc(url)}" target="_blank" rel="noopener">Book with ${esc(name.split(' ')[0])}</a><a class="pc-button pc-button-secondary" href="../index.html#barbers">Back to all barbers</a></div><nav class="pc-switcher" aria-label="Barber profiles">${links}</nav></div></section><div class="pc-grid"><section class="pc-panel"><h2>Services</h2><div class="pc-service-list">${serviceHtml}</div></section><section class="pc-panel"><h2>Availability and booking</h2><p class="pc-note">Choose a service and continue to the barber's current booking profile for available dates and times.</p><div class="pc-actions"><a class="pc-button pc-button-primary" href="${esc(url)}" target="_blank" rel="noopener">View live availability</a></div></section></div><section class="pc-gallery-section"><header class="pc-section-head"><h2>Featured Barbering Work</h2><p class="pc-section-subtitle">Explore fades, beard detailing, precision shaping, and finished styles. Select any photo to view it larger.</p></header><div class="pc-gallery">${galleryHtml}</div></section><section class="pc-reviews-section"><header class="pc-section-head"><h2>Sample Client Feedback</h2><p class="pc-section-subtitle">Preview feedback created to demonstrate the review layout. Names and comments are fictional placeholders.</p></header><div class="pc-reviews-grid">${reviewsHtml}</div></section></div><div class="pc-lightbox" id="pc-lightbox" role="dialog" aria-modal="true" aria-label="Gallery image preview"><button type="button" aria-label="Close image preview">×</button><img alt="Expanded portfolio work"></div>`;
-const box=document.querySelector('#pc-lightbox'),full=box.querySelector('img'),close=()=>box.classList.remove('is-open');document.querySelectorAll('[data-lightbox-src]').forEach(el=>el.addEventListener('click',()=>{full.src=el.dataset.lightboxSrc;full.alt=el.querySelector('img').alt;box.classList.add('is-open')}));box.querySelector('button').addEventListener('click',close);box.addEventListener('click',e=>{if(e.target===box)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})}
+const photo=pick(b,['photo','photoUrl','profilePhoto'],'../assets/images/precision-cuts-logo.png');document.querySelector('#barber-profile-root').innerHTML=`<div class="pc-profile"><section class="pc-hero"><img class="pc-photo" src="${esc(photo)}" alt="${esc(name)} profile"><div><div class="pc-kicker">Precision Cuts · Roanoke, Virginia</div><h1 class="pc-title">${esc(name)}</h1><div class="pc-role">${esc(role)}</div><p class="pc-bio">${esc(bio)}</p>${tags.length?`<div class="pc-tags">${tags.map(t=>`<span class="pc-tag">${esc(t)}</span>`).join('')}</div>`:''}<div class="pc-actions"><a class="pc-button pc-button-primary" href="${esc(url)}" target="_blank" rel="noopener">Book with ${esc(name.split(' ')[0])}</a><a class="pc-button pc-button-secondary" href="../index.html#barbers">Back to all barbers</a></div><nav class="pc-switcher" aria-label="Barber profiles">${links}</nav></div></section><div class="pc-grid"><section class="pc-panel"><h2>Services</h2><div class="pc-service-list">${serviceHtml}</div></section><section class="pc-panel"><h2>Availability and booking</h2><p class="pc-note">Choose a service and continue to the barber's current booking profile for available dates and times.</p><div class="pc-actions"><a class="pc-button pc-button-primary" href="${esc(url)}" target="_blank" rel="noopener">View live availability</a></div></section></div><section class="pc-gallery-section"><header class="pc-section-head"><h2>Featured Barbering Work</h2><p class="pc-section-subtitle">Explore fades, beard detailing, precision shaping, and finished styles. Select any photo to view it larger.</p></header><div class="pc-gallery">${galleryHtml}</div></section><section class="pc-reviews-section"><header class="pc-section-head"><h2>Sample Client Feedback</h2><p class="pc-section-subtitle">Preview feedback created to demonstrate the review layout. Names and comments are fictional placeholders.</p></header><div class="pc-reviews-grid">${reviewsHtml}</div></section></div><div class="pc-lightbox" id="pc-lightbox" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+  <button class="pc-lightbox-close" type="button" aria-label="Close image preview">×</button>
+  <button class="pc-lightbox-nav pc-lightbox-prev" type="button" aria-label="Previous gallery photo">‹</button>
+  <figure class="pc-lightbox-figure">
+    <img alt="Expanded portfolio work">
+    <figcaption class="pc-lightbox-caption">
+      <span class="pc-lightbox-category"></span>
+      <strong class="pc-lightbox-title"></strong>
+      <small class="pc-lightbox-count"></small>
+    </figcaption>
+  </figure>
+  <button class="pc-lightbox-nav pc-lightbox-next" type="button" aria-label="Next gallery photo">›</button>
+</div>`;
+const box=document.querySelector('#pc-lightbox');
+const galleryButtons=[...document.querySelectorAll('[data-lightbox-src]')];
+const full=box.querySelector('img');
+const captionCategory=box.querySelector('.pc-lightbox-category');
+const captionTitle=box.querySelector('.pc-lightbox-title');
+const captionCount=box.querySelector('.pc-lightbox-count');
+let activeGalleryIndex=0;
+
+const showGalleryImage=index=>{
+  if(!galleryButtons.length)return;
+  activeGalleryIndex=(index+galleryButtons.length)%galleryButtons.length;
+  const card=galleryButtons[activeGalleryIndex];
+  const cardImage=card.querySelector('img');
+  const category=card.querySelector('.pc-gallery-category');
+  const title=card.querySelector('.pc-gallery-title');
+  full.src=card.dataset.lightboxSrc;
+  full.alt=cardImage?.alt||'Expanded portfolio work';
+  captionCategory.textContent=category?.textContent||'';
+  captionTitle.textContent=title?.textContent||full.alt;
+  captionCount.textContent=`${activeGalleryIndex+1} of ${galleryButtons.length}`;
+};
+
+const openGallery=index=>{
+  showGalleryImage(index);
+  box.classList.add('is-open');
+  document.body.classList.add('pc-lightbox-open');
+  box.querySelector('.pc-lightbox-close').focus();
+};
+
+const closeGallery=()=>{
+  box.classList.remove('is-open');
+  document.body.classList.remove('pc-lightbox-open');
+  galleryButtons[activeGalleryIndex]?.focus();
+};
+
+galleryButtons.forEach((card,index)=>card.addEventListener('click',()=>openGallery(index)));
+box.querySelector('.pc-lightbox-prev').addEventListener('click',event=>{event.stopPropagation();showGalleryImage(activeGalleryIndex-1)});
+box.querySelector('.pc-lightbox-next').addEventListener('click',event=>{event.stopPropagation();showGalleryImage(activeGalleryIndex+1)});
+box.querySelector('.pc-lightbox-close').addEventListener('click',closeGallery);
+box.querySelector('.pc-lightbox-figure').addEventListener('click',event=>event.stopPropagation());
+box.addEventListener('click',event=>{if(event.target===box)closeGallery()});
+document.addEventListener('keydown',event=>{
+  if(!box.classList.contains('is-open'))return;
+  if(event.key==='Escape')closeGallery();
+  if(event.key==='ArrowLeft')showGalleryImage(activeGalleryIndex-1);
+  if(event.key==='ArrowRight')showGalleryImage(activeGalleryIndex+1);
+})}
 async function init(){try{await injectSharedLayout();const data=await fetch('../assets/config/portal.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(`portal.json ${r.status}`);return r.json()});const key=document.body.dataset.barberKey,b=findBarber(data,key);if(!b)throw Error(`No configured profile found for ${key}`);render(data,b,key)}catch(e){document.querySelector('#barber-profile-root').innerHTML=`<div class="pc-error"><h1>Profile unavailable</h1><p>${esc(e.message)}</p><a href="../index.html">Return to Precision Cuts</a></div>`;console.error(e)}}init();
