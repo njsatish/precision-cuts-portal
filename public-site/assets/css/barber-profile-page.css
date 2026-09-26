@@ -367,3 +367,52 @@ body.pc-lightbox-open { overflow: hidden !important; }
   }
 }
 /* PRECISION-CUTS-BARBER-PROFILE-BRAND-FIX-V2-END */
+
+/* PRECISION-CUTS-WORK-GALLERY-3X4-V1-START */
+/* Work-gallery cards use a consistent portrait 3:4 presentation. */
+#barber-profile-root .pc-gallery-card {
+  min-height: 0 !important;
+  aspect-ratio: 3 / 4 !important;
+}
+
+#barber-profile-root .pc-gallery-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: 3 / 4 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* The work-photo lightbox also uses a large 3:4 stage. */
+.pc-lightbox .pc-lightbox-figure {
+  width: min(72vw, 720px, calc(78vh * 0.75)) !important;
+  aspect-ratio: 3 / 4 !important;
+  max-width: 720px !important;
+  max-height: 78vh !important;
+}
+
+.pc-lightbox .pc-lightbox-figure > img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: 3 / 4 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.pc-lightbox .pc-lightbox-caption {
+  width: 100% !important;
+  max-width: 720px !important;
+}
+
+@media (max-width: 760px) {
+  .pc-lightbox .pc-lightbox-figure {
+    width: min(88vw, calc(72vh * 0.75)) !important;
+    max-height: 72vh !important;
+  }
+}
+/* PRECISION-CUTS-WORK-GALLERY-3X4-V1-END */
