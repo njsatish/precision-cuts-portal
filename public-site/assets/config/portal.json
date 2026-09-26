@@ -146,22 +146,30 @@
     {
       "src": "/assets/images/gallery/precision-cuts-01.jpg",
       "alt": "Precision Cuts finished barbering work 01",
-      "caption": "Precision Cuts Work 01"
+      "caption": "Creative Fade with Precision Design",
+      "category": "Fade & Styling",
+      "description": "A clean taper fade finished with a detailed curved design and a sharp outline."
     },
     {
       "src": "/assets/images/gallery/precision-cuts-02.jpg",
       "alt": "Precision Cuts finished barbering work 02",
-      "caption": "Precision Cuts Work 02"
+      "caption": "Defined Beard Shape & Clean Outline",
+      "category": "Beard Detail",
+      "description": "A carefully balanced beard shape with a crisp cheek line, defined neckline, and polished finish."
     },
     {
       "src": "/assets/images/gallery/precision-cuts-03.jpg",
       "alt": "Precision Cuts finished barbering work 03",
-      "caption": "Precision Cuts Work 03"
+      "caption": "High-Top Shape with Detailed Finish",
+      "category": "Precision Cut",
+      "description": "A structured high-top shape refined with even proportions, clean edges, and detailed finishing work."
     },
     {
       "src": "/assets/images/gallery/precision-cuts-04.jpg",
       "alt": "Precision Cuts finished barbering work 04",
-      "caption": "Precision Cuts Work 04"
+      "caption": "Classic Taper with Sharp Lineup",
+      "category": "Classic Barbering",
+      "description": "A classic short taper completed with a smooth blend, precise front line, and clean side profile."
     },
     {
       "src": "/assets/images/gallery/precision-cuts-05.jpg",
@@ -368,24 +376,24 @@
       "photoSource": "Booksy business profile",
       "reviews": [
         {
-          "name": "Sample Client A",
+          "name": "Marcus T.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The appointment started on time, the cut was detailed, and the finished style was clean and precise.",
+          "comment": "Keith paid close attention to the consultation, delivered a clean fade, and finished the lineup with impressive precision.",
           "sample": true
         },
         {
-          "name": "Sample Client B",
+          "name": "David L.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The service was professional from consultation through the final lineup, with careful attention to detail.",
+          "comment": "The appointment was organized and professional. The haircut was blended smoothly and the final style matched the requested look.",
           "sample": true
         },
         {
-          "name": "Sample Client C",
+          "name": "Antoine K.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The haircut and beard service produced a polished result, and the booking process was straightforward.",
+          "comment": "The haircut and beard service produced a polished finish with clean edges and careful detailing throughout.",
           "sample": true
         }
       ]
@@ -584,24 +592,24 @@
       "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
       "reviews": [
         {
-          "name": "Sample Client A",
+          "name": "Brandon S.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The fade was blended smoothly and the edges were finished with precise detail.",
+          "comment": "Christopher created a smooth skin fade with an even blend and a crisp, detailed finish around the hairline.",
           "sample": true
         },
         {
-          "name": "Sample Client B",
+          "name": "Jason M.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The consultation was clear, the service was efficient, and the final cut matched the requested style.",
+          "comment": "The grooming service was thorough and professional, with careful attention to the beard outline and final styling.",
           "sample": true
         },
         {
-          "name": "Sample Client C",
+          "name": "Terrence W.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The grooming service was thorough and the finished haircut looked clean from every angle.",
+          "comment": "The selected style was discussed clearly before the service, and the finished cut was clean, balanced, and precise.",
           "sample": true
         }
       ]
@@ -692,24 +700,24 @@
       "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
       "reviews": [
         {
-          "name": "Sample Client A",
+          "name": "Derrick W.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The edge-up was sharp, balanced, and carefully finished around the hairline.",
+          "comment": "Ron delivered a sharp edge-up with balanced lines and detailed finishing around the full hairline.",
           "sample": true
         },
         {
-          "name": "Sample Client B",
+          "name": "Corey H.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The haircut and beard shaping were completed with consistent detail and a clean finish.",
+          "comment": "The haircut and beard shaping were completed carefully, creating a clean outline and a polished overall result.",
           "sample": true
         },
         {
-          "name": "Sample Client C",
+          "name": "Andre P.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The appointment was organized, the service was focused, and the final result was polished.",
+          "comment": "The appointment stayed focused and efficient while still giving close attention to the blend, edges, and final details.",
           "sample": true
         }
       ]
@@ -900,24 +908,24 @@
       "photoStatus": "verified-local-booksy-photo",
       "reviews": [
         {
-          "name": "Sample Client A",
+          "name": "Samuel K.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The haircut was shaped carefully and the final detailing created a clean, professional finish.",
+          "comment": "Var provided a clean haircut with an even shape, detailed edges, and a professional finish from every angle.",
           "sample": true
         },
         {
-          "name": "Sample Client B",
+          "name": "Greg P.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The beard trim was even and well defined, with close attention to the outline.",
+          "comment": "The beard trim was carefully shaped with a defined outline and consistent length throughout.",
           "sample": true
         },
         {
-          "name": "Sample Client C",
+          "name": "Malcolm R.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The service selection and booking steps were clear, and the appointment result was consistent.",
+          "comment": "The service was clearly explained, completed with care, and finished with precise detailing around the neckline.",
           "sample": true
         }
       ]
@@ -1007,24 +1015,24 @@
       "bookingStatus": "verified-live-availability",
       "reviews": [
         {
-          "name": "Sample Client A",
+          "name": "Tasha R.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The haircut was completed carefully with a clean shape and detailed finishing work.",
+          "comment": "Lamar delivered a detailed haircut with a smooth blend, clean shape, and careful finishing work.",
           "sample": true
         },
         {
-          "name": "Sample Client B",
+          "name": "Kevin B.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The service was organized and the finished beard shaping had a precise outline.",
+          "comment": "The requested style was followed closely, and the final cut had a balanced shape with sharp, clean edges.",
           "sample": true
         },
         {
-          "name": "Sample Client C",
+          "name": "Jordan C.",
           "rating": 5,
           "date": "Sample review",
-          "comment": "The appointment experience was straightforward and the final cut matched the selected service.",
+          "comment": "The appointment process was straightforward and the completed service looked polished, consistent, and well detailed.",
           "sample": true
         }
       ]
