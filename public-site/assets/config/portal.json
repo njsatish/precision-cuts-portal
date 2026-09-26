@@ -880,26 +880,26 @@
       "profilePhoto": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
       "photoStatus": "verified-local-booksy-photo",
       "familyGallery": {
-        "heading": "Var & His Wife",
-        "description": "A few favorite moments Var and his wife have shared together, from relaxed getaways to time by the water.",
+        "heading": "Levar Neal & His Wife",
+        "description": "A few favorite moments Levar Neal and his wife have shared together, from relaxed getaways to time by the water.",
         "items": [
           {
             "src": "/assets/images/barbers/levar-neal/family/levar_neal_family_01.jpg",
             "alt": "Var and his wife posing together near the water at sunset",
             "title": "Sunset Together",
-            "caption": "Var and his wife share a polished portrait together near the water at sunset."
+            "caption": "Levar Neal and his wife share a polished portrait together near the water at sunset."
           },
           {
             "src": "/assets/images/barbers/levar-neal/family/levar_neal_family_02.jpg",
             "alt": "Var and his wife seated together in a relaxed indoor setting",
             "title": "Relaxing Together",
-            "caption": "Var and his wife enjoy a relaxed moment together in a comfortable indoor setting."
+            "caption": "Levar Neal and his wife enjoy a relaxed moment together in a comfortable indoor setting."
           },
           {
             "src": "/assets/images/barbers/levar-neal/family/levar_neal_family_03.jpg",
             "alt": "Var and his wife standing together outdoors beside a palm tree",
             "title": "A Moment in the Sun",
-            "caption": "Var and his wife share a warm outdoor moment together in a tropical setting."
+            "caption": "Levar Neal and his wife share a warm outdoor moment together in a tropical setting."
           }
         ]
       }
