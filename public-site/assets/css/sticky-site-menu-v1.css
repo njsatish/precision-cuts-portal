@@ -1,0 +1,68 @@
+/* Keep barber-page navigation available while the visitor scrolls. */
+#shared-header {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 0 !important;
+  z-index: 9990 !important;
+  width: 100% !important;
+  isolation: isolate !important;
+}
+
+#shared-header > header,
+#shared-header .pp-site-header,
+#shared-header .pp-header {
+  position: relative !important;
+  top: auto !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Prevent an ancestor layout rule from clipping sticky navigation. */
+html,
+body {
+  overflow-x: clip !important;
+}
+
+/* Match the home-page behavior when the navigation is wider than the screen. */
+#shared-header nav,
+#shared-header .pp-nav,
+#shared-header [data-site-nav] {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  overscroll-behavior-inline: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+  white-space: nowrap !important;
+}
+
+#shared-header nav::-webkit-scrollbar,
+#shared-header .pp-nav::-webkit-scrollbar,
+#shared-header [data-site-nav]::-webkit-scrollbar {
+  display: none !important;
+}
+
+#shared-header nav a,
+#shared-header .pp-nav a,
+#shared-header [data-site-nav] a {
+  flex: 0 0 auto !important;
+}
+
+@media (max-width: 760px) {
+  #shared-header {
+    top: 0 !important;
+  }
+
+  #shared-header nav,
+  #shared-header .pp-nav,
+  #shared-header [data-site-nav] {
+    scroll-snap-type: inline proximity !important;
+  }
+
+  #shared-header nav a,
+  #shared-header .pp-nav a,
+  #shared-header [data-site-nav] a {
+    scroll-snap-align: start !important;
+  }
+}
