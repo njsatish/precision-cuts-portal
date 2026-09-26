@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const PHOTO = "/assets/images/barbers/christopher-meadows/christopher_meadows_about.png";
+  const PHOTO = "/assets/images/barbers/christopher-meadows/christopher_meadows_03.png";
   const PROFILE = "/barbers/christopher-meadows.html";
 
   const findCard = () => {
