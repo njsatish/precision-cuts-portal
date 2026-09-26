@@ -374,8 +374,8 @@
         {
           "type": "local-mp4",
           "src": "/assets/videos/keith-lemon/keith_lemon_video.mp4",
-          "heading": "Keith in Action",
-          "description": "Watch featured barbering work, technique, and finished results from Keith at Precision Cuts.",
+          "heading": "Keith with His Wife",
+          "description": "Keith appears with his wife in a short studio performance, sharing a lighthearted moment together in front of the microphone.",
           "poster": "/assets/images/barbers/keith-lemon/videos/keith_video_01_thumbnail.jpg",
           "controls": true,
           "preload": "metadata"
@@ -383,8 +383,8 @@
         {
           "type": "local-mp4",
           "src": "/assets/videos/keith-lemon/keith_lemon_video_02.mp4",
-          "heading": "More from Keith",
-          "description": "Watch another featured Precision Cuts video from Keith.",
+          "heading": "Keith with a Friend",
+          "description": "Keith appears with a friend in a second studio performance, exchanging verses in front of the microphone against the signature orange backdrop.",
           "poster": "/assets/images/barbers/keith-lemon/videos/keith_video_02_thumbnail.jpg",
           "controls": true,
           "preload": "metadata"
