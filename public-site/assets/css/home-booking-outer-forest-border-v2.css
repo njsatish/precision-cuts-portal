@@ -20,3 +20,23 @@
     border-radius: 18px !important;
   }
 }
+
+/* PRECISION-CUTS-HOME-BOOKING-FOOTER-GAP-V3-START */
+/* Keep the forest border visually separate from the dark footer. */
+.pc-home-booking-outer-frame-v2 {
+  margin-bottom: 48px !important;
+}
+
+/* Preserve a visible cream gap even when the next element is the footer. */
+.pc-home-booking-outer-frame-v2 + footer,
+.pc-home-booking-outer-frame-v2 + #shared-footer,
+.pc-home-booking-outer-frame-v2 + [data-site-footer] {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .pc-home-booking-outer-frame-v2 {
+    margin-bottom: 28px !important;
+  }
+}
+/* PRECISION-CUTS-HOME-BOOKING-FOOTER-GAP-V3-END */
