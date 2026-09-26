@@ -177,3 +177,16 @@ body.pc-lightbox-open { overflow: hidden !important; }
 /* PRECISION-CUTS-KEITH-FAMILY-GALLERY-V1-START */
 .pc-family-section{padding:32px;background:#0b0e14;border:1px solid #1d2633;border-radius:20px;color:#fff8e9}.pc-family-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.pc-family-card{position:relative;display:block;overflow:hidden;min-height:360px;padding:0;border:1px solid rgba(226,181,47,.32);border-radius:18px;background:#111722;cursor:pointer;text-align:left}.pc-family-card img{display:block;width:100%;height:100%;min-height:360px;aspect-ratio:4/5;object-fit:cover;transition:transform .35s ease}.pc-family-card:hover img,.pc-family-card:focus-visible img{transform:scale(1.04)}.pc-family-card:focus-visible{outline:2px solid #e2b52f;outline-offset:3px}.pc-family-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(4,7,10,.95) 100%)}.pc-family-copy{position:absolute;left:16px;right:16px;bottom:16px;display:grid;gap:4px}.pc-family-copy strong{color:#fff8e9;font-family:Georgia,"Times New Roman",serif;font-size:1.05rem;text-transform:uppercase}.pc-family-copy small{color:#c8bda8;font-size:.82rem;line-height:1.4}@media(max-width:900px){.pc-family-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.pc-family-section{padding:22px}.pc-family-grid{grid-template-columns:1fr}.pc-family-card,.pc-family-card img{min-height:320px}}
 /* PRECISION-CUTS-KEITH-FAMILY-GALLERY-V1-END */
+
+/* PRECISION-CUTS-KEITH-WIFE-GALLERY-TEXT-V1-START */
+.pc-family-section > .pc-section-head h2 {
+  color: #fff8e9 !important;
+  -webkit-text-fill-color: #fff8e9 !important;
+  opacity: 1 !important;
+}
+.pc-family-section > .pc-section-head .pc-section-subtitle {
+  color: #c8bda8 !important;
+  -webkit-text-fill-color: #c8bda8 !important;
+  opacity: 1 !important;
+}
+/* PRECISION-CUTS-KEITH-WIFE-GALLERY-TEXT-V1-END */

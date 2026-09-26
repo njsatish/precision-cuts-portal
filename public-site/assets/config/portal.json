@@ -393,26 +393,26 @@
         }
       ],
       "familyGallery": {
-        "heading": "Life Beyond the Chair",
-        "description": "A few personal moments from Keith away from the barber chair.",
+        "heading": "Keith & His Wife",
+        "description": "A few favorite moments Keith and his wife have shared together, from celebrations close to home to time away by the water.",
         "items": [
           {
             "src": "/assets/images/barbers/keith-lemon/family/keith_lemon_family_01.jpg",
-            "alt": "A personal indoor photo featuring two people together under colorful lighting",
-            "title": "A Personal Moment",
-            "caption": "A personal moment shared indoors under colorful lighting."
+            "alt": "Keith and his wife together at an indoor event with colorful lighting",
+            "title": "Celebrating Together",
+            "caption": "Keith and his wife share a memorable moment together under colorful indoor lighting."
           },
           {
             "src": "/assets/images/barbers/keith-lemon/family/keith_lemon_family_02.jpg",
-            "alt": "A personal outdoor portrait featuring two people near a porch",
-            "title": "Time Together",
-            "caption": "A casual outdoor portrait captured near a porch."
+            "alt": "Keith and his wife together near the water beneath a blue sky",
+            "title": "A Day by the Water",
+            "caption": "Keith and his wife capture a bright moment together beside the water beneath a clear blue sky."
           },
           {
             "src": "/assets/images/barbers/keith-lemon/family/keith_lemon_family_03.jpg",
-            "alt": "A personal beach photo featuring two people beneath a blue sky",
-            "title": "A Day by the Water",
-            "caption": "A sunny personal photo captured near the water."
+            "alt": "Keith and his wife posing together outdoors near a porch",
+            "title": "Close to Home",
+            "caption": "Keith and his wife share a relaxed outdoor portrait near a porch."
           }
         ]
       }
