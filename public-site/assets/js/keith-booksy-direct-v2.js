@@ -2,49 +2,79 @@
   "use strict";
 
   const WIDGET_SRC = "https://booksy.com/widget/code.js?id=97909&country=us&lang=en";
-  let launcher = null;
-  let loadStarted = false;
+  const BOOKSY_PAGE = "https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke";
+  let generatedLauncher = null;
+  let widgetRequested = false;
 
-  const isVisible = element => {
-    const style = window.getComputedStyle(element);
-    return style.display !== "none" && style.visibility !== "hidden";
+  const labelOf = element =>
+    (element?.textContent || element?.value || "").replace(/\s+/g, " ").trim();
+
+  const isKeithButton = element =>
+    /book with keith/i.test(labelOf(element)) ||
+    element?.dataset?.keithDirectBooksy === "v3";
+
+  const findLiveAvailabilityArea = () => {
+    const heading = [...document.querySelectorAll("main h1, main h2, main h3, main h4")]
+      .find(node => /live availability/i.test(node.textContent));
+    return heading?.closest("section, article, [class*='availability'], [class*='booking']") || heading?.parentElement || document.querySelector("main");
   };
 
-  const findBooksyLauncher = () => {
-    const candidates = [...document.querySelectorAll("a, button, input[type='button'], input[type='submit']")]
-      .filter(element => !element.matches("[data-keith-direct-booksy]"));
+  const ensureKeithButton = () => {
+    let button = [...document.querySelectorAll("a, button")].find(isKeithButton);
+    if (!button) {
+      const area = findLiveAvailabilityArea();
+      if (!area) return null;
+      button = document.createElement("button");
+      button.type = "button";
+      button.textContent = "Book with Keith";
+      button.className = "pc-book-with-keith-v3";
+      area.appendChild(button);
+    }
 
+    button.style.removeProperty("display");
+    button.style.removeProperty("visibility");
+    button.style.removeProperty("position");
+    button.style.removeProperty("left");
+    button.style.removeProperty("width");
+    button.style.removeProperty("height");
+    button.removeAttribute("aria-hidden");
+    button.dataset.keithDirectBooksy = "v3";
+    button.classList.add("pc-book-with-keith-v3");
+    return button;
+  };
+
+  const findGeneratedLauncher = () => {
+    const candidates = [...document.querySelectorAll("a, button, input[type='button'], input[type='submit']")];
     return candidates.find(element => {
-      const text = (element.textContent || element.value || "").replace(/\s+/g, " ").trim();
+      if (isKeithButton(element)) return false;
+      const label = labelOf(element);
       const href = element.getAttribute("href") || "";
-      return /book now/i.test(text) || /booksy\.com/i.test(href);
+      return /^book now$/i.test(label) || /booksy\.com/i.test(href);
     }) || null;
   };
 
-  const hideGeneratedLauncher = element => {
-    if (!element) return;
-    launcher = element;
-    const wrapper = element.closest("div, span") || element;
-    wrapper.style.position = "fixed";
-    wrapper.style.left = "-10000px";
-    wrapper.style.top = "0";
-    wrapper.style.width = "1px";
-    wrapper.style.height = "1px";
-    wrapper.style.overflow = "hidden";
-    wrapper.setAttribute("aria-hidden", "true");
+  const concealOnlyGeneratedLauncher = element => {
+    if (!element || isKeithButton(element)) return;
+    generatedLauncher = element;
+    element.style.position = "fixed";
+    element.style.left = "-10000px";
+    element.style.top = "0";
+    element.style.width = "1px";
+    element.style.height = "1px";
+    element.style.overflow = "hidden";
+    element.style.opacity = "0";
+    element.style.pointerEvents = "none";
+    element.setAttribute("aria-hidden", "true");
   };
 
-  const observeLauncher = () => {
-    const existing = findBooksyLauncher();
-    if (existing) {
-      hideGeneratedLauncher(existing);
-      return;
-    }
+  const watchForGeneratedLauncher = () => {
+    const existing = findGeneratedLauncher();
+    if (existing) concealOnlyGeneratedLauncher(existing);
 
     const observer = new MutationObserver(() => {
-      const generated = findBooksyLauncher();
-      if (generated) {
-        hideGeneratedLauncher(generated);
+      const found = findGeneratedLauncher();
+      if (found) {
+        concealOnlyGeneratedLauncher(found);
         observer.disconnect();
       }
     });
@@ -52,27 +82,21 @@
     window.setTimeout(() => observer.disconnect(), 15000);
   };
 
-  const preloadBooksy = () => {
-    if (loadStarted) return;
-    loadStarted = true;
-    observeLauncher();
+  const preloadWidget = () => {
+    if (widgetRequested) return;
+    widgetRequested = true;
+    watchForGeneratedLauncher();
 
     const host = document.createElement("div");
-    host.id = "pc-keith-booksy-preload-v2";
-    host.style.position = "fixed";
-    host.style.left = "-10000px";
-    host.style.top = "0";
-    host.style.width = "1px";
-    host.style.height = "1px";
-    host.style.overflow = "hidden";
-    host.setAttribute("aria-hidden", "true");
+    host.id = "pc-keith-booksy-preload-v3";
+    host.hidden = true;
     document.body.appendChild(host);
 
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.src = WIDGET_SRC;
     script.async = true;
-    script.dataset.keithBooksyDirect = "v2";
+    script.dataset.keithBooksyDirect = "v3";
     host.appendChild(script);
   };
 
@@ -80,38 +104,34 @@
     event.preventDefault();
     event.stopImmediatePropagation();
 
-    launcher = launcher && document.contains(launcher) ? launcher : findBooksyLauncher();
-    if (launcher) {
-      launcher.click();
+    generatedLauncher = generatedLauncher && document.contains(generatedLauncher)
+      ? generatedLauncher
+      : findGeneratedLauncher();
+
+    if (generatedLauncher) {
+      generatedLauncher.style.pointerEvents = "auto";
+      generatedLauncher.click();
+      generatedLauncher.style.pointerEvents = "none";
       return;
     }
 
-    /* Booksy has not finished loading. Keep this fallback on the same tab. */
-    window.location.href = "https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke";
+    window.location.assign(BOOKSY_PAGE);
   };
 
-  const bindKeithButtons = () => {
-    const buttons = [...document.querySelectorAll("a, button")]
-      .filter(element => /book with keith/i.test(element.textContent.trim()));
-    if (!buttons.length) return false;
-
-    buttons.forEach(button => {
-      if (button.dataset.keithDirectBooksy === "v2") return;
-      button.dataset.keithDirectBooksy = "v2";
+  const bind = () => {
+    const button = ensureKeithButton();
+    if (!button) return false;
+    if (button.dataset.keithDirectBound !== "v3") {
+      button.dataset.keithDirectBound = "v3";
       button.addEventListener("click", openBooksy, true);
-    });
+    }
+    preloadWidget();
     return true;
   };
 
-  const initialize = () => {
-    preloadBooksy();
-    if (bindKeithButtons()) return true;
-    return false;
-  };
-
-  if (!initialize()) {
+  if (!bind()) {
     const observer = new MutationObserver(() => {
-      if (bindKeithButtons()) observer.disconnect();
+      if (bind()) observer.disconnect();
     });
     observer.observe(document.documentElement, { childList: true, subtree: true });
     window.setTimeout(() => observer.disconnect(), 15000);
