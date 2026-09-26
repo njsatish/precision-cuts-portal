@@ -19,6 +19,7 @@
       name: "Ron The Barber",
       description: "Haircuts · Haircut & Beard · Edge-Ups & Beard Services",
       href: "/barbers/ron-the-barber.html",
+      image: "/assets/images/barbers/ron-the-barber/transitions/ron_01.jpeg",
       imageNumber: "03"
     },
     {
