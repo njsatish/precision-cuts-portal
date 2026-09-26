@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const BARBER_NAME = "Levar Neal";
+  const BARBER_NAME = "Var Da Barber";
   const BOOKSY_IFRAME_URL = "https://booksy.com/widget/index.html?id=1814949&country=us&lang=en";
   let lastTrigger = null;
 
@@ -15,8 +15,9 @@
     if (!element) return false;
     const text = normalizedText(element);
     const href = element.getAttribute?.("href") || "";
-    return text.includes("book with levar") ||
-      text.includes("book with chris") ||
+    return text.includes("book with var") ||
+      text.includes("book with levar") ||
+      text.includes("book with var da barber") ||
       /^book now\b/.test(text) ||
       /^book appointment\b/.test(text) ||
       /booksy\.com/i.test(href);
@@ -45,7 +46,7 @@
         <div class="levar-booksy-frame-wrap-v1">
           <div class="levar-booksy-loader-v1">Connecting to Booksy...</div>
           <iframe
-            title="Booksy booking calendar for Levar Neal"
+            title="Booksy booking calendar for Var Da Barber"
             allow="geolocation; microphone; camera; payment"
             referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>
