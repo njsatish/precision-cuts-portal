@@ -190,3 +190,180 @@ body.pc-lightbox-open { overflow: hidden !important; }
   opacity: 1 !important;
 }
 /* PRECISION-CUTS-KEITH-WIFE-GALLERY-TEXT-V1-END */
+
+/* PRECISION-CUTS-BARBER-PROFILE-BRAND-FIX-V2-START */
+:root {
+  --pc-profile-ink: #fff8e9;
+  --pc-profile-muted: #d2c7b4;
+  --pc-profile-gold: #e2b52f;
+  --pc-profile-coral: #ff6b4a;
+  --pc-profile-surface: #0b0e14;
+  --pc-profile-card: #111722;
+  --pc-profile-line: rgba(226, 181, 47, 0.34);
+}
+
+/* Prevent inherited homepage gradients or dark text-fill rules. */
+#barber-profile-root .pc-title,
+#barber-profile-root .pc-section-head h2,
+#barber-profile-root .pc-panel h2,
+#barber-profile-root .pc-video-card-copy h3,
+#barber-profile-root .pc-family-copy strong,
+#barber-profile-root .pc-review-name,
+#barber-profile-root .pc-service-choice-copy strong,
+#barber-profile-root .pc-selected-service-name {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* Profile hero. */
+#barber-profile-root .pc-hero .pc-title {
+  color: var(--pc-profile-coral) !important;
+  -webkit-text-fill-color: var(--pc-profile-coral) !important;
+}
+
+#barber-profile-root .pc-hero .pc-kicker,
+#barber-profile-root .pc-hero .pc-role {
+  color: var(--pc-profile-gold) !important;
+  -webkit-text-fill-color: var(--pc-profile-gold) !important;
+}
+
+#barber-profile-root .pc-hero .pc-bio {
+  color: var(--pc-profile-muted) !important;
+  -webkit-text-fill-color: var(--pc-profile-muted) !important;
+}
+
+#barber-profile-root .pc-tag,
+#barber-profile-root .pc-switcher a {
+  color: var(--pc-profile-ink) !important;
+  -webkit-text-fill-color: var(--pc-profile-ink) !important;
+}
+
+#barber-profile-root .pc-switcher a[aria-current="page"] {
+  color: #17110a !important;
+  -webkit-text-fill-color: #17110a !important;
+}
+
+/* All profile section headings and descriptions. */
+#barber-profile-root .pc-section-head h2,
+#barber-profile-root .pc-panel h2,
+#barber-profile-root .pc-services-heading h2,
+#barber-profile-root .pc-sticky-booking-panel h2 {
+  color: var(--pc-profile-ink) !important;
+  -webkit-text-fill-color: var(--pc-profile-ink) !important;
+}
+
+#barber-profile-root .pc-section-head .pc-section-subtitle,
+#barber-profile-root .pc-note,
+#barber-profile-root .pc-services-heading p,
+#barber-profile-root .pc-booking-help,
+#barber-profile-root .pc-service-desc,
+#barber-profile-root .pc-review-quote,
+#barber-profile-root .pc-video-card-copy p,
+#barber-profile-root .pc-family-copy small {
+  color: var(--pc-profile-muted) !important;
+  -webkit-text-fill-color: var(--pc-profile-muted) !important;
+  opacity: 1 !important;
+}
+
+/* Cards and labels. */
+#barber-profile-root .pc-video-card-copy h3,
+#barber-profile-root .pc-family-copy strong,
+#barber-profile-root .pc-review-name,
+#barber-profile-root .pc-service-choice-copy strong,
+#barber-profile-root .pc-selected-service-name {
+  color: var(--pc-profile-ink) !important;
+  -webkit-text-fill-color: var(--pc-profile-ink) !important;
+}
+
+#barber-profile-root .pc-video-card-copy > span,
+#barber-profile-root .pc-gallery-category,
+#barber-profile-root .pc-service-choice-meta,
+#barber-profile-root .pc-selected-service-meta,
+#barber-profile-root .pc-services-kicker,
+#barber-profile-root .pc-booking-kicker {
+  color: var(--pc-profile-gold) !important;
+  -webkit-text-fill-color: var(--pc-profile-gold) !important;
+}
+
+/* Buttons retain readable Precision Cuts contrast. */
+#barber-profile-root .pc-button-primary {
+  background: var(--pc-profile-gold) !important;
+  border-color: var(--pc-profile-gold) !important;
+  color: #17110a !important;
+  -webkit-text-fill-color: #17110a !important;
+}
+
+#barber-profile-root .pc-button-secondary {
+  background: transparent !important;
+  border-color: var(--pc-profile-gold) !important;
+  color: var(--pc-profile-gold) !important;
+  -webkit-text-fill-color: var(--pc-profile-gold) !important;
+}
+
+/* Keep every section header aligned to the exact card-grid width. */
+#barber-profile-root .pc-gallery-section,
+#barber-profile-root .pc-reviews-section,
+#barber-profile-root .pc-video-gallery,
+#barber-profile-root .pc-family-section {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+#barber-profile-root .pc-gallery-section > .pc-section-head,
+#barber-profile-root .pc-reviews-section > .pc-section-head,
+#barber-profile-root .pc-video-gallery > .pc-section-head,
+#barber-profile-root .pc-family-section > .pc-section-head {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 26px !important;
+  padding: 0 0 18px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid #303a4b !important;
+}
+
+#barber-profile-root .pc-gallery-section > .pc-section-head h2,
+#barber-profile-root .pc-reviews-section > .pc-section-head h2,
+#barber-profile-root .pc-video-gallery > .pc-section-head h2,
+#barber-profile-root .pc-family-section > .pc-section-head h2 {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+}
+
+#barber-profile-root .pc-gallery-section > .pc-section-head .pc-section-subtitle,
+#barber-profile-root .pc-reviews-section > .pc-section-head .pc-section-subtitle,
+#barber-profile-root .pc-video-gallery > .pc-section-head .pc-section-subtitle,
+#barber-profile-root .pc-family-section > .pc-section-head .pc-section-subtitle {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+/* Wife gallery heading and tiles use the same left and right boundaries. */
+#barber-profile-root .pc-family-grid {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 600px) {
+  #barber-profile-root .pc-gallery-section > .pc-section-head,
+  #barber-profile-root .pc-reviews-section > .pc-section-head,
+  #barber-profile-root .pc-video-gallery > .pc-section-head,
+  #barber-profile-root .pc-family-section > .pc-section-head {
+    margin-bottom: 20px !important;
+  }
+}
+/* PRECISION-CUTS-BARBER-PROFILE-BRAND-FIX-V2-END */
