@@ -58,7 +58,20 @@ async function injectSharedLayout(){
 // PRECISION-CUTS-SHARED-HOME-LAYOUT-V1-END
 function galleryItems(data,b){const configured=arr(b.gallery).length?arr(b.gallery):arr(data.gallery);const titles=[['Fade & Styling','Mid Bald Fade & Textured Top'],['Beard Detail','Full Beard Sculpt & Razor Sharp Line'],['Precision Cut','Low Drop Fade With Curved Edge'],['Classic Barbering','Clean Taper Cut & Groomed Beard']];if(configured.length)return configured.slice(0,4).map((g,i)=>({src:pick(g,['src','url','image','img']),title:pick(g,['caption','title','name'],titles[i][1]),category:pick(g,['category','type'],titles[i][0]),ai:false}));return titles.map((t,i)=>({category:t[0],title:t[1],src:`../assets/images/ai-gallery/work-0${i+1}.png`,ai:true}))}
 function reviewItems(data,b){return arr(b.reviews).length?arr(b.reviews).slice(0,3):arr(data.reviews).slice(0,3)}
-function featuredVideoSection(b){const video=b.featuredVideo;if(!video||!video.url)return "";return `<section class="pc-video-section"><div class="pc-video-copy"><p class="pc-video-kicker">Featured video</p><h2>${esc(video.heading||"Barber in Action")}</h2><p>${esc(video.description||"")}</p><a class="pc-button pc-button-primary pc-video-button" href="${esc(video.url)}" target="_blank" rel="noopener noreferrer">${esc(video.buttonLabel||"Watch Video")}</a><small>Opens the public video on Facebook.</small></div><a class="pc-video-poster" href="${esc(video.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(video.buttonLabel||"Watch video on Facebook")}"><img src="${esc(video.poster||imageUrl(b))}" alt="Featured barber video preview" loading="lazy"><span class="pc-video-play" aria-hidden="true">▶</span></a></section>`}
+function featuredVideoSection(b){
+  const video=b.featuredVideo;
+  if(!video)return "";
+  const heading=esc(video.heading||"Barber in Action");
+  const description=esc(video.description||"");
+  const poster=esc(video.poster||imageUrl(b));
+  if(video.type==="local-mp4"&&video.src){
+    return `<section class="pc-video-section pc-video-section-local"><div class="pc-video-copy"><p class="pc-video-kicker">Featured video</p><h2>${heading}</h2><p>${description}</p><small>Use the player controls for sound, playback, and full screen.</small></div><div class="pc-local-video-wrap"><video class="pc-local-video" controls playsinline preload="metadata" poster="${poster}"><source src="${esc(video.src)}" type="video/mp4">Your browser does not support HTML5 video.</video></div></section>`;
+  }
+  if(video.url){
+    return `<section class="pc-video-section"><div class="pc-video-copy"><p class="pc-video-kicker">Featured video</p><h2>${heading}</h2><p>${description}</p><a class="pc-button pc-button-primary pc-video-button" href="${esc(video.url)}" target="_blank" rel="noopener noreferrer">${esc(video.buttonLabel||"Watch Video")}</a></div><a class="pc-video-poster" href="${esc(video.url)}" target="_blank" rel="noopener noreferrer"><img src="${poster}" alt="Featured barber video preview" loading="lazy"><span class="pc-video-play" aria-hidden="true">▶</span></a></section>`;
+  }
+  return "";
+}
 function render(data,b,key){const name=pick(b,['displayName','professionalName','name'],key);const role=pick(b,['title','role'],'Precision Cuts barber');const bio=pick(b,['bio','overview','description'],'Professional barbering with clear pricing and convenient online booking.');const services=arr(b.services);const tags=arr(b.specialties);const gallery=galleryItems(data,b);const reviews=reviewItems(data,b);const url=pick(b,['profileUrl','booksyUrl'],pick(data.business||{},['booksyUrl'],'#'));
 const serviceHtml=services.map(s=>`<article class="pc-service"><div class="pc-service-head"><span>${esc(pick(s,['displayName','name'],'Service'))}</span><span class="pc-service-meta">${esc(money(s.price))}${pick(s,['durationMinutes','duration'],'')?` · ${esc(pick(s,['durationMinutes','duration']))} min`:''}</span></div>${s.description?`<p class="pc-service-desc">${esc(s.description)}</p>`:''}</article>`).join('')||'<p class="pc-note">Services are available through the current booking configuration.</p>';
 const links=Object.entries(PAGE_MAP).map(([k,f])=>`<a href="${f}" ${k===key?'aria-current="page"':''}>${esc(k==='var'?'Var':k[0].toUpperCase()+k.slice(1))}</a>`).join('');

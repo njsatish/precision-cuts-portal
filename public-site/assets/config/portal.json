@@ -371,13 +371,13 @@
       "profilePhoto": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
       "photoSource": "Booksy business profile",
       "featuredVideo": {
-        "type": "facebook-reel-link",
-        "url": "https://www.facebook.com/reel/2317851569041914",
+        "type": "local-mp4",
+        "src": "/assets/videos/keith-lemon/keith_lemon_video.mp4",
         "heading": "Keith in Action",
         "description": "Watch featured barbering work, technique, and finished results from Keith at Precision Cuts.",
-        "buttonLabel": "Watch on Facebook",
         "poster": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
-        "external": true
+        "controls": true,
+        "preload": "metadata"
       }
     },
     {
