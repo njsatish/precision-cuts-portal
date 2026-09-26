@@ -141,75 +141,71 @@
       "availabilityPath": "/availability/eyebrows-clippers-or-razor-cut"
     }
   ],
-  "reviews": [],
+  "reviews": [
+    {
+      "name": "Marcus T.",
+      "rating": 5,
+      "date": "Sample review",
+      "label": "Sample review",
+      "comment": "The consultation was detailed, the fade was blended smoothly, and the final lineup had a clean, precise finish.",
+      "sample": true,
+      "verified": false
+    },
+    {
+      "name": "David L.",
+      "rating": 5,
+      "date": "Sample review",
+      "label": "Sample review",
+      "comment": "The appointment was organized and professional. The finished haircut matched the requested style and was carefully detailed.",
+      "sample": true,
+      "verified": false
+    },
+    {
+      "name": "Antoine K.",
+      "rating": 5,
+      "date": "Sample review",
+      "label": "Sample review",
+      "comment": "The haircut and beard service produced a polished result with balanced shaping, clean edges, and consistent detailing.",
+      "sample": true,
+      "verified": false
+    }
+  ],
   "gallery": [
     {
       "src": "/assets/images/gallery/precision-cuts-01.jpg",
-      "alt": "Precision Cuts finished barbering work 01",
-      "caption": "Creative Fade with Precision Design",
+      "alt": "Creative fade with a precision hair design",
       "category": "Fade & Styling",
-      "description": "A clean taper fade finished with a detailed curved design and a sharp outline."
+      "caption": "Creative Fade with Precision Design",
+      "title": "Creative Fade with Precision Design",
+      "description": "A clean taper fade finished with a detailed curved design and a sharp outline.",
+      "placeholder": true
     },
     {
       "src": "/assets/images/gallery/precision-cuts-02.jpg",
-      "alt": "Precision Cuts finished barbering work 02",
-      "caption": "Defined Beard Shape & Clean Outline",
+      "alt": "Defined beard shape with a clean outline",
       "category": "Beard Detail",
-      "description": "A carefully balanced beard shape with a crisp cheek line, defined neckline, and polished finish."
+      "caption": "Defined Beard Shape & Clean Outline",
+      "title": "Defined Beard Shape & Clean Outline",
+      "description": "A carefully balanced beard shape with a crisp cheek line, defined neckline, and polished finish.",
+      "placeholder": true
     },
     {
       "src": "/assets/images/gallery/precision-cuts-03.jpg",
-      "alt": "Precision Cuts finished barbering work 03",
-      "caption": "High-Top Shape with Detailed Finish",
+      "alt": "High-top shape with detailed finishing",
       "category": "Precision Cut",
-      "description": "A structured high-top shape refined with even proportions, clean edges, and detailed finishing work."
+      "caption": "High-Top Shape with Detailed Finish",
+      "title": "High-Top Shape with Detailed Finish",
+      "description": "A structured high-top shape refined with even proportions, clean edges, and detailed finishing work.",
+      "placeholder": true
     },
     {
       "src": "/assets/images/gallery/precision-cuts-04.jpg",
-      "alt": "Precision Cuts finished barbering work 04",
-      "caption": "Classic Taper with Sharp Lineup",
+      "alt": "Classic taper haircut with a sharp lineup",
       "category": "Classic Barbering",
-      "description": "A classic short taper completed with a smooth blend, precise front line, and clean side profile."
-    },
-    {
-      "src": "/assets/images/gallery/precision-cuts-05.jpg",
-      "alt": "Precision Cuts finished barbering work 05",
-      "caption": "Precision Cuts Work 05"
-    },
-    {
-      "src": "/assets/images/gallery/precision-cuts-06.jpg",
-      "alt": "Precision Cuts finished barbering work 06",
-      "caption": "Precision Cuts Work 06"
-    },
-    {
-      "src": "/assets/images/gallery/precision-cuts-07.jpg",
-      "alt": "Precision Cuts finished barbering work 07",
-      "caption": "Precision Cuts Work 07"
-    },
-    {
-      "src": "/assets/images/gallery/precision-cuts-08.jpg",
-      "alt": "Precision Cuts finished barbering work 08",
-      "caption": "Precision Cuts Work 08"
-    },
-    {
-      "src": "/assets/images/gallery/precision-cuts-09.jpg",
-      "alt": "Precision Cuts finished barbering work 09",
-      "caption": "Precision Cuts Work 09"
-    },
-    {
-      "src": "/assets/images/gallery/precision-cuts-10.jpg",
-      "alt": "Precision Cuts finished barbering work 10",
-      "caption": "Precision Cuts Work 10"
-    },
-    {
-      "src": "/assets/images/gallery/precision-cuts-11.jpg",
-      "alt": "Precision Cuts finished barbering work 11",
-      "caption": "Precision Cuts Work 11"
-    },
-    {
-      "src": "/assets/images/gallery/precision-cuts-12.jpg",
-      "alt": "Precision Cuts finished barbering work 12",
-      "caption": "Precision Cuts Work 12"
+      "caption": "Classic Taper with Sharp Lineup",
+      "title": "Classic Taper with Sharp Lineup",
+      "description": "A classic short taper completed with a smooth blend, precise front line, and clean side profile.",
+      "placeholder": true
     }
   ],
   "booking": {
@@ -373,30 +369,7 @@
       },
       "photoUrl": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
       "profilePhoto": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
-      "photoSource": "Booksy business profile",
-      "reviews": [
-        {
-          "name": "Marcus T.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "Keith paid close attention to the consultation, delivered a clean fade, and finished the lineup with impressive precision.",
-          "sample": true
-        },
-        {
-          "name": "David L.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The appointment was organized and professional. The haircut was blended smoothly and the final style matched the requested look.",
-          "sample": true
-        },
-        {
-          "name": "Antoine K.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The haircut and beard service produced a polished finish with clean edges and careful detailing throughout.",
-          "sample": true
-        }
-      ]
+      "photoSource": "Booksy business profile"
     },
     {
       "id": "christopher-meadows",
@@ -589,30 +562,7 @@
           "durationMinutes": 60
         }
       ],
-      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
-      "reviews": [
-        {
-          "name": "Brandon S.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "Christopher created a smooth skin fade with an even blend and a crisp, detailed finish around the hairline.",
-          "sample": true
-        },
-        {
-          "name": "Jason M.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The grooming service was thorough and professional, with careful attention to the beard outline and final styling.",
-          "sample": true
-        },
-        {
-          "name": "Terrence W.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The selected style was discussed clearly before the service, and the finished cut was clean, balanced, and precise.",
-          "sample": true
-        }
-      ]
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
     },
     {
       "id": "ron-the-barber",
@@ -697,30 +647,7 @@
           "durationMinutes": 25
         }
       ],
-      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
-      "reviews": [
-        {
-          "name": "Derrick W.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "Ron delivered a sharp edge-up with balanced lines and detailed finishing around the full hairline.",
-          "sample": true
-        },
-        {
-          "name": "Corey H.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The haircut and beard shaping were completed carefully, creating a clean outline and a polished overall result.",
-          "sample": true
-        },
-        {
-          "name": "Andre P.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The appointment stayed focused and efficient while still giving close attention to the blend, edges, and final details.",
-          "sample": true
-        }
-      ]
+      "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}"
     },
     {
       "id": "levar-neal",
@@ -905,30 +832,7 @@
       "bookingStatus": "verified-live-availability",
       "photo": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
       "profilePhoto": "/assets/images/barbers/levar-neal-booksy.jpg?v=1",
-      "photoStatus": "verified-local-booksy-photo",
-      "reviews": [
-        {
-          "name": "Samuel K.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "Var provided a clean haircut with an even shape, detailed edges, and a professional finish from every angle.",
-          "sample": true
-        },
-        {
-          "name": "Greg P.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The beard trim was carefully shaped with a defined outline and consistent length throughout.",
-          "sample": true
-        },
-        {
-          "name": "Malcolm R.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The service was clearly explained, completed with care, and finished with precise detailing around the neckline.",
-          "sample": true
-        }
-      ]
+      "photoStatus": "verified-local-booksy-photo"
     },
     {
       "id": "lamar-the-barber",
@@ -1012,30 +916,7 @@
       "availabilityApiUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
       "availabilityBaseUrl": "https://nju3ryot9c.execute-api.us-east-1.amazonaws.com",
       "availabilityRouteTemplate": "/availability/{barberSlug}/{serviceSlug}",
-      "bookingStatus": "verified-live-availability",
-      "reviews": [
-        {
-          "name": "Tasha R.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "Lamar delivered a detailed haircut with a smooth blend, clean shape, and careful finishing work.",
-          "sample": true
-        },
-        {
-          "name": "Kevin B.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The requested style was followed closely, and the final cut had a balanced shape with sharp, clean edges.",
-          "sample": true
-        },
-        {
-          "name": "Jordan C.",
-          "rating": 5,
-          "date": "Sample review",
-          "comment": "The appointment process was straightforward and the completed service looked polished, consistent, and well detailed.",
-          "sample": true
-        }
-      ]
+      "bookingStatus": "verified-live-availability"
     }
   ],
   "founderSpotlight": {
@@ -1137,5 +1018,101 @@
       "reviewDisplay": "4.9 Booksy rating",
       "photoUrl": "/assets/images/barbers/lamar-the-barber-booksy.jpg?v=1"
     }
-  ]
+  ],
+  "sharedBarberPageContent": {
+    "temporary": true,
+    "replacementNote": "Replace shared gallery and sample feedback with barber-specific content when approved assets become available.",
+    "gallery": {
+      "sharedAcrossAllBarbers": true,
+      "heading": "Featured Barbering Work",
+      "description": "Explore fades, beard detailing, precision shaping, and finished styles. Select any photo to view it larger.",
+      "lightboxNavigation": true,
+      "items": [
+        {
+          "src": "/assets/images/gallery/precision-cuts-01.jpg",
+          "alt": "Creative fade with a precision hair design",
+          "category": "Fade & Styling",
+          "caption": "Creative Fade with Precision Design",
+          "title": "Creative Fade with Precision Design",
+          "description": "A clean taper fade finished with a detailed curved design and a sharp outline.",
+          "placeholder": true
+        },
+        {
+          "src": "/assets/images/gallery/precision-cuts-02.jpg",
+          "alt": "Defined beard shape with a clean outline",
+          "category": "Beard Detail",
+          "caption": "Defined Beard Shape & Clean Outline",
+          "title": "Defined Beard Shape & Clean Outline",
+          "description": "A carefully balanced beard shape with a crisp cheek line, defined neckline, and polished finish.",
+          "placeholder": true
+        },
+        {
+          "src": "/assets/images/gallery/precision-cuts-03.jpg",
+          "alt": "High-top shape with detailed finishing",
+          "category": "Precision Cut",
+          "caption": "High-Top Shape with Detailed Finish",
+          "title": "High-Top Shape with Detailed Finish",
+          "description": "A structured high-top shape refined with even proportions, clean edges, and detailed finishing work.",
+          "placeholder": true
+        },
+        {
+          "src": "/assets/images/gallery/precision-cuts-04.jpg",
+          "alt": "Classic taper haircut with a sharp lineup",
+          "category": "Classic Barbering",
+          "caption": "Classic Taper with Sharp Lineup",
+          "title": "Classic Taper with Sharp Lineup",
+          "description": "A classic short taper completed with a smooth blend, precise front line, and clean side profile.",
+          "placeholder": true
+        }
+      ]
+    },
+    "reviews": {
+      "sharedAcrossAllBarbers": true,
+      "heading": "Sample Client Feedback",
+      "description": "Preview feedback created to demonstrate the review layout. Names and comments are fictional placeholders.",
+      "source": "sample",
+      "verified": false,
+      "items": [
+        {
+          "name": "Marcus T.",
+          "rating": 5,
+          "date": "Sample review",
+          "label": "Sample review",
+          "comment": "The consultation was detailed, the fade was blended smoothly, and the final lineup had a clean, precise finish.",
+          "sample": true,
+          "verified": false
+        },
+        {
+          "name": "David L.",
+          "rating": 5,
+          "date": "Sample review",
+          "label": "Sample review",
+          "comment": "The appointment was organized and professional. The finished haircut matched the requested style and was carefully detailed.",
+          "sample": true,
+          "verified": false
+        },
+        {
+          "name": "Antoine K.",
+          "rating": 5,
+          "date": "Sample review",
+          "label": "Sample review",
+          "comment": "The haircut and beard service produced a polished result with balanced shaping, clean edges, and consistent detailing.",
+          "sample": true,
+          "verified": false
+        }
+      ]
+    },
+    "footer": {
+      "sharedAcrossAllBarbers": true,
+      "useCompactHomeFooter": true,
+      "logo": "/assets/images/precision-cuts-logo-approved.png",
+      "copyright": "© 2026 Precision Cuts",
+      "phoneDisplay": "(540) 556-2871",
+      "phoneHref": "+15405562871",
+      "facebookUrl": "https://www.facebook.com/precisioncutsvip/",
+      "servicesUrl": "/services.html",
+      "bookingUrl": "https://booksy.com/en-us/97909_precision-cuts_barber-shop_134579_roanoke",
+      "address": "6423 Williamson Rd, Roanoke, VA 24019"
+    }
+  }
 }
