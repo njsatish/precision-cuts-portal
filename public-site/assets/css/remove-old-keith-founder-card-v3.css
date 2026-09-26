@@ -1,0 +1,2 @@
+/* Safety fallback: hide any explicitly marked legacy founder container. */
+.pc-old-keith-founder-card-v3{display:none!important}
