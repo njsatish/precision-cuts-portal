@@ -12,6 +12,7 @@
       name: "Christopher Meadows",
       description: "Haircuts & Skin Fades · Haircut & Beard · Hot Towel & Razor Shaves",
       href: "/barbers/christopher-meadows.html",
+      image: "/assets/images/barbers/christopher-meadows/transitions/christopher_meadows_02.jpg",
       imageNumber: "02"
     },
     {
@@ -66,6 +67,9 @@
 
     applying = true;
     const slide = slides[index];
+    if (slide.image && image.getAttribute("src") !== slide.image) {
+      image.src = slide.image;
+    }
     link.href = slide.href;
     link.dataset.barberProfile = slide.name;
     link.setAttribute("aria-label", `View ${slide.name} profile`);
