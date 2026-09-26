@@ -25,6 +25,7 @@
       name: "Var da Barber",
       description: "Men's Haircuts · Head Shaves · Beard Trims · Hot Towel Shaves",
       href: "/barbers/var-da-barber.html",
+      image: "/assets/images/barbers/levar-neal/transitions/Levar_Neal_02.jpg",
       imageNumber: "04"
     },
     {
