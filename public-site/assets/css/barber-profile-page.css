@@ -99,3 +99,35 @@ body.pc-lightbox-open { overflow: hidden !important; }
   .pc-lightbox-next { right: calc(50% - 70px) !important; }
 }
 /* PRECISION-CUTS-GALLERY-LIGHTBOX-NAV-V1-END */
+
+/* PRECISION-CUTS-HOME-FOOTER-ON-BARBER-PAGES-V1-START */
+#shared-footer {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#shared-footer .pp-site-footer {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+#shared-footer .pp-footer-logo-lockup,
+#shared-footer .pp-footer-grid,
+#shared-footer .pp-footer-location,
+#shared-footer .pp-footer-business-details {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#shared-footer a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+#shared-header .pp-nav.is-open {
+  display: flex !important;
+}
+/* PRECISION-CUTS-HOME-FOOTER-ON-BARBER-PAGES-V1-END */

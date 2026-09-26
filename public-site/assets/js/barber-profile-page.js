@@ -4,7 +4,58 @@ const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const arr=v=>Array.isArray(v)?v:[];const pick=(o,keys,f='')=>{for(const k of keys)if(o&&o[k]!=null&&o[k]!=='')return o[k];return f};
 function findBarber(data,key){return arr(data.barbers).find(b=>IDS[key].includes(String(b.id||b.slug||'').toLowerCase()))||arr(data.teamProfiles).find(b=>IDS[key].includes(String(b.id||'').toLowerCase()))||null}
 function money(v){if(v===''||v==null)return'';if(typeof v==='string'&&v.includes('$'))return v;return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(Number(v))}
-async function injectSharedLayout(){const html=await fetch('../index.html',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(r.status);return r.text()});const doc=new DOMParser().parseFromString(html,'text/html');for(const [source,target] of [['header','#shared-header'],['footer','#shared-footer']]){const node=doc.querySelector(source);if(node)document.querySelector(target).replaceChildren(node.cloneNode(true))}document.querySelectorAll('#shared-header script,#shared-footer script').forEach(s=>s.remove())}
+// PRECISION-CUTS-SHARED-HOME-LAYOUT-V1-START
+async function injectSharedLayout(){
+  const response=await fetch('../index.html',{cache:'no-store'});
+  if(!response.ok)throw Error(`Unable to load shared home layout: ${response.status}`);
+  const html=await response.text();
+  const doc=new DOMParser().parseFromString(html,'text/html');
+  const sourceHeader=doc.querySelector('header.pp-site-header')||doc.querySelector('header');
+  const sourceFooter=doc.querySelector('footer.pp-site-footer')||doc.querySelector('footer');
+  const sourceMobileActions=doc.querySelector('.pp-mobile-actions');
+  const headerTarget=document.querySelector('#shared-header');
+  const footerTarget=document.querySelector('#shared-footer');
+
+  if(!sourceHeader||!sourceFooter||!headerTarget||!footerTarget){
+    throw Error('The home page header or footer could not be found.');
+  }
+
+  const header=sourceHeader.cloneNode(true);
+  const footer=sourceFooter.cloneNode(true);
+  header.querySelectorAll('script').forEach(node=>node.remove());
+  footer.querySelectorAll('script').forEach(node=>node.remove());
+  headerTarget.replaceChildren(header);
+  footerTarget.replaceChildren(footer);
+
+  document.querySelectorAll('#shared-header [href^="/"],#shared-footer [href^="/"],#shared-header [src^="/"],#shared-footer [src^="/"]').forEach(node=>{
+    for(const attribute of ['href','src']){
+      const value=node.getAttribute(attribute);
+      if(value&&value.startsWith('/'))node.setAttribute(attribute,`..${value}`);
+    }
+  });
+
+  document.querySelectorAll('#shared-header a').forEach(link=>{
+    const href=link.getAttribute('href')||'';
+    if(href.endsWith('/index.html')||href.endsWith('../index.html'))link.setAttribute('aria-current','page');
+  });
+
+  if(sourceMobileActions&&!document.querySelector('.pp-mobile-actions')){
+    const mobileActions=sourceMobileActions.cloneNode(true);
+    mobileActions.querySelectorAll('[href^="/"]').forEach(link=>link.setAttribute('href',`..${link.getAttribute('href')}`));
+    document.body.appendChild(mobileActions);
+  }
+
+  const menuButton=document.querySelector('#shared-header [data-menu-toggle]');
+  const nav=document.querySelector('#shared-header [data-site-nav]');
+  if(menuButton&&nav){
+    menuButton.addEventListener('click',()=>{
+      const expanded=menuButton.getAttribute('aria-expanded')==='true';
+      menuButton.setAttribute('aria-expanded',String(!expanded));
+      nav.classList.toggle('is-open',!expanded);
+    });
+  }
+}
+// PRECISION-CUTS-SHARED-HOME-LAYOUT-V1-END
 function galleryItems(data,b){const configured=arr(b.gallery).length?arr(b.gallery):arr(data.gallery);const titles=[['Fade & Styling','Mid Bald Fade & Textured Top'],['Beard Detail','Full Beard Sculpt & Razor Sharp Line'],['Precision Cut','Low Drop Fade With Curved Edge'],['Classic Barbering','Clean Taper Cut & Groomed Beard']];if(configured.length)return configured.slice(0,4).map((g,i)=>({src:pick(g,['src','url','image','img']),title:pick(g,['caption','title','name'],titles[i][1]),category:pick(g,['category','type'],titles[i][0]),ai:false}));return titles.map((t,i)=>({category:t[0],title:t[1],src:`../assets/images/ai-gallery/work-0${i+1}.png`,ai:true}))}
 function reviewItems(data,b){return arr(b.reviews).length?arr(b.reviews).slice(0,3):arr(data.reviews).slice(0,3)}
 function render(data,b,key){const name=pick(b,['displayName','professionalName','name'],key);const role=pick(b,['title','role'],'Precision Cuts barber');const bio=pick(b,['bio','overview','description'],'Professional barbering with clear pricing and convenient online booking.');const services=arr(b.services);const tags=arr(b.specialties);const gallery=galleryItems(data,b);const reviews=reviewItems(data,b);const url=pick(b,['profileUrl','booksyUrl'],pick(data.business||{},['booksyUrl'],'#'));
