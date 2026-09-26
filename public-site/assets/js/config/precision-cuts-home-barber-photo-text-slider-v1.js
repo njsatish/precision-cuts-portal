@@ -33,6 +33,7 @@
       name: "Lamar the barber",
       description: "Male Haircuts · Beard Shaping · Kids Cuts",
       href: "/barbers/lamar-the-barber.html",
+      image: "/assets/images/barbers/lamar-the-barber/transitions/lamar-the-barber.jpg",
       imageNumber: "05"
     }
   ];
