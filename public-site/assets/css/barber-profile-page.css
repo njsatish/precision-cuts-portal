@@ -11,3 +11,69 @@
   color: #c8bda8;
   opacity: 1;
 }
+
+/* PRECISION-CUTS-SECTION-HEADERS-V2-START */
+.pc-gallery-section .pc-section-head,
+.pc-reviews-section .pc-section-head {
+  display: block !important;
+  margin: 0 0 26px !important;
+  padding: 0 0 18px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid #303a4b !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.pc-gallery-section .pc-section-head h2,
+.pc-reviews-section .pc-section-head h2 {
+  display: block !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  color: #fff8e9 !important;
+  -webkit-text-fill-color: #fff8e9 !important;
+  background: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: none !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(1.55rem, 2.5vw, 2.15rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.015em !important;
+  text-transform: uppercase !important;
+}
+
+.pc-gallery-section .pc-section-head .pc-section-subtitle,
+.pc-reviews-section .pc-section-head .pc-section-subtitle {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 960px !important;
+  color: #c8bda8 !important;
+  -webkit-text-fill-color: #c8bda8 !important;
+  background: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: none !important;
+  font-family: Inter, Arial, sans-serif !important;
+  font-size: 1rem !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 560px) {
+  .pc-gallery-section .pc-section-head h2,
+  .pc-reviews-section .pc-section-head h2 {
+    font-size: 1.45rem !important;
+  }
+
+  .pc-gallery-section .pc-section-head .pc-section-subtitle,
+  .pc-reviews-section .pc-section-head .pc-section-subtitle {
+    font-size: 0.92rem !important;
+  }
+}
+/* PRECISION-CUTS-SECTION-HEADERS-V2-END */
