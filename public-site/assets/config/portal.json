@@ -369,7 +369,16 @@
       },
       "photoUrl": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
       "profilePhoto": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
-      "photoSource": "Booksy business profile"
+      "photoSource": "Booksy business profile",
+      "featuredVideo": {
+        "type": "facebook-reel-link",
+        "url": "https://www.facebook.com/reel/2317851569041914",
+        "heading": "Keith in Action",
+        "description": "Watch featured barbering work, technique, and finished results from Keith at Precision Cuts.",
+        "buttonLabel": "Watch on Facebook",
+        "poster": "/assets/images/barbers/keith-booksy-profile.jpg?v=1",
+        "external": true
+      }
     },
     {
       "id": "christopher-meadows",
