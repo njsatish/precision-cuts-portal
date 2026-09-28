@@ -2,7 +2,7 @@
   "use strict";
 
   const BARBER_NAME = "Christopher Meadows";
-  const BOOKSY_IFRAME_URL = "https://booksy.com/widget/index.html?id=1648732&country=us&lang=en";
+  const BOOKSY_IFRAME_URL = "https://booksy.com/widget/index.html?id=1548070&country=us&lang=en";
   let lastTrigger = null;
 
   const normalizedText = element =>
