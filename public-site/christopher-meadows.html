@@ -34,5 +34,29 @@
   <div id="shared-footer" aria-label="Precision Cuts footer"></div>
   <script defer src="../assets/js/barber-service-categories-v1.js?v=1"></script>
   <script src="../assets/js/christopher-meadows-booksy-modal-v1.js?v=1"></script>
+  <!-- HQ-SAME-WINDOW-BOOKSY-START -->
+  <script>
+    document.addEventListener('click', function (event) {
+      const target = event.target.closest('a, button');
+      if (!target) return;
+
+      const label = (target.textContent || '').trim().toLowerCase();
+      const href = target.getAttribute('href') || '';
+      const isBookNow =
+        label === 'book now' ||
+        label.startsWith('book now ') ||
+        target.matches('[data-book-now], [data-booksy-book], .book-now, .pc-book-now') ||
+        href.includes('booksy.com');
+
+      if (!isBookNow) return;
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.assign(
+        'https://booksy.com/en-us/instant-experiences/widget/1548070'
+      );
+    }, true);
+  </script>
+  <!-- HQ-SAME-WINDOW-BOOKSY-END -->
 </body>
 </html>
